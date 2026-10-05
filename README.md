@@ -48,7 +48,9 @@ Everything shown comes from two JSON files in `content/`. Edit them (on GitHub's
 
 - Sections print in the order they are listed. Each row is `[what, value, ref]`, three strings.
 - `ref` is where to check it: `"BT-19 2.2.4"` or `"art. 4"` (REBT, shown in blue), anything else such as
-  `"Guía anexo 2"` (other documents, grey), or `""` when there is none. Check values against the BOE text.
+  `"Guía anexo 2"` (other documents, grey), or `""` when there is none. Several: `"BT-14 3 · BT-15 3"`. Check values
+  against the text in `sources/` (see below); `python3 tools/sources.py check` confirms every ref points to a real
+  section.
 - A section may also have a table, shown above its rows (or alone, with `"rows": []`):
   `"table": {"head": ["", "Uso", "PIA"], "rows": [["C1", "alumbrado", "10 A"]]}`. Every table row needs as many cells
   as `head`.
@@ -83,6 +85,22 @@ open index.html              # works straight from disk
 `python3 tools/build.py --check` only checks. Python 3 standard library only. `data.js` is generated and not
 committed: the workflow builds it.
 
+## Sources
+
+`sources/` keeps the official documents the content comes from, unchanged: the REBT (BOE), the Ministry's *Guía
+Técnica de Aplicación del REBT*, RD 614/2001, the INSST electrical-risk guide and NTP 391, and the CTE DB-SUA. Each one
+is there because its publisher allows redistribution; `sources/sources.json` records its URL, edition, checksum and
+the publisher's terms, and `sources/README.md` explains them. Standards (UNE/IEC) and course material are never added.
+
+```
+python3 tools/sources.py grep "verde-amarillo"       # find the passage
+python3 tools/sources.py show ITC-BT-19#2.2.4        # read the section
+python3 tools/sources.py check                       # files unchanged, every ref resolves
+python3 tools/sources.py update                      # anything new at the publishers?
+```
+
+Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
+
 ## Layout
 
 | Path | What |
@@ -93,15 +111,19 @@ committed: the workflow builds it.
 | `content/elements/fixed/` | Our corrections of faulty elements |
 | `tools/build.py` | content → `data.js` (checks, SVG conversion) |
 | `tools/symbols.py` | QElectroTech element → SVG; `--vendor` copies new elements |
+| `sources/`, `sources/sources.json` | Official source documents, their origin and reuse terms |
+| `tools/sources.py`, `tools/rebt_index.py` | Check, index, search and update the sources; REBT split into citable sections |
+| `CLAUDE.md` | Working rules for editing this repo with Claude Code (what may be published, how to check) |
 | `.github/workflows/pages.yml` | Builds and publishes to GitHub Pages on every push to `main` |
 
 ## Origin and credits
 
-Extracted from a private study almanac (`rebt-almanac`), which keeps the same two JSON formats, so content can be
-copied between them as is. Only this original summary and the symbols are published here.
+Extracted from a private study almanac (`rebt-almanac`), which keeps the same two JSON formats. Only this original
+summary, the symbols and the freely redistributable official sources are published here.
 
 - REBT: Real Decreto 842/2002 and its ITC-BT, as published by the BOE. Official legal texts are not subject to
   copyright (Ley de Propiedad Intelectual, art. 13); the chuleta is our own summary of their figures.
 - Symbol drawings: the EN 60617 element collection of [QElectroTech](https://qelectrotech.org/), licensed
   [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) (see `content/elements/qet/ELEMENTS.LICENSE`).
+- Source documents: see `sources/README.md` for each publisher's terms and the attribution it asks for.
 - Fonts: Barlow and Barlow Condensed (SIL Open Font License), from Google Fonts.

@@ -8,3 +8,6 @@ __pycache__/
 
 # Local state of MCP tools (e.g. the Zulip chat database), not part of the project
 .mcp/
+
+# Plain-text index of sources/ (tools/sources.py builds it on first use)
+sources/index/

@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: sudo apt-get install -y --no-install-recommends poppler-utils
+      - run: python3 tools/sources.py check
       - run: python3 tools/build.py
       - run: |
           mkdir _site

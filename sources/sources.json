@@ -1,0 +1,466 @@
+{
+ "_doc": "Official documents kept in sources/ to write and check the content. Every file is here because its publisher allows redistribution (see 'publishers'); tools/sources.py checks, indexes, searches and updates them. See sources/README.md.",
+ "terms_checked": "2026-10-06",
+ "publishers": {
+  "BOE-CODIGOS": {
+   "name": "Agencia Estatal Boletín Oficial del Estado — Códigos electrónicos",
+   "terms_url": "https://www.boe.es/informacion/aviso_legal/index.php",
+   "licence": "CC BY-NC-ND 4.0 (stated on page 2 of the PDF)",
+   "allows": "Redistributing the PDF unchanged, non-commercially, with attribution. Not: modified versions of the PDF. The legal text itself is not subject to copyright (LPI art. 13), so summarising its figures in our own words is fine.",
+   "attribution": "Fuente: Agencia Estatal Boletín Oficial del Estado (https://www.boe.es), Códigos electrónicos, CC BY-NC-ND 4.0"
+  },
+  "BOE": {
+   "name": "Agencia Estatal Boletín Oficial del Estado",
+   "terms_url": "https://www.boe.es/informacion/aviso_legal/index.php",
+   "licence": "Reuse authorised by the BOE legal notice (Ley 37/2007), commercial or not",
+   "allows": "Copying and distributing; derived works. Conditions: cite the source, do not distort the meaning, consolidated texts are informative only, no suggestion of official status, keep update dates.",
+   "attribution": "Fuente de los datos: Agencia Estatal Boletín Oficial del Estado (https://www.boe.es)"
+  },
+  "MINISTERIO-INDUSTRIA": {
+   "name": "Ministerio de Industria y Turismo",
+   "terms_url": "https://sede.serviciosmin.gob.es/es-es/paginas/aviso.aspx",
+   "licence": "Reproduction allowed citing the origin (legal notice: «Se prohíbe la reproducción total o parcial de los contenidos del portal sin citar su origen o solicitar autorización»); public sector information under Ley 37/2007",
+   "allows": "Copying the guides unchanged, citing the Ministry and the URL. Do not alter them.",
+   "attribution": "Fuente: Ministerio de Industria y Turismo, Guía Técnica de Aplicación del Reglamento Electrotécnico para Baja Tensión (https://industria.gob.es)"
+  },
+  "INSST": {
+   "name": "Instituto Nacional de Seguridad y Salud en el Trabajo",
+   "terms_url": "https://www.insst.es/informacion-general/aviso-legal",
+   "licence": "Reuse authorised, commercial or not, including modification and extraction (INSST legal notice)",
+   "allows": "Copy, distribute, adapt. Conditions: cite the source, keep update dates, do not distort, no suggestion of INSST endorsement.",
+   "attribution": "Origen de los datos: Instituto Nacional de Seguridad y Salud en el Trabajo (https://www.insst.es)"
+  },
+  "MIVAU-CTE": {
+   "name": "Ministerio de Vivienda y Agenda Urbana — Código Técnico de la Edificación",
+   "terms_url": "https://www.codigotecnico.org/",
+   "licence": "The DB text is a regulation (RD 314/2006, published in the BOE); the site's documents state «Se permite la reproducción total o parcial del contenido de este documento siempre y cuando se cite la fuente original y a sus autores» (e.g. its radon guide). No separate legal notice found on codigotecnico.org (checked 2026-10-06).",
+   "allows": "Copying unchanged, citing the Ministry and codigotecnico.org.",
+   "attribution": "Fuente: Ministerio de Vivienda y Agenda Urbana, Código Técnico de la Edificación (https://www.codigotecnico.org)"
+  }
+ },
+ "docs": {
+  "REBT": {
+   "title": "Reglamento electrotécnico para baja tensión e ITC (Códigos electrónicos nº 326)",
+   "publisher": "BOE-CODIGOS",
+   "file": "sources/boe/rebt_boe_326.pdf",
+   "url": "https://www.boe.es/biblioteca_juridica/codigos/abrir_pdf.php?fich=326_Reglamento_electrotecnico_para_baja_tension_e_ITC.pdf",
+   "edition": "3 de septiembre de 2025",
+   "sha256": "fd1816fa2afde6774d47f77b06f81da84966174db8fc9eddd9a8a2f7a66c308a",
+   "bytes": 9062701,
+   "retrieved": "2026-09-29",
+   "note": "The main source. Landing page: https://www.boe.es/biblioteca_juridica/codigos/codigo.php?id=326"
+  },
+  "RD-614-2001": {
+   "title": "Real Decreto 614/2001, protección de la salud y seguridad de los trabajadores frente al riesgo eléctrico (texto consolidado)",
+   "publisher": "BOE",
+   "file": "sources/boe/RD_614_2001_riesgo_electrico.pdf",
+   "url": "https://www.boe.es/buscar/pdf/2001/BOE-A-2001-11881-consolidado.pdf",
+   "edition": null,
+   "sha256": "6cec505acf22402db7c9b91b79ebdce08645cc7b5eba6a105dbda388c2fd649c",
+   "bytes": 185236,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-40": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-40",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/Guia_bt_40_sep13R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/Guia_bt_40_sep13R1.pdf",
+   "edition": "sept-13",
+   "sha256": "069fd128c87f2e52efc60a3df816310a0ee13e7d03f7917d86f91b006c3513a4",
+   "bytes": 2111396,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-09": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-09",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/ITC-BT-09_guia_E_jul_20_R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/ITC-BT-09_guia_E_jul_20_R2.pdf",
+   "edition": "jul 2020",
+   "sha256": "90717a0e4225a5fb906401336dfd1cb2e11dc94279b9f358fd6acd1ad313f263",
+   "bytes": 1535157,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-17": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-17",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/ITC-BT-17_guia_E_Sep_20_R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/ITC-BT-17_guia_E_Sep_20_R2.pdf",
+   "edition": "sep 20",
+   "sha256": "eb206f03c5053d2da1d346146a815e09ba4216a211ac661e44d852e4d87843d9",
+   "bytes": 198643,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-33": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-33",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/ITC-BT-33_guia_E_ene_24_R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/ITC-BT-33%20guia%20E%20ene%2024%20R2.pdf",
+   "edition": "ene 24",
+   "sha256": "f49b729f87ccd88d19b0507216d423963ddbf3fea5098b077a2898c6b59541a3",
+   "bytes": 528457,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-03": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-03",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_03_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_03_sep03R1.pdf",
+   "edition": "Sep 03",
+   "sha256": "866e3da88c847867a7e4640a92d63110f67b41053bc7d3c7b6c717b8f0f786e9",
+   "bytes": 334606,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-04": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-04",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_04_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_04_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "8847632f2e9b3df0b55d169d3b538d4013040b85927e873ff5c0cf1a5d53797f",
+   "bytes": 313456,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-05": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-05",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_05_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_05_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "a580e73f93387fbf232be5e2b519a8114efb6169a8de9934820b16223505386e",
+   "bytes": 272935,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-08": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-08",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_08_oct05R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_08_oct05R1.pdf",
+   "edition": "Oct 05",
+   "sha256": "8ae9ace97519a8949c3a1e6994c0d52749a3f36bb911dc16ed7a9bc97a449da3",
+   "bytes": 145025,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-10": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-10",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_10_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_10_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "bf5bcfcf5560e4053c21971f68ae6ef2af08da10878897bd8d01905dddae3f6c",
+   "bytes": 126999,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-12": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-12",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_12_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_12_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "0c90d06a5af9d4f9886d1e4550e4267e8158814c5f3c0cd9709bebf9196e8426",
+   "bytes": 151974,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-13": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-13",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_13_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_13_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "f9ff6dab1b5c6b3e237a931f923eb93838cc85cf9e826aca3d63179cb1dd92e6",
+   "bytes": 125644,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-14": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-14",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_14_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_14_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "d9750599747c8f95adf8933ece2953d0c2a285293d40966e585506e32fbd6b47",
+   "bytes": 178050,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-15": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-15",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_15_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_15_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "d4566ca0fc20d3ecd1887cc3df0646b52012c8ca6dcea1f3fd4f7343935373a5",
+   "bytes": 243522,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-16": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-16",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_16_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_16_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "52728955300704a1257a124ca161673eb8f0642759b19677a58251286aadb36f",
+   "bytes": 409929,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-18": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-18",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_18_oct05R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_18_oct05R1.pdf",
+   "edition": "Oct 05",
+   "sha256": "1c56c7981a05258a37e3b6339ce4aa152dd2fcef616f3a5b1925c999806cea9c",
+   "bytes": 207144,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-19": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-19",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_19_feb09R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_19_feb09R2.pdf",
+   "edition": "feb 09",
+   "sha256": "b238228eee206caf2851d320ffe578731a2bf7bd89525086f34606c28e5977ee",
+   "bytes": 298285,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-20": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-20",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_20_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_20_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "aea8eb90d9058efb2130ec722295963fe6ca5acf10b1650341fc4e1535bf5618",
+   "bytes": 150178,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-21": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-21",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_21_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_21_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "840d6c6de47555581c2114b2dc15a18f3eac4a6f45ed8128e2edede74b002122",
+   "bytes": 275270,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-22": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-22",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_22_oct05R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_22_oct05R1.pdf",
+   "edition": "Oct 05",
+   "sha256": "af652337c46dad37b1c230670f0c475854d8a5081e0bffe811b74315c036adb8",
+   "bytes": 152050,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-23": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-23",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_23_nov19R4.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_23_nov19R4.pdf",
+   "edition": "nov 19",
+   "sha256": "f2c7e5c407711f0318c5f389446ab1054b2c4b409676d741a0f76179f3e136b3",
+   "bytes": 165906,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-24": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-24",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_24_jun19R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_24_jun19R2.pdf",
+   "edition": "junio-2019",
+   "sha256": "47c7b683b1751c19cc0988f3187e9566168bab543fb3d740ce520aa73bb79f89",
+   "bytes": 1111370,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-25": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-25",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_25_jul12R2.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_25_jul12R2.pdf",
+   "edition": "jul 12",
+   "sha256": "2169a94f063e335306acee5da8e4757b160a6f7cf6e4e322a5ebf149ea8f23c4",
+   "bytes": 485966,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-26": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-26",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_26_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_26_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "9030b8dd64c037a7f42eeb89c3fd5dd0e09ee01b7ece5d652cd8f5822533e227",
+   "bytes": 206858,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-27": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-27",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_27_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_27_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "99e30e5a1d80f36813d9af4238d762ab51dde3128db499af3145368a1c78e140",
+   "bytes": 170908,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-28": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-28",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_28_mar15R3.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_28_mar15R3.pdf",
+   "edition": "mar 15",
+   "sha256": "f320da42097df87e375f9b765f819cc6a30cd0783d16b219030b6377efff084b",
+   "bytes": 234807,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-29": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-29",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_29_nov19R4.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_29_nov19R4.pdf",
+   "edition": "nov 19",
+   "sha256": "333c9651850a5bd775528c1fa32034c8b69adaf5c6de29d4e666d6ad5cc36420",
+   "bytes": 498256,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-30": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-30",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_30_feb09R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_30_feb09R1.pdf",
+   "edition": "feb 09",
+   "sha256": "75fd152249f4bc2f8ca1f0026579ece31d17b3755ea9f085014a9cde40cb4552",
+   "bytes": 68368,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-49": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-49",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_49_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_49_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "9ca642d3566ff70b3b9b3afbddffb7fbbdab1b89fcb6a5475532444eb67362fc",
+   "bytes": 84569,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-52": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-52",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_52_nov17R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_52_nov17R1.pdf",
+   "edition": "septiembre 2024",
+   "sha256": "296f24abda546b38283b23fcaf4b3286a1bb81d9de104eb770105c1cd32c5c15",
+   "bytes": 1214437,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-ANEXO-1": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-ANEXO-1",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_anexo_1_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_anexo_1_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "3fa27ca3e55b202dba27cfe46375286f87b17ade87ebb0b3e9b0c2be3ad215c8",
+   "bytes": 119025,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-ANEXO-2": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-ANEXO-2",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_anexo_2_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_anexo_2_sep03R1.pdf",
+   "edition": "febrero 2026",
+   "sha256": "a74a5690b4e3c89327b6161f6dbdfea57b1cfb416bb76a3470347a16bbf905a5",
+   "bytes": 303750,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-ANEXO-3": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-ANEXO-3",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_anexo_3_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_anexo_3_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "9607cad276e569bccafa88fc2842bf03bc58a88ff4ba9dbc4e24cd1f94d9816e",
+   "bytes": 63092,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-ANEXO-4": {
+   "title": "Guía Técnica de Aplicación del REBT — GUÍA-BT-ANEXO-4",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_anexo_4_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_anexo_4_sep03R1.pdf",
+   "edition": "sep 03",
+   "sha256": "e462f0990576010abdb8eedc93c12bc527961c5bdbbb66f615a249eb6287076d",
+   "bytes": 168137,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-INDICE": {
+   "title": "Guía Técnica de Aplicación del REBT — índice",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_indice_jul19R8.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_indice_jul19R8.pdf",
+   "edition": null,
+   "sha256": "49c0e30d073e4ec06466995e6d44061ae669b6ec2de1ecb55e67d9aea46bdbe6",
+   "bytes": 37211,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-INTRODUCCION": {
+   "title": "Guía Técnica de Aplicación del REBT — introducción",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_introduccion.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_introduccion.pdf",
+   "edition": null,
+   "sha256": "9e6146f446cd92ae8eeb5d1572f658f94fe7a86e99ff5a0205b04d07c884f555",
+   "bytes": 62950,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-RD_842_02": {
+   "title": "Guía Técnica de Aplicación del REBT — aspectos generales (RD 842/2002)",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/guia_bt_rd_842_02_sep03R1.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/Documents/bt/guia_bt_rd_842_02_sep03R1.pdf",
+   "edition": "Sep 03",
+   "sha256": "3007b67404f0eb51b2f34be8c290cb319fb74389f0dde8a933a012f3af9f9a79",
+   "bytes": 322308,
+   "retrieved": "2026-09-29"
+  },
+  "GUIA-BT-NOTA-SEPARACION-GALVANICA": {
+   "title": "Guía Técnica de Aplicación del REBT — nota de interpretación: separación galvánica",
+   "publisher": "MINISTERIO-INDUSTRIA",
+   "file": "sources/ministerio-industria/guia-tecnica-rebt/nota_interpretacion_separacion_galvanica.pdf",
+   "url": "https://industria.gob.es/Calidad-Industrial/seguridadindustrial/instalacionesindustriales/baja-tension/notas/nota_interpretacion_separacion_galvanica.pdf",
+   "edition": null,
+   "sha256": "1750c37bafc9ec8463c34b35ccc83d63752709958c9b91c0bca9989c36fcbe25",
+   "bytes": 39707,
+   "retrieved": "2026-09-29"
+  },
+  "INSST-RIESGO-ELECTRICO": {
+   "title": "Guía técnica para la evaluación y prevención del riesgo eléctrico (RD 614/2001)",
+   "publisher": "INSST",
+   "file": "sources/insst/INSST_guia_tecnica_riesgo_electrico.pdf",
+   "url": "https://www.insst.es/documents/94886/96076/g_electr.pdf/46679419-d4cc-461e-8da1-4b2e65df9146",
+   "edition": "julio 2020",
+   "sha256": "73a98b5fd052762e851786eba0905e7b1f1cca9304bf80f8640182505121ce82",
+   "bytes": 4450831,
+   "retrieved": "2026-09-29"
+  },
+  "INSST-NTP-391": {
+   "title": "NTP 391: Herramientas manuales (I): condiciones generales de seguridad",
+   "publisher": "INSST",
+   "file": "sources/insst/NTP_391.pdf",
+   "url": "https://www.insst.es/documentacion/colecciones-tecnicas/ntp-notas-tecnicas-de-prevencion/11-serie-ntp-numeros-366-a-400-ano-1996/ntp-391-herramientas-manuales-i-condiciones-generales-de-seguridad",
+   "edition": "serie NTP 366-400, año 1996 (according to the INSST page)",
+   "sha256": "899ec3ceed460d490d87c82ccd665f871c0572d4048e6dad383836dfbe4879d9",
+   "bytes": 432272,
+   "retrieved": "2026-09-29",
+   "manual": true,
+   "note": "The INSST site serves this PDF only through its viewer page (url): download it from there by hand to check for changes."
+  },
+  "CTE-DB-SUA": {
+   "title": "Código Técnico de la Edificación — DB SUA Seguridad de utilización y accesibilidad (con comentarios del Ministerio)",
+   "publisher": "MIVAU-CTE",
+   "file": "sources/cte/CTE_DB-SUA_comentado.pdf",
+   "url": "https://www.codigotecnico.org/pdf/Documentos/SUA/DccSUA.pdf",
+   "edition": "articulado 14 junio 2022 · comentarios 15 julio 2024",
+   "sha256": "1bc0a3fe0bdf78f2f5bff14d7afe1c9ed5512b2a603333a9bc53f17a54a8785c",
+   "bytes": 1679174,
+   "retrieved": "2026-09-29"
+  }
+ }
+}

@@ -115,7 +115,7 @@
    "rows": [
     [
      "L1 · L2 · L3",
-     "fases (MasterD las llama F1, F2, F3) · marrón, negro, gris",
+     "fases (también F1, F2, F3) · marrón, negro, gris",
      "BT-19 2.2.4"
     ],
     [
@@ -560,7 +560,7 @@
    "rows": [
     [
      "U · V",
-     "tensión, en voltios (V). U es la letra de las normas; V la de muchos libros y del curso: es lo mismo",
+     "tensión, en voltios (V). U es la letra de las normas; V la de muchos libros: es lo mismo",
      ""
     ],
     [
@@ -924,7 +924,7 @@
      "BT-15 3"
     ],
     [
-     "Ejemplo de test",
+     "Ejemplo",
      "DI de una vivienda con contadores concentrados → 1 %",
      "BT-15 3"
     ],
