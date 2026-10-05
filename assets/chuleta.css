@@ -1,0 +1,204 @@
+/* Chuleta REBT. Palette from the REBT conductor colour code (ITC-BT-19 2.2.4): neutral blue for the REBT,
+   grey for other documents. Paper is always the light palette. */
+:root {
+  --bg: #e6eaee;
+  --card: #fbfcfd;
+  --panel: #f2f5f7;
+  --ink: #16202c;
+  --ink-soft: #4b5663;
+  --rule: #c9d0d7;
+  --rebt: #2e63a6;
+  --official: #5f6b77;
+  --focus: #2e63a6;
+  --btn-ink: #ffffff;
+  --sans: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cond: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171e;
+    --card: #1a222c;
+    --panel: #151c24;
+    --ink: #e4e9ee;
+    --ink-soft: #a3aeba;
+    --rule: #33404d;
+    --rebt: #6a9fe0;
+    --official: #9aa6b2;
+    --focus: #8ab8f0;
+    --btn-ink: #0e1620;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.5 var(--sans); }
+a { color: var(--rebt); text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- top bar ---------- */
+.bar {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px;
+  padding: 10px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--rule);
+}
+.brand { margin: 0; font: 700 1.75rem/1 var(--cond); white-space: nowrap; }
+.jump { display: flex; gap: 14px; font: 600 1.0625rem/1 var(--cond); }
+.jump a { text-decoration: none; }
+.jump a:hover { text-decoration: underline; }
+.search { flex: 1 1 200px; max-width: 320px; }
+.search input {
+  width: 100%; padding: 7px 10px; font: inherit; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
+}
+.print-box { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-left: auto; }
+.print-box fieldset { display: flex; gap: 4px 12px; flex-wrap: wrap; margin: 0; padding: 0; border: 0; }
+.check { display: inline-flex; align-items: center; gap: 5px; font-size: 0.9375rem; white-space: nowrap; cursor: pointer; }
+.check input { margin: 0; accent-color: var(--rebt); }
+.print-est { font-size: 0.8125rem; color: var(--ink-soft); }
+.btn {
+  padding: 7px 16px; font: 600 1rem/1.2 var(--cond); letter-spacing: 0.02em;
+  color: var(--btn-ink); background: var(--rebt); border: 1px solid var(--rebt); border-radius: 6px; cursor: pointer;
+}
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn-quiet { color: var(--rebt); background: transparent; }
+
+/* ---------- content ---------- */
+main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
+.part { padding-top: 16px; scroll-margin-top: 72px; }
+.part + .part { margin-top: 16px; border-top: 1px solid var(--rule); }
+.part-title { margin: 0 0 4px; font: 700 2rem/1.1 var(--cond); }
+.part-sub { margin: 0 0 16px; color: var(--ink-soft); max-width: 90ch; }
+.no-match { color: var(--ink-soft); }
+
+.cheat-grid { columns: 3 320px; column-gap: 16px; }
+.cheat-sec { break-inside: avoid; margin: 0 0 14px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); overflow: hidden; }
+.cheat-sec h3, .sym-sec h3 {
+  margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  padding: 7px 12px; background: var(--panel); border-bottom: 1px solid var(--rule); font: 700 1.125rem/1.2 var(--cond);
+}
+.cheat-sec h3 span, .sym-sec h3 span { font: 600 0.8125rem/1.2 var(--cond); color: var(--rebt); text-align: right; }
+/* one grid per section, rows on its subgrid: the columns line up down the whole section */
+.cheat-rows { margin: 0; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) auto; }
+.cheat-rows div { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; gap: 10px; padding: 5px 12px; border-top: 1px solid var(--rule); font-size: 0.875rem; line-height: 1.35; }
+.cheat-rows div:first-child { border-top: 0; }
+.cheat-rows dt { font-weight: 600; hyphens: auto; overflow-wrap: break-word; }
+.cheat-rows dd { margin: 0; overflow-wrap: break-word; }
+.cheat-ref { font: 600 0.75rem/1.35 var(--cond); color: var(--rebt); white-space: nowrap; text-align: right; padding-top: 1px; }
+.cheat-ref[data-kind="official"] { color: var(--official); }
+.cheat-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; line-height: 1.3; border-bottom: 1px solid var(--rule); }
+.cheat-table th { text-align: left; font: 600 0.75rem/1.2 var(--cond); color: var(--ink-soft); padding: 5px 12px 3px; }
+.cheat-table td { padding: 4px 12px; border-top: 1px solid var(--rule); }
+.cheat-table td:first-child { font-weight: 600; }
+
+.sym-sec { margin: 0 0 16px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); overflow: hidden; }
+.sym-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.sym { margin: 0; padding: 10px 10px 8px; display: flex; flex-direction: column; gap: 6px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); break-inside: avoid; }
+.sym-art { flex: 1 1 auto; min-height: 76px; display: flex; align-items: center; justify-content: center; color: var(--ink); }
+.sym-art svg { max-width: 100%; max-height: 120px; width: auto; height: auto; }
+.sym figcaption { display: flex; flex-direction: column; gap: 2px; font-size: 0.8125rem; line-height: 1.25; }
+.sym-name { font-weight: 600; }
+.sym-note { color: var(--ink-soft); font-size: 0.75rem; }
+.sym-tags { display: flex; gap: 6px; align-items: baseline; margin-top: 2px; }
+.sym-iec { font: 600 0.75rem/1.2 var(--cond); color: var(--rebt); }
+.sym-code { font: 700 0.75rem/1.2 var(--cond); padding: 0 5px; border: 1px solid var(--rule); border-radius: 4px; color: var(--ink-soft); }
+.sym-credit { margin: 4px 0 0; font-size: 0.75rem; color: var(--ink-soft); }
+
+.foot { padding: 16px 24px 32px; max-width: 1480px; margin: 0 auto; font-size: 0.8125rem; color: var(--ink-soft); border-top: 1px solid var(--rule); }
+.foot p { margin: 0 0 4px; }
+
+/* phones: the screen view only; the printed pages keep their A4 layout */
+@media (max-width: 720px) {
+  .bar { padding: 10px 16px; position: static; }
+  .search { max-width: none; flex-basis: 100%; order: 5; }
+  .print-box { margin-left: 0; }
+  .print-est { flex-basis: 100%; order: 3; }
+  main, .foot { padding-left: 16px; padding-right: 16px; }
+  #screen .cheat-rows { grid-template-columns: minmax(0, 1fr) auto; }
+  #screen .cheat-rows div { row-gap: 2px; }
+  #screen .cheat-rows dd:not(.cheat-ref) { grid-column: 1 / -1; grid-row: 2; }
+  #screen .sym-grid { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+  #screen .sym { padding: 8px 6px 6px; }
+}
+
+/* ---------- printed pages: A4 landscape, 14 mm binding strip at the top ----------
+   On screen they sit off-view (still laid out, so they can be measured) until "Vista previa". */
+#print-root {
+  --bg: #e6eaee; --card: #ffffff; --panel: #f2f5f7; --ink: #16202c; --ink-soft: #4b5663;
+  --rule: #c9d0d7; --rebt: #2e63a6; --official: #5f6b77;
+  --bind: 14mm;
+  color-scheme: light;
+  color: var(--ink);
+  position: fixed; left: -10000px; top: 0; visibility: hidden; pointer-events: none;
+}
+body.preview #screen, body.preview .foot { display: none; }
+body.preview #print-root {
+  position: static; visibility: visible; pointer-events: auto;
+  display: grid; justify-content: center; gap: 24px; padding: 24px 0; overflow-x: auto;
+}
+.preview-note { margin: 12px auto 0; padding: 0 24px; max-width: 297mm; font-size: 0.875rem; color: var(--ink-soft); }
+body:not(.duplex) .duplex-only { display: none; }
+
+@page { size: A4 landscape; margin: 0; }
+
+.ppage {
+  width: 297mm; height: 210mm;
+  background: var(--card);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  break-after: page;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.ppage:last-child { break-after: auto; }
+.pbind {
+  flex: 0 0 var(--bind);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 0 12mm 1.6mm;
+  border-bottom: 0.3mm dashed #9aa3ad;
+  font: 600 8pt/1 var(--cond); color: #6b7580; letter-spacing: 0.02em;
+}
+.pbind-ref { color: var(--rebt); font-size: 9pt; }
+/* double-sided: backs (even pages) carry the strip at the bottom; printed "flip on long edge" it lands on the
+   same paper edge as the front's, so the binding margins match and every page reads upright when flipped up */
+.duplex .ppage:nth-child(even) { flex-direction: column-reverse; }
+.duplex .ppage:nth-child(even) .pbind { align-items: flex-start; padding: 1.6mm 12mm 0; border-bottom: 0; border-top: 0.3mm dashed #9aa3ad; }
+
+.ppage-inner { flex: 1 1 auto; min-height: 0; overflow: hidden; padding: 5mm 9mm 6mm; display: flex; flex-direction: column; }
+.ppage-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.ppage-title { margin: 0 0 1mm; font: 700 22pt/1 var(--cond); }
+.ppage-sub { margin: 0 0 3.5mm; font-size: 9.5pt; color: var(--ink-soft); }
+
+.cheat-cols { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 5mm; }
+.cheat-col { min-height: 0; overflow: hidden; }
+.ppage .cheat-sec, .ppage .sym-sec { margin: 0 0 3.5mm; border-radius: 2mm; }
+.ppage .cheat-sec h3, .ppage .sym-sec h3 { font-size: 12pt; padding: 1.6mm 2.8mm; }
+.ppage .cheat-sec h3 span, .ppage .sym-sec h3 span { font-size: 8.5pt; }
+.ppage .cheat-rows div { font-size: 9pt; line-height: 1.3; padding: 1.2mm 2.8mm; gap: 2.5mm; }
+.ppage .cheat-ref { font-size: 7.8pt; }
+.ppage .cheat-table { font-size: 9pt; }
+.ppage .cheat-table th { font-size: 8pt; padding: 1.2mm 2.8mm 0.6mm; }
+.ppage .cheat-table td { padding: 0.9mm 2.8mm; }
+
+.psym-flow { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.ppage .sym-grid { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.ppage .sym { padding: 1.6mm 1.8mm 1.4mm; gap: 1mm; }
+.ppage .sym:nth-child(9n) { border-right: 0; }
+.ppage .sym-art { min-height: 13mm; }
+.ppage .sym-art svg { max-height: 17mm; }
+.ppage .sym figcaption { font-size: 7.6pt; line-height: 1.2; }
+.ppage .sym-note { font-size: 6.8pt; }
+.ppage .sym-iec, .ppage .sym-code { font-size: 7pt; }
+.psym-tables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5mm; align-items: start; }
+.ppage .sym-credit { font-size: 7pt; margin: 0; }
+
+@media print {
+  body { background: #fff; }
+  .bar, .preview-note, #screen, .foot { display: none !important; }
+  #print-root { position: static; visibility: visible; display: block; padding: 0; overflow: visible; }
+  .ppage { box-shadow: none; }
+}

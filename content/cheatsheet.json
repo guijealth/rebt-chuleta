@@ -1,0 +1,2534 @@
+{
+ "_doc": "Chuleta: the first part of the page. Sections in order; rows are [what, value, ref] (ref like \"BT-19 2.2.4\", \"art. 4\", \"Guía anexo 2\", or \"\"); an optional table {head, rows} goes above the rows. See README.md.",
+ "title": "Chuleta REBT",
+ "subtitle": "Las siglas y letras, las cifras que más se preguntan y las clave de cada capítulo, con su sitio en el REBT (BOE, edición 2025)",
+ "sections": [
+  {
+   "title": "Siglas: enlace y cuadro",
+   "ref": "ITC-BT-12 a 17 · ITC-BT-25",
+   "rows": [
+    [
+     "CGP",
+     "Caja General de Protección",
+     "BT-12 1.2"
+    ],
+    [
+     "CPM",
+     "Caja de Protección y Medida: CGP + contador, 1 o 2 usuarios",
+     "BT-13 2"
+    ],
+    [
+     "DGP",
+     "Dispositivo General de Protección: nombre común de CGP, AGP, CSP y ASP (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "AGP",
+     "Armario General de Protección: armario donde van las CGP (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "CSP",
+     "Conjunto de Seccionamiento y Protección: 2 armarios, uno con cuchillas de seccionamiento y otro con fusibles para hasta 2 LGA (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "ASP",
+     "Armario de Seccionamiento y Protección: lo mismo que el CSP, hasta 4 salidas, bases tripolares verticales de 630 A (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "CGP-7-250",
+     "cómo se lee: CGP de esquema 7 con bases cortacircuitos de 250 A",
+     ""
+    ],
+    [
+     "LGA",
+     "Línea General de Alimentación: CGP → contadores",
+     "BT-12 1.2"
+    ],
+    [
+     "CC",
+     "Centralización de Contadores",
+     "BT-12 1.2"
+    ],
+    [
+     "DI",
+     "Derivación Individual: contador → cuadro del usuario",
+     "BT-12 1.2"
+    ],
+    [
+     "ICP",
+     "Interruptor de Control de Potencia: corta si se pasa de la potencia contratada (el REBT lo define con protección contra sobrecargas y cortocircuitos)",
+     "BT-01"
+    ],
+    [
+     "DGMP",
+     "Dispositivos Generales de Mando y Protección",
+     "BT-12 1.2"
+    ],
+    [
+     "CGMP · CMP",
+     "Cuadro (General) de Mando y Protección (uso común)",
+     "BT-17 1"
+    ],
+    [
+     "IGA",
+     "Interruptor General Automático, corte omnipolar",
+     "BT-17 1.2"
+    ],
+    [
+     "ID",
+     "Interruptor Diferencial (UNE-EN 61008)",
+     "BT-17 1.2"
+    ],
+    [
+     "AD",
+     "Automático diferencial: ID + magnetotérmico (UNE-EN 61009)",
+     "BT-02"
+    ],
+    [
+     "PIA",
+     "Pequeño Interruptor Automático: magnetotérmico de cada circuito (uso común)",
+     ""
+    ],
+    [
+     "C1 … C13",
+     "circuitos de vivienda (C1 alumbrado, C2 tomas, C3 cocina…)",
+     "BT-25 2.3"
+    ],
+    [
+     "CT",
+     "Centro de Transformación (AT → BT)",
+     "BT-06 3.7"
+    ],
+    [
+     "AT · MT · BT",
+     "alta · media · baja tensión (BT ≤ 1 000 V c.a.) · un CT es MT/BT",
+     "art. 4"
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: conductores, tierras y protección",
+   "ref": "ITC-BT-01, 08, 19, 24, 36 y 38",
+   "rows": [
+    [
+     "L1 · L2 · L3",
+     "fases (MasterD las llama F1, F2, F3) · marrón, negro, gris",
+     "BT-19 2.2.4"
+    ],
+    [
+     "N",
+     "neutro · azul claro",
+     "BT-19 2.2.4"
+    ],
+    [
+     "PE · CP",
+     "conductor de protección (tierra) · verde-amarillo",
+     "BT-01"
+    ],
+    [
+     "CPN · PEN",
+     "conductor que hace de neutro y protección a la vez (esquema TN-C)",
+     "BT-01"
+    ],
+    [
+     "TT · TN · IT",
+     "1.ª letra, la alimentación: T a tierra · I aislada · 2.ª letra, las masas: T a tierra propia · N al neutro",
+     "BT-08 1"
+    ],
+    [
+     "TN-S · TN-C · TN-C-S",
+     "S: N y PE separados · C: combinados (PEN) · C-S: combinados y luego separados",
+     "BT-08 1.1"
+    ],
+    [
+     "RA · Ia",
+     "resistencia de tierra de las masas · corriente de disparo (RA·Ia ≤ U)",
+     "BT-24 4.1.2"
+    ],
+    [
+     "Zs · U0",
+     "impedancia del bucle de defecto · tensión fase-tierra (Zs·Ia ≤ U0)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "MBT",
+     "Muy Baja Tensión (≤ 50 V c.a. · ≤ 75 V c.c.)",
+     "art. 4"
+    ],
+    [
+     "MBTS",
+     "MBT de Seguridad: fuente separada, sin tierra (en inglés SELV)",
+     "BT-36 1"
+    ],
+    [
+     "MBTP",
+     "MBT de Protección: como la MBTS pero con un punto a tierra (PELV)",
+     "BT-36 1"
+    ],
+    [
+     "MBTF",
+     "MBT Funcional: MBT por funcionamiento, sin las garantías de la MBTS (FELV)",
+     "BT-36 1"
+    ],
+    [
+     "EE · PT",
+     "quirófanos: Embarrado Equipotencial · Puesta a Tierra de protección",
+     "BT-38 2.1.2"
+    ],
+    [
+     "IP",
+     "grado de protección de la envolvente: 1.ª cifra sólidos 0–6, 2.ª agua 0–8 (X = no se indica)",
+     "BT-02"
+    ],
+    [
+     "IK",
+     "resistencia a impactos mecánicos: IK00 a IK10",
+     "BT-02"
+    ],
+    [
+     "DPS",
+     "Dispositivo de Protección contra Sobretensiones (en inglés SPD)",
+     "BT-02"
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: cables",
+   "ref": "ITC-BT-07 · UNE 21031 · UNE 21123",
+   "rows": [
+    [
+     "PVC",
+     "policloruro de vinilo: termoplástico, 70 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "XLPE",
+     "polietileno reticulado: termoestable, 90 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "EPR",
+     "etileno-propileno: goma termoestable, 90 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "0,6/1 kV",
+     "tensión asignada: 0,6 kV a tierra / 1 kV entre fases (redes, LGA, DI)",
+     "BT-06 1.1.1"
+    ],
+    [
+     "450/750 V",
+     "tensión asignada de los cables unipolares de interior (H07…)",
+     "BT-20 2.2.1"
+    ],
+    [
+     "H07V-K",
+     "H armonizado · 07 = 450/750 V · V aislamiento PVC · K flexible para instalación fija",
+     ""
+    ],
+    [
+     "H05VV-F",
+     "H armonizado · 05 = 300/500 V · VV aislamiento y cubierta PVC · F flexible",
+     "BT-27 3"
+    ],
+    [
+     "H07RN-F",
+     "R goma · N cubierta policloropreno · F flexible (obras, puertos)",
+     "BT-42 4.3.3"
+    ],
+    [
+     "RV-K · RZ1-K",
+     "nacional 0,6/1 kV: R XLPE · V cubierta PVC · Z1 cubierta libre de halógenos",
+     ""
+    ],
+    [
+     "(AS)",
+     "alta seguridad: libre de halógenos y baja emisión de humos (locales de pública concurrencia)",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: recarga, autoconsumo y documentación",
+   "ref": "ITC-BT-03, 04, 40 y 52 · RD 842/2002",
+   "rows": [
+    [
+     "VE",
+     "Vehículo Eléctrico",
+     "BT-52"
+    ],
+    [
+     "SAVE",
+     "Sistema de Alimentación específico del Vehículo Eléctrico (modos 3 y 4)",
+     "BT-52 7.1"
+    ],
+    [
+     "SPL",
+     "Sistema de Protección de la LGA: reduce la recarga del VE para no sobrecargar la LGA",
+     "BT-52 7.1"
+    ],
+    [
+     "FV",
+     "fotovoltaica",
+     "BT-02"
+    ],
+    [
+     "PT = PV + PSG + PL + PG",
+     "Potencia Total = Viviendas + Servicios Generales + Locales + Garajes",
+     "BT-10 3"
+    ],
+    [
+     "IBTB · IBTE",
+     "empresa instaladora en BT: categoría Básica · Especialista",
+     "BT-03 3"
+    ],
+    [
+     "MTD",
+     "Memoria Técnica de Diseño (cuando no hace falta proyecto)",
+     "BT-04 2.2"
+    ],
+    [
+     "OCA",
+     "Organismo de Control Autorizado: hace las inspecciones (uso común)",
+     "art. 18"
+    ],
+    [
+     "CIE",
+     "Certificado de Instalación Eléctrica, el «boletín» (uso común)",
+     "art. 18"
+    ],
+    [
+     "CUPS",
+     "Código Universal del Punto de Suministro: identifica el contador (fuera del REBT)",
+     ""
+    ],
+    [
+     "RF 120",
+     "Resistencia al Fuego 120 min (hoy EI 120); NBE-CPI-96 hoy es el CTE DB-SI",
+     "BT-14 2"
+    ],
+    [
+     "MIE-BT",
+     "ITC del reglamento anterior (REBT de 1973)",
+     "BT-16 2.1"
+    ],
+    [
+     "PCI",
+     "Protección Contra Incendios: extintores, bocas de incendio equipadas (BIE), pulsadores… (alumbrado de emergencia 5 lux en ellos)",
+     "BT-28 3.1.1"
+    ],
+    [
+     "ICT",
+     "Infraestructura Común de Telecomunicaciones del edificio",
+     ""
+    ],
+    [
+     "INSST · NTP",
+     "Instituto Nacional de Seguridad y Salud en el Trabajo · sus Notas Técnicas de Prevención",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Letras y bornes de esquemas",
+   "ref": "IEC 60750 · EN 50005",
+   "rows": [
+    [
+     "Cómo se nombra",
+     "letra del tipo de aparato + número de orden: F1, Q2, K3, S1…",
+     ""
+    ],
+    [
+     "A",
+     "conjuntos y controladores electrónicos",
+     ""
+    ],
+    [
+     "B",
+     "transductores y sensores: termostatos, presostatos, sondas",
+     ""
+    ],
+    [
+     "E",
+     "alumbrado y calefacción (lámparas)",
+     ""
+    ],
+    [
+     "F",
+     "protección: fusibles, relés térmicos, diferenciales, descargadores",
+     ""
+    ],
+    [
+     "G",
+     "generadores, baterías, fuentes de alimentación",
+     ""
+    ],
+    [
+     "H",
+     "señalización: pilotos, timbres, sirenas",
+     ""
+    ],
+    [
+     "K",
+     "relés y contactores",
+     ""
+    ],
+    [
+     "M",
+     "motores",
+     ""
+    ],
+    [
+     "P",
+     "aparatos de medida y prueba",
+     ""
+    ],
+    [
+     "Q",
+     "maniobra de potencia: interruptores automáticos, seccionadores",
+     ""
+    ],
+    [
+     "R",
+     "resistencias",
+     ""
+    ],
+    [
+     "S",
+     "maniobra de mando: pulsadores, interruptores, finales de carrera",
+     ""
+    ],
+    [
+     "T",
+     "transformadores",
+     ""
+    ],
+    [
+     "X",
+     "bornes, regleteros (X1, X2…), clavijas y bases",
+     ""
+    ],
+    [
+     "Y",
+     "electroválvulas y accionamientos electromecánicos",
+     ""
+    ],
+    [
+     "Z",
+     "filtros RC y LC",
+     ""
+    ],
+    [
+     "NA · NC",
+     "contacto Normalmente Abierto (cierra al activarse) · Normalmente Cerrado (abre al activarse)",
+     ""
+    ],
+    [
+     "Contactos principales",
+     "1-2, 3-4, 5-6: impares arriba (entrada), pares abajo (salida) · tetrapolar del 1 al 8",
+     ""
+    ],
+    [
+     "Contactos auxiliares",
+     "decena = n.º de orden · unidad = función (ej. 13-14 = 1.er NA, 21-22 = 2.º NC)",
+     ""
+    ],
+    [
+     "Unidad 1-2 · 3-4",
+     "NC · NA",
+     ""
+    ],
+    [
+     "Unidad 5-6 · 7-8",
+     "NC · NA de función especial (temporizados, térmico)",
+     ""
+    ],
+    [
+     "Relé térmico",
+     "95-96 NC · 97-98 NA",
+     ""
+    ],
+    [
+     "A1-A2 · X1-X2",
+     "bobina del contactor o relé · borna del piloto señalizador",
+     ""
+    ],
+    [
+     "Esquemas",
+     "se dibujan en reposo: sin tensión y sin accionar",
+     ""
+    ],
+    [
+     "OL",
+     "en el polímetro: fuera de rango («over limit»), p. ej. continuidad abierta",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: normas y organismos",
+   "ref": "ITC-BT-02 · fuera del REBT",
+   "rows": [
+    [
+     "REBT",
+     "Reglamento Electrotécnico para Baja Tensión (RD 842/2002)",
+     "art. 1"
+    ],
+    [
+     "ITC-BT",
+     "Instrucción Técnica Complementaria de baja tensión (01 a 52)",
+     "art. 2"
+    ],
+    [
+     "RD · BOE",
+     "Real Decreto · Boletín Oficial del Estado",
+     ""
+    ],
+    [
+     "UNE",
+     "norma española (antes AENOR, hoy la Asociación Española de Normalización)",
+     "BT-02"
+    ],
+    [
+     "UNE-EN · UNE-HD",
+     "norma europea adoptada · documento de armonización europeo",
+     "BT-02"
+    ],
+    [
+     "IEC · CEI",
+     "Comisión Electrotécnica Internacional (CEI es la sigla en español)",
+     "BT-02"
+    ],
+    [
+     "CENELEC",
+     "Comité Europeo de Normalización Electrotécnica (normas EN)",
+     "BT-02"
+    ],
+    [
+     "ISO",
+     "Organización Internacional de Normalización",
+     ""
+    ],
+    [
+     "IRANOR",
+     "Instituto de Racionalización y Normalización: el antecesor de AENOR",
+     ""
+    ],
+    [
+     "DIN · VDE",
+     "normas alemanas (DIN general · VDE electrotecnia)",
+     ""
+    ],
+    [
+     "BS · ANSI",
+     "normas británicas · estadounidenses",
+     ""
+    ],
+    [
+     "CE · CEE · UE",
+     "marcado de conformidad europeo · Comunidad Económica Europea · Unión Europea",
+     ""
+    ],
+    [
+     "CTE · DB-SUA · DB-SI",
+     "Código Técnico de la Edificación · Seguridad de Utilización y Accesibilidad · Seguridad en caso de Incendio",
+     ""
+    ],
+    [
+     "CCAA",
+     "Comunidades Autónomas: registran las instalaciones",
+     ""
+    ],
+    [
+     "c.a. · c.c.",
+     "corriente alterna · continua (en inglés AC · DC)",
+     "art. 4"
+    ],
+    [
+     "MCB · RCD · RCBO",
+     "en inglés: PIA · diferencial · automático diferencial",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Letras y símbolos: magnitudes",
+   "ref": "electrotecnia · unidades",
+   "rows": [
+    [
+     "U · V",
+     "tensión, en voltios (V). U es la letra de las normas; V la de muchos libros y del curso: es lo mismo",
+     ""
+    ],
+    [
+     "I",
+     "intensidad (corriente), en amperios (A)",
+     ""
+    ],
+    [
+     "R",
+     "resistencia, en ohmios (Ω)",
+     ""
+    ],
+    [
+     "Z · X",
+     "impedancia: la «resistencia» total en c.a. (Ω) · X: reactancia (Ω), la parte de bobinas y condensadores",
+     ""
+    ],
+    [
+     "P",
+     "potencia activa, en vatios (W, kW): la que se convierte en trabajo o calor",
+     ""
+    ],
+    [
+     "Q",
+     "potencia reactiva, en VAr (voltamperios reactivos)",
+     ""
+    ],
+    [
+     "S (potencia)",
+     "potencia aparente, en VA o kVA: S = U·I",
+     ""
+    ],
+    [
+     "S (sección)",
+     "sección del conductor, en mm². ¡Misma letra que la potencia aparente!",
+     ""
+    ],
+    [
+     "L",
+     "longitud de la línea, en metros",
+     ""
+    ],
+    [
+     "f",
+     "frecuencia, en hercios (Hz): la red va a 50 Hz",
+     "art. 4"
+    ],
+    [
+     "φ · cos φ",
+     "φ (fi): desfase entre tensión e intensidad · cos φ: factor de potencia, de 0 a 1 (1 en resistencias)",
+     "BT-09 3"
+    ],
+    [
+     "Δ (delta)",
+     "«variación» o «diferencia»: ΔU = caída de tensión · Δf = variación de frecuencia",
+     ""
+    ],
+    [
+     "ΔU · e",
+     "caída de tensión: lo que se pierde en el cable. e en voltios; en %: e / U × 100",
+     "BT-19 2.2.2"
+    ],
+    [
+     "ρ (rho)",
+     "resistividad, en Ω·mm²/m: resistencia de 1 m de 1 mm² (Cu ≈ 0,018)",
+     ""
+    ],
+    [
+     "γ (gamma)",
+     "conductividad = 1/ρ, en m/(Ω·mm²): cobre ≈ 56 · aluminio ≈ 35",
+     ""
+    ],
+    [
+     "√3 ≈ 1,73",
+     "aparece en trifásica: P = √3·U·I·cos φ (U entre fases, 400 V)",
+     ""
+    ],
+    [
+     "π ≈ 3,14 · Ø",
+     "pi · Ø = diámetro (S = π·D²/4)",
+     ""
+    ],
+    [
+     "lx · lm · cd",
+     "lux = lm/m² (iluminancia) · lumen (flujo luminoso) · candela (intensidad luminosa)",
+     "BT-28 3.1.1"
+    ],
+    [
+     "m · k · M",
+     "prefijos: mili = /1000 (30 mA = 0,03 A) · kilo = ×1000 (kW) · mega = ×1 000 000 (MΩ)",
+     ""
+    ],
+    [
+     "≤ · ≥ · ≈",
+     "menor o igual · mayor o igual · aproximadamente",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Letras y símbolos: subíndices y aparatos",
+   "ref": "ITC-BT-24 · 25 · normas de aparamenta",
+   "rows": [
+    [
+     "U0 · Uo",
+     "tensión fase-tierra (o fase-neutro): 230 V · en cables, Uo/U = a tierra / entre fases (450/750 V)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Un",
+     "tensión nominal (asignada) de la red o del aparato",
+     ""
+    ],
+    [
+     "3×400/230 V",
+     "trifásica con neutro: 400 V entre fases, 230 V fase-neutro",
+     "BT-40 4.3.1"
+    ],
+    [
+     "In",
+     "intensidad nominal del aparato: la que aguanta sin disparar (PIA de 16 A → In = 16 A)",
+     ""
+    ],
+    [
+     "IΔn",
+     "«I delta n»: sensibilidad del diferencial, la fuga a la que dispara (30 mA, 300 mA)",
+     ""
+    ],
+    [
+     "Ia (protección)",
+     "corriente que hace actuar la protección; si es un diferencial, su IΔn",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Ia (circuitos)",
+     "en la tabla de circuitos, intensidad prevista por toma: I = n × Ia × Fs × Fu · ¡misma letra, otro uso!",
+     "BT-25 tabla 1"
+    ],
+    [
+     "n · Fs · Fu",
+     "nº de tomas · factor de simultaneidad · factor de utilización",
+     "BT-25 tabla 1"
+    ],
+    [
+     "Ib · Iz",
+     "intensidad de empleo (la que consume el circuito) · admisible del cable: Ib ≤ In ≤ Iz",
+     ""
+    ],
+    [
+     "Icc · PdC",
+     "corriente de cortocircuito · poder de corte: la Icc máxima que el aparato corta (IGA ≥ 4 500 A)",
+     "BT-17 1.3"
+    ],
+    [
+     "RA",
+     "suma de las resistencias de la toma de tierra y de los conductores de protección: RA·Ia ≤ U",
+     "BT-24 4.1.2"
+    ],
+    [
+     "Zs",
+     "impedancia del bucle de defecto (fase → masa → vuelta a la fuente): Zs·Ia ≤ U0",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Curva B · C · D",
+     "disparo magnético del PIA: B 3–5 In · C 5–10 In (la usual) · D 10–20 In (motores)",
+     "BT-52 7.1"
+    ],
+    [
+     "Diferencial clase AC · A · B",
+     "AC: solo alterna · A: también continua pulsante (electrónica) · B: también continua lisa",
+     "BT-24 3.5"
+    ],
+    [
+     "gG · aM",
+     "fusible de uso general (líneas) · fusible de acompañamiento de motor (solo cortocircuito)",
+     ""
+    ],
+    [
+     "Clase 0 · I · II · III",
+     "aparatos: I con toma de tierra · II doble aislamiento (□ dentro de □) · III a MBTS",
+     "BT-24 4.2"
+    ]
+   ]
+  },
+  {
+   "title": "Tensiones",
+   "ref": "RD 842/2002 art. 4",
+   "rows": [
+    [
+     "Muy baja tensión",
+     "≤ 50 V c.a. · ≤ 75 V c.c.",
+     "art. 4"
+    ],
+    [
+     "Tensión usual",
+     "50–500 V c.a. · 75–750 V c.c.",
+     "art. 4"
+    ],
+    [
+     "Tensión especial",
+     "500–1000 V c.a. · 750–1500 V c.c.",
+     "art. 4"
+    ],
+    [
+     "Red de distribución",
+     "230 V fase-neutro · 400 V entre fases · 50 Hz",
+     "art. 4"
+    ]
+   ]
+  },
+  {
+   "title": "Redes de distribución",
+   "ref": "ITC-BT-06 · ITC-BT-07",
+   "rows": [
+    [
+     "Aérea, conductor aislado",
+     "0,6/1 kV · mín. 16 mm² Al · 10 mm² Cu",
+     "BT-06 1.1.1"
+    ],
+    [
+     "Cable posado en fachada",
+     "≥ 2,5 m del suelo",
+     "BT-06 3.1.1"
+    ],
+    [
+     "Tensado o desnudo",
+     "≥ 4 m del suelo",
+     "BT-06 3.1.2"
+    ],
+    [
+     "Cruce de carretera o ferrocarril",
+     "≥ 6 m · sin empalmes en el vano",
+     "BT-06 3.9.1.4"
+    ],
+    [
+     "Neutro de red aérea (TT, TN)",
+     "a tierra en el CT y al menos cada 500 m",
+     "BT-06 3.7"
+    ],
+    [
+     "Subterránea enterrada",
+     "≥ 0,60 m en acera · 0,80 m en calzada",
+     "BT-07 2.1.1"
+    ],
+    [
+     "Entubada",
+     "un circuito por tubo · arquetas cada ≤ 40 m",
+     "BT-07 2.1.2"
+    ],
+    [
+     "Cruce de calles",
+     "tubo hormigonado a ≥ 0,80 m",
+     "BT-07 2.2.1"
+    ],
+    [
+     "Paralelo con otros cables",
+     "0,10 m de BT · 0,25 m de AT",
+     "BT-07 2.2.2"
+    ]
+   ]
+  },
+  {
+   "title": "Instalación de enlace",
+   "ref": "ITC-BT-12 a 17",
+   "rows": [
+    [
+     "Orden",
+     "acometida → CGP → LGA → contadores → DI → mando y protección",
+     "BT-12 1.2"
+    ],
+    [
+     "Uno o dos usuarios desde el mismo lugar",
+     "no existe LGA: la DI sale de la CGP · el fusible de seguridad es el de la CGP",
+     "BT-12 2.1"
+    ],
+    [
+     "CGP",
+     "neutro amovible a la izquierda · fusibles en las fases",
+     "BT-13 1.2"
+    ],
+    [
+     "LGA, sección mínima",
+     "10 mm² Cu · 16 mm² Al",
+     "BT-14 3"
+    ],
+    [
+     "Contadores",
+     "≥ 0,25 m del suelo · lectura más alta ≤ 1,80 m",
+     "BT-16 3"
+    ],
+    [
+     "DI, tubos",
+     "Ø exterior ≥ 32 mm · 1 de reserva cada 10 DI",
+     "BT-15 2"
+    ]
+   ]
+  },
+  {
+   "title": "Caídas de tensión: todos los límites",
+   "ref": "ITC-BT-14, 15, 19 y 25 · otras ITC",
+   "table": {
+    "head": [
+     "Tramo",
+     "Contadores en un solo lugar",
+     "En varios lugares (por plantas)",
+     "Un usuario (o 2 desde un lugar)"
+    ],
+    "rows": [
+     [
+      "LGA",
+      "0,5 %",
+      "1 %",
+      "no hay LGA"
+     ],
+     [
+      "DI",
+      "1 %",
+      "0,5 %",
+      "1,5 %"
+     ],
+     [
+      "LGA + DI",
+      "1,5 %",
+      "1,5 %",
+      "1,5 %"
+     ],
+     [
+      "Interior vivienda",
+      "3 %",
+      "3 %",
+      "3 %"
+     ],
+     [
+      "Total desde la CGP",
+      "4,5 %",
+      "4,5 %",
+      "4,5 %"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Truco",
+     "LGA + DI suman siempre 1,5 %: lo que tiene una lo pierde la otra",
+     ""
+    ],
+    [
+     "Un solo lugar = concentrados = centralizados",
+     "LGA corta (CGP → cuarto de contadores) 0,5 % · DI larga (hasta cada vivienda) 1 %",
+     "BT-14 3 · BT-15 3"
+    ],
+    [
+     "Varios lugares = centralización parcial, por plantas",
+     "LGA larga (sube por el edificio) 1 % · DI corta 0,5 %",
+     "BT-14 3 · BT-15 3"
+    ],
+    [
+     "Un usuario, sin LGA",
+     "toda la caída en la DI: 1,5 %",
+     "BT-15 3"
+    ],
+    [
+     "Ejemplo de test",
+     "DI de una vivienda con contadores concentrados → 1 %",
+     "BT-15 3"
+    ],
+    [
+     "Fórmula, monofásica",
+     "e = 2 · P · L / (γ · S · U) · U = 230 V (el 2: ida y vuelta)",
+     "Guía anexo 2"
+    ],
+    [
+     "Fórmula, trifásica",
+     "e = P · L / (γ · S · U) · U = 400 V entre fases",
+     "Guía anexo 2"
+    ],
+    [
+     "Con la intensidad en vez de P",
+     "mono e = 2 · L · I · cos φ / (γ · S) · tri e = √3 · L · I · cos φ / (γ · S)",
+     ""
+    ],
+    [
+     "Qué es cada letra",
+     "e caída en V · P en W · L longitud en m (solo ida) · γ conductividad (Cu 56/48/44) · S en mm² · U en V",
+     "Guía anexo 2"
+    ],
+    [
+     "Pasar a %",
+     "e % = e / U × 100 → comparar con el límite del tramo",
+     ""
+    ],
+    [
+     "Despejar la sección",
+     "S = 2 · P · L / (γ · e · U) (mono) · S = P · L / (γ · e · U) (tri) → sección normalizada superior",
+     "Guía anexo 2"
+    ],
+    [
+     "Ejemplo resuelto (DI, 1 %)",
+     "5 750 W, 22 m, Cu γ 48, e = 1 % de 230 = 2,3 V → S = 2·5 750·22 / (48·2,3·230) = 9,96 → 10 mm²",
+     "Guía anexo 2"
+    ],
+    [
+     "Ejemplo al revés",
+     "2,5 mm² Cu, 20 m, 3 450 W mono, γ 56 → e = 2·3 450·20 / (56·2,5·230) = 4,3 V = 1,9 % (< 3 %)",
+     ""
+    ],
+    [
+     "Interior de vivienda",
+     "3 % en cualquier circuito, desde el origen de la instalación interior",
+     "BT-19 2.2.2"
+    ],
+    [
+     "Otras interiores (locales, industria)",
+     "3 % alumbrado · 5 % demás usos",
+     "BT-19 2.2.2"
+    ],
+    [
+     "Industria con trafo propio (AT)",
+     "desde la salida del trafo: 4,5 % alumbrado · 6,5 % demás usos",
+     "BT-19 2.2.2"
+    ],
+    [
+     "Compensación",
+     "interior y DI pueden compensarse si el total no supera la suma de sus límites",
+     "BT-19 2.2.2"
+    ],
+    [
+     "Cómo se calcula en vivienda",
+     "con I = In del PIA del circuito y hasta el punto más alejado",
+     "BT-25 3"
+    ],
+    [
+     "Cómo se calcula en otras",
+     "con todos los aparatos que pueden funcionar a la vez",
+     "BT-19 2.2.2"
+    ],
+    [
+     "Acometida",
+     "la fija la empresa distribuidora",
+     "BT-11 1.4"
+    ],
+    [
+     "Alumbrado exterior",
+     "3 % desde el origen a cualquier punto",
+     "BT-09 3"
+    ],
+    [
+     "Alumbrado a MBT",
+     "5 % de la fuente a los puntos de utilización",
+     "BT-36 2.2"
+    ],
+    [
+     "Grúas y ascensores",
+     "5 % en el arranque del motor",
+     "BT-32 2"
+    ],
+    [
+     "Recarga del VE",
+     "5 % desde el origen del circuito al punto de recarga",
+     "BT-52 7.1"
+    ],
+    [
+     "Generadores: cable de conexión",
+     "1,5 % a intensidad nominal",
+     "BT-40 5"
+    ],
+    [
+     "Generador asíncrono al conectarse",
+     "3 % de la tensión de red · eólicos 2 % durante 1 s",
+     "BT-40 4.3.2.1"
+    ],
+    [
+     "En voltios a 230 V",
+     "0,5 % = 1,15 V · 1 % = 2,3 V · 1,5 % = 3,45 V · 3 % = 6,9 V · 5 % = 11,5 V",
+     "Guía anexo 2"
+    ],
+    [
+     "En voltios a 400 V",
+     "0,5 % = 2 V · 1 % = 4 V · 3 % = 12 V · 5 % = 20 V",
+     "Guía anexo 2"
+    ]
+   ]
+  },
+  {
+   "title": "Cálculo de una línea, paso a paso",
+   "ref": "ITC-BT-10, 19 y 25 · Guía anexo 2",
+   "rows": [
+    [
+     "1. Potencia prevista P",
+     "de la ITC-BT-10 (vivienda 5 750 / 9 200 W…) o la suma de receptores con sus coeficientes",
+     "BT-10"
+    ],
+    [
+     "2. Intensidad, monofásica",
+     "I = P / (U · cos φ) · U = 230 V",
+     ""
+    ],
+    [
+     "2. Intensidad, trifásica",
+     "I = P / (√3 · U · cos φ) · U = 400 V entre fases",
+     ""
+    ],
+    [
+     "3. Sección por calentamiento",
+     "la que en la tabla, × los factores de corrección, admite ≥ I",
+     "BT-19 2.2.3"
+    ],
+    [
+     "4. Sección por caída (ΔU), monofásica",
+     "S = 2 · P · L / (γ · e · U)",
+     "Guía anexo 2"
+    ],
+    [
+     "4. Sección por caída (ΔU), trifásica",
+     "S = P · L / (γ · e · U) (sin el 2: no hay hilo de vuelta)",
+     "Guía anexo 2"
+    ],
+    [
+     "5. Resultado",
+     "la mayor de las dos, y redondear a la sección normalizada superior",
+     "BT-14 3"
+    ],
+    [
+     "6. Protección",
+     "Ib ≤ In ≤ Iz: lo que consume ≤ calibre del PIA ≤ lo que aguanta el cable",
+     ""
+    ],
+    [
+     "e: el % pasado a voltios",
+     "e = % × U / 100 · 3 % de 230 = 6,9 V · 1 % = 2,3 V · 0,5 % de 400 = 2 V",
+     "Guía anexo 2"
+    ],
+    [
+     "γ (conductividad) del cobre",
+     "56 a 20 °C · 48 a 70 °C (cable PVC a plena carga) · 44 a 90 °C (XLPE, EPR)",
+     "Guía anexo 2"
+    ],
+    [
+     "γ del aluminio",
+     "35 a 20 °C · 30 a 70 °C · 28 a 90 °C",
+     "Guía anexo 2"
+    ],
+    [
+     "Circuitos de vivienda",
+     "caída con I = In del PIA, hasta el punto más alejado · puede compensarse con la DI",
+     "BT-25 3"
+    ],
+    [
+     "Secciones normalizadas (mm²)",
+     "1,5 · 2,5 · 4 · 6 · 10 · 16 · 25 · 35 · 50 · 70 · 95 · 120 · 150 · 185 · 240",
+     ""
+    ],
+    [
+     "Conductor de protección",
+     "fase S ≤ 16 → igual · 16 < S ≤ 35 → 16 · S > 35 → S/2",
+     "BT-19 2.3"
+    ],
+    [
+     "Protección fuera de la canalización",
+     "≥ 2,5 mm² con protección mecánica · ≥ 4 mm² sin ella",
+     "BT-19 2.3"
+    ],
+    [
+     "Neutro de la LGA",
+     "25 → 16 · 35 → 16 · 50 → 25 · 70 → 35 · 95 → 50 · 120 y 150 → 70 · 240 → 120",
+     "BT-14 tabla 1"
+    ]
+   ]
+  },
+  {
+   "title": "Factores y coeficientes: cuándo se aplican",
+   "ref": "ITC-BT-06, 07, 10, 25 y 40 a 48",
+   "rows": [
+    [
+     "Cómo se usan",
+     "intensidad de la tabla × cada factor que aplique (se multiplican todos)",
+     "BT-07 3.1.2.2"
+    ],
+    [
+     "Interiores: tabla de la ITC-BT-19",
+     "aire a 40 °C · otros casos (agrupados, enterrados…): UNE-HD 60364-5-52",
+     "BT-19 2.2.3"
+    ],
+    [
+     "Enterrado: condiciones de la tabla",
+     "0,70 m de fondo · terreno a 25 °C · resistividad térmica 1 K·m/W",
+     "BT-07 3.1.2.1"
+    ],
+    [
+     "Enterrado bajo tubo",
+     "terna o cable tripolar en un tubo × 0,8 · 4 unipolares en tubos separados × 0,9",
+     "BT-07 3.1.3"
+    ],
+    [
+     "Bajo tubo ≤ 15 m relleno",
+     "con aglomerado especial: sin factor",
+     "BT-07 3.1.3"
+    ],
+    [
+     "Varias ternas juntas en la zanja",
+     "en contacto: 2 → 0,80 · 3 → 0,70 · 4 → 0,64 · 6 → 0,56",
+     "BT-07 tabla 8"
+    ],
+    [
+     "Terreno a otra temperatura (XLPE)",
+     "20 °C → 1,04 · 30 °C → 0,96 · 35 °C → 0,92 · 40 °C → 0,88",
+     "BT-07 tabla 6"
+    ],
+    [
+     "Otra profundidad",
+     "0,4 m → 1,03 · 1 m → 0,97 · 1,2 m → 0,95",
+     "BT-07 tabla 9"
+    ],
+    [
+     "Terreno seco (más resistividad térmica)",
+     "2 K·m/W → 0,75 · 2,5 → 0,68 (unipolares)",
+     "BT-07 tabla 7"
+    ],
+    [
+     "Al aire: condiciones de la tabla",
+     "40 °C, cable sobre bandeja o pared con buena ventilación",
+     "BT-07 3.1.4.1"
+    ],
+    [
+     "Aire a otra temperatura (XLPE)",
+     "30 °C → 1,10 · 45 °C → 0,95 · 50 °C → 0,90 (PVC 50 °C → 0,81)",
+     "BT-07 tabla 13"
+    ],
+    [
+     "Galería o canal sin ventilación",
+     "sumar unos 15 K al aire y aplicar el factor de temperatura",
+     "BT-07 3.1.4.2.2"
+    ],
+    [
+     "Red aérea al sol fuerte",
+     "× 0,9 o menos",
+     "BT-06 4.2.2.1"
+    ],
+    [
+     "Riesgo de incendio o explosión",
+     "intensidad admisible un 15 % menor (× 0,85)",
+     "BT-29 9.1"
+    ],
+    [
+     "Lámparas de descarga",
+     "carga en VA = 1,8 × potencia en W de las lámparas",
+     "BT-44 3.1"
+    ],
+    [
+     "Un motor",
+     "cables para 1,25 × su intensidad a plena carga",
+     "BT-47 3.1"
+    ],
+    [
+     "Varios motores",
+     "1,25 × la del mayor + la de los demás",
+     "BT-47 3.2"
+    ],
+    [
+     "Generadores",
+     "cables para 1,25 × su intensidad máxima",
+     "BT-40 5"
+    ],
+    [
+     "Condensadores",
+     "aparamenta para 1,5 a 1,8 × su In (armónicos)",
+     "BT-48 2.3"
+    ],
+    [
+     "Edificio de viviendas",
+     "media de las potencias × coeficiente: 1 → 1 · 5 → 4,6 · 10 → 8,5 · 13 → 10,6 · 15 → 11,9 · 20 → 14,8 · 21 → 15,3",
+     "BT-10 3.1"
+    ],
+    [
+     "Más de 21 viviendas",
+     "15,3 + (n − 21) × 0,5 · con tarifa nocturna, coeficiente = n.º de viviendas",
+     "BT-10 3.1"
+    ],
+    [
+     "Servicios generales, locales, garajes",
+     "simultaneidad 1 (se suma todo)",
+     "BT-10 3.2-3.4"
+    ],
+    [
+     "Circuitos de vivienda I = n × Ia × Fs × Fu",
+     "C1 200 W · 0,75 · 0,5 — C2 3 450 W · 0,2 · 0,25 — C3 5 400 W · 0,5 · 0,75 — C4 3 450 W · 0,66 · 0,75 — C5 3 450 W · 0,4 · 0,5",
+     "BT-25 tabla 1"
+    ],
+    [
+     "Recarga VE en el edificio",
+     "con SPL × 0,3 · sin SPL × 1",
+     "BT-52 4.1"
+    ]
+   ]
+  },
+  {
+   "title": "Previsión de cargas",
+   "ref": "ITC-BT-10",
+   "rows": [
+    [
+     "Electrificación básica",
+     "≥ 5 750 W a 230 V",
+     "BT-10 2.2"
+    ],
+    [
+     "Electrificación elevada",
+     "≥ 9 200 W: calefacción, A/A, > 160 m², recarga VE",
+     "BT-10 2.1.2"
+    ],
+    [
+     "Locales y oficinas",
+     "100 W/m² y planta · mínimo 3 450 W",
+     "BT-10 3.3"
+    ],
+    [
+     "Garajes",
+     "ventilación natural 10 W/m² · ventilación forzada (con extractores) 20 W/m² · mínimo 3 450 W",
+     "BT-10 3.4"
+    ],
+    [
+     "Edificio de viviendas",
+     "PT = PV + PSG + PL + PG",
+     "BT-10 3"
+    ]
+   ]
+  },
+  {
+   "title": "Coeficientes de simultaneidad (viviendas)",
+   "ref": "ITC-BT-10 3.1 tabla 1",
+   "table": {
+    "head": [
+     "N.º viv.",
+     "Coef.",
+     "N.º viv.",
+     "Coef."
+    ],
+    "rows": [
+     [
+      "1",
+      "1",
+      "12",
+      "9,9"
+     ],
+     [
+      "2",
+      "2",
+      "13",
+      "10,6"
+     ],
+     [
+      "3",
+      "3",
+      "14",
+      "11,3"
+     ],
+     [
+      "4",
+      "3,8",
+      "15",
+      "11,9"
+     ],
+     [
+      "5",
+      "4,6",
+      "16",
+      "12,5"
+     ],
+     [
+      "6",
+      "5,4",
+      "17",
+      "13,1"
+     ],
+     [
+      "7",
+      "6,2",
+      "18",
+      "13,7"
+     ],
+     [
+      "8",
+      "7",
+      "19",
+      "14,3"
+     ],
+     [
+      "9",
+      "7,8",
+      "20",
+      "14,8"
+     ],
+     [
+      "10",
+      "8,5",
+      "21",
+      "15,3"
+     ],
+     [
+      "11",
+      "9,2",
+      "n > 21",
+      "15,3 + (n − 21) × 0,5"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Cómo se usa",
+     "PV = media de las potencias de las viviendas × coeficiente",
+     "BT-10 3.1"
+    ],
+    [
+     "Media",
+     "suma de la potencia de cada vivienda / n.º de viviendas (básica 5 750 W · elevada 9 200 W)",
+     "BT-10 3.1"
+    ],
+    [
+     "Tarifa nocturna",
+     "simultaneidad 1: coeficiente = n.º de viviendas",
+     "BT-10 3.1"
+    ],
+    [
+     "Sin coeficiente (simultaneidad 1)",
+     "servicios generales, locales comerciales, oficinas y garajes: se suman enteros",
+     "BT-10 3.2-3.4"
+    ],
+    [
+     "Ejemplo 1: todas iguales",
+     "10 viviendas básicas → 5 750 × 8,5 = 48 875 W",
+     ""
+    ],
+    [
+     "Ejemplo 2: mezcla",
+     "5 elevadas + 8 básicas = 13 → media (5·9 200 + 8·5 750) / 13 = 7 077 W × 10,6 ≈ 75 016 W",
+     ""
+    ],
+    [
+     "Ejemplo 3: más de 21",
+     "25 viviendas → 15,3 + (25 − 21) × 0,5 = 17,3 · básicas: 5 750 × 17,3 = 99 475 W",
+     ""
+    ],
+    [
+     "Después",
+     "PT = PV + PSG + PL + PG (sumar servicios generales, locales y garajes)",
+     "BT-10 3"
+    ]
+   ]
+  },
+  {
+   "title": "Cuadro de mando y protección",
+   "ref": "ITC-BT-17 · ITC-BT-25 2.1",
+   "rows": [
+    [
+     "Situación",
+     "junto a la puerta de entrada · nunca en dormitorios ni baños",
+     "BT-17 1.1"
+    ],
+    [
+     "Altura",
+     "1,4–2 m en viviendas · ≥ 1 m en locales",
+     "BT-17 1.1"
+    ],
+    [
+     "IGA",
+     "≥ 25 A · poder de corte ≥ 4 500 A",
+     "BT-17 1.3"
+    ],
+    [
+     "Mínimo",
+     "IGA + diferencial + PIA por circuito (+ sobretensiones si hace falta)",
+     "BT-25 2.1"
+    ]
+   ]
+  },
+  {
+   "title": "Circuitos de vivienda",
+   "ref": "ITC-BT-25 2.3 y tabla 1",
+   "table": {
+    "head": [
+     "",
+     "Uso",
+     "PIA",
+     "Sección"
+    ],
+    "rows": [
+     [
+      "C1",
+      "alumbrado (máx. 30 puntos)",
+      "10 A",
+      "1,5 mm²"
+     ],
+     [
+      "C2",
+      "tomas de uso general (máx. 20)",
+      "16 A",
+      "2,5 mm²"
+     ],
+     [
+      "C3",
+      "cocina y horno",
+      "25 A",
+      "6 mm²"
+     ],
+     [
+      "C4",
+      "lavadora, lavavajillas, termo",
+      "20 A",
+      "4 mm²"
+     ],
+     [
+      "C5",
+      "baño y auxiliares de cocina (máx. 6)",
+      "16 A",
+      "2,5 mm²"
+     ],
+     [
+      "C6",
+      "otro C1 cada 30 puntos de luz",
+      "10 A",
+      "1,5 mm²"
+     ],
+     [
+      "C7",
+      "otro C2 cada 20 tomas o > 160 m²",
+      "16 A",
+      "2,5 mm²"
+     ],
+     [
+      "C8",
+      "calefacción",
+      "25 A",
+      "6 mm²"
+     ],
+     [
+      "C9",
+      "aire acondicionado",
+      "25 A",
+      "6 mm²"
+     ],
+     [
+      "C10",
+      "secadora",
+      "16 A",
+      "2,5 mm²"
+     ],
+     [
+      "C11",
+      "automatización",
+      "10 A",
+      "1,5 mm²"
+     ],
+     [
+      "C12",
+      "otro C3/C4, o C5 si > 6 tomas",
+      "—",
+      "—"
+     ],
+     [
+      "C13",
+      "recarga VE (diferencial exclusivo)",
+      "BT-52",
+      "2,5 mm²"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Básica",
+     "C1–C5; elevada añade C6–C13 según necesidad",
+     "BT-25 2.3"
+    ],
+    [
+     "Diferenciales",
+     "≥ 1 por cada 5 circuitos",
+     "BT-25 2.3.2"
+    ]
+   ]
+  },
+  {
+   "title": "Conductores y canalizaciones",
+   "ref": "ITC-BT-19, 20 y 21",
+   "rows": [
+    [
+     "Colores",
+     "fases marrón, negro, gris · neutro azul · protección verde-amarillo",
+     "BT-19 2.2.4"
+    ],
+    [
+     "Empalmes",
+     "siempre en cajas de empalme o derivación, nunca retorciendo",
+     "BT-19 2.11"
+    ],
+    [
+     "Tubo empotrado o en superficie",
+     "> 5 conductores: sección interior 3 × la ocupada",
+     "BT-21 1.2.2"
+    ],
+    [
+     "Tubo enterrado",
+     "> 10 conductores: 4 × la ocupada",
+     "BT-21 1.2.4"
+    ],
+    [
+     "Huecos de la construcción",
+     "dimensión más pequeña ≥ 20 mm",
+     "BT-20 2.2.6"
+    ],
+    [
+     "Potencia y MBTS juntos",
+     "solo si todo está aislado para la tensión más alta",
+     "BT-20 2.1"
+    ]
+   ]
+  },
+  {
+   "title": "Protección de las personas",
+   "ref": "ITC-BT-01, 22 y 24",
+   "rows": [
+    [
+     "Contacto directo",
+     "con una parte activa (tocar la fase)",
+     "BT-01"
+    ],
+    [
+     "Contacto indirecto",
+     "con una masa en tensión por un fallo de aislamiento",
+     "BT-01"
+    ],
+    [
+     "Alta sensibilidad",
+     "diferencial ≤ 30 mA",
+     "BT-01"
+    ],
+    [
+     "TT, condición",
+     "RA × Ia ≤ U · U = 50 V (24 V en ciertos casos)",
+     "BT-24 4.1.2"
+    ],
+    [
+     "Contra directos",
+     "aislamiento, barreras, obstáculos, alejamiento, DR 30 mA",
+     "BT-24 3"
+    ],
+    [
+     "Sobreintensidades",
+     "sobrecargas, cortocircuitos, descargas atmosféricas",
+     "BT-22 1.1"
+    ],
+    [
+     "Ensayo del diferencial",
+     "½·IΔn no dispara · IΔn < 200 ms · 2·IΔn < 150 ms",
+     "Guía anexo 4"
+    ]
+   ]
+  },
+  {
+   "title": "Tierra y esquemas",
+   "ref": "ITC-BT-08 · ITC-BT-18",
+   "rows": [
+    [
+     "Electrodo (pica)",
+     "profundidad ≥ 0,50 m",
+     "BT-18 3.1"
+    ],
+    [
+     "TT",
+     "neutro a tierra · masas a una tierra separada",
+     "BT-08 1.2"
+    ],
+    [
+     "TN-S / TN-C",
+     "masas al neutro: PE aparte / un solo PEN",
+     "BT-08 1.1"
+    ],
+    [
+     "IT",
+     "alimentación aislada o por impedancia",
+     "BT-08 1.3"
+    ]
+   ]
+  },
+  {
+   "title": "Puesta a tierra: valores para calcular",
+   "ref": "ITC-BT-18",
+   "rows": [
+    [
+     "Pica vertical",
+     "R = ρ / L (L = longitud de la pica, m)",
+     "BT-18 tabla 5"
+    ],
+    [
+     "Placa enterrada",
+     "R = 0,8 · ρ / P (P = perímetro, m)",
+     "BT-18 tabla 5"
+    ],
+    [
+     "Conductor horizontal enterrado",
+     "R = 2 · ρ / L",
+     "BT-18 tabla 5"
+    ],
+    [
+     "ρ del terreno (media)",
+     "cultivable y húmedo 50 Ω·m · terraplén poco fértil 500 · arena seca, pedregoso 3 000",
+     "BT-18 tabla 4"
+    ],
+    [
+     "Tensión de contacto máx.",
+     "24 V en local conductor (mojado) · 50 V en los demás",
+     "BT-18 9"
+    ],
+    [
+     "Conductor de tierra enterrado",
+     "sin protección contra corrosión: 25 mm² Cu · 50 mm² hierro · protegido: 16 mm² Cu",
+     "BT-18 tabla 1"
+    ]
+   ]
+  },
+  {
+   "title": "Resistencia de aislamiento",
+   "ref": "ITC-BT-19 2.9",
+   "rows": [
+    [
+     "MBTS / MBTP",
+     "ensayo 250 V c.c. → ≥ 0,25 MΩ",
+     "BT-19 2.9"
+    ],
+    [
+     "≤ 500 V",
+     "ensayo 500 V c.c. → ≥ 0,5 MΩ",
+     "BT-19 2.9"
+    ],
+    [
+     "> 500 V",
+     "ensayo 1000 V c.c. → ≥ 1 MΩ",
+     "BT-19 2.9"
+    ],
+    [
+     "Instalación larga",
+     "se mide por tramos de unos 100 m",
+     "BT-19 2.9"
+    ]
+   ]
+  },
+  {
+   "title": "Sobretensiones",
+   "ref": "ITC-BT-23",
+   "rows": [
+    [
+     "Categorías (230/400 V)",
+     "IV 6 kV · III 4 kV · II 2,5 kV · I 1,5 kV",
+     "BT-23 4"
+    ],
+    [
+     "IV · III",
+     "origen (contador) · instalación fija (cuadros, tomas, cables)",
+     "BT-23 2.2"
+    ],
+    [
+     "II · I",
+     "electrodomésticos · equipos muy sensibles",
+     "BT-23 2.2"
+    ],
+    [
+     "Situación natural",
+     "red toda subterránea: sin protección adicional",
+     "BT-23 3.1"
+    ],
+    [
+     "Situación controlada",
+     "con línea aérea: protección en el origen",
+     "BT-23 3.2"
+    ]
+   ]
+  },
+  {
+   "title": "Baños y duchas",
+   "ref": "ITC-BT-27 2.1",
+   "rows": [
+    [
+     "Volúmenes",
+     "cuatro: 0, 1, 2 y 3",
+     "BT-27 2.1"
+    ],
+    [
+     "Volumen 0",
+     "interior de bañera o ducha · sin plato: hasta 0,05 m",
+     "BT-27 2.1.1"
+    ],
+    [
+     "Volumen 1",
+     "sobre el 0 hasta 2,25 m de altura",
+     "BT-27 2.1.2"
+    ],
+    [
+     "Volúmenes 2 y 3",
+     "0,6 m y 2,4 m más allá del anterior",
+     "BT-27 2.1.3-4"
+    ]
+   ]
+  },
+  {
+   "title": "Piscinas y fuentes",
+   "ref": "ITC-BT-31",
+   "rows": [
+    [
+     "Zona 0",
+     "interior del vaso · IPX8",
+     "BT-31 2.1"
+    ],
+    [
+     "Zona 1",
+     "2 m del borde, 2,5 m de alto · IPX5",
+     "BT-31 2.1"
+    ],
+    [
+     "Zona 2",
+     "1,5 m más · IPX2 interior, IPX4 exterior (no en fuentes)",
+     "BT-31 2.1"
+    ],
+    [
+     "MBTS en zonas 0 y 1",
+     "≤ 12 V c.a. · 30 V c.c.",
+     "BT-31 2.2"
+    ],
+    [
+     "Zonas 0 y 1",
+     "sin cajas, interruptores ni tomas",
+     "BT-31 2.2.4"
+    ],
+    [
+     "Zona 2",
+     "MBTS, diferencial ≤ 30 mA o separación",
+     "BT-31 2.2.4"
+    ]
+   ]
+  },
+  {
+   "title": "Alumbrado de emergencia",
+   "ref": "ITC-BT-28 3",
+   "rows": [
+    [
+     "Tipos",
+     "seguridad y reemplazamiento",
+     "BT-28 3"
+    ],
+    [
+     "Evacuación",
+     "1 lux en el eje de paso · 5 lux en equipos PCI y cuadros · 1 h",
+     "BT-28 3.1.1"
+    ],
+    [
+     "Anti-pánico",
+     "0,5 lux hasta 1 m de altura",
+     "BT-28 3.1.2"
+    ],
+    [
+     "Alto riesgo",
+     "15 lux o el 10 % del normal (el mayor)",
+     "BT-28 3.1.3"
+    ],
+    [
+     "Hospitalización (zonas de)",
+     "emergencia ≥ 5 lux durante 2 h como mínimo",
+     "BT-28 3.3.2"
+    ],
+    [
+     "Reemplazamiento: intervención, cuidados intensivos, salas de curas, paritorios, urgencias",
+     "iluminancia igual a la del alumbrado normal durante 2 h como mínimo",
+     "BT-28 3.3.2"
+    ],
+    [
+     "Dónde (seguridad)",
+     "> 100 personas · evacuación · aseos de planta · garajes > 5 vehículos · salidas y señales · a < 2 m de escaleras, extintores y primeros auxilios · cuadros",
+     "BT-28 3.3.1"
+    ]
+   ]
+  },
+  {
+   "title": "Locales especiales",
+   "ref": "ITC-BT-29 · ITC-BT-30",
+   "rows": [
+    [
+     "Riesgo de explosión",
+     "Clase I gas: zonas 0, 1, 2 · Clase II polvo: 20, 21, 22",
+     "BT-29 4.1"
+    ],
+    [
+     "Garajes",
+     "riesgo de explosión salvo privados de ≤ 5 vehículos",
+     "BT-29 4.2"
+    ],
+    [
+     "Intensidad admisible",
+     "15 % menor · cables ≥ 450/750 V",
+     "BT-29 9.1"
+    ],
+    [
+     "Húmedo",
+     "IPX1 · alumbrado no de clase 0",
+     "BT-30 1"
+    ],
+    [
+     "Mojado (intemperie)",
+     "IPX4 · sin portátiles salvo MBTS o separación",
+     "BT-30 2"
+    ],
+    [
+     "Polvoriento",
+     "IP5X",
+     "BT-30 4"
+    ],
+    [
+     "Temperatura elevada",
+     "> 40 °C a menudo o > 35 °C siempre",
+     "BT-30 5"
+    ],
+    [
+     "Baterías",
+     "ventilación · pasillos ≥ 0,75 m",
+     "BT-30 7"
+    ],
+    [
+     "Servicio eléctrico",
+     "cerrado con llave · pasillo ≥ 1,10 m",
+     "BT-30 8"
+    ]
+   ]
+  },
+  {
+   "title": "Obras, ferias y stands",
+   "ref": "ITC-BT-33 · ITC-BT-34",
+   "rows": [
+    [
+     "Obras, tensión límite (TT)",
+     "24 V c.a. · 60 V c.c.",
+     "BT-33 4.2"
+    ],
+    [
+     "Obras, tomas",
+     "diferencial ≤ 30 mA, MBTS o trafo de separación",
+     "BT-33 4.2"
+    ],
+    [
+     "Obras, intemperie",
+     "≥ IP45",
+     "BT-33 5.1"
+    ],
+    [
+     "Ferias, público",
+     "diferencial ≤ 30 mA siempre",
+     "BT-34 3.1"
+    ],
+    [
+     "Ferias, envolventes",
+     "IP4X interior · IP45 exterior",
+     "BT-34 6.1"
+    ],
+    [
+     "Ferias, tomas",
+     "cordones ≤ 2 m · sin adaptadores multivía",
+     "BT-34 6.4.4"
+    ],
+    [
+     "Alumbrado de seguridad",
+     "instalaciones interiores > 100 personas",
+     "BT-34 6.4.2"
+    ]
+   ]
+  },
+  {
+   "title": "Muy baja tensión y tensiones especiales",
+   "ref": "ITC-BT-36 · ITC-BT-37",
+   "rows": [
+    [
+     "MBTS",
+     "≤ 50 V c.a. / 75 V c.c. · sin tierra",
+     "BT-36 1"
+    ],
+    [
+     "MBTP",
+     "igual, pero con circuito o masas a tierra",
+     "BT-36 1"
+    ],
+    [
+     "Sin protección contra directos",
+     "MBTS ≤ 25 V c.a. / 60 V c.c.",
+     "BT-36 3"
+    ],
+    [
+     "Bases MBTS",
+     "sin contacto de protección (MBTP sí puede)",
+     "BT-36 2.2"
+    ],
+    [
+     "Alumbrado en MBT",
+     "caída ≤ 5 %",
+     "BT-36 2.2"
+    ],
+    [
+     "Tensión especial",
+     "cables ≥ 1 000 V · indirectos obligatorio",
+     "BT-37 1"
+    ]
+   ]
+  },
+  {
+   "title": "Quirófanos",
+   "ref": "ITC-BT-38",
+   "rows": [
+    [
+     "Alimentación",
+     "trafo de aislamiento por quirófano + vigilante",
+     "BT-38 2.1.3"
+    ],
+    [
+     "Tierra → masas y tomas",
+     "≤ 0,2 Ω",
+     "BT-38 2.1.1"
+    ],
+    [
+     "Equipotencial (EE)",
+     "≤ 0,1 Ω · ≤ 10 mV · EE–PT ≥ 16 mm²",
+     "BT-38 2.1.2"
+    ],
+    [
+     "Suministro especial",
+     "entra en < 0,5 s · 2 h",
+     "BT-38 2.2"
+    ],
+    [
+     "Sin trafo de aislamiento",
+     "diferencial ≤ 30 mA clase A",
+     "BT-38 2.1.4"
+    ],
+    [
+     "Controles",
+     "semanal · mensual · anual + Libro de Mantenimiento",
+     "BT-38 2.4"
+    ]
+   ]
+  },
+  {
+   "title": "Otras instalaciones",
+   "ref": "ITC-BT-32, 39 y 42",
+   "rows": [
+    [
+     "Grúas",
+     "caída en el arranque ≤ 5 % · paro de emergencia desde el suelo",
+     "BT-32 2"
+    ],
+    [
+     "Contactores",
+     "no sirven para seccionar",
+     "BT-32 5.1"
+    ],
+    [
+     "Cercas para ganado",
+     "carteles cada ≤ 50 m · 2 m entre cercas · tierra separada",
+     "BT-39 3"
+    ],
+    [
+     "Puertos, tomas",
+     "230 V · 16 A · IPX6 · diferencial 30 mA por toma",
+     "BT-42 4.3.2"
+    ],
+    [
+     "Puertos, cable al barco",
+     "≤ 25 m, sin empalmes",
+     "BT-42 4.3.3"
+    ]
+   ]
+  },
+  {
+   "title": "Proyecto obligatorio",
+   "ref": "ITC-BT-04 3.1",
+   "table": {
+    "head": [
+     "",
+     "Instalación",
+     "Proyecto si"
+    ],
+    "rows": [
+     [
+      "a",
+      "industrias",
+      "P > 20 kW"
+     ],
+     [
+      "b",
+      "húmedos, polvorientos, corrosivos · bombas de agua",
+      "P > 10 kW"
+     ],
+     [
+      "c",
+      "mojados · generadores · caldeo",
+      "P > 10 kW"
+     ],
+     [
+      "d",
+      "temporales (obras, abiertos)",
+      "P > 50 kW"
+     ],
+     [
+      "e",
+      "edificios de viviendas, comercios, oficinas",
+      "P > 100 kW por CGP"
+     ],
+     [
+      "f",
+      "vivienda unifamiliar",
+      "P > 50 kW"
+     ],
+     [
+      "g",
+      "garaje con ventilación forzada",
+      "siempre"
+     ],
+     [
+      "h",
+      "garaje con ventilación natural",
+      "> 5 plazas"
+     ],
+     [
+      "i",
+      "pública concurrencia",
+      "siempre"
+     ],
+     [
+      "j",
+      "apoyos comunes BT/AT · elevación · tensiones especiales · rótulos · cercas · redes",
+      "siempre"
+     ],
+     [
+      "k",
+      "alumbrado exterior",
+      "P > 5 kW"
+     ],
+     [
+      "l",
+      "riesgo de incendio o explosión",
+      "siempre"
+     ],
+     [
+      "m",
+      "quirófanos y salas de intervención",
+      "siempre"
+     ],
+     [
+      "n",
+      "piscinas y fuentes",
+      "P > 5 kW"
+     ],
+     [
+      "z",
+      "recarga VE · exterior · modo 4",
+      "> 50 kW · > 10 kW · siempre"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Sin proyecto",
+     "Memoria Técnica de Diseño (MTD)",
+     "BT-04 4"
+    ]
+   ]
+  },
+  {
+   "title": "Empresas e inspecciones",
+   "ref": "ITC-BT-03 · ITC-BT-05",
+   "rows": [
+    [
+     "Categorías",
+     "básica (IBTB) · especialista (IBTE)",
+     "BT-03 3"
+    ],
+    [
+     "Seguro de RC",
+     "600 000 € básica · 900 000 € especialista",
+     "BT-03 5.8"
+    ],
+    [
+     "Inspección inicial",
+     "industria con proyecto > 100 kW · pública concurrencia · riesgo incendio/explosión · mojados > 25 kW · piscinas > 10 kW · quirófanos · alumbrado exterior > 5 kW · recarga VE con proyecto",
+     "BT-05 4.1"
+    ],
+    [
+     "Inspección periódica",
+     "cada 5 años · comunes de viviendas > 100 kW cada 10",
+     "BT-05 4.2"
+    ],
+    [
+     "Calificación",
+     "negativa: ≥ 1 muy grave · condicionada: ≥ 1 grave (en servicio, corregir en ≤ 6 meses)",
+     "BT-05 5.2"
+    ]
+   ]
+  },
+  {
+   "title": "Alumbrado exterior",
+   "ref": "ITC-BT-09",
+   "rows": [
+    [
+     "Lámparas de descarga",
+     "carga ≥ 1,8 × W · cos φ ≥ 0,90",
+     "BT-09 3"
+    ],
+    [
+     "Caída de tensión",
+     "≤ 3 %",
+     "BT-09 3"
+    ],
+    [
+     "Diferencial",
+     "≤ 300 mA con R ≤ 30 Ω (500 mA ≤ 5 Ω · 1 A ≤ 1 Ω)",
+     "BT-09 4"
+    ],
+    [
+     "Cuadro",
+     "IP55 · IK10 · puerta entre 0,3 y 2 m",
+     "BT-09 4"
+    ],
+    [
+     "Subterránea",
+     "tubo a ≥ 0,4 m · Ø ≥ 60 mm · ≥ 6 mm²",
+     "BT-09 5.2.1"
+    ],
+    [
+     "Tierra",
+     "tensión de contacto ≤ 24 V · electrodo cada 5 soportes",
+     "BT-09 10"
+    ]
+   ]
+  },
+  {
+   "title": "Generación y autoconsumo",
+   "ref": "ITC-BT-40",
+   "rows": [
+    [
+     "Tipos",
+     "aislada · asistida · interconectada",
+     "BT-40 2"
+    ],
+    [
+     "Máximo en red 3×400/230 V",
+     "100 kVA y ≤ ½ de la salida del CT",
+     "BT-40 4.3.1"
+    ],
+    [
+     "Cables de conexión",
+     "≥ 125 % de I máx · caída ≤ 1,5 %",
+     "BT-40 5"
+    ],
+    [
+     "Protecciones",
+     "V < 85 % o > 110 % en < 0,5 s · f < 49 o > 51 Hz",
+     "BT-40 7"
+    ],
+    [
+     "Circuito independiente",
+     "con excedentes · sin excedentes > 800 VA",
+     "BT-40 4.3"
+    ],
+    [
+     "Diferencial",
+     "tipo A · 30 mA en viviendas",
+     "BT-40 4.3"
+    ],
+    [
+     "Generador sin circuito dedicado",
+     "fuga ≤ 10 mA",
+     "BT-40 4.3"
+    ]
+   ]
+  },
+  {
+   "title": "Receptores",
+   "ref": "ITC-BT-44 a 49",
+   "rows": [
+    [
+     "Lámparas de descarga",
+     "carga ≥ 1,8 × W · cos φ ≥ 0,9",
+     "BT-44 3.1"
+    ],
+    [
+     "Motor",
+     "conductores al 125 % de I plena carga",
+     "BT-47 3.1"
+    ],
+    [
+     "Varios motores",
+     "125 % del mayor + el resto",
+     "BT-47 3.2"
+    ],
+    [
+     "Arranque c.a. (I arr. / I plena)",
+     "≤ 4,5 hasta 1,5 kW · 3 hasta 5 kW · 2 hasta 15 kW · 1,5 más",
+     "BT-47 6"
+    ],
+    [
+     "Calefactores",
+     "8 cm de combustibles (50 cm si luminosos)",
+     "BT-45 2.2"
+    ],
+    [
+     "Soldadura, tensión en vacío",
+     "≤ 90 V c.a. · 150 V c.c.",
+     "BT-45 3.3"
+    ],
+    [
+     "Suelo radiante",
+     "≤ 25 A por circuito · 30 mA · aislamiento ≥ 250 kΩ",
+     "BT-46 3.2"
+    ],
+    [
+     "Transformador ≤ 3 000 VA",
+     "pantalla incombustible a 1 cm",
+     "BT-48 2.1"
+    ],
+    [
+     "Muebles",
+     "0,75 mm² solo alumbrado ≤ 10 m · 1,5 · 2,5 con tomas",
+     "BT-49 2.3"
+    ]
+   ]
+  },
+  {
+   "title": "Recarga del vehículo eléctrico",
+   "ref": "ITC-BT-52",
+   "rows": [
+    [
+     "Vivienda unifamiliar",
+     "circuito C13, esquema 4a · monofásico ≤ 9 200 W",
+     "BT-52 3.1"
+    ],
+    [
+     "Cada punto",
+     "diferencial ≤ 30 mA clase A · automático curva C",
+     "BT-52 6.1"
+    ],
+    [
+     "Toma Schuko (modo 1 y 2)",
+     "automático de 10 A",
+     "BT-52 6.3"
+    ],
+    [
+     "Altura del punto",
+     "≥ 60 cm · ≤ 120 cm uso público",
+     "BT-52 5.4"
+    ],
+    [
+     "Caída · sección",
+     "≤ 5 % · ≥ 2,5 mm² Cu",
+     "BT-52 5"
+    ],
+    [
+     "Previsión con SPL",
+     "simultaneidad 0,3 (1 sin SPL)",
+     "BT-52 4.1"
+    ],
+    [
+     "Modos",
+     "1 y 2 toma normal · 3 SAVE · 4 continua",
+     "BT-52 7.1"
+    ]
+   ]
+  },
+  {
+   "title": "Todas las fórmulas",
+   "ref": "electrotecnia · REBT · Guía anexo 2",
+   "rows": [
+    [
+     "Ley de Ohm",
+     "V = R · I → I = V / R · R = V / I",
+     ""
+    ],
+    [
+     "Potencia (c.c. o resistiva)",
+     "P = V · I = R · I² = V² / R",
+     ""
+    ],
+    [
+     "Energía consumida",
+     "E = P · t (W·h; kWh = 1 000 W durante 1 h) — lo que se factura",
+     ""
+    ],
+    [
+     "Calor por efecto Joule",
+     "Q = R · I² · t (julios)",
+     ""
+    ],
+    [
+     "Intensidad y carga",
+     "I = Q / t (1 A = 1 culombio por segundo)",
+     ""
+    ],
+    [
+     "Resistencias en serie",
+     "Req = R1 + R2 + … · misma I · V = V1 + V2 + …",
+     ""
+    ],
+    [
+     "Resistencias en paralelo",
+     "1/Req = 1/R1 + 1/R2 + … · misma V · I = I1 + I2 + … · Req < la menor",
+     ""
+    ],
+    [
+     "Dos en paralelo",
+     "Req = R1 · R2 / (R1 + R2)",
+     ""
+    ],
+    [
+     "Resistencia de un conductor",
+     "R = ρ · L / S = L / (γ · S) · γ = 1/ρ (Cu 56 · Al 35 a 20 °C)",
+     "Guía anexo 2"
+    ],
+    [
+     "Sección de un conductor circular",
+     "S = π · D² / 4 (D = diámetro)",
+     ""
+    ],
+    [
+     "Potencias, monofásica",
+     "P = U · I · cos φ (W) · Q = U · I · sen φ (VAr) · S = U · I (VA)",
+     ""
+    ],
+    [
+     "Potencias, trifásica",
+     "P = √3 · U · I · cos φ · Q = √3 · U · I · sen φ · S = √3 · U · I (U entre fases)",
+     ""
+    ],
+    [
+     "Triángulo de potencias",
+     "S² = P² + Q² · cos φ = P / S",
+     ""
+    ],
+    [
+     "Tensión de línea y de fase",
+     "U línea = √3 · U fase → 400 = √3 · 230",
+     ""
+    ],
+    [
+     "Frecuencia y periodo",
+     "f = 1 / T → 50 Hz = un ciclo cada 20 ms",
+     ""
+    ],
+    [
+     "Intensidad, monofásica",
+     "I = P / (U · cos φ) · U = 230 V",
+     ""
+    ],
+    [
+     "Intensidad, trifásica",
+     "I = P / (√3 · U · cos φ) · U = 400 V",
+     ""
+    ],
+    [
+     "Circuitos de vivienda",
+     "I = n × Ia × Fs × Fu (tomas × intensidad por toma × simultaneidad × utilización)",
+     "BT-25 3"
+    ],
+    [
+     "Elegir la protección",
+     "Ib ≤ In ≤ Iz (consumo ≤ calibre del PIA ≤ intensidad admisible del cable)",
+     ""
+    ],
+    [
+     "Intensidad admisible corregida",
+     "I tabla × F1 × F2 × … (temperatura, agrupación, tubo…)",
+     "BT-07 3.1"
+    ],
+    [
+     "Caída de tensión, monofásica",
+     "e = 2 · P · L / (γ · S · U) = 2 · L · I · cos φ / (γ · S)",
+     "Guía anexo 2"
+    ],
+    [
+     "Caída de tensión, trifásica",
+     "e = P · L / (γ · S · U) = √3 · L · I · cos φ / (γ · S)",
+     "Guía anexo 2"
+    ],
+    [
+     "Caída en %",
+     "e % = e / U × 100",
+     ""
+    ],
+    [
+     "Sección por caída de tensión",
+     "mono S = 2 · P · L / (γ · e · U) · tri S = P · L / (γ · e · U)",
+     "Guía anexo 2"
+    ],
+    [
+     "Edificio de viviendas",
+     "PT = PV + PSG + PL + PG (viviendas + servicios generales + locales + garajes)",
+     "BT-10 3"
+    ],
+    [
+     "Carga de las viviendas",
+     "PV = media de sus potencias × coeficiente de simultaneidad (n > 21: 15,3 + (n − 21) × 0,5)",
+     "BT-10 3.1"
+    ],
+    [
+     "Locales y garajes",
+     "P = W/m² × superficie (locales 100 · garajes 10 natural / 20 forzada; mín. 3 450 W)",
+     "BT-10 3.3-3.4"
+    ],
+    [
+     "Edificio con recarga de VE",
+     "P = P1 + P2 + P3 + P4 + 0,3 · P5 con SPL (+ P5 sin SPL) · P5 = recarga del VE",
+     "BT-52 7.1"
+    ],
+    [
+     "Lámparas de descarga",
+     "potencia en VA = 1,8 × potencia en W",
+     "BT-44 3.1"
+    ],
+    [
+     "Motores",
+     "uno: 1,25 × I plena carga · varios: 1,25 × I del mayor + I de los demás",
+     "BT-47 3"
+    ],
+    [
+     "Esquema TT, condición",
+     "RA · Ia ≤ U (U = 50 V, o 24 V en locales mojados)",
+     "BT-24 4.1.2"
+    ],
+    [
+     "Esquema TN, condición",
+     "Zs · Ia ≤ U0 (U0 = 230 V)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Resistencia de tierra: pica",
+     "R = ρ / L (ρ del terreno en Ω·m, L en m)",
+     "BT-18 tabla 5"
+    ],
+    [
+     "Resistencia de tierra: placa",
+     "R = 0,8 · ρ / P (P = perímetro)",
+     "BT-18 tabla 5"
+    ],
+    [
+     "Resistencia de tierra: conductor horizontal",
+     "R = 2 · ρ / L",
+     "BT-18 tabla 5"
+    ],
+    [
+     "Conductor de protección",
+     "S ≤ 16 → Sp = S · 16 < S ≤ 35 → Sp = 16 · S > 35 → Sp = S / 2",
+     "BT-19 2.3"
+    ],
+    [
+     "Red aérea: separación en vanos > 50 m",
+     "D = 0,55 · √F (F = flecha máxima, m)",
+     "BT-06 3.2.2"
+    ],
+    [
+     "Iluminancia",
+     "E = Φ / S (lux = lúmenes / m²) · rendimiento = lm / W",
+     "BT-28 3.1.1"
+    ],
+    [
+     "Medir",
+     "amperímetro en serie · voltímetro en paralelo · óhmetro y aislamiento sin tensión",
+     ""
+    ]
+   ]
+  }
+ ]
+}

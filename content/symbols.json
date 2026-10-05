@@ -1,0 +1,509 @@
+{
+ "_doc": "Symbol sheet: the second part of the page. 'qet' = EN 60617 number (part-section-symbol) of the QElectroTech element in content/elements/qet/, or a path under content/elements/ (qet/<composite>, fixed/<our correction>); 'iec' = the number shown when it differs from 'qet' (QElectroTech swaps 03-02-01 junction and 03-02-02 terminal); 'star' replaces the '*' of a general symbol (machine, instrument); 'notext' drops the element's captions; 'code' = reference letter (IEC 60750). See README.md.",
+ "title": "Símbolos UNE-EN 60617",
+ "subtitle": "Símbolos gráficos normalizados (UNE-EN 60617 = IEC 60617). Cada uno lleva su número de la norma: parte-sección-símbolo.",
+ "credit": "Dibujos: colección de elementos EN 60617 de QElectroTech (CC-BY 3.0).",
+ "sections": [
+  {
+   "title": "Corriente y conexiones",
+   "ref": "60617-2 · 60617-3",
+   "items": [
+    {
+     "qet": "02-02-03",
+     "name": "Corriente continua",
+     "note": "en aparatos también DC"
+    },
+    {
+     "qet": "02-02-04",
+     "name": "Corriente alterna",
+     "note": "en aparatos también AC"
+    },
+    {
+     "qet": "02-02-07",
+     "name": "Trifásica con neutro, 400/230 V, 50 Hz",
+     "note": "3/N ∼: tres fases y neutro"
+    },
+    {
+     "qet": "02-02-15",
+     "name": "Neutro",
+     "code": "N"
+    },
+    {
+     "qet": "03-01-01",
+     "name": "Conductor, línea, cable"
+    },
+    {
+     "qet": "03-01-02",
+     "name": "Tres conductores (forma 1)",
+     "note": "un trazo por conductor"
+    },
+    {
+     "qet": "03-01-03",
+     "name": "Tres conductores (forma 2)",
+     "note": "el número de conductores"
+    },
+    {
+     "qet": "03-02-02",
+     "name": "Punto de conexión, unión",
+     "iec": "03-02-01"
+    },
+    {
+     "qet": "03-02-01",
+     "name": "Borne",
+     "code": "X",
+     "iec": "03-02-02"
+    },
+    {
+     "qet": "03-02-03",
+     "name": "Regleta de bornes",
+     "code": "X"
+    },
+    {
+     "qet": "03-02-05",
+     "name": "Derivación en T",
+     "note": "el punto marca la unión"
+    },
+    {
+     "qet": "03-02-07",
+     "name": "Doble derivación",
+     "note": "sin punto, dos líneas que se cruzan no están unidas"
+    },
+    {
+     "qet": "03-03-05",
+     "name": "Clavija y base",
+     "code": "X",
+     "note": "hembra = base · macho = clavija"
+    }
+   ]
+  },
+  {
+   "title": "Tierra y conductores",
+   "ref": "60617-2 · 60617-11",
+   "items": [
+    {
+     "qet": "02-15-01",
+     "name": "Tierra, símbolo general"
+    },
+    {
+     "qet": "fixed/protective_earth.elmt",
+     "name": "Tierra de protección",
+     "code": "PE",
+     "iec": "02-15-03"
+    },
+    {
+     "qet": "02-15-04",
+     "name": "Masa, chasis"
+    },
+    {
+     "qet": "02-15-05",
+     "name": "Conexión equipotencial de protección"
+    },
+    {
+     "qet": "11-11-01",
+     "name": "Conductor neutro",
+     "code": "N",
+     "note": "en esquemas unifilares y planos"
+    },
+    {
+     "qet": "11-11-02",
+     "name": "Conductor de protección",
+     "code": "PE"
+    },
+    {
+     "qet": "11-11-03",
+     "name": "Conductor PEN (protección + neutro)",
+     "code": "PEN"
+    },
+    {
+     "qet": "11-11-04",
+     "name": "Tres fases, neutro y protección",
+     "code": "3N+PE",
+     "note": "3 trazos de fase + N + PE"
+    }
+   ]
+  },
+  {
+   "title": "Contactos y mandos",
+   "ref": "60617-7",
+   "items": [
+    {
+     "qet": "07-02-01",
+     "name": "Contacto de cierre (NA)",
+     "note": "también símbolo general de interruptor"
+    },
+    {
+     "qet": "07-02-03",
+     "name": "Contacto de apertura (NC)"
+    },
+    {
+     "qet": "07-02-04",
+     "name": "Contacto conmutado",
+     "note": "abre antes de cerrar"
+    },
+    {
+     "qet": "07-05-01",
+     "name": "Contacto NA con cierre retardado",
+     "note": "temporizado a la conexión"
+    },
+    {
+     "qet": "07-05-02",
+     "name": "Contacto NA con apertura retardada",
+     "note": "temporizado a la desconexión"
+    },
+    {
+     "qet": "07-07-01",
+     "name": "Interruptor de mando manual",
+     "code": "S"
+    },
+    {
+     "qet": "07-07-02",
+     "name": "Pulsador (retorno automático)",
+     "code": "S",
+     "note": "vuelve a reposo al soltarlo"
+    },
+    {
+     "qet": "07-07-04",
+     "name": "Interruptor giratorio (se queda en posición)",
+     "code": "S"
+    },
+    {
+     "qet": "07-07-06",
+     "name": "Parada de emergencia (seta)",
+     "code": "S"
+    },
+    {
+     "qet": "07-08-01",
+     "name": "Interruptor de posición (final de carrera), NA",
+     "code": "S"
+    },
+    {
+     "qet": "07-09-04",
+     "name": "Cebador de tubo fluorescente",
+     "note": "lámpara de descarga con elemento térmico"
+    },
+    {
+     "qet": "07-15-01",
+     "name": "Bobina de relé o contactor",
+     "code": "K",
+     "note": "bornes A1–A2"
+    }
+   ]
+  },
+  {
+   "title": "Maniobra y protección",
+   "ref": "60617-7",
+   "items": [
+    {
+     "qet": "07-13-01",
+     "name": "Interruptor",
+     "code": "Q"
+    },
+    {
+     "qet": "07-13-02",
+     "name": "Contactor (contacto principal)",
+     "code": "K",
+     "note": "semicírculo = función contactor"
+    },
+    {
+     "qet": "07-13-05",
+     "name": "Interruptor automático",
+     "code": "Q",
+     "note": "aspa = función interruptor automático"
+    },
+    {
+     "qet": "07-13-06",
+     "name": "Seccionador",
+     "code": "Q",
+     "note": "barra = función seccionador"
+    },
+    {
+     "qet": "07-13-08",
+     "name": "Interruptor-seccionador",
+     "code": "Q",
+     "note": "círculo = función interruptor-seccionador"
+    },
+    {
+     "qet": "qet/dis_mag_term_2f-1.elmt",
+     "name": "Interruptor automático magnetotérmico (PIA), fase + neutro",
+     "code": "Q",
+     "note": "07-13-05 + relé térmico 07-15-21 + relé I> 07-17-05"
+    },
+    {
+     "qet": "qet/int_diff2.elmt",
+     "name": "Interruptor diferencial, 2 polos",
+     "code": "F",
+     "note": "el toroidal abraza fase y neutro: detecta la corriente diferencial"
+    },
+    {
+     "qet": "07-15-21",
+     "name": "Relé térmico",
+     "code": "F",
+     "note": "protege contra sobrecargas"
+    },
+    {
+     "qet": "07-21-01",
+     "name": "Fusible",
+     "code": "F"
+    },
+    {
+     "qet": "07-21-08",
+     "name": "Fusible-seccionador",
+     "code": "F"
+    },
+    {
+     "qet": "07-22-03",
+     "name": "Descargador de sobretensiones",
+     "code": "F",
+     "note": "protege contra sobretensiones del rayo"
+    }
+   ]
+  },
+  {
+   "title": "Receptores y medida",
+   "ref": "60617-4 · 60617-6 · 60617-8",
+   "items": [
+    {
+     "qet": "04-01-01",
+     "name": "Resistencia",
+     "code": "R"
+    },
+    {
+     "qet": "04-01-12",
+     "name": "Elemento calefactor",
+     "code": "E"
+    },
+    {
+     "qet": "04-02-01",
+     "name": "Condensador",
+     "code": "C"
+    },
+    {
+     "qet": "04-03-01",
+     "name": "Bobina, inductancia",
+     "code": "L"
+    },
+    {
+     "qet": "06-04-01",
+     "name": "Motor",
+     "code": "M",
+     "star": "M"
+    },
+    {
+     "qet": "06-04-01",
+     "name": "Motor trifásico",
+     "code": "M",
+     "star": "M\n3∼"
+    },
+    {
+     "qet": "06-04-01",
+     "name": "Generador",
+     "code": "G",
+     "star": "G"
+    },
+    {
+     "qet": "06-09-01",
+     "name": "Transformador de dos devanados",
+     "code": "T",
+     "notext": true
+    },
+    {
+     "qet": "06-15-01",
+     "name": "Pila, acumulador",
+     "code": "G",
+     "note": "trazo largo = polo positivo"
+    },
+    {
+     "qet": "08-10-01",
+     "name": "Lámpara",
+     "code": "E",
+     "note": "E para alumbrado · H si es piloto de señalización"
+    },
+    {
+     "qet": "08-10-02",
+     "name": "Lámpara de señalización intermitente",
+     "code": "H"
+    },
+    {
+     "qet": "08-10-06",
+     "name": "Timbre",
+     "code": "H"
+    },
+    {
+     "qet": "08-10-10",
+     "name": "Zumbador",
+     "code": "H"
+    },
+    {
+     "qet": "08-10-09",
+     "name": "Sirena",
+     "code": "H"
+    },
+    {
+     "qet": "08-01-01",
+     "name": "Voltímetro",
+     "code": "P",
+     "note": "en paralelo",
+     "star": "V"
+    },
+    {
+     "qet": "08-01-01",
+     "name": "Amperímetro",
+     "code": "P",
+     "note": "en serie",
+     "star": "A"
+    },
+    {
+     "qet": "08-01-01",
+     "name": "Vatímetro",
+     "code": "P",
+     "star": "W"
+    },
+    {
+     "qet": "08-01-01",
+     "name": "Óhmetro",
+     "code": "P",
+     "star": "Ω"
+    },
+    {
+     "qet": "08-04-03",
+     "name": "Contador de energía (vatihorímetro)",
+     "code": "P",
+     "note": "kWh"
+    },
+    {
+     "qet": "08-08-01",
+     "name": "Reloj"
+    }
+   ]
+  },
+  {
+   "title": "Planos de instalación (unifilar)",
+   "ref": "60617-11",
+   "items": [
+    {
+     "qet": "11-12-04",
+     "name": "Caja, símbolo general"
+    },
+    {
+     "qet": "11-12-05",
+     "name": "Caja de conexión o de derivación (registro)"
+    },
+    {
+     "qet": "11-12-06",
+     "name": "Entrada de la acometida al usuario",
+     "note": "IEC: consumer's terminal, service entrance"
+    },
+    {
+     "qet": "11-12-07",
+     "name": "Cuadro de distribución"
+    },
+    {
+     "qet": "11-12-01",
+     "name": "Canalización que sube"
+    },
+    {
+     "qet": "11-12-02",
+     "name": "Canalización que baja"
+    },
+    {
+     "qet": "11-13-01",
+     "name": "Base de enchufe"
+    },
+    {
+     "qet": "11-13-04",
+     "name": "Base de enchufe con contacto de protección (tierra)",
+     "note": "la de vivienda: 2P+T"
+    },
+    {
+     "qet": "11-13-03",
+     "name": "Base de enchufe múltiple (triple)"
+    },
+    {
+     "qet": "11-13-06",
+     "name": "Base de enchufe con interruptor"
+    },
+    {
+     "qet": "11-13-09",
+     "name": "Toma de telecomunicaciones"
+    },
+    {
+     "qet": "11-14-01",
+     "name": "Interruptor unipolar"
+    },
+    {
+     "qet": "11-14-04",
+     "name": "Interruptor bipolar"
+    },
+    {
+     "qet": "11-14-06",
+     "name": "Conmutador"
+    },
+    {
+     "qet": "11-14-07",
+     "name": "Conmutador de cruce",
+     "note": "entre dos conmutadores, uno por cada punto más"
+    },
+    {
+     "qet": "11-14-08",
+     "name": "Regulador (dimmer)"
+    },
+    {
+     "qet": "11-14-02",
+     "name": "Interruptor con piloto luminoso"
+    },
+    {
+     "qet": "11-14-03",
+     "name": "Interruptor temporizado"
+    },
+    {
+     "qet": "11-14-09",
+     "name": "Interruptor de tirador"
+    },
+    {
+     "qet": "11-14-10",
+     "name": "Pulsador"
+    },
+    {
+     "qet": "11-14-11",
+     "name": "Pulsador luminoso"
+    },
+    {
+     "qet": "11-14-13",
+     "name": "Minutero (temporizador)"
+    },
+    {
+     "qet": "11-15-01",
+     "name": "Punto de luz"
+    },
+    {
+     "qet": "11-15-02",
+     "name": "Punto de luz en pared (aplique)"
+    },
+    {
+     "qet": "11-15-04",
+     "name": "Luminaria fluorescente"
+    },
+    {
+     "qet": "11-15-05",
+     "name": "Luminaria de varios tubos fluorescentes"
+    },
+    {
+     "qet": "11-15-11",
+     "name": "Luminaria de emergencia en circuito especial"
+    },
+    {
+     "qet": "11-15-12",
+     "name": "Luminaria autónoma de emergencia"
+    },
+    {
+     "qet": "11-16-01",
+     "name": "Calentador de agua (termo)"
+    },
+    {
+     "qet": "11-16-02",
+     "name": "Ventilador"
+    }
+   ]
+  }
+ ]
+}

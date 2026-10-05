@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chuleta REBT</title>
+<meta name="description" content="Chuleta del Reglamento Electrotécnico para Baja Tensión (REBT) y símbolos UNE-EN 60617, lista para imprimir.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232e63a6'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/chuleta.css">
+</head>
+<body>
+<header class="bar">
+  <h1 class="brand">Chuleta REBT</h1>
+  <nav class="jump" aria-label="Partes">
+    <a href="#chuleta">Chuleta</a>
+    <a href="#simbolos">Símbolos</a>
+  </nav>
+  <label class="search">
+    <span class="visually-hidden">Buscar</span>
+    <input type="search" id="q" placeholder="Buscar (tecla /)" autocomplete="off">
+  </label>
+  <form class="print-box" id="print-form" aria-label="Imprimir">
+    <fieldset>
+      <legend class="visually-hidden">Qué imprimir</legend>
+      <label class="check"><input type="checkbox" name="part" value="chuleta" checked> Chuleta</label>
+      <label class="check"><input type="checkbox" name="part" value="simbolos" checked> Símbolos</label>
+      <label class="check" title="Las páginas pares llevan la franja de encuadernar abajo: imprime a doble cara volteando por el borde largo">
+        <input type="checkbox" id="duplex"> Doble cara</label>
+    </fieldset>
+    <span class="print-est" id="print-est" aria-live="polite">Calculando páginas…</span>
+    <button class="btn btn-quiet" type="button" id="preview" aria-pressed="false">Vista previa</button>
+    <button class="btn" type="submit" id="print">Imprimir</button>
+  </form>
+</header>
+
+<p class="preview-note" id="preview-note" hidden>
+  Así sale en papel: A4 horizontal, con una franja de 14 mm arriba para encuadernar.
+  En el diálogo de impresión deja los márgenes en «Predeterminado» o «Ninguno».
+  <span class="duplex-only">Doble cara: voltear por el borde largo.</span>
+</p>
+
+<main id="screen">
+  <section id="chuleta" class="part" aria-labelledby="chuleta-title"></section>
+  <section id="simbolos" class="part" aria-labelledby="simbolos-title"></section>
+  <p class="no-match" id="no-match" hidden>Nada coincide con la búsqueda.</p>
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<div id="print-root" aria-hidden="true"></div>
+
+<script src="data.js"></script>
+<script src="assets/chuleta.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<definition version="0.100.0" type="element" link_type="simple" width="40" height="50" hotspot_x="20" hotspot_y="20">
+    <!-- EN 60617 02-15-03 (IEC 60617 S00203) Protective earth: the earth symbol inside a circle.
+         The QElectroTech element draws the circle as a zero-angle arc (so it does not show) and leaves a stray dot;
+         this is the same earth drawing with the circle. -->
+    <description>
+        <line x1="0" y1="-15" x2="0" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="-10" y1="0" x2="10" y2="0" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="-7" y1="5" x2="7" y2="5" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="-4" y1="10" x2="4" y2="10" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <ellipse x="-14" y="-10" width="28" height="28" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+    </description>
+</definition>
