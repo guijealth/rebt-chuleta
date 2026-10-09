@@ -1356,7 +1356,7 @@
   },
   {
    "title": "Cuadro de mando y protección",
-   "ref": "ITC-BT-17 · ITC-BT-25 2.1",
+   "ref": "ITC-BT-17 · ITC-BT-25",
    "rows": [
     [
      "Situación",
@@ -1377,7 +1377,31 @@
      "Mínimo",
      "IGA + diferencial + PIA por circuito (+ sobretensiones si hace falta)",
      "BT-25 2.1"
+    ],
+    [
+     "Elevada si",
+     "más de un circuito de un tipo · calefacción eléctrica · aire acondicionado · automatización · recarga de VE en vivienda unifamiliar · > 160 m²",
+     "BT-25 2.3.2"
+    ],
+    [
+     "IGA por grado",
+     "básica ≥ 25 A (5 750 W) · elevada ≥ 40 A (9 200 W)",
+     "Guía BT-10"
+    ],
+    [
+     "Diferenciales",
+     "≥ 1 por cada 5 circuitos, en las dos electrificaciones · C13: diferencial exclusivo (ITC-BT-52)",
+     "BT-25 2.3.2"
+    ],
+    [
+     "Orden",
+     "ICP (precintado) → IGA → protector de sobretensiones, si hace falta → diferenciales → PIA de cada circuito",
+     "BT-17 1.2"
     ]
+   ],
+   "visuals": [
+    "cuadro-basica",
+    "cuadro-elevada"
    ]
   },
   {
