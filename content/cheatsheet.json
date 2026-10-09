@@ -1682,7 +1682,7 @@
   },
   {
    "title": "Baños y duchas",
-   "ref": "ITC-BT-27 2.1",
+   "ref": "ITC-BT-27",
    "rows": [
     [
      "Volúmenes",
@@ -1703,7 +1703,40 @@
      "Volúmenes 2 y 3",
      "0,6 m y 2,4 m más allá del anterior",
      "BT-27 2.1.3-4"
+    ],
+    [
+     "Ducha sin plato",
+     "volúmenes 0 y 1: radio de 1,2 m desde la toma de agua (difusor móvil) o de 0,6 m alrededor del difusor fijo · el 0, hasta 0,05 m del suelo",
+     "BT-27 2.1.1"
+    ],
+    [
+     "Por encima de 2,25 m",
+     "hasta el techo o 3 m: sobre el volumen 1 es volumen 2; sobre el 2, volumen 3",
+     "BT-27 2.1.3-4"
+    ],
+    [
+     "Mamparas y falsos techos",
+     "no separan volúmenes",
+     "BT-27 2.1"
+    ],
+    [
+     "Grado IP",
+     "0: IPX7 · 1 y 2: IPX4 (IPX2 por encima de un difusor fijo) · IPX5 donde haya chorros de limpieza, en baños comunes",
+     "BT-27 2.3"
+    ],
+    [
+     "Mecanismos",
+     "0: ninguno · 1: solo interruptores de MBTS ≤ 12 V ca o 30 V cc, con la fuente fuera de 0, 1 y 2 · 2: además bases de MBTS y de afeitadora · 3: bases con trafo de aislamiento, MBTS o diferencial ≤ 30 mA",
+     "BT-27 2.3"
+    ],
+    [
+     "Conexión equipotencial",
+     "une al conductor de protección las masas de clase I de los volúmenes 1, 2 y 3 y las tuberías y partes metálicas de 0 a 3",
+     "BT-27 2.2"
     ]
+   ],
+   "visuals": [
+    "banos"
    ]
   },
   {

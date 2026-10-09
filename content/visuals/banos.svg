@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bathroom zones (ITC-BT-27 2.1) in a side view of a bath against a wall, to scale for the distances the REBT
+     gives (0,6 m, 2,4 m, 2,25 m, 3 m; 50 units per metre; the bath itself is schematic), and what Table 1 of
+     ITC-BT-27 2.3 allows in each zone. Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 436" role="img" aria-label="Volúmenes 0, 1, 2 y 3 de un baño con sus medidas, y qué se permite en cada uno">
+  <text class="v-title" x="10" y="12">Volúmenes de un baño (alzado)</text>
+  <!-- above 2,25 m, up to the ceiling or 3 m -->
+  <rect class="v-ok" x="20" y="26" width="90" height="37.5" opacity="0.55"/>
+  <rect class="v-card" x="110" y="26" width="30.0" height="37.5" stroke-dasharray="3 2"/>
+  <text class="v-key" x="65.0" y="48.75" text-anchor="middle" font-size="11">2</text>
+  <text class="v-key" x="125.0" y="48.75" text-anchor="middle" font-size="11">3</text>
+  <!-- zones up to 2,25 m -->
+  <rect class="v-acc-soft" x="20" y="63.5" width="90" height="85.0"/>
+  <rect class="v-ok" x="110" y="63.5" width="30.0" height="112.5"/>
+  <rect class="v-card" x="140.0" y="63.5" width="120.0" height="112.5" stroke-dasharray="3 2"/>
+  <!-- the bath: inside is zone 0 -->
+  <path class="v-line" stroke-width="1.6" d="M20 148.5H110V176"/>
+  <rect class="v-acc" x="24" y="152.5" width="78" height="19.5" rx="6"/>
+  <text class="v-on-acc" x="63.0" y="167.25" text-anchor="middle" font-size="13">0</text>
+  <text class="v-key" x="65.0" y="111.0" text-anchor="middle" font-size="15">1</text>
+  <text class="v-key" x="125.0" y="124.75" text-anchor="middle" font-size="15">2</text>
+  <text class="v-key" x="200.0" y="124.75" text-anchor="middle" font-size="15">3</text>
+  <!-- wall, floor, heights -->
+  <path class="v-line" stroke-width="2" d="M20 20V176H270.0"/>
+  <path class="v-dash" d="M20 63.5H300.0M20 26H300.0"/>
+  <g font-size="9">
+    <text x="302.0" y="66.5">2,25 m</text>
+    <text x="302.0" y="29">3 m</text>
+    <text class="v-soft" x="302.0" y="41" font-size="8">o techo</text>
+  </g>
+  <path class="v-line" d="M292.0 63.5V176M288.0 63.5H296.0M288.0 176H296.0"/>
+  <!-- horizontal distances -->
+  <path class="v-line" d="M110 188H140.0M140.0 188H260.0M110 184V192M140.0 184V192M260.0 184V192"/>
+  <g text-anchor="middle" font-size="9" class="v-key">
+    <text x="125.0" y="202">0,6 m</text><text x="200.0" y="202">2,4 m</text>
+  </g>
+  <text class="v-soft" x="65.0" y="202" text-anchor="middle" font-size="8.5">bañera</text>
+  <text class="v-soft" x="350" y="202" text-anchor="end" font-size="8">mamparas: no separan</text>
+  <path class="v-rule" d="M0 214H360"/>
+  <!-- shower without a tray: zone 0 is the floor up to 0,05 m (not to scale) -->
+  <text class="v-title" x="10" y="228">Ducha sin plato (no a escala)</text>
+  <rect class="v-acc-soft" x="20" y="238" width="120" height="44"/>
+  <rect class="v-acc" x="20" y="282" width="120" height="8"/>
+  <path class="v-line" stroke-width="2" d="M20 236V290H180"/>
+  <path class="v-line" d="M20 248H32M32 244V252"/>
+  <text class="v-soft" x="36" y="251" font-size="8">toma de agua</text>
+  <text class="v-key" x="80" y="266" text-anchor="middle" font-size="13">1</text>
+  <text class="v-on-acc" x="80" y="289" text-anchor="middle" font-size="7.5">0</text>
+  <path class="v-line" d="M146 282V290M142 282H150M142 290H150"/>
+  <text class="v-key" x="154" y="290" font-size="9">0,05 m</text>
+  <path class="v-line" d="M20 298H140M20 294V302M140 294V302"/>
+    <g font-size="9">
+    <text class="v-key" x="200" y="246">Radio de los volúmenes 0 y 1:</text>
+    <text x="200" y="260">1,2 m desde la toma de agua,</text>
+    <text x="200" y="272">si el difusor es móvil</text>
+    <text x="200" y="286">0,6 m alrededor del difusor,</text>
+    <text x="200" y="298">si es fijo</text>
+  </g>
+  <text class="v-soft" x="80" y="310" text-anchor="middle" font-size="8">radio</text>
+  <path class="v-rule" d="M0 316H360"/>
+  <!-- what each zone allows (ITC-BT-27, table 1) -->
+  <g font-size="8.5">
+    <text class="v-soft" x="10" y="328">Vol.</text><text class="v-soft" x="38" y="328">IP</text>
+    <text class="v-soft" x="98" y="328">Mecanismos y aparatos</text>
+    <text class="v-key" x="14" y="344">0</text><text class="v-key" x="38" y="344">IPX7</text>
+    <text x="98" y="344">ningún mecanismo · solo aparatos hechos para el volumen 0</text>
+    <text class="v-key" x="14" y="360">1</text><text class="v-key" x="38" y="360">IPX4</text>
+    <text x="98" y="360">solo interruptores de MBTS ≤ 12 V ca / 30 V cc · calentador,</text>
+    <text x="98" y="371">bomba de ducha, hidromasaje: con diferencial ≤ 30 mA</text>
+    <text class="v-key" x="14" y="387">2</text><text class="v-key" x="38" y="387">IPX4</text>
+    <text x="98" y="387">además bases de MBTS y de afeitadora · luminarias,</text>
+    <text x="98" y="398">ventiladores, calefactores: con diferencial ≤ 30 mA</text>
+    <text class="v-key" x="14" y="414">3</text><text class="v-key" x="38" y="414">—</text>
+    <text x="98" y="414">bases y aparatos con trafo de aislamiento, MBTS o diferencial ≤ 30 mA</text>
+  </g>
+  <text class="v-soft" x="10" y="431" font-size="8">IPX5 con chorros de limpieza (baños comunes) · fuente de la MBTS fuera de 0, 1 y 2</text>
+</svg>
