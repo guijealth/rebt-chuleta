@@ -1,0 +1,297 @@
+{
+ "_doc": "Mediciones: the fourth part of the page, the measuring instruments and the verification tests. Same format as cheatsheet.json: rows [what, value, ref], optional table {head, rows}, optional \"visuals\": names of our SVGs in content/visuals/. See README.md.",
+ "title": "Mediciones",
+ "subtitle": "Los aparatos de medida que exige el REBT y cómo se hace cada verificación, sin tensión y con tensión, según la ITC-BT-03, la Guía anexo 4 y la guía del INSST",
+ "sections": [
+  {
+   "title": "Los aparatos que exige el REBT",
+   "ref": "ITC-BT-03 · Guía anexo 4",
+   "visuals": [
+    "medidas"
+   ],
+   "rows": [
+    [
+     "Exigidos (categoría básica)",
+     "telurómetro · medidor de aislamiento · multímetro o tenaza · medidor de fugas · detector de tensión · analizador de potencia y energía · comprobador de diferenciales · verificador de continuidad · medidor de impedancia de bucle · luxómetro",
+     "BT-03"
+    ],
+    [
+     "Multímetro o tenaza",
+     "tensión alterna y continua hasta 500 V · intensidad alterna y continua hasta 20 A · resistencia",
+     "BT-03"
+    ],
+    [
+     "Medidor de fugas",
+     "resolución de 1 mA o mejor",
+     "BT-03"
+    ],
+    [
+     "Analizador",
+     "trifásico, con registro: potencia activa, tensión, intensidad y factor de potencia",
+     "BT-03"
+    ],
+    [
+     "Comprobador de diferenciales",
+     "que verifique la característica intensidad-tiempo",
+     "BT-03"
+    ],
+    [
+     "Medidor de bucle",
+     "resolución de 0,1 Ω o mejor, compensando los cables de prueba",
+     "BT-03"
+    ],
+    [
+     "Luxómetro",
+     "con rango para el alumbrado de emergencia",
+     "BT-03"
+    ],
+    [
+     "Especialista, además",
+     "analizador de redes y armónicos · electrodos para el aislamiento de suelos · comprobador del vigilante de aislamiento de quirófanos",
+     "BT-03"
+    ],
+    [
+     "Orden",
+     "1º verificación por examen, sin medidas · 2º medidas y ensayos",
+     "Guía anexo 4"
+    ],
+    [
+     "Sin tensión",
+     "continuidad, aislamiento, resistencia de tierra (electrodo desconectado), rigidez dieléctrica",
+     "Guía anexo 4"
+    ],
+    [
+     "Con tensión",
+     "corrientes de fuga, impedancia de bucle, tensión de contacto, disparo de diferenciales, secuencia de fases",
+     "Guía anexo 4"
+    ],
+    [
+     "Calibración",
+     "los equipos básicos deberían ser del propio instalador, en buen estado y calibrados",
+     "Guía BT-03"
+    ]
+   ]
+  },
+  {
+   "title": "Telurómetro (resistencia de tierra)",
+   "ref": "ITC-BT-18 · Guía anexo 4",
+   "visuals": [
+    "telurometro"
+   ],
+   "rows": [
+    [
+     "Qué mide",
+     "la resistencia de la toma de tierra RE: inyecta una corriente alterna conocida (más de 50 Hz) y mide la caída de tensión: RE = U / I",
+     "Guía anexo 4"
+    ],
+    [
+     "Conexión",
+     "3 terminales: la corriente entre E y H, la tensión entre S y ES · las dos picas auxiliares (≈ 30 cm) vienen con el aparato",
+     "Guía anexo 4"
+    ],
+    [
+     "Colocación",
+     "los tres electrodos en línea recta · S a 20 m o más del electrodo y de H · los cables no se cruzan",
+     "Guía anexo 4"
+    ],
+    [
+     "Antes de medir",
+     "desconectar el electrodo de los conductores de tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "Lectura buena",
+     "si al mover S un par de metros a cada lado el valor no cambia",
+     "Guía anexo 4"
+    ],
+    [
+     "Cuándo",
+     "al dar de alta la instalación · al menos una vez al año, en la época más seca",
+     "BT-18 12"
+    ],
+    [
+     "Cada 5 años",
+     "si el terreno no favorece la conservación de los electrodos, descubrirlos y examinarlos",
+     "BT-18 12"
+    ],
+    [
+     "Qué valor",
+     "el que cumpla RA × Ia ≤ U (50 V; 24 V en ciertos casos): ver «Puesta a tierra» en la chuleta",
+     "BT-24 4.1.2"
+    ]
+   ]
+  },
+  {
+   "title": "Medidor de aislamiento (megóhmetro)",
+   "ref": "ITC-BT-19 · Guía anexo 4",
+   "visuals": [
+    "aislamiento"
+   ],
+   "rows": [
+    [
+     "Qué mide",
+     "la resistencia de aislamiento, con la tensión continua que genera el propio aparato (1 mA con la resistencia mínima)",
+     "BT-19 2.9"
+    ],
+    [
+     "Valores",
+     "MBTS y MBTP: 250 V → ≥ 0,25 MΩ · hasta 500 V: 500 V → ≥ 0,5 MΩ · más de 500 V: 1000 V → ≥ 1 MΩ",
+     "BT-19 2.9"
+    ],
+    [
+     "Longitud",
+     "valores para 100 m de canalización; si es más larga, por tramos de ≈ 100 m, o el mínimo dividido por los hectómetros",
+     "BT-19 2.9"
+    ],
+    [
+     "Sin tensión",
+     "circuito desconectado de su alimentación: con tensión se puede averiar el aparato",
+     "Guía anexo 4"
+    ],
+    [
+     "1ª medida: a tierra",
+     "fases y neutro unidos entre sí frente a tierra · receptores conectados y en «paro» · positivo a tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "2ª medida: entre conductores",
+     "receptores desconectados · cada pareja de conductores, neutro incluido",
+     "Guía anexo 4"
+    ],
+    [
+     "Electrónica",
+     "en circuitos con dispositivos electrónicos, fase y neutro unidos durante la medida",
+     "Guía anexo 4"
+    ],
+    [
+     "Redes TN",
+     "quitar las uniones de las masas al neutro durante la medida y reponerlas después",
+     "Guía anexo 4"
+    ],
+    [
+     "Si sale bajo",
+     "vale si cada receptor cumple su norma (o 0,5 MΩ) y la instalación sin receptores cumple la tabla",
+     "Guía anexo 4"
+    ],
+    [
+     "Suelos y paredes",
+     "aislantes: ≥ 50 kΩ (hasta 500 V) · ≥ 100 kΩ (más de 500 V) · 3 medidas por superficie · electrodo de placa de 250 mm con 750 N (suelo) o 250 N (pared)",
+     "Guía anexo 4"
+    ],
+    [
+     "Rigidez dieléctrica",
+     "sin receptores: 2U + 1 000 V (mínimo 1 500 V) a 50 Hz durante 1 min · fuga menor que la sensibilidad de los diferenciales · nunca en locales con riesgo de incendio o explosión",
+     "Guía anexo 4"
+    ]
+   ]
+  },
+  {
+   "title": "Pinza de fugas, multímetro y detector de tensión",
+   "ref": "Guía anexo 4 · INSST",
+   "visuals": [
+    "pinza"
+   ],
+   "rows": [
+    [
+     "Pinza de fugas",
+     "abraza los conductores activos (fases y neutro) y mide su suma vectorial: si no es cero, hay fuga a tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "Sensibilidad",
+     "1 mA como mínimo · suelen llevar filtro para medir a 50 Hz o en alta frecuencia",
+     "Guía anexo 4"
+    ],
+    [
+     "Valor admisible",
+     "fugas por debajo de la mitad de la sensibilidad (IΔn/2) de su diferencial, con los receptores conectados",
+     "Guía anexo 4"
+    ],
+    [
+     "Fuga no es defecto",
+     "todo receptor fuga algo (filtros con condensadores a tierra, balastos electrónicos); el defecto es un fallo de aislamiento",
+     "Guía anexo 4"
+    ],
+    [
+     "Multímetro o tenaza",
+     "tensión alterna y continua hasta 500 V · intensidad alterna y continua hasta 20 A · resistencia",
+     "BT-03"
+    ],
+    [
+     "Detector de tensión",
+     "verifica la ausencia de tensión en cada fase y en el neutro (y se recomienda en las masas), lo más cerca posible de la zona de trabajo",
+     "INSST"
+    ],
+    [
+     "Comprobar el detector",
+     "antes y después de usarlo: obligatorio en alta tensión, recomendable en baja · revisar su tensión nominal, puntas y pilas",
+     "INSST"
+    ],
+    [
+     "Norma del detector",
+     "por ejemplo, UNE-EN 61243-3 (bipolar, baja tensión)",
+     "INSST"
+    ]
+   ]
+  },
+  {
+   "title": "Comprobador de bucle y de diferenciales",
+   "ref": "Guía anexo 4 · ITC-BT-24",
+   "visuals": [
+    "comprobador"
+   ],
+   "rows": [
+    [
+     "Continuidad",
+     "de protección y equipotenciales: ohmímetro con ≈ 200 mA en continua y 4–24 V, cambiando la polaridad · sin tensión · descontar los cables de prueba",
+     "Guía anexo 4"
+    ],
+    [
+     "Quirófanos",
+     "≤ 0,2 Ω del embarrado a masas y tomas · ≤ 0,1 Ω de las partes metálicas al embarrado equipotencial",
+     "Guía anexo 4"
+    ],
+    [
+     "Impedancia de bucle",
+     "Zs: de la fuente por la fase hasta el defecto y vuelta por el conductor de protección · con tensión · descontar los cables",
+     "Guía anexo 4"
+    ],
+    [
+     "Cómo la mide",
+     "carga el circuito unos milisegundos con una resistencia calibrada y compara la tensión antes y durante",
+     "Guía anexo 4"
+    ],
+    [
+     "Para qué",
+     "Icc = U0 / Zs debe ser ≥ Ia, la corriente que hace actuar la protección en el tiempo exigido (TN, 230 V: 0,4 s)",
+     "Guía anexo 4"
+    ],
+    [
+     "Puentear el diferencial",
+     "al medir el bucle, puentear provisionalmente los diferenciales aguas arriba",
+     "Guía anexo 4"
+    ],
+    [
+     "Tensión de contacto",
+     "el aparato calcula Uc = Zs × IΔn; como Zs es mayor que RA, sale mayor que la real: del lado de la seguridad",
+     "Guía anexo 4"
+    ],
+    [
+     "Ensayo del diferencial",
+     "desde una base aguas abajo, en servicio: ½ IΔn no dispara · IΔn < 200 ms · 2 IΔn < 150 ms · 5 IΔn < 40 ms, a 0° y a 180°",
+     "Guía anexo 4"
+    ],
+    [
+     "Tipo S y especiales",
+     "otros límites; para algunos hay que inyectar alterna de media onda o continua",
+     "Guía anexo 4"
+    ],
+    [
+     "Secuencia de fases",
+     "con equipo específico o multifunción: que sea directa antes de conectar motores trifásicos",
+     "Guía anexo 4"
+    ]
+   ]
+  }
+ ]
+}

@@ -36,7 +36,7 @@ SRC = ROOT / "sources"
 MANIFEST = SRC / "sources.json"
 INDEX = SRC / "index"
 PAGES = INDEX / "pages.json"
-SHEETS = [ROOT / "content" / f for f in ("cheatsheet.json", "materials.json", "devices.json")]
+SHEETS = [ROOT / "content" / f for f in ("cheatsheet.json", "materials.json", "devices.json", "measurements.json")]
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
 
 
@@ -132,7 +132,7 @@ OTHER_DOCS = {"INSST": "INSST-RIESGO-ELECTRICO", "NTP 391": "INSST-NTP-391", "RD
 
 
 def check_refs(sections, docs):
-    """Each row ref of the chuleta, the materials and the devices ("BT-19 2.2.4 · BT-15 3", "art. 4", "Guía anexo 2", "INSST") must point to a real place."""
+    """Each row ref of the chuleta, materials, devices and measurements ("BT-19 2.2.4 · BT-15 3", "art. 4", "Guía anexo 2", "INSST") must point to a real place."""
     ids = {s["id"] for s in sections}
     bad = []
     for sec in (s for f in SHEETS for s in json.loads(f.read_text(encoding="utf-8"))["sections"]):

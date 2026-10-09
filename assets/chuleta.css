@@ -150,6 +150,11 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .foot { padding: 16px 24px 32px; max-width: 1480px; margin: 0 auto; font-size: 0.8125rem; color: var(--ink-soft); border-top: 1px solid var(--rule); }
 .foot p { margin: 0 0 4px; }
 
+/* medium widths: the search box takes its own row, so the links and the print button stay on one line */
+@media (max-width: 960px) {
+  .search { order: 5; flex-basis: 100%; max-width: none; }
+}
+
 /* phones: the screen view only; the printed pages keep their A4 layout */
 @media (max-width: 720px) {
   .bar { padding: 10px 16px; position: static; }

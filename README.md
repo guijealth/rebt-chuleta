@@ -1,10 +1,11 @@
 # Chuleta REBT
 
-One page with four parts, each ready to print: the **chuleta** (acronyms, letters and the key figures of every
+One page with five parts, each ready to print: the **chuleta** (acronyms, letters and the key figures of every
 chapter of the Spanish low-voltage regulation, REBT, each tagged with its ITC-BT section), the **materials**
 (materiales: cables, tubes, trunking, boxes, enclosures, sockets: how their codes are read), the **devices**
-(dispositivos: fuses, ICP, IGA, differential, PIA… and measuring instruments), and the **UNE-EN 60617 graphical
-symbols** a low-voltage electrician needs. Materials and devices come one section each, with a drawing.
+(dispositivos: fuses, ICP, IGA, surge protector, differential, PIA, emergency lights), the **measurements**
+(mediciones: the instruments the REBT requires and how each verification is done), and the **UNE-EN 60617 graphical
+symbols** a low-voltage electrician needs. Materials, devices and measurements come one section each, with a drawing.
 
 Published at <https://guijealth.github.io/rebt-chuleta/>.
 
@@ -13,14 +14,14 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Use
 
-- **Read:** the page shows the four parts in that order. The search box (or the `/` key) filters them all: rows, table
+- **Read:** the page shows the five parts in that order. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
 - **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Materiales**,
-  **Dispositivos**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
+  **Dispositivos**, **Mediciones**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
   or **Vista previa** to see the pages on screen (**Volver** in the bar returns). The browser's own Print
   (Ctrl/Cmd+P) gives the same result.
   - A4 landscape, a 14 mm blank strip at the top for binding (dashed edge line, part and page number, date).
-  - The chuleta, materials and devices fill three columns. To save paper, when a section doesn't fit in what is left of a
+  - The chuleta, materials, devices and measurements fill three columns. To save paper, when a section doesn't fit in what is left of a
     column, the biggest later section that fits is placed there (the order changes only to fill gaps); otherwise the
     section is split between rows and continues in the next column with "(cont.)", and a section whose drawing doesn't
     fit may start with its rows and continue with the drawing. The symbols flow down the page as tile grids, split
@@ -31,7 +32,7 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Edit the content
 
-Everything shown comes from four JSON files in `content/`. Edit them (on GitHub's web editor is fine): every push to
+Everything shown comes from five JSON files in `content/`. Edit them (on GitHub's web editor is fine): every push to
 `main` rebuilds and republishes the page.
 
 ### `content/cheatsheet.json` — the chuleta
@@ -74,6 +75,11 @@ sockets and plugs), with a drawing where a code has to be read. Cables, tubes, b
 Same format as the chuleta: one section per device (`"PIA: interruptor automático (magnetotérmico)"`,
 `"Diferencial: ID y AD"`…), usually with a drawing in `"visuals"`. A device or a piece of equipment goes here, not in
 the chuleta. The drawings show what the device's data mean; they never claim how a standard says it is printed.
+
+### `content/measurements.json` — the measurements
+
+Same format: one section per instrument or test (earth tester, insulation tester, leakage clamp and voltage detector,
+loop and RCD tester), plus the instruments ITC-BT-03 requires. Measuring and verification go here, not in devices.
 
 ### `content/symbols.json` — the symbols
 
@@ -127,7 +133,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 |---|---|
 | `index.html`, `assets/chuleta.css`, `assets/chuleta.js` | The page: screen view, search, print layout and controls |
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
-| `content/cheatsheet.json`, `content/materials.json`, `content/devices.json`, `content/symbols.json` | The content, in page order |
+| `content/cheatsheet.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
 | `content/elements/fixed/` | Our corrections of faulty elements |

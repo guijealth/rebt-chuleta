@@ -1,4 +1,4 @@
-/* Chuleta REBT — one page in four parts (chuleta, materiales, dispositivos, símbolos), ready to print.
+/* Chuleta REBT — one page in five parts (chuleta, materiales, dispositivos, mediciones, símbolos), ready to print.
    Content comes from data.js (built by tools/build.py from content/*.json).
    Printing: the pages are laid out ahead of time in #print-root (A4 landscape, 14 mm binding strip),
    hidden on screen and the only thing printed, so the browser's own Print (Ctrl+P) gives the same result. */
@@ -33,6 +33,7 @@
     { id: 'chuleta', label: 'Chuleta', data: data.cheatsheet, kind: 'sheet', ref: 'REBT · ITC-BT' },
     { id: 'materiales', label: 'Materiales', data: data.materials, kind: 'sheet', ref: 'REBT · Guías técnicas' },
     { id: 'dispositivos', label: 'Dispositivos', data: data.devices, kind: 'sheet', ref: 'REBT · Guías técnicas' },
+    { id: 'mediciones', label: 'Mediciones', data: data.measurements, kind: 'sheet', ref: 'REBT · Guía anexo 4' },
     { id: 'simbolos', label: 'Símbolos', data: data.symbols, kind: 'symbols', ref: 'UNE-EN 60617' },
   ].filter((p) => p.data);
   const syms = data.symbols;
@@ -134,7 +135,7 @@
   }
 
   const label = (pages, part) => pages.forEach((p, i) => {
-    p.label.textContent = `Chuleta REBT · ${part.label.toLowerCase()}${pages.length > 1 ? ` ${i + 1} de ${pages.length}` : ''} · ${builtDate}`;
+    p.label.textContent = `REBT · ${part.label.toLowerCase()}${pages.length > 1 ? ` ${i + 1} de ${pages.length}` : ''} · ${builtDate}`;
   });
 
   // Sheets: sections fill three columns, column by column and page by page. To waste as little paper as possible:
