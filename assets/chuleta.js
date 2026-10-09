@@ -289,7 +289,7 @@
     const pages = counts.reduce((a, [, n]) => a + n, 0);
     const sheets = duplex.checked ? Math.ceil(pages / 2) : pages;
     $('#print-est').textContent = pages ? `${pages} págs. → ${sheets} ${sheets === 1 ? 'hoja' : 'hojas'} A4` : 'Marca qué imprimir';
-    $('#print-est').title = counts.map(([part, n]) => `${n} de ${part.label.toLowerCase()}`).join(' + ');  // on hover
+    $('#print-parts').textContent = counts.map(([part, n]) => `${n} de ${part.label.toLowerCase()}`).join(' + ');
     $('#print').disabled = !pages;
     document.body.classList.toggle('duplex', duplex.checked);
   }
@@ -297,7 +297,7 @@
   function setPreview(on) {
     document.body.classList.toggle('preview', on);
     $('#preview').setAttribute('aria-pressed', on);
-    $('#preview').textContent = on ? 'Volver' : 'Vista previa';
+    $('#preview-back').hidden = !on;
     $('#preview-note').hidden = !on;
     $('#print-root').setAttribute('aria-hidden', !on);
     window.scrollTo(0, 0);
@@ -312,12 +312,18 @@
       if (e.key === 'Escape' && e.target === q && q.value) { q.value = ''; search(''); }
       if (e.key === 'Escape' && document.body.classList.contains('preview')) setPreview(false);
     });
+    const dialog = $('#print-dialog');
+    $('#print-open').addEventListener('click', () => { layout(); dialog.showModal(); });
+    $('#print-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });  // click on the backdrop
     form.addEventListener('change', () => document.fonts.ready.then(layout));
-    form.addEventListener('submit', (e) => { e.preventDefault(); layout(); window.print(); });
-    $('#preview').addEventListener('click', () => { layout(); setPreview(!document.body.classList.contains('preview')); });
+    form.addEventListener('submit', (e) => { e.preventDefault(); layout(); dialog.close(); window.print(); });
+    $('#preview').addEventListener('click', () => { layout(); dialog.close(); setPreview(true); });
+    $('#preview-back').addEventListener('click', () => setPreview(false));
     window.addEventListener('beforeprint', layout);  // Ctrl+P before the fonts arrived: lay out with what there is
     // measure with the real fonts
-    await Promise.allSettled(['400 16px Barlow', '600 16px Barlow', '600 16px "Barlow Condensed"', '700 16px "Barlow Condensed"']
+    await Promise.allSettled(['400 16px Barlow', '500 16px Barlow', '600 16px Barlow', '500 16px "Barlow Condensed"',
+      '600 16px "Barlow Condensed"', '700 16px "Barlow Condensed"']
       .map((f) => document.fonts.load(f)));
     await document.fonts.ready;
     laidOut = null;

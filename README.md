@@ -15,9 +15,10 @@ This is a study summary, not an official document: the text that counts is the
 
 - **Read:** the page shows the four parts in that order. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
-- **Print:** tick what to print (**Chuleta**, **Materiales**, **Dispositivos**, **Símbolos**, **Doble cara**) and press **Imprimir**, or use the browser's
-  own Print (Ctrl/Cmd+P) for the same result. The bar shows how many pages and sheets that is. **Vista previa** shows
-  the pages on screen.
+- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Materiales**,
+  **Dispositivos**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
+  or **Vista previa** to see the pages on screen (**Volver** in the bar returns). The browser's own Print
+  (Ctrl/Cmd+P) gives the same result.
   - A4 landscape, a 14 mm blank strip at the top for binding (dashed edge line, part and page number, date).
   - The chuleta, materials and devices fill three columns. To save paper, when a section doesn't fit in what is left of a
     column, the biggest later section that fits is placed there (the order changes only to fill gaps); otherwise the
@@ -125,6 +126,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | Path | What |
 |---|---|
 | `index.html`, `assets/chuleta.css`, `assets/chuleta.js` | The page: screen view, search, print layout and controls |
+| `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
 | `content/cheatsheet.json`, `content/materials.json`, `content/devices.json`, `content/symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
@@ -146,4 +148,5 @@ summary, the symbols and the freely redistributable official sources are publish
 - Symbol drawings: the EN 60617 element collection of [QElectroTech](https://qelectrotech.org/), licensed
   [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) (see `content/elements/qet/ELEMENTS.LICENSE`).
 - Source documents: see `sources/README.md` for each publisher's terms and the attribution it asks for.
-- Fonts: Barlow and Barlow Condensed (SIL Open Font License), from Google Fonts.
+- Fonts: Barlow and Barlow Condensed by the Barlow Project Authors, SIL Open Font License 1.1, served from this site
+  (`assets/fonts/`, licence in `assets/fonts/OFL.txt`), so the page and its print layout work offline.

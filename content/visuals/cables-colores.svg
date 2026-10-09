@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Conductor colours (ITC-BT-19 2.2.4 and Guía BT-19), the red control wire (ITC-BT-15 3, Guía BT-16) and how
+     uncoloured 0,6/1 kV conductors are identified (Guía BT-19). The sheath is drawn neutral grey on purpose: no source
+     here gives a sheath colour per designation. Our own drawing; the colours are the real ones, not theme colours. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 212" role="img" aria-label="Colores de los conductores en cables monofásicos y trifásicos, hilo de mando rojo y cables sin colores">
+  <defs><pattern id="ccol-pe" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="3" height="6" fill="#e4c21b"/><rect x="3" width="3" height="6" fill="#2f8f46"/></pattern></defs>
+  <text class="v-title" x="10" y="14">Colores de los conductores</text>
+  <circle class="v-body" cx="44" cy="56" r="22" style="fill:#c7ccd2;stroke:var(--ink)"/><circle cx="44.0" cy="46.0" r="9" fill="#7b4b2a" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="52.7" cy="61.0" r="9" fill="#3d7ad6" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="35.3" cy="61.0" r="9" fill="url(#ccol-pe)" style="stroke:var(--ink);stroke-width:0.8"/>
+  <text class="v-key" x="80" y="44">Monofásico</text>
+  <text x="80" y="57" font-size="9">fase: marrón o negro</text>
+  <text x="80" y="69" font-size="9">neutro azul · protección verde-amarillo</text>
+  <circle class="v-body" cx="44" cy="124" r="26" style="fill:#c7ccd2;stroke:var(--ink)"/><circle cx="44.0" cy="109.0" r="8" fill="#7b4b2a" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="58.3" cy="119.4" r="8" fill="#1d1d1d" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="52.8" cy="136.1" r="8" fill="#8a929a" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="35.2" cy="136.1" r="8" fill="#3d7ad6" style="stroke:var(--ink);stroke-width:0.8"/><circle cx="29.7" cy="119.4" r="8" fill="url(#ccol-pe)" style="stroke:var(--ink);stroke-width:0.8"/>
+  <text class="v-key" x="80" y="112">Trifásico</text>
+  <text x="80" y="125" font-size="9">fases: marrón, negro y gris, cada una distinta</text>
+  <text x="80" y="137" font-size="9">neutro azul · protección verde-amarillo</text>
+  <g font-size="8.5">
+    <circle cx="268.0" cy="32.0" r="5" fill="#7b4b2a" style="stroke:var(--ink);stroke-width:0.8"/><text x="278" y="35">marrón</text><circle cx="268.0" cy="47.0" r="5" fill="#1d1d1d" style="stroke:var(--ink);stroke-width:0.8"/><text x="278" y="50">negro</text><circle cx="268.0" cy="62.0" r="5" fill="#8a929a" style="stroke:var(--ink);stroke-width:0.8"/><text x="278" y="65">gris</text><circle cx="268.0" cy="77.0" r="5" fill="#3d7ad6" style="stroke:var(--ink);stroke-width:0.8"/><text x="278" y="80">azul claro</text><circle cx="268.0" cy="92.0" r="5" fill="url(#ccol-pe)" style="stroke:var(--ink);stroke-width:0.8"/><text x="278" y="95">verde-amarillo</text>
+  </g>
+  <path class="v-rule" d="M0 160H360"/>
+  <rect x="10" y="171" width="46" height="10" rx="5" fill="#c62828" style="stroke:var(--ink);stroke-width:0.8"/>
+  <text x="64" y="179" font-size="9"><tspan class="v-key">Hilo de mando</tspan>: rojo, 1,5 mm² (derivación individual)</text>
+  <rect x="10" y="190" width="46" height="10" rx="5" fill="#2a2a2a" style="stroke:var(--ink);stroke-width:0.8"/>
+  <rect class="v-card" x="38" y="187" width="12" height="16" rx="2"/><text x="44" y="198" text-anchor="middle" font-size="7" class="v-key">L1</text>
+  <text x="64" y="198" font-size="9"><tspan class="v-key">0,6/1 kV unipolar</tspan>: sin colores; etiqueta o argolla en cada extremo</text>
+</svg>

@@ -6,9 +6,7 @@
 <title>Chuleta REBT</title>
 <meta name="description" content="Chuleta del Reglamento Electrotécnico para Baja Tensión (REBT), materiales, dispositivos y símbolos UNE-EN 60617, lista para imprimir.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232e63a6'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/chuleta.css">
 </head>
 <body>
@@ -19,18 +17,30 @@
     <span class="visually-hidden">Buscar</span>
     <input type="search" id="q" placeholder="Buscar (tecla /)" autocomplete="off">
   </label>
-  <form class="print-box" id="print-form" aria-label="Imprimir">
-    <fieldset>
-      <legend class="visually-hidden">Qué imprimir</legend>
-      <span id="part-checks"></span>
-      <label class="check" title="Las páginas pares llevan la franja de encuadernar abajo: imprime a doble cara volteando por el borde largo">
-        <input type="checkbox" id="duplex"> Doble cara</label>
-    </fieldset>
-    <span class="print-est" id="print-est" aria-live="polite">Calculando páginas…</span>
-    <button class="btn btn-quiet" type="button" id="preview" aria-pressed="false">Vista previa</button>
-    <button class="btn" type="submit" id="print">Imprimir</button>
-  </form>
+  <button class="btn btn-quiet" type="button" id="preview-back" hidden>Volver</button>
+  <button class="btn" type="button" id="print-open" aria-haspopup="dialog">Imprimir…</button>
 </header>
+
+<dialog class="print-dialog" id="print-dialog" aria-labelledby="print-dialog-title">
+  <form class="print-panel" id="print-form">
+    <header class="print-head">
+      <h2 id="print-dialog-title">Imprimir</h2>
+      <button class="btn-close" type="button" id="print-close" aria-label="Cerrar">×</button>
+    </header>
+    <fieldset>
+      <legend>Qué imprimir</legend>
+      <span id="part-checks"></span>
+    </fieldset>
+    <label class="check duplex-opt"><input type="checkbox" id="duplex">
+      <span>Doble cara <small>(las páginas pares llevan la franja abajo: voltear por el borde largo)</small></span></label>
+    <p class="print-est" aria-live="polite"><strong id="print-est">Calculando páginas…</strong><br><span id="print-parts"></span></p>
+    <p class="print-hint">A4 horizontal, con una franja de 14 mm arriba para encuadernar. En el diálogo del navegador, márgenes «Predeterminado» o «Ninguno».</p>
+    <div class="print-actions">
+      <button class="btn btn-quiet" type="button" id="preview" aria-pressed="false">Vista previa</button>
+      <button class="btn" type="submit" id="print" autofocus>Imprimir</button>
+    </div>
+  </form>
+</dialog>
 
 <p class="preview-note" id="preview-note" hidden>
   Así sale en papel: A4 horizontal, con una franja de 14 mm arriba para encuadernar.

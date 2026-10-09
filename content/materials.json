@@ -152,7 +152,8 @@
    "title": "Cables: cómo se lee la designación",
    "ref": "UNE-EN 50525 · UNE 21123 · Guías",
    "visuals": [
-    "cables"
+    "cables",
+    "cables-colores"
    ],
    "rows": [
     [
@@ -194,6 +195,26 @@
      "Reacción al fuego",
      "clase mínima Cca-s1b,d1,a1 para los cables (AS) en garajes",
      "Guía BT-29"
+    ],
+    [
+     "Colores",
+     "fase: marrón o negro (trifásico: marrón, negro y gris, una distinta por fase) · neutro: azul claro · protección: verde-amarillo",
+     "BT-19 2.2.4"
+    ],
+    [
+     "Varios circuitos monofásicos",
+     "pueden distinguirse con negro, marrón o gris, si el proyecto o la memoria lo especifica",
+     "Guía BT-19"
+    ],
+    [
+     "Hilo de mando",
+     "rojo, de 1,5 mm² (derivación individual y centralización de contadores)",
+     "BT-15 3 · Guía BT-16"
+    ],
+    [
+     "0,6/1 kV unipolares",
+     "no llevan colores: identificar los conductores en cada extremo con señalizador, argolla o etiqueta",
+     "Guía BT-19"
     ],
     [
      "PVC",
