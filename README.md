@@ -108,6 +108,10 @@ or point), see the result as you type. Each calculator lists:
   `V ?? R * I` solves for whichever value is missing. `{"type": "check", "expr": …, "ok": …, "fail": …}` shows ✓ or ✗.
 - `constants` (standard sections, simultaneity coefficients) must equal the chuleta's own row and table: the build
   checks it. `example` fills the form (button «Ejemplo») and is what the tests run.
+- `about` + `about_ref`: two or three sentences on what the formula is for, shown under it. Write them in our own
+  words from the passage `about_ref` points to (checked like any ref). Basic electricity no official source explains
+  (Ohm, series/parallel, energy…) gets a general text with `"about_general": true` instead, shown as «explicación
+  general, no del REBT».
 
 ### `content/symbols.json` — the symbols
 

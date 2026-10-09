@@ -61,6 +61,9 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
   calculator. Test all of them: in a headless page, for each id in `window.chuletaCalc.CALCS`, `openCalc`, `fillCalc`
   with its example, `readCalc` + `runCalc`, and require finite numbers / booleans. The 🖩 glyph needs the 'Calc Glyph'
   font (system fonts lack U+1F5A9).
+- Calculator `about` texts come from an official passage (`about_ref`). For the basic-electricity formulas no source
+  explains, the user asked for general texts: `"about_general": true`, labelled «explicación general, no del REBT»
+  (2026-10-09). Keep that exception to textbook physics; REBT figures and rules always need a source.
 - `content/visuals/*.svg`: our own drawings for chuleta, material, device and measurement sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).

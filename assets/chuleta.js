@@ -59,9 +59,11 @@
     return c.textContent;
   };
 
-  // Rows are [what, value, ref]; a ref from the REBT itself (BT-xx, art.) is blue, other documents grey.
+  // A ref from the REBT itself (BT-xx, art.) is blue, other documents grey.
+  const kind = (r) => (!r ? null : /^(BT-|art\.)/.test(r) ? 'rebt' : 'official');
+
+  // Rows are [what, value, ref].
   function cheatSection(s, title = s.title) {
-    const kind = (r) => (!r ? null : /^(BT-|art\.)/.test(r) ? 'rebt' : 'official');
     return el('section', { class: 'cheat-sec' },
       el('h3', {}, title, el('span', { text: s.ref || '' })),
       (s.visuals || []).map((svg) => el('figure', { class: 'cheat-visual', html: svg })),
@@ -290,6 +292,10 @@
     put(calcDialog, el('div', { class: 'print-panel calc-panel' },
       el('header', { class: 'print-head' }, el('h2', { id: 'calc-title' }, el('span', { class: 'calc-glyph', 'aria-hidden': 'true' }, '\u{1F5A9} '), calc.title), close),
       el('div', { class: 'calc-tex', html: window.katex ? window.katex.renderToString(calc.tex, { throwOnError: false, displayMode: true }) : calc.tex }),
+      calc.about ? el('p', { class: 'calc-about' }, calc.about, ' ',
+        calc.about_general
+          ? el('span', { class: 'cheat-ref', 'data-kind': 'official', text: 'explicación general, no del REBT' })
+          : el('span', { class: 'cheat-ref', 'data-kind': kind(calc.about_ref), text: calc.about_ref })) : null,
       calc.note ? el('p', { class: 'calc-note', text: calc.note }) : null,
       form,
       el('section', { class: 'calc-result' }, el('h3', { text: 'Resultado' }), missing, out),

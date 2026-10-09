@@ -132,6 +132,8 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .calc-dialog { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); }
 .calc-tex { overflow-x: auto; padding: 4px 0; border-block: 1px solid var(--rule); }
 .calc-tex .katex-display { margin: 6px 0; }
+.calc-about { margin: 0; font-size: 0.9375rem; line-height: 1.45; }
+.calc-about .cheat-ref { white-space: nowrap; }
 .calc-note { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
 .calc-form { display: grid; gap: 10px; }
 .calc-field { display: grid; gap: 4px; font-size: 0.9375rem; }

@@ -112,6 +112,10 @@ def check_calculators(calcs, sheets, cheat):
         for k in c.get("example", {}):
             if k not in names:
                 errors.append(f"{where}: example sets {k!r}, which is not an input")
+        if c.get("about") and bool(c.get("about_ref")) == bool(c.get("about_general")):
+            errors.append(f"{where}: 'about' needs 'about_ref' or, for basic electricity, 'about_general': true")
+        if not c.get("about") and (c.get("about_ref") or c.get("about_general")):
+            errors.append(f"{where}: 'about_ref' / 'about_general' without 'about'")
         if not c.get("outputs") or any(not o.get("expr") for o in c["outputs"]):
             errors.append(f"{where}: every output needs an expr")
         for sec, key in c.get("rows", []):

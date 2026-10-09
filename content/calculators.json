@@ -1,5 +1,5 @@
 {
- "_doc": "Calculators: each one opens from a 🖩 button on the rows listed in 'rows' ([section title, row key], exact). Inputs: number (unit, default, optional), select (options label/value), list (several numbers of one variable), groups (rows of several fields). Outputs: {label, unit, expr, digits} or {type: check, label, expr, ok, fail}; expr is a JavaScript expression over the input ids and the helpers sum, max, min, sqrt, PI, nextSection (next standard section) and coefSim (ITC-BT-10 table 1). A blank optional input is null: use ?? to solve for the missing one. 'example' fills the form and is run by the tests. See README.md.",
+ "_doc": "Calculators: each one opens from a 🖩 button on the rows listed in 'rows' ([section title, row key], exact). Inputs: number (unit, default, optional), select (options label/value), list (several numbers of one variable), groups (rows of several fields). Outputs: {label, unit, expr, digits} or {type: check, label, expr, ok, fail}; expr is a JavaScript expression over the input ids and the helpers sum, max, min, sqrt, PI, nextSection (next standard section) and coefSim (ITC-BT-10 table 1). A blank optional input is null: use ?? to solve for the missing one. 'example' fills the form and is run by the tests. 'about' (with 'about_ref') is a short explanation written from an official source, shown under the formula; for basic electricity no source explains, write a general one and set 'about_general': true (shown as such, no ref). See README.md.",
  "constants": {
   "secciones": [
    1.5,
@@ -97,7 +97,9 @@
     "V": 230,
     "R": 52.9
    },
-   "note": "Rellena dos valores cualesquiera: se calcula el tercero."
+   "note": "Rellena dos valores cualesquiera: se calcula el tercero.",
+   "about": "La corriente que pasa por un conductor es proporcional a la tensión aplicada e inversamente proporcional a su resistencia: a doble tensión, doble corriente; a doble resistencia, la mitad.",
+   "about_general": true
   },
   {
    "id": "potencia_cc",
@@ -141,7 +143,9 @@
     "V": 230,
     "I": 10
    },
-   "note": "Rellena dos valores cualesquiera."
+   "note": "Rellena dos valores cualesquiera.",
+   "about": "En continua, o con cargas puramente resistivas como estufas y calentadores, toda la potencia es activa: tensión por intensidad. Las otras dos formas salen de sustituir la ley de Ohm.",
+   "about_general": true
   },
   {
    "id": "energia",
@@ -182,7 +186,9 @@
    "example": {
     "P": 2000,
     "t": 3
-   }
+   },
+   "about": "La energía consumida es la potencia por el tiempo que está funcionando el receptor. Es lo que mide el contador y lo que se factura, en kilovatios hora.",
+   "about_general": true
   },
   {
    "id": "joule",
@@ -223,7 +229,9 @@
     "R": 10,
     "I": 2,
     "t": 60
-   }
+   },
+   "about": "Toda corriente que atraviesa una resistencia la calienta. El calor crece con el cuadrado de la intensidad: el doble de corriente calienta cuatro veces más. Por eso una sobrecarga calienta los cables y un buen contacto en los bornes importa.",
+   "about_general": true
   },
   {
    "id": "carga",
@@ -258,7 +266,9 @@
    "example": {
     "Q": 120,
     "t": 60
-   }
+   },
+   "about": "La intensidad es la cantidad de carga eléctrica que atraviesa el conductor por segundo: un amperio es un culombio por segundo.",
+   "about_general": true
   },
   {
    "id": "serie",
@@ -293,7 +303,9 @@
      22,
      47
     ]
-   }
+   },
+   "about": "En serie la corriente recorre las resistencias una tras otra y es la misma en todas; sus valores se suman y la tensión total se reparte entre ellas.",
+   "about_general": true
   },
   {
    "id": "paralelo",
@@ -332,7 +344,9 @@
      10,
      20
     ]
-   }
+   },
+   "about": "En paralelo todas las resistencias tienen la misma tensión y la corriente se reparte entre ellas. La resistencia equivalente es siempre menor que la menor de ellas. Los receptores de una vivienda están en paralelo.",
+   "about_general": true
   },
   {
    "id": "r_conductor",
@@ -400,7 +414,9 @@
     "L": 100,
     "S": 2.5,
     "gamma": 56
-   }
+   },
+   "about": "La resistencia de un conductor crece con su longitud y baja con su sección y con la conductividad del material, que a su vez baja al calentarse: el cobre tiene 56 a 20 °C, 48 a 70 °C y 44 a 90 °C.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "seccion_circular",
@@ -429,7 +445,9 @@
    ],
    "example": {
     "D": 1.78
-   }
+   },
+   "about": "La sección de un conductor es el área de su corte transversal, la que da su designación en mm². Con el diámetro medido se calcula y se compara con la sección normalizada.",
+   "about_general": true
   },
   {
    "id": "potencias_mono",
@@ -488,7 +506,9 @@
     "U": 230,
     "I": 10,
     "cos": 0.9
-   }
+   },
+   "about": "La potencia activa que transporta una línea monofásica es P = U · I · cos φ.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "potencias_tri",
@@ -547,7 +567,9 @@
     "U": 400,
     "I": 16,
     "cos": 0.85
-   }
+   },
+   "about": "La potencia activa que transporta una línea trifásica es P = √3 · U · I · cos φ, con U la tensión entre fases.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "triangulo",
@@ -588,7 +610,9 @@
    "example": {
     "P": 3000,
     "Q": 1500
-   }
+   },
+   "about": "En alterna la potencia aparente S (la que cargan los cables y el transformador) tiene dos componentes: la activa P, que hace trabajo útil, y la reactiva Q, que va y vuelve con motores y reactancias. El cos φ indica qué parte de S es útil.",
+   "about_general": true
   },
   {
    "id": "linea_fase",
@@ -631,7 +655,9 @@
    "example": {
     "Uf": 230
    },
-   "note": "Rellena una de las dos."
+   "note": "Rellena una de las dos.",
+   "about": "En una red trifásica la tensión entre dos fases (de línea) es √3 veces la tensión entre una fase y el neutro (de fase): 400 V y 230 V en la red de distribución.",
+   "about_general": true
   },
   {
    "id": "frecuencia",
@@ -674,7 +700,9 @@
    "example": {
     "f": 50
    },
-   "note": "Rellena una de las dos."
+   "note": "Rellena una de las dos.",
+   "about": "La frecuencia es el número de ciclos por segundo de la corriente alterna; el periodo, lo que dura un ciclo. La red española funciona a 50 Hz: un ciclo cada 20 ms.",
+   "about_general": true
   },
   {
    "id": "intensidad_mono",
@@ -721,7 +749,9 @@
     "P": 5750,
     "U": 230,
     "cos": 1
-   }
+   },
+   "about": "La potencia que transporta una línea monofásica es P = U · I · cos φ; despejando sale la intensidad, que sirve para calcular la caída de tensión y elegir la protección.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "intensidad_tri",
@@ -768,7 +798,9 @@
     "P": 15000,
     "U": 400,
     "cos": 0.9
-   }
+   },
+   "about": "La potencia que transporta una línea trifásica es P = √3 · U · I · cos φ, con U la tensión entre fases; despejando sale la intensidad, que sirve para calcular la caída de tensión y elegir la protección.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "circuito_vivienda",
@@ -824,7 +856,9 @@
     "Fs": 0.2,
     "Fu": 0.25
    },
-   "note": "Valores de cada circuito en la tabla 1 de la ITC-BT-25."
+   "note": "Valores de cada circuito en la tabla 1 de la ITC-BT-25.",
+   "about": "Intensidad prevista de cada circuito de una vivienda: número de tomas o receptores, por la intensidad prevista por toma, por la fracción de receptores conectados a la vez (Fs) y por la fracción media de su potencia máxima que se usa (Fu). Los valores de cada circuito están en la tabla 1 de la ITC-BT-25.",
+   "about_ref": "BT-25 3"
   },
   {
    "id": "proteccion",
@@ -927,7 +961,9 @@
     "In": 16,
     "Iz": 21,
     "tipo": "pia"
-   }
+   },
+   "about": "El dispositivo contra sobrecargas debe tener un calibre entre la corriente prevista del circuito y la que admite el cable, y la corriente que asegura su disparo (I₂) no debe pasar de 1,45 veces la admisible. I₂ es 1,45 In en los PIA y 1,30 In en los automáticos industriales; en los fusibles gG hace ese papel la corriente de fusión If.",
+   "about_ref": "Guía BT-22"
   },
   {
    "id": "iz_corregida",
@@ -967,7 +1003,9 @@
      0.8,
      0.94
     ]
-   }
+   },
+   "about": "La intensidad máxima que admite un cable depende de cómo y dónde se instala: la de la tabla vale para sus condiciones de referencia y, para otras, se aplican los factores de corrección de cada tipo de montaje.",
+   "about_ref": "BT-14 3"
   },
   {
    "id": "caida_mono",
@@ -1081,7 +1119,9 @@
     "gamma": 56,
     "U": 230
    },
-   "note": "Rellena la potencia o la intensidad."
+   "note": "Rellena la potencia o la intensidad.",
+   "about": "La corriente que circula por el cable hace que la tensión al final de la línea sea menor que al principio: esa diferencia es la caída de tensión, y el REBT le pone un límite en cada tramo para que los receptores funcionen bien. En monofásico se cuenta la ida y la vuelta (el 2). Con secciones de hasta 120 mm² la reactancia del cable se puede despreciar.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "caida_tri",
@@ -1187,7 +1227,9 @@
     "gamma": 48,
     "U": 400
    },
-   "note": "Rellena la potencia o la intensidad."
+   "note": "Rellena la potencia o la intensidad.",
+   "about": "La corriente que circula por el cable hace que la tensión al final de la línea sea menor que al principio, y el REBT limita esa caída en cada tramo. En trifásico no hay hilo de vuelta: la caída de línea se calcula con la tensión entre fases (400 V). Con secciones de hasta 120 mm² la reactancia del cable se puede despreciar.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "caida_pct",
@@ -1245,7 +1287,9 @@
     "pct": 3,
     "U": 230
    },
-   "note": "Rellena la caída en voltios o en %."
+   "note": "Rellena la caída en voltios o en %.",
+   "about": "Los límites de caída de tensión del REBT se dan en %: la caída en voltios dividida por la tensión del tramo (230 V en monofásico, 400 V entre fases en trifásico), por 100.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "seccion_caida",
@@ -1372,7 +1416,9 @@
     "gamma": 48,
     "U": 230
    },
-   "note": "Comprueba también la sección por calentamiento: vale la mayor de las dos."
+   "note": "Comprueba también la sección por calentamiento: vale la mayor de las dos.",
+   "about": "La sección de un cable debe cumplir a la vez dos criterios: no calentarse por encima de lo que admite su aislamiento (70 °C los termoplásticos, 90 °C los termoestables) y no superar la caída de tensión permitida en su tramo. Esta fórmula da la mínima por caída; en líneas largas, como las derivaciones individuales de los últimos pisos de un edificio, suele ser la que manda.",
+   "about_ref": "Guía anexo 2"
   },
   {
    "id": "edificio",
@@ -1444,7 +1490,9 @@
     "PSG": 12000,
     "PL": 6900,
     "PG": 9000
-   }
+   },
+   "about": "La carga total de un edificio de viviendas es la suma de la de las viviendas, los servicios generales, los locales comerciales y oficinas y los garajes.",
+   "about_ref": "BT-10 3"
   },
   {
    "id": "viviendas",
@@ -1549,7 +1597,9 @@
     ],
     "noct": 0
    },
-   "note": "Coeficientes de la tabla 1 de la ITC-BT-10; con más de 21 viviendas, 15,3 + (n − 21) · 0,5."
+   "note": "Coeficientes de la tabla 1 de la ITC-BT-10; con más de 21 viviendas, 15,3 + (n − 21) · 0,5.",
+   "about": "La carga de un conjunto de viviendas es la media de las potencias máximas previstas de cada una por el coeficiente de simultaneidad de la tabla 1, según su número. Con tarifa nocturna la simultaneidad es 1: el coeficiente es el número de viviendas.",
+   "about_ref": "BT-10 3.1"
   },
   {
    "id": "locales",
@@ -1608,7 +1658,9 @@
     "sup": 120,
     "tipo": 100
    },
-   "note": "Mínimo 3 450 W por local o garaje."
+   "note": "Mínimo 3 450 W por local o garaje.",
+   "about": "Locales comerciales y oficinas: 100 W por m² y planta, con un mínimo de 3 450 W por local. Garajes: 10 W por m² con ventilación natural y 20 W por m² con ventilación forzada, también con un mínimo de 3 450 W.",
+   "about_ref": "BT-10 3.3-3.4"
   },
   {
    "id": "recarga_edificio",
@@ -1686,7 +1738,9 @@
     "P5": 36800,
     "spl": 0.3
    },
-   "note": "ITC-BT-52 4.1: simultaneidad 0,3 con SPL y 1 sin él."
+   "note": "ITC-BT-52 4.1: simultaneidad 0,3 con SPL y 1 sin él.",
+   "about": "En un edificio con recarga de vehículos eléctricos y contador principal común, la carga de la recarga se suma con un factor de simultaneidad de 0,3 si se instala el SPL, que regula la recarga según la intensidad de la LGA, y de 1 si no se instala.",
+   "about_ref": "BT-52"
   },
   {
    "id": "lamparas",
@@ -1719,7 +1773,9 @@
    ],
    "example": {
     "W": 580
-   }
+   },
+   "about": "Las lámparas de descarga cargan la línea más de lo que dice su potencia, por sus equipos auxiliares y sus corrientes armónicas y de arranque: la carga mínima prevista en voltiamperios es 1,8 veces su potencia en vatios.",
+   "about_ref": "BT-44 3.1"
   },
   {
    "id": "motores",
@@ -1762,7 +1818,9 @@
      8,
      5.5
     ]
-   }
+   },
+   "about": "Los conductores que alimentan a un motor se dimensionan para el 125 % de su intensidad a plena carga; si alimentan a varios, para el 125 % de la del motor de mayor potencia más la de todos los demás.",
+   "about_ref": "BT-47 3.1"
   },
   {
    "id": "tt",
@@ -1845,7 +1903,9 @@
     "RA": 80,
     "Ia": 30,
     "U": 50
-   }
+   },
+   "about": "En el esquema TT las masas van a una toma de tierra propia. Ante un defecto, la resistencia de tierra por la corriente que hace actuar la protección (con diferencial, su sensibilidad IΔn) no debe superar la tensión de contacto límite: 50 V, o 24 V en ciertos casos.",
+   "about_ref": "BT-24 4.1.2"
   },
   {
    "id": "tn",
@@ -1906,7 +1966,9 @@
     "Zs": 0.8,
     "Ia": 160,
     "U0": 230
-   }
+   },
+   "about": "En el esquema TN un defecto entre fase y masa cierra un bucle por el conductor de protección. Su impedancia debe ser tan baja que la corriente de defecto haga actuar la protección en el tiempo que fija la tabla 1 de la ITC-BT-24.",
+   "about_ref": "BT-24 4.1.1"
   },
   {
    "id": "tierra",
@@ -1983,7 +2045,9 @@
     "tipo": "pica",
     "rho": 50,
     "L": 2
-   }
+   },
+   "about": "Estas fórmulas dan solo un valor aproximado de la resistencia del electrodo, a partir de la resistividad media del terreno. La toma de tierra debe ser tal que ninguna masa llegue a tensiones de contacto de más de 24 V en local conductor o 50 V en los demás.",
+   "about_ref": "BT-18 9"
   },
   {
    "id": "contacto",
@@ -2043,7 +2107,9 @@
     "Zs": 120,
     "Idn": 30,
     "U": 50
-   }
+   },
+   "about": "Los medidores de bucle calculan la tensión de contacto como la impedancia del bucle por la sensibilidad del diferencial. Como el bucle incluye la tierra del centro de transformación, el resultado es mayor que el real: si cumple, la instalación es segura.",
+   "about_ref": "Guía anexo 4"
   },
   {
    "id": "pe",
@@ -2077,7 +2143,9 @@
    "example": {
     "S": 50
    },
-   "note": "Con S/2 se toma la sección normalizada correspondiente."
+   "note": "Con S/2 se toma la sección normalizada correspondiente.",
+   "about": "Los conductores de protección unen las masas a tierra para proteger contra contactos indirectos. Su sección mínima depende de la de los conductores de fase, si son del mismo material; si sale un valor no normalizado, se toma la sección normalizada superior.",
+   "about_ref": "BT-18 3.4"
   },
   {
    "id": "red_aerea",
@@ -2106,7 +2174,9 @@
    ],
    "example": {
     "F": 1.2
-   }
+   },
+   "about": "En redes aéreas con conductores desnudos, la separación mínima entre conductores depende del vano; en vanos de más de 50 m se calcula con la flecha máxima.",
+   "about_ref": "BT-06 3.2.2"
   },
   {
    "id": "iluminancia",
@@ -2141,7 +2211,9 @@
    "example": {
     "Phi": 3000,
     "S": 12
-   }
+   },
+   "about": "La iluminancia es el flujo luminoso que llega a una superficie repartido por su área, en lux (lúmenes por m²). Es lo que mide el luxómetro y lo que se compara con los niveles mínimos, como los del alumbrado de emergencia.",
+   "about_general": true
   },
   {
    "id": "fusible_if",
@@ -2176,7 +2248,9 @@
    ],
    "example": {
     "In": 25
-   }
+   },
+   "about": "Los fusibles gG cortan sobrecargas y cortocircuitos. Su corriente convencional de fusión If, que hace el papel de la I₂ de los automáticos, es 1,6, 1,9 o 2,1 veces In según el calibre.",
+   "about_ref": "Guía BT-22"
   },
   {
    "id": "pia_im",
@@ -2258,7 +2332,9 @@
     "In": 16,
     "curva": "C",
     "Icc": 250
-   }
+   },
+   "about": "El disparo magnético de un PIA actúa sin retardo dentro de una franja que depende de su curva: B para circuitos sin transitorios, C para carga mixta (la habitual en vivienda) y D para transitorios fuertes, como el arranque de motores. Para que dispare ante un cortocircuito al final de la línea, la Icc mínima debe superar el máximo de la franja.",
+   "about_ref": "Guía BT-22"
   },
   {
    "id": "dif_fugas",
@@ -2314,7 +2390,9 @@
    "example": {
     "Idn": 30,
     "fuga": 7
-   }
+   },
+   "about": "Todos los receptores fugan algo de corriente a tierra en funcionamiento normal (filtros, balastos electrónicos…). La fuga medida aguas abajo de un diferencial debe quedar por debajo de la mitad de su sensibilidad, y conviene que no pase del 30 % para evitar disparos intempestivos.",
+   "about_ref": "Guía BT-24"
   }
  ]
 }

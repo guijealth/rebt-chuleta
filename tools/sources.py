@@ -135,7 +135,9 @@ def check_refs(sections, docs):
     """Each row ref of the chuleta, materials, devices and measurements ("BT-19 2.2.4 · BT-15 3", "art. 4", "Guía anexo 2", "INSST") must point to a real place."""
     ids = {s["id"] for s in sections}
     bad = []
-    for sec in (s for f in SHEETS for s in json.loads(f.read_text(encoding="utf-8"))["sections"]):
+    calcs = json.loads((ROOT / "content" / "calculators.json").read_text(encoding="utf-8"))["calculators"]
+    about = {"title": "Calculadoras", "rows": [[c["id"], "", c["about_ref"]] for c in calcs if c.get("about_ref")]}
+    for sec in [*(s for f in SHEETS for s in json.loads(f.read_text(encoding="utf-8"))["sections"]), about]:
         for row in sec.get("rows", []):
             ref = row[2]
             for part in filter(None, (p.strip() for p in ref.split("·"))):
