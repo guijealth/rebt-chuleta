@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Emergency luminaire: its data, how to read its marking (Guía BT-28, "Marcado de los aparatos de emergencia",
+     with the guide's own example X 2 B 60) and when the lamp is lit in each mode. Our own drawing of a generic
+     luminaire. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 286" role="img" aria-label="Datos de un aparato de alumbrado de emergencia, cómo se lee su marcado y cuándo luce en cada modo">
+  <!-- generic luminaire with its marking -->
+  <rect class="v-body" x="10" y="22" width="90" height="34" rx="9"/>
+  <rect class="v-card" x="18" y="28" width="74" height="22" rx="5"/>
+  <rect class="v-card" x="10" y="62" width="90" height="20" rx="2"/>
+  <text class="v-key" x="55" y="76" text-anchor="middle" font-size="11">X 2 B 60</text>
+  <text class="v-soft" x="55" y="93" text-anchor="middle" font-size="8">marcado (ej. de la Guía)</text>
+  <path class="v-dash" d="M100 72H106M106 26V92"/>
+  <text class="v-title" x="114" y="14">Datos del aparato</text>
+  <text class="v-key" x="114" y="32">Tipo</text><text x="160" y="32">autónomo (X) o de fuente central (Z)</text>
+  <text class="v-key" x="114" y="48">Modo</text><text x="160" y="48">permanente, no permanente, combinado…</text>
+  <text class="v-key" x="114" y="64">Duración</text><text x="160" y="64">en minutos: ≥ 60 (1 h)</text>
+  <text class="v-key" x="114" y="80">Norma</text><text x="160" y="80">UNE-EN 60598-2-22</text>
+  <path class="v-rule" d="M0 102H360"/>
+
+  <!-- the four cells of the marking -->
+  <text class="v-title" x="10" y="118">Cómo se lee el marcado</text>
+  <g text-anchor="middle">
+    <rect class="v-acc-soft" x="10" y="124" width="82" height="26" rx="3"/><text class="v-key" x="51" y="143" font-size="16">X</text>
+    <rect class="v-acc-soft" x="96" y="124" width="82" height="26" rx="3"/><text class="v-key" x="137" y="143" font-size="16">2</text>
+    <rect class="v-acc-soft" x="182" y="124" width="82" height="26" rx="3"/><text class="v-key" x="223" y="143" font-size="16">B</text>
+    <rect class="v-acc-soft" x="268" y="124" width="82" height="26" rx="3"/><text class="v-key" x="309" y="143" font-size="16">60</text>
+  </g>
+  <g font-size="8.5">
+    <text class="v-key" x="12" y="162">1 · tipo</text>
+    <text x="12" y="173">X autónomo</text><text x="12" y="183">Z fuente central</text>
+    <text class="v-key" x="98" y="162">2 · modo</text>
+    <text x="98" y="173">0 no permanente</text><text x="98" y="183">1 permanente</text>
+    <text x="98" y="193">2 combinado no perm.</text><text x="98" y="203">3 combinado perm.</text>
+    <text x="98" y="213">4 · 5 compuesto</text><text x="98" y="223">6 satélite</text>
+    <text class="v-key" x="184" y="162">3 · dispositivos</text>
+    <text x="184" y="173">A verificación incorp.</text><text x="184" y="183">B reposo a distancia</text>
+    <text x="184" y="193">C neutralización</text><text x="184" y="203">D zonas de alto riesgo</text>
+    <text class="v-key" x="270" y="162">4 · duración</text>
+    <text x="270" y="173">60 = 1 h (mínimo)</text><text x="270" y="183">120 = 2 h</text><text x="270" y="193">180 = 3 h</text>
+    <text class="v-soft" x="270" y="206">solo autónomos</text>
+  </g>
+  <text class="v-soft" x="10" y="238" font-size="9">X 2 B 60: autónomo, combinado no permanente, reposo a distancia, 1 hora</text>
+  <path class="v-rule" d="M0 246H360"/>
+
+  <!-- when the emergency lamp is lit -->
+  <g font-size="9">
+    <text class="v-soft" x="200" y="258" text-anchor="middle">con red</text>
+    <text class="v-soft" x="280" y="258" text-anchor="middle">fallo de red</text>
+    <text class="v-key" x="10" y="270">Permanente</text>
+    <circle class="v-acc" cx="200" cy="267" r="4.5"/><circle class="v-acc" cx="280" cy="267" r="4.5"/>
+    <text class="v-key" x="10" y="283">No permanente</text>
+    <circle class="v-card" cx="200" cy="280" r="4.5"/><circle class="v-acc" cx="280" cy="280" r="4.5"/>
+  </g>
+</svg>

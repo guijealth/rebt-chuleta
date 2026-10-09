@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Insulation resistance with an insulation tester: the two measurements (to earth, then between conductors) and
+     the minimum values (ITC-BT-19 2.9, Guía anexo 4, 2.3). Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 188" role="img" aria-label="Medida de aislamiento: respecto a tierra y entre conductores, y valores mínimos">
+  <!-- 1: phases and neutral joined, against earth -->
+  <text class="v-key" x="10" y="14">1 · Respecto a tierra</text>
+  <path class="v-line" d="M30 30H118M30 44H118"/>
+  <g font-size="8.5" class="v-soft"><text x="122" y="33">L</text><text x="122" y="47">N</text></g>
+  <path class="v-line" stroke-width="2" d="M30 30V44"/>
+  <path class="v-line" d="M30 44V62H58"/>
+  <rect class="v-body" x="58" y="52" width="40" height="22" rx="3"/>
+  <text class="v-key" x="78" y="67" text-anchor="middle" font-size="9.5">MΩ</text>
+  <text class="v-key" x="54" y="60" text-anchor="end" font-size="9">−</text>
+  <text class="v-key" x="104" y="60" font-size="9">+</text>
+  <path class="v-line" d="M98 62H112V80M104 80H120M107 84H117M110 88H114"/>
+  <text x="10" y="102" font-size="9">fases y neutro unidos · + a tierra</text>
+  <text class="v-soft" x="10" y="113" font-size="8.5">receptores conectados, mandos en «paro»</text>
+  <!-- 2: between conductors -->
+  <text class="v-key" x="190" y="14">2 · Entre conductores</text>
+  <path class="v-line" d="M210 30H298M210 44H298"/>
+  <g font-size="8.5" class="v-soft"><text x="302" y="33">L</text><text x="302" y="47">N</text></g>
+  <path class="v-line" d="M230 30V38M230 38H244V56M262 44V56"/>
+  <rect class="v-body" x="234" y="56" width="40" height="22" rx="3"/>
+  <text class="v-key" x="254" y="71" text-anchor="middle" font-size="9.5">MΩ</text>
+  <text x="190" y="102" font-size="9">de dos en dos, neutro incluido</text>
+  <text class="v-soft" x="190" y="113" font-size="8.5">receptores desconectados</text>
+  <path class="v-rule" d="M0 122H360"/>
+  <!-- minimum values -->
+  <g font-size="9.5">
+    <text class="v-soft" x="10" y="136" font-size="8.5">Instalación</text><text class="v-soft" x="150" y="136" font-size="8.5">Ensayo (c.c.)</text><text class="v-soft" x="250" y="136" font-size="8.5">Mínimo</text>
+    <text x="10" y="150">MBTS y MBTP</text><text x="150" y="150">250 V</text><text class="v-key" x="250" y="150">≥ 0,25 MΩ</text>
+    <text x="10" y="164">hasta 500 V</text><text x="150" y="164">500 V</text><text class="v-key" x="250" y="164">≥ 0,5 MΩ</text>
+    <text x="10" y="178">más de 500 V</text><text x="150" y="178">1000 V</text><text class="v-key" x="250" y="178">≥ 1 MΩ</text>
+  </g>
+  <text class="v-soft" x="350" y="186" text-anchor="end" font-size="8">por cada 100 m · sin tensión</text>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Loop impedance (Guía anexo 4, 2.7 and figure 4) and the differential test sequence (2.8 b). Our own drawing.
+     Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 214" role="img" aria-label="Bucle de defecto fase-protección y secuencia de ensayo de un diferencial">
+  <text class="v-title" x="10" y="14">Bucle de defecto</text>
+  <!-- source -->
+  <circle class="v-body" cx="34" cy="62" r="16"/>
+  <text class="v-key" x="34" y="66" text-anchor="middle" font-size="9.5">U0</text>
+  <!-- phase out, protective back -->
+  <path class="v-line" d="M34 46V30H164"/>
+  <path class="v-line" d="M34 78V96H184V86"/>
+  <text x="96" y="25" text-anchor="middle" font-size="9">fase (R1, X1)</text>
+  <text x="110" y="108" text-anchor="middle" font-size="9">conductor de protección (R2, X2)</text>
+  <!-- appliance with a fault to its frame -->
+  <rect class="v-body" x="152" y="38" width="64" height="48" rx="3"/>
+  <text class="v-soft" x="184" y="80" text-anchor="middle" font-size="8.5">masa</text>
+  <path class="v-line" d="M164 30V40"/>
+  <path class="v-acc" d="M170 42L178 54L173 55L182 68L172 58L177 57Z"/>
+  <path class="v-dash" d="M60 36H150M150 90H60"/>
+  <path class="v-line" d="M146 32L150 36L146 40M64 86L60 90L64 94"/>
+  <g font-size="9.5">
+    <text class="v-key" x="230" y="44">Zs = todo el bucle</text>
+    <text x="230" y="60">Icc = U0 / Zs</text>
+    <text x="230" y="76">Icc ≥ Ia → corta a tiempo</text>
+    <text class="v-soft" x="230" y="92" font-size="8.5">(TN, 230 V: 0,4 s)</text>
+  </g>
+  <path class="v-rule" d="M0 120H360"/>
+  <!-- differential test -->
+  <text class="v-title" x="10" y="136">Ensayo del diferencial (desde una base, en servicio)</text>
+  <g text-anchor="middle">
+    <rect class="v-ok" x="10" y="144" width="80" height="44" rx="3"/>
+    <rect class="v-acc-soft" x="96" y="144" width="80" height="44" rx="3"/>
+    <rect class="v-acc-soft" x="182" y="144" width="80" height="44" rx="3"/>
+    <rect class="v-acc-soft" x="268" y="144" width="82" height="44" rx="3"/>
+    <g class="v-key" font-size="12"><text x="50" y="162">½ IΔn</text><text x="136" y="162">IΔn</text><text x="222" y="162">2 IΔn</text><text x="309" y="162">5 IΔn</text></g>
+    <g font-size="9.5"><text x="50" y="179">no dispara</text><text x="136" y="179">&lt; 200 ms</text><text x="222" y="179">&lt; 150 ms</text><text x="309" y="179">&lt; 40 ms</text></g>
+  </g>
+  <text class="v-soft" x="10" y="204" font-size="9">Cada prueba a 0° y a 180° · los de tipo S tienen otros límites</text>
+</svg>

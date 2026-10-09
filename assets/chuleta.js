@@ -1,4 +1,4 @@
-/* Chuleta REBT — one page: the chuleta, then the UNE-EN 60617 symbols, both ready to print.
+/* Chuleta REBT — one page in three parts: the chuleta, the UNE-EN 60617 symbols and the devices, ready to print.
    Content comes from data.js (built by tools/build.py from content/*.json).
    Printing: the pages are laid out ahead of time in #print-root (A4 landscape, 14 mm binding strip),
    hidden on screen and the only thing printed, so the browser's own Print (Ctrl+P) gives the same result. */
@@ -25,7 +25,7 @@
     $('#screen').textContent = 'Falta data.js: ejecuta «python3 tools/build.py».';
     return;
   }
-  const { cheatsheet: cheat, symbols: syms } = data;
+  const { cheatsheet: cheat, devices, symbols: syms } = data;
   const builtDate = new Date(`${data.built}T12:00:00`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
 
   // ---------- building blocks, shared by the screen and the printed pages ----------
@@ -35,6 +35,7 @@
     const kind = (r) => (!r ? null : /^(BT-|art\.)/.test(r) ? 'rebt' : 'official');
     return el('section', { class: 'cheat-sec' },
       el('h3', {}, title, el('span', { text: s.ref || '' })),
+      (s.visuals || []).map((svg) => el('figure', { class: 'cheat-visual', html: svg })),
       s.table ? el('table', { class: 'cheat-table' },
         el('thead', {}, el('tr', {}, s.table.head.map((h) => el('th', { text: h })))),
         el('tbody', {}, s.table.rows.map((r) => el('tr', {}, r.map((x) => el('td', { text: x })))))) : null,
@@ -71,6 +72,10 @@
       syms.subtitle ? el('p', { class: 'part-sub', text: syms.subtitle }) : null,
       ...syms.sections.map((s) => (s.items ? symbolSection(s) : cheatSection(s))),
       syms.credit ? el('p', { class: 'sym-credit', text: syms.credit }) : null);
+    $('#dispositivos').append(
+      el('h2', { class: 'part-title', id: 'dispositivos-title', text: devices.title }),
+      devices.subtitle ? el('p', { class: 'part-sub', text: devices.subtitle }) : null,
+      el('div', { class: 'cheat-grid' }, devices.sections.map((s) => cheatSection(s))));
     $('#foot').append(
       el('p', {}, 'Resumen para estudiar, ', el('strong', { text: 'no es un documento oficial' }),
         '. El texto que vale es el del ',
@@ -122,12 +127,12 @@
     p.label.textContent = `Chuleta REBT · ${part}${pages.length > 1 ? ` ${i + 1} de ${pages.length}` : ''} · ${builtDate}`;
   });
 
-  // Chuleta: sections fill three columns in order, column by column and page by page; a long section is split
-  // between rows (at least two on each side) and continues in the next column.
-  function layoutCheat(root) {
+  // Chuleta and devices: sections fill three columns in order, column by column and page by page; a long section is
+  // split between rows (at least two on each side) and continues in the next column.
+  function layoutCheat(root, sheet = cheat, part = 'chuleta', ref = 'REBT · ITC-BT') {
     const pages = [];
     const newPage = () => {
-      const p = page(root, 'Chuleta', 'REBT · ITC-BT', !pages.length, cheat);
+      const p = page(root, part, ref, !pages.length, sheet);
       p.cols = Array.from({ length: CHEAT_COLS }, () => el('div', { class: 'cheat-col' }));
       p.body.append(el('div', { class: 'cheat-cols' }, p.cols));
       pages.push(p);
@@ -142,7 +147,7 @@
       else return false;
       return true;
     };
-    for (const s of cheat.sections) {
+    for (const s of sheet.sections) {
       let sec = cheatSection(s);
       for (;;) {
         const col = p.cols[ci];
@@ -153,7 +158,7 @@
         while (dl && full(col) && dl.children.length > 2) { const r = dl.lastElementChild; r.remove(); rest.unshift(r); }
         if (dl && !full(col) && rest.length >= 2) {
           if (!advance()) { dl.append(...rest); break; }
-          sec = cheatSection({ ...s, table: null, rows: [] }, `${s.title} (cont.)`);
+          sec = cheatSection({ ...s, table: null, visuals: null, rows: [] }, `${s.title} (cont.)`);
           sec.append(el('dl', { class: 'cheat-rows' }, rest));
           continue;
         }
@@ -164,7 +169,7 @@
       }
     }
     for (let z = 1; p.cols.some(full) && z > 0.6; z -= 0.03) p.body.style.zoom = (z - 0.03).toFixed(2);
-    label(pages, 'chuleta');
+    label(pages, part);
     return pages.length;
   }
 
@@ -230,13 +235,13 @@
     root.classList.toggle('duplex', duplex.checked);  // even pages (backs) carry the strip at the bottom
     const cp = parts.includes('chuleta') ? layoutCheat(root) : 0;
     const sp = parts.includes('simbolos') ? layoutSymbols(root) : 0;
+    const dp = parts.includes('dispositivos') ? layoutCheat(root, devices, 'dispositivos', 'REBT · Guías técnicas') : 0;
     laidOut = key;
-    const pages = cp + sp;
+    const pages = cp + sp + dp;
     const sheets = duplex.checked ? Math.ceil(pages / 2) : pages;
-    const what = [cp && `${cp} de chuleta`, sp && `${sp} de símbolos`].filter(Boolean).join(' + ');
-    $('#print-est').textContent = pages
-      ? `${pages} págs. (${what}) → ${sheets} ${sheets === 1 ? 'hoja' : 'hojas'} A4`
-      : 'Marca qué imprimir';
+    const what = [cp && `${cp} de chuleta`, sp && `${sp} de símbolos`, dp && `${dp} de dispositivos`].filter(Boolean).join(' + ');
+    $('#print-est').textContent = pages ? `${pages} págs. → ${sheets} ${sheets === 1 ? 'hoja' : 'hojas'} A4` : 'Marca qué imprimir';
+    $('#print-est').title = what;  // the breakdown per part, on hover
     $('#print').disabled = !pages;
     document.body.classList.toggle('duplex', duplex.checked);
   }

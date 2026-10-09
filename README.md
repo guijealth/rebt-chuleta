@@ -1,8 +1,9 @@
 # Chuleta REBT
 
-One page with two parts, each ready to print: the **chuleta** (acronyms, letters and the key figures of every
-chapter of the Spanish low-voltage regulation, REBT, each tagged with its ITC-BT section), followed by the
-**UNE-EN 60617 graphical symbols** a low-voltage electrician needs.
+One page with three parts, each ready to print: the **chuleta** (acronyms, letters and the key figures of every
+chapter of the Spanish low-voltage regulation, REBT, each tagged with its ITC-BT section), the **UNE-EN 60617
+graphical symbols** a low-voltage electrician needs, and the **devices** (dispositivos: PIA, differential…), one
+section per device with a drawing of what its data mean.
 
 Published at <https://guijealth.github.io/rebt-chuleta/>.
 
@@ -11,13 +12,13 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Use
 
-- **Read:** the page shows the chuleta, then the symbols. The search box (or the `/` key) filters both: rows, table
+- **Read:** the page shows the chuleta, the symbols, then the devices. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
-- **Print:** tick what to print (**Chuleta**, **Símbolos**, **Doble cara**) and press **Imprimir**, or use the browser's
+- **Print:** tick what to print (**Chuleta**, **Símbolos**, **Dispositivos**, **Doble cara**) and press **Imprimir**, or use the browser's
   own Print (Ctrl/Cmd+P) for the same result. The bar shows how many pages and sheets that is. **Vista previa** shows
   the pages on screen.
   - A4 landscape, a 14 mm blank strip at the top for binding (dashed edge line, part and page number, date).
-  - The chuleta fills three columns in order; a long section continues in the next column with "(cont.)". The
+  - The chuleta and the devices fill three columns in order; a long section continues in the next column with "(cont.)". The
     symbols flow down the page as tile grids, split between rows when they don't fit.
   - **Doble cara:** even pages carry the strip at the bottom. Print two-sided with "flip on long edge": both strips
     land on the same paper edge and every page reads upright when the sheet is flipped up.
@@ -25,7 +26,7 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Edit the content
 
-Everything shown comes from two JSON files in `content/`. Edit them (on GitHub's web editor is fine): every push to
+Everything shown comes from three JSON files in `content/`. Edit them (on GitHub's web editor is fine): every push to
 `main` rebuilds and republishes the page.
 
 ### `content/cheatsheet.json` — the chuleta
@@ -51,9 +52,18 @@ Everything shown comes from two JSON files in `content/`. Edit them (on GitHub's
   `"Guía anexo 2"` (other documents, grey), or `""` when there is none. Several: `"BT-14 3 · BT-15 3"`. Check values
   against the text in `sources/` (see below); `python3 tools/sources.py check` confirms every ref points to a real
   section.
+- A section may have drawings, shown under its heading: `"visuals": ["pia"]` names `content/visuals/pia.svg`. They
+  are our own SVGs, drawn with the `v-*` classes of `assets/chuleta.css` (`v-line`, `v-key`, `v-acc-soft`…) so they
+  follow the light/dark theme and print in the paper palette; keep them 360 units wide, the width of a printed column.
 - A section may also have a table, shown above its rows (or alone, with `"rows": []`):
   `"table": {"head": ["", "Uso", "PIA"], "rows": [["C1", "alumbrado", "10 A"]]}`. Every table row needs as many cells
   as `head`.
+
+### `content/devices.json` — the devices
+
+Same format as the chuleta: one section per device (`"PIA: interruptor automático (magnetotérmico)"`,
+`"Diferencial: ID y AD"`…), usually with a drawing in `"visuals"`. A device or a piece of equipment goes here, not in
+the chuleta. The drawings show what the device's data mean; they never claim how a standard says it is printed.
 
 ### `content/symbols.json` — the symbols
 
@@ -106,7 +116,8 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | Path | What |
 |---|---|
 | `index.html`, `assets/chuleta.css`, `assets/chuleta.js` | The page: screen view, search, print layout and controls |
-| `content/cheatsheet.json`, `content/symbols.json` | The content |
+| `content/cheatsheet.json`, `content/devices.json`, `content/symbols.json` | The content |
+| `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
 | `content/elements/fixed/` | Our corrections of faulty elements |
 | `tools/build.py` | content → `data.js` (checks, SVG conversion) |

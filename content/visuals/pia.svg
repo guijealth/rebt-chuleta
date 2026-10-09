@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PIA: the data that identify it, and where curves B, C and D trip (Guía BT-22). Our own drawing: a generic
+     device, not the marking format of any standard or manufacturer. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 254" role="img" aria-label="Datos de un PIA y zonas de disparo magnético de las curvas B, C y D">
+  <!-- generic one-module device -->
+  <rect class="v-body" x="10" y="6" width="52" height="98" rx="4"/>
+  <circle class="v-line" cx="24" cy="16" r="4"/>
+  <circle class="v-line" cx="48" cy="16" r="4"/>
+  <circle class="v-line" cx="24" cy="94" r="4"/>
+  <circle class="v-line" cx="48" cy="94" r="4"/>
+  <rect class="v-card" x="16" y="26" width="40" height="24" rx="1.5"/>
+  <path class="v-rule" d="M21 33H51M21 39H51M21 45H41"/>
+  <rect class="v-card" x="28" y="58" width="16" height="24" rx="2"/>
+  <rect class="v-acc" x="31" y="61" width="10" height="9" rx="1"/>
+  <path class="v-dash" d="M57 38H76M76 26V96"/>
+  <text class="v-title" x="84" y="16">Datos de un PIA</text>
+  <text class="v-key" x="84" y="36">Norma</text><text x="116" y="36">UNE-EN 60898-1 (doméstico y análogo)</text>
+  <text class="v-key" x="84" y="54">Curva</text><text x="116" y="54">B, C o D: a cuánto dispara el magnético</text>
+  <text class="v-key" x="84" y="72">In</text><text x="116" y="72">intensidad asignada (calibre), en A</text>
+  <text class="v-key" x="84" y="90">Icn</text><text x="116" y="90">poder de corte asignado: ≥ Icc del punto</text>
+  <path class="v-rule" d="M0 114H360"/>
+
+  <!-- magnetic trip zones on a log scale of multiples of In: x = 20 + 236.06·log10(m) -->
+  <text class="v-title" x="10" y="132">Disparo magnético Im, en múltiplos de In</text>
+  <text class="v-soft" x="20" y="147" font-size="9">← sobrecarga (térmico)</text>
+  <text class="v-soft" x="137" y="147" font-size="9">cortocircuito (magnético, sin retardo) →</text>
+  <rect class="v-acc-soft" x="132.6" y="154" width="52.4" height="15"/>
+  <text class="v-key" x="158.8" y="165" text-anchor="middle">B</text>
+  <text x="190" y="165">sin transitorios</text>
+  <rect class="v-acc-soft" x="185" y="174" width="71.1" height="15"/>
+  <text class="v-key" x="220.5" y="185" text-anchor="middle">C</text>
+  <text x="261" y="185">mixta · vivienda</text>
+  <rect class="v-acc-soft" x="256.1" y="194" width="71" height="15"/>
+  <text class="v-key" x="291.6" y="205" text-anchor="middle">D</text>
+  <text x="251" y="205" text-anchor="end">arranque de motores</text>
+  <path class="v-dash" d="M58.1 152V220"/>
+  <text class="v-key" x="62" y="172">I2 = 1,45 In</text>
+  <text class="v-soft" x="62" y="184" font-size="9">dispara seguro</text>
+  <text class="v-soft" x="62" y="195" font-size="9">en tiempo largo</text>
+  <path class="v-line" d="M20 220H350M20 220V224M58.1 220V224M132.6 220V224M185 220V224M256.1 220V224M327.1 220V224"/>
+  <g text-anchor="middle" font-size="9">
+    <text x="20" y="233">1</text><text x="58.1" y="233">1,45</text><text x="132.6" y="233">3</text>
+    <text x="185" y="233">5</text><text x="256.1" y="233">10</text><text x="327.1" y="233">20</text>
+  </g>
+  <text class="v-soft" x="350" y="215" text-anchor="end" font-size="9">× In</text>
+  <text class="v-soft" x="10" y="249">Ej.: curva C, In = 16 A → Im entre 80 y 160 A</text>
+</svg>

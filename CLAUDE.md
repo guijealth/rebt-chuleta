@@ -1,8 +1,8 @@
 # Chuleta REBT — working notes
 
 Public repo (`guijealth/rebt-chuleta`), published by GitHub Pages at https://guijealth.github.io/rebt-chuleta/ on every
-push to `main` (`.github/workflows/pages.yml`). One static page: the chuleta, then the UNE-EN 60617 symbols, both
-printable. User-facing text is Spanish; code, comments and docs are English. Read `README.md` (content formats) and
+push to `main` (`.github/workflows/pages.yml`). One static page in three printable parts: the chuleta, the UNE-EN 60617
+symbols and the devices (dispositivos). User-facing text is Spanish; code, comments and docs are English. Read `README.md` (content formats) and
 `sources/README.md` (sources and their terms) before changing things.
 
 ## Rule 1: everything must be allowed to be public
@@ -13,6 +13,9 @@ printable. User-facing text is Spanish; code, comments and docs are English. Rea
 - Don't paste long verbatim passages; short terms and figures are fine.
 - **Never** add or quote: standards (UNE/EN/IEC/ISO, only cite their numbers), course material (MasterD) or anything
   from the private `../rebt-almanac` that came from it (its questions, tests, `refs/masterd/`), textbooks, commercial sites.
+- Standards themselves are not in `sources/`: write about a standard only what the official documents say about it
+  (the Guías cite them often). Device marking formats (how a PIA or a differential is labelled) are defined only in
+  the standards: the user chose to show the data and its meaning, never a claimed printed format.
 - Symbol drawings only from QElectroTech's EN 60617 collection (CC-BY 3.0; keep the credit) or our own drawings.
 - **New source document:** only from an official publisher (BOE, ministries, INSST, CTE, EU Official Journal…).
   First read the publisher's legal notice / reuse terms on its site and record them in `sources/sources.json`
@@ -38,7 +41,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 13 chuleta + 4 symbol pages).
+before and after a change (now 13 chuleta + 4 symbol + 8 device pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.
@@ -46,10 +49,14 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 ## Where things are
 
 - `content/cheatsheet.json`: sections → `rows` `[what, value, ref]`, optional `table {head, rows}`. Order = page order.
+- `content/devices.json`: one section per device (PIA, differential…), same format as the chuleta. **When the content
+  is about a device or piece of equipment, it goes here, not in the chuleta** (user's request, 2026-10-09).
+- `content/visuals/*.svg`: our own drawings for chuleta and device sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).
 - `assets/chuleta.js`: screen rendering, search, and the print layout (pages pre-built in `#print-root`, hidden on
-  screen; `layoutCheat` fills 3 columns and splits long sections; `layoutSymbols` splits grids between rows).
+  screen; `layoutCheat` fills 3 columns and splits long sections, for the chuleta and the devices; `layoutSymbols`
+  splits grids between rows). Part order: chuleta, símbolos, dispositivos.
   `assets/chuleta.css`: screen styles, then `.ppage` print styles (A4 landscape, 14 mm binding strip, duplex).
 - `sources/`: official PDFs + `sources.json`. `tools/sources.py` (check, index, grep, show, sections, update, add);
   `tools/rebt_index.py` splits the REBT into sections (`ITC-BT-19#2.2.4`, `RD#art-16`).

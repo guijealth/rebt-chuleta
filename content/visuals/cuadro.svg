@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Head of the home panel, in the order the current flows (ITC-BT-17 1.1-1.3, ITC-BT-25 2.1, Guía BT-17).
+     Our own drawing: generic modules on a rail. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 190" role="img" aria-label="Cabecera del cuadro de una vivienda: ICP, IGA, protector de sobretensiones, diferencial y PIA">
+  <text class="v-title" x="10" y="12">Cabecera del cuadro, en el orden de la corriente</text>
+  <!-- rail -->
+  <path class="v-rule" d="M64 55H356"/>
+  <!-- ICP in its own sealable compartment -->
+  <rect class="v-dash" x="8" y="20" width="50" height="70" rx="3"/>
+  <rect class="v-body" x="14" y="26" width="38" height="58" rx="3"/>
+  <text class="v-key" x="33" y="42" text-anchor="middle">ICP</text>
+  <rect class="v-acc" x="29" y="56" width="8" height="10" rx="1"/>
+  <text class="v-soft" x="33" y="101" text-anchor="middle" font-size="8.5">precintado</text>
+  <!-- IGA -->
+  <rect class="v-body" x="70" y="26" width="34" height="58" rx="3"/>
+  <text class="v-key" x="87" y="42" text-anchor="middle">IGA</text>
+  <rect class="v-acc" x="83" y="56" width="8" height="10" rx="1"/>
+  <!-- surge protector, only if needed -->
+  <rect class="v-body" x="112" y="26" width="34" height="58" rx="3" stroke-dasharray="3 2"/>
+  <text class="v-key" x="129" y="42" text-anchor="middle" font-size="7.5">Sobret.</text>
+  <!-- differential -->
+  <rect class="v-body" x="154" y="26" width="52" height="58" rx="3"/>
+  <text class="v-key" x="180" y="42" text-anchor="middle">ID</text>
+  <rect class="v-acc" x="166" y="56" width="8" height="10" rx="1"/>
+  <rect class="v-acc-soft" x="188" y="57" width="8" height="8" rx="1"/>
+  <!-- one PIA per circuit -->
+  <g text-anchor="middle" font-size="9">
+    <rect class="v-body" x="214" y="26" width="26" height="58" rx="3"/><text class="v-key" x="227" y="42">C1</text><rect class="v-acc" x="223" y="56" width="8" height="10" rx="1"/>
+    <rect class="v-body" x="242" y="26" width="26" height="58" rx="3"/><text class="v-key" x="255" y="42">C2</text><rect class="v-acc" x="251" y="56" width="8" height="10" rx="1"/>
+    <rect class="v-body" x="270" y="26" width="26" height="58" rx="3"/><text class="v-key" x="283" y="42">C3</text><rect class="v-acc" x="279" y="56" width="8" height="10" rx="1"/>
+    <rect class="v-body" x="298" y="26" width="26" height="58" rx="3"/><text class="v-key" x="311" y="42">C4</text><rect class="v-acc" x="307" y="56" width="8" height="10" rx="1"/>
+    <rect class="v-body" x="326" y="26" width="26" height="58" rx="3"/><text class="v-key" x="339" y="42">C5</text><rect class="v-acc" x="335" y="56" width="8" height="10" rx="1"/>
+  </g>
+  <!-- direction of the current -->
+  <path class="v-line" d="M70 99H348"/>
+  <path class="v-line" d="M343 95L349 99L343 103"/>
+  <text class="v-soft" x="210" y="95" text-anchor="middle" font-size="8.5">hacia los circuitos</text>
+  <!-- legend -->
+  <text class="v-key" x="10" y="118">ICP</text><text x="50" y="118">controla la potencia contratada; no protege</text>
+  <text class="v-key" x="10" y="132">IGA</text><text x="50" y="132">general: In ≥ 25 A · Icn ≥ 4 500 A · corte omnipolar</text>
+  <text class="v-key" x="10" y="146">Sobret.</text><text x="50" y="146">si hace falta; con un solo ID, va antes de él</text>
+  <text class="v-key" x="10" y="160">ID</text><text x="50" y="160">diferencial ≤ 30 mA · uno por cada 5 circuitos</text>
+  <text class="v-key" x="10" y="174">PIA</text><text x="50" y="174">uno por circuito, corte omnipolar</text>
+  <text class="v-soft" x="10" y="187" font-size="9">Placa del cuadro: instalador, fecha e intensidad del IGA</text>
+</svg>

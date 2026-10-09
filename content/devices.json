@@ -1,0 +1,905 @@
+{
+ "_doc": "Dispositivos: the third part of the page, one section per device (PIA, differential…). Same format as cheatsheet.json: rows [what, value, ref], optional table {head, rows}, optional \"visuals\": names of our SVGs in content/visuals/, shown under the heading. See README.md.",
+ "title": "Dispositivos",
+ "subtitle": "Los aparatos de la instalación, en el orden de la corriente, de la CGP a los receptores, y los de medida: qué hace cada uno, cómo se elige y qué significan sus datos, según el REBT y las guías técnicas del Ministerio",
+ "sections": [
+  {
+   "title": "Fusibles (cortacircuitos fusibles)",
+   "ref": "UNE-EN 60269 · Guía BT-22",
+   "visuals": [
+    "fusible"
+   ],
+   "rows": [
+    [
+     "Qué hace",
+     "el cartucho se funde y abre el circuito: protege de cortocircuitos y, según su clase, también de sobrecargas",
+     "Guía BT-22"
+    ],
+    [
+     "1ª letra: g",
+     "corta todas las corrientes desde su In hasta su poder de corte: sobrecargas y cortocircuitos",
+     "Guía BT-22"
+    ],
+    [
+     "1ª letra: a",
+     "solo corta desde k2·In hasta su poder de corte: solo cortocircuitos; necesita otra protección contra sobrecargas",
+     "Guía BT-22"
+    ],
+    [
+     "2ª letra",
+     "uso: G general · M motores · Tr transformadores · B líneas de gran longitud · R semiconductores · D retardado",
+     "Guía BT-22"
+    ],
+    [
+     "gG: If",
+     "corriente convencional de fusión: 1,60 In (In ≥ 16 A) · 1,90 In (4 A < In < 16 A) · 2,10 In (In ≤ 4 A)",
+     "Guía BT-22"
+    ],
+    [
+     "Sobrecarga",
+     "If hace el papel de la I2 del automático: IB ≤ In ≤ Iz e If ≤ 1,45 Iz",
+     "Guía BT-22"
+    ],
+    [
+     "Poder de corte",
+     "≥ Icc prevista en su punto de instalación",
+     "BT-13 1.2"
+    ],
+    [
+     "En la CGP",
+     "en todas las fases; el neutro es una conexión amovible a la izquierda de las fases",
+     "BT-13 1.2"
+    ],
+    [
+     "Una por LGA",
+     "una misma protección no puede servir a más de una línea general de alimentación",
+     "Guía BT-13"
+    ],
+    [
+     "Fusibles de seguridad",
+     "en el origen de cada derivación individual, antes del contador, en cada fase; precintados por la distribuidora",
+     "BT-16 1"
+    ],
+    [
+     "Un solo usuario (CPM)",
+     "el fusible de seguridad es el de la CGP",
+     "BT-12 2.1"
+    ],
+    [
+     "Desconectar",
+     "sirven para desconectar un circuito; para maniobrar en carga, solo los de accionamiento manual con poder de corte y de cierre adecuado",
+     "BT-19 2.6 · BT-19 2.7"
+    ],
+    [
+     "Norma",
+     "UNE-EN 60269 · personas autorizadas (industrial): UNE-HD 60269-2 · personas comunes (doméstico): UNE-HD 60269-3",
+     "Guía BT-24"
+    ],
+    [
+     "Dentro de la vivienda",
+     "se usan automáticos (magnetotérmicos), no fusibles",
+     "Guía BT-22"
+    ]
+   ]
+  },
+  {
+   "title": "ICP: interruptor de control de potencia",
+   "ref": "UNE 20317 · ITC-BT-17 · Guía BT-17",
+   "rows": [
+    [
+     "Qué hace",
+     "controla que la potencia que se demanda no pase de la contratada",
+     "Guía BT-17"
+    ],
+    [
+     "No protege",
+     "no es protección ni desconexión de la instalación: siempre va acompañado de un IGA",
+     "Guía BT-17"
+    ],
+    [
+     "Hasta 63 A",
+     "por encima no se usa ICP: interruptores de intensidad regulable, maxímetros o integradores del equipo de medida, sin caja de ICP",
+     "Guía BT-17"
+    ],
+    [
+     "Situación",
+     "inmediatamente antes de los demás dispositivos, en compartimento independiente y precintable; puede ir en el mismo cuadro",
+     "BT-17 1.1"
+    ],
+    [
+     "Caja",
+     "precintable, de modelo oficialmente aprobado, de dimensiones según el suministro y la tarifa",
+     "BT-17 1.2"
+    ],
+    [
+     "Contador inteligente",
+     "si lleva el ICP incorporado, la caja de ICP no es exigible (RD 1110/2007, art. 9.6)",
+     "Guía BT-17"
+    ],
+    [
+     "Tarifa nocturna",
+     "puede haber contactores que puenteen el ICP en las horas de esa tarifa",
+     "Guía BT-17"
+    ],
+    [
+     "ICPM",
+     "interruptor de control de potencia y magnetotérmico: mando + protección contra sobrecargas y cortocircuitos",
+     "BT-01"
+    ],
+    [
+     "Norma",
+     "UNE 20317",
+     "Guía BT-17"
+    ]
+   ],
+   "visuals": [
+    "icp"
+   ]
+  },
+  {
+   "title": "IGA: interruptor general automático",
+   "ref": "ITC-BT-17 y 25 · Guía BT-10 y 17",
+   "visuals": [
+    "iga",
+    "cuadro"
+   ],
+   "rows": [
+    [
+     "Qué es",
+     "el interruptor general del cuadro: corte omnipolar, accionamiento manual, protección contra sobrecargas y cortocircuitos",
+     "BT-17 1.2"
+    ],
+    [
+     "Corte omnipolar",
+     "corta todos los conductores activos, neutro incluido: monofásico L y N · trifásico L1, L2, L3 y N",
+     "BT-01"
+    ],
+    [
+     "Siempre",
+     "sea cual sea el control de potencia: ni el ICP ni otro dispositivo de control sirven de protección ni de desconexión",
+     "Guía BT-17"
+    ],
+    [
+     "Independiente del ICP",
+     "no puede ser sustituido por éste",
+     "BT-25 2.1"
+    ],
+    [
+     "In en vivienda",
+     "≥ 25 A",
+     "BT-25 2.1"
+    ],
+    [
+     "Poder de corte",
+     "≥ Icc de su punto de instalación, y como mínimo 4 500 A",
+     "BT-17 1.3"
+    ],
+    [
+     "Fija la potencia",
+     "la potencia prevista es la capacidad máxima de la instalación, definida por la In del IGA",
+     "BT-10 2.2"
+    ],
+    [
+     "Mínimo previsto",
+     "5 750 W por vivienda · electrificación elevada ≥ 9 200 W",
+     "BT-10 2.2"
+    ],
+    [
+     "Escalones (230 V)",
+     "básica: 25 A = 5 750 W · 32 A = 7 360 W · elevada: 40 A = 9 200 W · 50 A = 11 500 W · 63 A = 14 490 W",
+     "Guía BT-10"
+    ],
+    [
+     "Placa del cuadro",
+     "nombre del instalador o empresa, fecha de la instalación e intensidad del interruptor general",
+     "Guía BT-17"
+    ],
+    [
+     "Norma",
+     "UNE-EN 60898 (doméstico) · UNE-EN 60947-2 (industrial, con seccionamiento)",
+     "Guía BT-17"
+    ]
+   ]
+  },
+  {
+   "title": "Protector de sobretensiones transitorias",
+   "ref": "UNE-EN 61643-11 · Guía BT-23",
+   "visuals": [
+    "sobretensiones"
+   ],
+   "rows": [
+    [
+     "Qué hace",
+     "limita las sobretensiones transitorias (rayo lejano, conmutaciones y defectos de la red) a un valor que aguanten los equipos",
+     "Guía BT-23"
+    ],
+    [
+     "No cubre",
+     "el impacto directo del rayo: eso es la protección externa (pararrayos, CTE DB-SUA 8)",
+     "BT-23 3"
+    ],
+    [
+     "Obligatorio",
+     "alimentación total o parcialmente aérea · fallo que afecte a vidas, servicios públicos, procesos continuos o servicios de seguridad no autónomos · edificio con pararrayos · recarga de VE",
+     "Guía BT-23"
+    ],
+    [
+     "Recomendado",
+     "pararrayos a < 50 m · ≥ 20 días de tormenta al año (muy recomendado ≥ 25) · equipos sensibles · viviendas",
+     "Guía BT-23"
+    ],
+    [
+     "Tipo 1",
+     "energía muy alta (impacto directo): en el origen, antes de los contadores, si el edificio tiene pararrayos · Iimp ≥ 12,5 kA (10/350 µs)",
+     "Guía BT-23"
+    ],
+    [
+     "Tipo 2",
+     "el general: en el cuadro principal, lo más cerca posible del origen · In ≥ 5 kA (8/20 µs)",
+     "Guía BT-23"
+    ],
+    [
+     "Tipo 3",
+     "protección fina, junto a los equipos sensibles (categoría I)",
+     "Guía BT-23"
+    ],
+    [
+     "Up",
+     "nivel de protección: menor que la tensión soportada de la categoría a proteger (categoría II → Up ≤ 2,5 kV)",
+     "Guía BT-23"
+    ],
+    [
+     "Uc",
+     "tensión máxima permanente: en TT 230/400 V, > 253 V (230 × 1,1)",
+     "Guía BT-23"
+    ],
+    [
+     "Conexión",
+     "TT e IT: cada conductor, neutro incluido, a tierra · TN-S: cada fase al conductor de protección · TN-C: cada fase al neutro",
+     "BT-23 3.2"
+    ],
+    [
+     "Con el diferencial",
+     "con un solo ID, antes de él; si va detrás, el ID debe ser tipo S",
+     "Guía BT-23"
+    ],
+    [
+     "Su propia protección",
+     "la que indique el fabricante, aguas arriba, para que si el protector se destruye no dispare el IGA",
+     "Guía BT-23"
+    ],
+    [
+     "Conductor a tierra (Cu)",
+     "tipo 1: 16 mm² · tipo 2: 4 mm² · tipo 3: 2,5 mm²",
+     "Guía BT-23"
+    ],
+    [
+     "Categorías",
+     "tensión soportada a impulsos (230/400 V): IV 6 kV · III 4 kV · II 2,5 kV · I 1,5 kV",
+     "BT-23 4"
+    ]
+   ]
+  },
+  {
+   "title": "Diferencial: ID y AD",
+   "ref": "UNE-EN 61008-1 · 61009-1 · Guía BT-24",
+   "visuals": [
+    "diferencial"
+   ],
+   "rows": [
+    [
+     "Qué protege",
+     "a las personas: corta si una corriente se fuga a tierra (contactos indirectos; con ≤ 30 mA complementa contra los directos)",
+     "BT-24 3.5"
+    ],
+    [
+     "ID",
+     "solo diferencial, sin protección contra sobreintensidades: UNE-EN 61008-1",
+     "Guía BT-24"
+    ],
+    [
+     "AD",
+     "diferencial con protección contra sobreintensidades incorporada: UNE-EN 61009-1",
+     "Guía BT-24"
+    ],
+    [
+     "Tipos F y B",
+     "UNE-EN 62423 (el B, también UNE-EN 60947-2)",
+     "Guía BT-24"
+    ],
+    [
+     "IΔn",
+     "sensibilidad: 10 · 30 · 100 · 300 · 500 mA · 1 A",
+     "Guía BT-24"
+    ],
+    [
+     "Umbral",
+     "dispara entre 0,5 y 1 IΔn: el de 30 mA, entre 15 y 30 mA",
+     "Guía BT-24"
+    ],
+    [
+     "En vivienda",
+     "IΔn ≤ 30 mA · In ≥ la del IGA",
+     "BT-25 2.1"
+    ],
+    [
+     "Tipo AC",
+     "alterna senoidal",
+     "Guía BT-24"
+    ],
+    [
+     "Tipo A",
+     "lo del AC + continua pulsante (con hasta 6 mA de continua alisada encima)",
+     "Guía BT-24"
+    ],
+    [
+     "Tipo F",
+     "lo del A + corrientes de varias frecuencias (convertidores entre fase y neutro) y hasta 10 mA de continua alisada",
+     "Guía BT-24"
+    ],
+    [
+     "Tipo B",
+     "lo del F + alterna hasta 1 000 Hz y continua alisada de cualquier polaridad",
+     "Guía BT-24"
+    ],
+    [
+     "Tipo S",
+     "selectivo (retardado, ≤ 1 s): en serie, aguas arriba de los generales · debe serlo si el protector de sobretensiones va aguas abajo",
+     "Guía BT-24"
+    ],
+    [
+     "Fugas",
+     "< IΔn/2 en servicio normal · mejor ≤ 30 % de IΔn para evitar disparos intempestivos",
+     "Guía BT-24"
+    ],
+    [
+     "≤ 300 mA",
+     "en el origen del circuito protege además contra incendio por fugas a tierra",
+     "Guía BT-24"
+    ],
+    [
+     "Esquema TN-C",
+     "no se puede usar diferencial (neutro y protección son el mismo conductor)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Botón de prueba",
+     "pulsarlo al menos una vez al mes: si no dispara, está averiado",
+     "Guía RD 842/2002"
+    ]
+   ]
+  },
+  {
+   "title": "PIA: interruptor automático (magnetotérmico)",
+   "ref": "UNE-EN 60898-1 · Guía BT-22",
+   "visuals": [
+    "pia"
+   ],
+   "rows": [
+    [
+     "Qué protege",
+     "sobrecargas (disparo térmico, de tiempo inverso) y cortocircuitos (disparo magnético, sin retardo)",
+     "Guía BT-22"
+    ],
+    [
+     "Norma",
+     "UNE-EN 60898 (doméstico y análogo) · con diferencial: UNE-EN 61009 · industrial: UNE-EN 60947-2",
+     "Guía BT-22"
+    ],
+    [
+     "Polos",
+     "corte omnipolar, con tantos polos protegidos como fases tenga el circuito: fase y neutro → corta los dos · trifásico con neutro → protege las tres fases (a veces también el neutro: ITC-BT-22 tabla 1)",
+     "BT-17 1.3"
+    ],
+    [
+     "In",
+     "intensidad asignada, el calibre · vivienda: C1 10 A, C2 16 A, C3 25 A, C4 20 A, C5 16 A",
+     "BT-25 tabla 1"
+    ],
+    [
+     "Curva B",
+     "Im = 3–5 In · circuitos sin transitorios",
+     "Guía BT-22"
+    ],
+    [
+     "Curva C",
+     "Im = 5–10 In · carga mixta, la habitual en vivienda",
+     "Guía BT-22"
+    ],
+    [
+     "Curva D",
+     "Im = 10–20 In · transitorios fuertes, como el arranque de motores",
+     "Guía BT-22"
+    ],
+    [
+     "Elegir In",
+     "IB ≤ In ≤ Iz (IB: corriente prevista del circuito · Iz: admisible del cable)",
+     "Guía BT-22"
+    ],
+    [
+     "I2",
+     "la que asegura el disparo en tiempo largo: 1,45 In (UNE-EN 60898 y 61009) · 1,30 In (UNE-EN 60947-2) · debe cumplir I2 ≤ 1,45 Iz",
+     "Guía BT-22"
+    ],
+    [
+     "Icn",
+     "poder de corte asignado: ≥ Icc máxima en su punto de instalación",
+     "Guía BT-22"
+    ],
+    [
+     "Icn del IGA",
+     "≥ 4 500 A",
+     "BT-17 1.3"
+    ],
+    [
+     "Final de la línea",
+     "Icc mín > Im, para que el disparo magnético esté asegurado (curva C: se toma Im = 10 In)",
+     "Guía BT-22"
+    ],
+    [
+     "Ej. curva C, 16 A",
+     "Im entre 80 y 160 A · para comprobar la Icc mín se toman 160 A",
+     "Guía BT-22"
+    ],
+    [
+     "En vivienda",
+     "solo magnetotérmicos: protegen a la vez de sobrecargas y cortocircuitos",
+     "Guía BT-22"
+    ]
+   ]
+  },
+  {
+   "title": "Bases de enchufe y clavijas",
+   "ref": "UNE 20315 · ITC-BT-19 y 52",
+   "visuals": [
+    "tomas"
+   ],
+   "rows": [
+    [
+     "Interiores",
+     "bases de UNE 20315, figuras C2a, C3a o ESB 25-5a",
+     "BT-19 2.10"
+    ],
+    [
+     "C2a",
+     "bipolar con contacto lateral de tierra, 16 A 250 V, con obturadores (UNE 20315:2004): la de uso general",
+     "Guía BT-19"
+    ],
+    [
+     "C3a",
+     "bipolar con espiga de tierra, 16 A 250 V: cuando hay que distinguir fase y neutro o hay una red de tierras específica",
+     "BT-19 2.10"
+    ],
+    [
+     "ESB 25-5a",
+     "bipolar con contacto de tierra, 25 A 250 V: la de cocina y horno",
+     "Guía BT-19"
+    ],
+    [
+     "En vivienda",
+     "C2, C5 y C10: base 16 A 2p+T · C3: base 25 A 2p+T · C4: base 16 A 2p+T con fusible o automático de 16 A",
+     "BT-25 tabla 1"
+    ],
+    [
+     "Solo reposición",
+     "fijas C1a, ESB 10-5a, ESC 10-1a y clavijas ESB 10-5b, C1b: solo para sustituir las existentes",
+     "BT-19 2.10"
+    ],
+    [
+     "Bases móviles",
+     "ESC 10-1a, C2a o C3a",
+     "BT-19 2.10"
+    ],
+    [
+     "Clavijas",
+     "ESC 10-1b, C2b, C4, C6 o ESB 25-5b (UNE 20315) o UNE-EN 50075; fuera de vivienda, también UNE-EN 60309",
+     "BT-43 2.5"
+    ],
+    [
+     "Industriales",
+     "las de UNE-EN 60309 se admiten en instalaciones que no sean viviendas",
+     "BT-19 2.10"
+    ],
+    [
+     "Maniobra en carga",
+     "las clavijas de ≤ 16 A sirven para conectar y desconectar en carga",
+     "BT-19 2.7"
+    ],
+    [
+     "Puertos (amarres)",
+     "UNE-EN 60309: 230 V, 16 A, 2 polos + tierra, IPX6, cada una con su protección",
+     "BT-42 4.3.2"
+    ],
+    [
+     "VE ≤ 3,7 kW",
+     "monofásica, en vivienda unifamiliar o aparcamiento de viviendas: cualquiera de la tabla 3, también la C2a (a 10 A)",
+     "BT-52"
+    ],
+    [
+     "VE 3,7–22 kW",
+     "base o conector tipo 2 (UNE-EN 62196-2); se recomiendan obturadores si la usa público no experto",
+     "BT-52"
+    ],
+    [
+     "VE > 22 kW",
+     "alterna: conector tipo 2 · continua (modo 4): combo 2 (EN 62196-3)",
+     "BT-52"
+    ],
+    [
+     "Modos de carga",
+     "1: toma normalizada ≤ 16 A · 2: ≤ 32 A, con control piloto y diferencial en el cable · 3: SAVE · 4: continua, con el convertidor en el SAVE",
+     "BT-52"
+    ]
+   ]
+  },
+  {
+   "title": "Alumbrado de emergencia: los aparatos",
+   "ref": "ITC-BT-28 · Guía BT-28",
+   "visuals": [
+    "emergencia"
+   ],
+   "rows": [
+    [
+     "Aparato autónomo",
+     "batería, lámpara, mando y control dentro de la luminaria o a menos de 1 m",
+     "BT-28 3.4.1"
+    ],
+    [
+     "Fuente central",
+     "luminaria alimentada por un sistema de emergencia central, fuera de ella",
+     "BT-28 3.4.2"
+    ],
+    [
+     "Cuándo se enciende",
+     "automáticamente al fallar el alumbrado normal o cuando su tensión baja a menos del 70 % de la nominal",
+     "BT-28 3.1"
+    ],
+    [
+     "Permanente",
+     "sus lámparas de emergencia están siempre encendidas, haya o no fallo",
+     "Guía BT-28"
+    ],
+    [
+     "No permanente",
+     "solo se encienden cuando falla el alumbrado normal",
+     "Guía BT-28"
+    ],
+    [
+     "Combinado",
+     "2 o más lámparas: al menos una del alumbrado de emergencia y las otras del normal",
+     "Guía BT-28"
+    ],
+    [
+     "Autonomía",
+     "≥ 1 h (evacuación y antipánico) · zonas de hospitalización ≥ 2 h",
+     "BT-28 3.1.1"
+    ],
+    [
+     "Marcado",
+     "4 celdas: tipo (X autónomo, Z fuente central) · modo (0–6) · dispositivos (A, B, C, D) · duración en minutos (60 = 1 h)",
+     "Guía BT-28"
+    ],
+    [
+     "Puesta en reposo",
+     "dispositivo integrado o a distancia, para no descargar las baterías cuando no hace falta",
+     "Guía BT-28"
+    ],
+    [
+     "Autotest",
+     "ensayo automático recomendado (UNE-EN 62034) · mantenimiento recomendado cada 3 años como máximo, registrado",
+     "Guía BT-28"
+    ],
+    [
+     "Circuito",
+     "con bloques autónomos no hace falta circuito independiente · si comparte circuito con el normal: interruptor que apague el normal sin desconectar la emergencia",
+     "Guía BT-28"
+    ],
+    [
+     "Fuente central: líneas",
+     "automático de 10 A como máximo · ≤ 12 puntos de luz por línea, repartidos en ≥ 2 líneas · a ≥ 5 cm de otras canalizaciones",
+     "BT-28 3.4.2"
+    ],
+    [
+     "Niveles",
+     "1 lux en el eje de paso · 5 lux en equipos contra incendios y cuadros · 0,5 lux antipánico (más en la chuleta)",
+     "BT-28 3.1.1"
+    ],
+    [
+     "Normas",
+     "UNE-EN 60598-2-22 (también LED) · UNE 20392 fluorescencia · UNE 20062 incandescencia",
+     "Guía BT-28"
+    ]
+   ]
+  },
+  {
+   "title": "Medida: los aparatos que exige el REBT",
+   "ref": "ITC-BT-03 · Guía anexo 4",
+   "visuals": [
+    "medidas"
+   ],
+   "rows": [
+    [
+     "Exigidos (categoría básica)",
+     "telurómetro · medidor de aislamiento · multímetro o tenaza · medidor de fugas · detector de tensión · analizador de potencia y energía · comprobador de diferenciales · verificador de continuidad · medidor de impedancia de bucle · luxómetro",
+     "BT-03"
+    ],
+    [
+     "Multímetro o tenaza",
+     "tensión alterna y continua hasta 500 V · intensidad alterna y continua hasta 20 A · resistencia",
+     "BT-03"
+    ],
+    [
+     "Medidor de fugas",
+     "resolución de 1 mA o mejor",
+     "BT-03"
+    ],
+    [
+     "Analizador",
+     "trifásico, con registro: potencia activa, tensión, intensidad y factor de potencia",
+     "BT-03"
+    ],
+    [
+     "Comprobador de diferenciales",
+     "que verifique la característica intensidad-tiempo",
+     "BT-03"
+    ],
+    [
+     "Medidor de bucle",
+     "resolución de 0,1 Ω o mejor, compensando los cables de prueba",
+     "BT-03"
+    ],
+    [
+     "Luxómetro",
+     "con rango para el alumbrado de emergencia",
+     "BT-03"
+    ],
+    [
+     "Especialista, además",
+     "analizador de redes y armónicos · electrodos para el aislamiento de suelos · comprobador del vigilante de aislamiento de quirófanos",
+     "BT-03"
+    ],
+    [
+     "Orden",
+     "1º verificación por examen, sin medidas · 2º medidas y ensayos",
+     "Guía anexo 4"
+    ],
+    [
+     "Sin tensión",
+     "continuidad, aislamiento, resistencia de tierra (electrodo desconectado), rigidez dieléctrica",
+     "Guía anexo 4"
+    ],
+    [
+     "Con tensión",
+     "corrientes de fuga, impedancia de bucle, tensión de contacto, disparo de diferenciales, secuencia de fases",
+     "Guía anexo 4"
+    ],
+    [
+     "Calibración",
+     "los equipos básicos deberían ser del propio instalador, en buen estado y calibrados",
+     "Guía BT-03"
+    ]
+   ]
+  },
+  {
+   "title": "Medida: telurómetro (resistencia de tierra)",
+   "ref": "ITC-BT-18 · Guía anexo 4",
+   "visuals": [
+    "telurometro"
+   ],
+   "rows": [
+    [
+     "Qué mide",
+     "la resistencia de la toma de tierra RE: inyecta una corriente alterna conocida (más de 50 Hz) y mide la caída de tensión: RE = U / I",
+     "Guía anexo 4"
+    ],
+    [
+     "Conexión",
+     "3 terminales: la corriente entre E y H, la tensión entre S y ES · las dos picas auxiliares (≈ 30 cm) vienen con el aparato",
+     "Guía anexo 4"
+    ],
+    [
+     "Colocación",
+     "los tres electrodos en línea recta · S a 20 m o más del electrodo y de H · los cables no se cruzan",
+     "Guía anexo 4"
+    ],
+    [
+     "Antes de medir",
+     "desconectar el electrodo de los conductores de tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "Lectura buena",
+     "si al mover S un par de metros a cada lado el valor no cambia",
+     "Guía anexo 4"
+    ],
+    [
+     "Cuándo",
+     "al dar de alta la instalación · al menos una vez al año, en la época más seca",
+     "BT-18 12"
+    ],
+    [
+     "Cada 5 años",
+     "si el terreno no favorece la conservación de los electrodos, descubrirlos y examinarlos",
+     "BT-18 12"
+    ],
+    [
+     "Qué valor",
+     "el que cumpla RA × Ia ≤ U (50 V; 24 V en ciertos casos): ver «Puesta a tierra» en la chuleta",
+     "BT-24 4.1.2"
+    ]
+   ]
+  },
+  {
+   "title": "Medida: medidor de aislamiento (megóhmetro)",
+   "ref": "ITC-BT-19 · Guía anexo 4",
+   "visuals": [
+    "aislamiento"
+   ],
+   "rows": [
+    [
+     "Qué mide",
+     "la resistencia de aislamiento, con la tensión continua que genera el propio aparato (1 mA con la resistencia mínima)",
+     "BT-19 2.9"
+    ],
+    [
+     "Valores",
+     "MBTS y MBTP: 250 V → ≥ 0,25 MΩ · hasta 500 V: 500 V → ≥ 0,5 MΩ · más de 500 V: 1000 V → ≥ 1 MΩ",
+     "BT-19 2.9"
+    ],
+    [
+     "Longitud",
+     "valores para 100 m de canalización; si es más larga, por tramos de ≈ 100 m, o el mínimo dividido por los hectómetros",
+     "BT-19 2.9"
+    ],
+    [
+     "Sin tensión",
+     "circuito desconectado de su alimentación: con tensión se puede averiar el aparato",
+     "Guía anexo 4"
+    ],
+    [
+     "1ª medida: a tierra",
+     "fases y neutro unidos entre sí frente a tierra · receptores conectados y en «paro» · positivo a tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "2ª medida: entre conductores",
+     "receptores desconectados · cada pareja de conductores, neutro incluido",
+     "Guía anexo 4"
+    ],
+    [
+     "Electrónica",
+     "en circuitos con dispositivos electrónicos, fase y neutro unidos durante la medida",
+     "Guía anexo 4"
+    ],
+    [
+     "Redes TN",
+     "quitar las uniones de las masas al neutro durante la medida y reponerlas después",
+     "Guía anexo 4"
+    ],
+    [
+     "Si sale bajo",
+     "vale si cada receptor cumple su norma (o 0,5 MΩ) y la instalación sin receptores cumple la tabla",
+     "Guía anexo 4"
+    ],
+    [
+     "Suelos y paredes",
+     "aislantes: ≥ 50 kΩ (hasta 500 V) · ≥ 100 kΩ (más de 500 V) · 3 medidas por superficie · electrodo de placa de 250 mm con 750 N (suelo) o 250 N (pared)",
+     "Guía anexo 4"
+    ],
+    [
+     "Rigidez dieléctrica",
+     "sin receptores: 2U + 1 000 V (mínimo 1 500 V) a 50 Hz durante 1 min · fuga menor que la sensibilidad de los diferenciales · nunca en locales con riesgo de incendio o explosión",
+     "Guía anexo 4"
+    ]
+   ]
+  },
+  {
+   "title": "Medida: pinza de fugas, multímetro y detector de tensión",
+   "ref": "Guía anexo 4 · INSST",
+   "visuals": [
+    "pinza"
+   ],
+   "rows": [
+    [
+     "Pinza de fugas",
+     "abraza los conductores activos (fases y neutro) y mide su suma vectorial: si no es cero, hay fuga a tierra",
+     "Guía anexo 4"
+    ],
+    [
+     "Sensibilidad",
+     "1 mA como mínimo · suelen llevar filtro para medir a 50 Hz o en alta frecuencia",
+     "Guía anexo 4"
+    ],
+    [
+     "Valor admisible",
+     "fugas por debajo de la mitad de la sensibilidad (IΔn/2) de su diferencial, con los receptores conectados",
+     "Guía anexo 4"
+    ],
+    [
+     "Fuga no es defecto",
+     "todo receptor fuga algo (filtros con condensadores a tierra, balastos electrónicos); el defecto es un fallo de aislamiento",
+     "Guía anexo 4"
+    ],
+    [
+     "Multímetro o tenaza",
+     "tensión alterna y continua hasta 500 V · intensidad alterna y continua hasta 20 A · resistencia",
+     "BT-03"
+    ],
+    [
+     "Detector de tensión",
+     "verifica la ausencia de tensión en cada fase y en el neutro (y se recomienda en las masas), lo más cerca posible de la zona de trabajo",
+     "INSST"
+    ],
+    [
+     "Comprobar el detector",
+     "antes y después de usarlo: obligatorio en alta tensión, recomendable en baja · revisar su tensión nominal, puntas y pilas",
+     "INSST"
+    ],
+    [
+     "Norma del detector",
+     "por ejemplo, UNE-EN 61243-3 (bipolar, baja tensión)",
+     "INSST"
+    ]
+   ]
+  },
+  {
+   "title": "Medida: comprobador de bucle y de diferenciales",
+   "ref": "Guía anexo 4 · ITC-BT-24",
+   "visuals": [
+    "comprobador"
+   ],
+   "rows": [
+    [
+     "Continuidad",
+     "de protección y equipotenciales: ohmímetro con ≈ 200 mA en continua y 4–24 V, cambiando la polaridad · sin tensión · descontar los cables de prueba",
+     "Guía anexo 4"
+    ],
+    [
+     "Quirófanos",
+     "≤ 0,2 Ω del embarrado a masas y tomas · ≤ 0,1 Ω de las partes metálicas al embarrado equipotencial",
+     "Guía anexo 4"
+    ],
+    [
+     "Impedancia de bucle",
+     "Zs: de la fuente por la fase hasta el defecto y vuelta por el conductor de protección · con tensión · descontar los cables",
+     "Guía anexo 4"
+    ],
+    [
+     "Cómo la mide",
+     "carga el circuito unos milisegundos con una resistencia calibrada y compara la tensión antes y durante",
+     "Guía anexo 4"
+    ],
+    [
+     "Para qué",
+     "Icc = U0 / Zs debe ser ≥ Ia, la corriente que hace actuar la protección en el tiempo exigido (TN, 230 V: 0,4 s)",
+     "Guía anexo 4"
+    ],
+    [
+     "Puentear el diferencial",
+     "al medir el bucle, puentear provisionalmente los diferenciales aguas arriba",
+     "Guía anexo 4"
+    ],
+    [
+     "Tensión de contacto",
+     "el aparato calcula Uc = Zs × IΔn; como Zs es mayor que RA, sale mayor que la real: del lado de la seguridad",
+     "Guía anexo 4"
+    ],
+    [
+     "Ensayo del diferencial",
+     "desde una base aguas abajo, en servicio: ½ IΔn no dispara · IΔn < 200 ms · 2 IΔn < 150 ms · 5 IΔn < 40 ms, a 0° y a 180°",
+     "Guía anexo 4"
+    ],
+    [
+     "Tipo S y especiales",
+     "otros límites; para algunos hay que inyectar alterna de media onda o continua",
+     "Guía anexo 4"
+    ],
+    [
+     "Secuencia de fases",
+     "con equipo específico o multifunción: que sea directa antes de conectar motores trifásicos",
+     "Guía anexo 4"
+    ]
+   ]
+  }
+ ]
+}

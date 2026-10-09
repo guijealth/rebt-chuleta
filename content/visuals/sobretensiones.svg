@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Surge protection in cascade: overvoltage category and withstand voltage of each zone (ITC-BT-23 4, table 1;
+     examples from Guía BT-23 2.2) and where protectors of type 1, 2 and 3 go (Guía BT-23 4.A).
+     Our own drawing; bar height = 10 units per kV. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 212" role="img" aria-label="Categorías de sobretensión de cada zona de la instalación y dónde van los protectores tipo 1, 2 y 3">
+  <text class="v-title" x="10" y="14">Protección en cascada (230/400 V)</text>
+  <text class="v-soft" x="10" y="27" font-size="9">Tensión soportada a impulsos en cada zona</text>
+  <!-- withstand voltage by category -->
+  <rect class="v-acc-soft" x="20" y="60" width="65" height="60" rx="1.5"/>
+  <rect class="v-acc-soft" x="105" y="80" width="65" height="40" rx="1.5"/>
+  <rect class="v-acc-soft" x="190" y="95" width="65" height="25" rx="1.5"/>
+  <rect class="v-acc-soft" x="275" y="105" width="65" height="15" rx="1.5"/>
+  <g class="v-key" text-anchor="middle" font-size="9.5">
+    <text x="52.5" y="55">IV · 6 kV</text><text x="137.5" y="75">III · 4 kV</text>
+    <text x="222.5" y="90">II · 2,5 kV</text><text x="307.5" y="100">I · 1,5 kV</text>
+  </g>
+  <path class="v-line" d="M10 120H350"/>
+  <g text-anchor="middle" font-size="8.5">
+    <text x="52.5" y="132">CGP · contadores</text><text x="137.5" y="132">cuadro, cables, tomas</text>
+    <text x="222.5" y="132">electrodomésticos</text><text x="307.5" y="132">ordenadores</text>
+  </g>
+  <!-- protectors -->
+  <path class="v-dash" d="M52.5 138V146M137.5 138V146M307.5 138V146"/>
+  <g text-anchor="middle">
+    <rect class="v-body" x="38" y="146" width="29" height="18" rx="2" stroke-dasharray="3 2"/><text class="v-key" x="52.5" y="159" font-size="9.5">T1</text>
+    <rect class="v-body" x="123" y="146" width="29" height="18" rx="2"/><text class="v-key" x="137.5" y="159" font-size="9.5">T2</text>
+    <rect class="v-body" x="293" y="146" width="29" height="18" rx="2"/><text class="v-key" x="307.5" y="159" font-size="9.5">T3</text>
+  </g>
+  <g text-anchor="middle" font-size="8.5">
+    <text x="52.5" y="176">si hay pararrayos,</text><text x="52.5" y="186">antes de contadores</text>
+    <text x="137.5" y="176">cuadro principal,</text><text x="137.5" y="186">lo antes posible</text>
+    <text x="307.5" y="176">junto al equipo</text><text x="307.5" y="186">sensible</text>
+  </g>
+  <text class="v-soft" x="10" y="206" font-size="9">Cada protector deja pasar una tensión Up menor que la que aguanta lo que tiene detrás.</text>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Leakage clamp around the live conductors (Guía anexo 4, 2.6) and the voltage-absence check before working
+     (INSST guide). Our own drawing of a generic clamp meter. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" role="img" aria-label="Pinza de fugas abrazando fase y neutro, y verificación de ausencia de tensión">
+  <!-- conductors and clamp -->
+  <path class="v-line" d="M96 8V122M112 8V122"/>
+  <g font-size="8.5" class="v-soft"><text x="92" y="16" text-anchor="end">L</text><text x="116" y="16">N</text></g>
+  <path class="v-line" d="M92 96L96 104L100 96M108 34L112 26L116 34"/>
+  <ellipse class="v-line" stroke-width="2.4" cx="104" cy="64" rx="24" ry="20"/>
+  <rect class="v-body" x="20" y="52" width="58" height="34" rx="5"/>
+  <rect class="v-card" x="27" y="58" width="44" height="16" rx="2"/>
+  <text class="v-key" x="49" y="70" text-anchor="middle" font-size="9.5">mA</text>
+  <path class="v-line" d="M78 64H80"/>
+  <!-- what it reads -->
+  <text class="v-title" x="146" y="16">Pinza de fugas</text>
+  <g font-size="9.5">
+    <text x="146" y="34">abraza fase y neutro juntos</text>
+    <text x="146" y="49">mide la suma de sus corrientes:</text>
+    <text x="146" y="64">sin fuga, la ida y la vuelta se anulan → 0</text>
+    <text x="146" y="79">con fuga, lo que falta va a tierra</text>
+    <text x="146" y="96"><tspan class="v-key">debe ser &lt; IΔn / 2</tspan> del diferencial</text>
+    <text class="v-soft" x="146" y="110" font-size="8.5">resolución 1 mA · en servicio, con los receptores</text>
+  </g>
+  <path class="v-rule" d="M0 130H360"/>
+  <text x="10" y="146" font-size="9.5"><tspan class="v-key">Detector de tensión</tspan>, antes de trabajar: L1 · L2 · L3 · N (y masas)</text>
+  <text class="v-soft" x="10" y="158" font-size="8.5">comprobar el detector antes y después de usarlo</text>
+</svg>

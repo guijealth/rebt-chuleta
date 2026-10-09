@@ -1,5 +1,5 @@
 {
- "_doc": "Chuleta: the first part of the page. Sections in order; rows are [what, value, ref] (ref like \"BT-19 2.2.4\", \"art. 4\", \"Guía anexo 2\", or \"\"); an optional table {head, rows} goes above the rows. See README.md.",
+ "_doc": "Chuleta: the first part of the page. Sections in order; rows are [what, value, ref] (ref like \"BT-19 2.2.4\", \"art. 4\", \"Guía anexo 2\", or \"\"); an optional table {head, rows} goes above the rows. See README.md. Devices (PIA, differential…) go in devices.json.",
  "title": "Chuleta REBT",
  "subtitle": "Las siglas y letras, las cifras que más se preguntan y las clave de cada capítulo, con su sitio en el REBT (BOE, edición 2025)",
  "sections": [

@@ -36,7 +36,7 @@ SRC = ROOT / "sources"
 MANIFEST = SRC / "sources.json"
 INDEX = SRC / "index"
 PAGES = INDEX / "pages.json"
-CHEAT = ROOT / "content" / "cheatsheet.json"
+SHEETS = [ROOT / "content" / "cheatsheet.json", ROOT / "content" / "devices.json"]
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
 
 
@@ -127,14 +127,15 @@ def list_sections(a):
 # ---------- check ----------
 
 REF_PART = re.compile(r"^(?:BT-(?P<itc>\d{2})(?:\s+(?:(?P<tabla>tabla\s+\d+)|(?P<num>\d+(?:\.\d+)*)(?:-[\d.]+)?))?"
-                      r"|art\.\s*(?P<art>\d+)|Guía(?:\s+(?P<guia>.+))?)$")
+                      r"|art\.\s*(?P<art>\d+)|Guía(?:\s+(?P<guia>.+))?|(?P<other>INSST|NTP 391|RD 614/2001|CTE DB-SUA))$")
+OTHER_DOCS = {"INSST": "INSST-RIESGO-ELECTRICO", "NTP 391": "INSST-NTP-391", "RD 614/2001": "RD-614-2001", "CTE DB-SUA": "CTE-DB-SUA"}
 
 
 def check_refs(sections, docs):
-    """Each row ref of the chuleta ("BT-19 2.2.4 · BT-15 3", "art. 4", "Guía anexo 2") must point to a real place."""
+    """Each row ref of the chuleta and the devices ("BT-19 2.2.4 · BT-15 3", "art. 4", "Guía anexo 2", "INSST") must point to a real place."""
     ids = {s["id"] for s in sections}
     bad = []
-    for sec in json.loads(CHEAT.read_text(encoding="utf-8"))["sections"]:
+    for sec in (s for f in SHEETS for s in json.loads(f.read_text(encoding="utf-8"))["sections"]):
         for row in sec.get("rows", []):
             ref = row[2]
             for part in filter(None, (p.strip() for p in ref.split("·"))):
@@ -147,9 +148,12 @@ def check_refs(sections, docs):
                         ok = f"{doc}#{m['num']}" in ids
                 elif m and m["art"]:
                     ok = f"RD#art-{m['art']}" in ids
-                elif m and m["guia"]:
-                    g = re.match(r"anexo\s+(\d)$", m["guia"])
-                    ok = bool(g) and f"GUIA-BT-ANEXO-{g[1]}" in docs
+                elif m and m["guia"]:  # "Guía anexo 2", "Guía BT-22", "Guía RD 842/2002"
+                    g = re.match(r"anexo\s+(\d)$|BT-(\d{2})$|(RD 842/2002)$", m["guia"])
+                    doc = g and (f"GUIA-BT-ANEXO-{g[1]}" if g[1] else f"GUIA-BT-{g[2]}" if g[2] else "GUIA-BT-RD_842_02")
+                    ok = bool(doc) and doc in docs
+                if m and m["other"]:
+                    ok = OTHER_DOCS[m["other"]] in docs
                 if not ok:
                     bad.append(f"  {sec['title']} · {row[0]}: «{part}»")
     return bad

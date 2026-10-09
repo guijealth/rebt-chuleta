@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ICP: the data that identify it, and who controls the contracted power in each case, always followed by an IGA
+     (ITC-BT-17 1.1-1.2, Guía BT-17). Our own drawing: a generic device in its sealed box, not the marking format of
+     any standard or manufacturer. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 222" role="img" aria-label="Datos de un ICP y quién controla la potencia contratada en cada caso">
+  <!-- generic device in its own sealable box -->
+  <rect class="v-dash" x="8" y="4" width="74" height="102" rx="3"/>
+  <rect class="v-body" x="18" y="12" width="54" height="86" rx="4"/>
+  <circle class="v-line" cx="31" cy="21" r="3.5"/>
+  <circle class="v-line" cx="59" cy="21" r="3.5"/>
+  <circle class="v-line" cx="31" cy="89" r="3.5"/>
+  <circle class="v-line" cx="59" cy="89" r="3.5"/>
+  <rect class="v-card" x="23" y="30" width="44" height="18" rx="1.5"/>
+  <path class="v-rule" d="M27 36H63M27 42H53"/>
+  <rect class="v-card" x="27" y="54" width="36" height="24" rx="2"/>
+  <rect class="v-acc" x="30" y="57" width="30" height="8" rx="1"/>
+  <circle class="v-acc" cx="82" cy="55" r="3"/>
+  <text class="v-soft" x="45" y="116" text-anchor="middle" font-size="8.5">caja precintada</text>
+  <path class="v-dash" d="M86 55H92M92 26V100"/>
+  <text class="v-title" x="98" y="16">Datos de un ICP</text>
+  <text class="v-key" x="98" y="34">Norma</text><text x="142" y="34">UNE 20317</text>
+  <text class="v-key" x="98" y="50">Función</text><text x="142" y="50">que no se pase de la potencia contratada</text>
+  <text class="v-key" x="98" y="66">Límite</text><text x="142" y="66">hasta 63 A</text>
+  <text class="v-key" x="98" y="82">Caja</text><text x="142" y="82">precintable, aparte, antes de todo</text>
+  <text class="v-key" x="98" y="98">Protege</text><text x="142" y="98">no: siempre con un IGA detrás</text>
+  <path class="v-rule" d="M0 124H360"/>
+
+  <!-- who controls the contracted power -->
+  <text class="v-title" x="10" y="140">¿Quién controla la potencia contratada?</text>
+  <g font-size="9" text-anchor="middle">
+    <rect class="v-acc-soft" x="8" y="148" width="108" height="46" rx="3"/>
+    <text class="v-key" x="62" y="161">Hasta 63 A</text>
+    <text x="62" y="174">ICP en su caja</text>
+    <text x="62" y="186">precintable</text>
+    <rect class="v-ok" x="126" y="148" width="108" height="46" rx="3"/>
+    <text class="v-key" x="180" y="161">Contador inteligente</text>
+    <text x="180" y="174">con ICP incorporado:</text>
+    <text x="180" y="186">sin caja de ICP</text>
+    <rect class="v-card" x="244" y="148" width="108" height="46" rx="3"/>
+    <text class="v-key" x="298" y="161">Más de 63 A</text>
+    <text x="298" y="174">interruptor regulable,</text>
+    <text x="298" y="186">maxímetro o integrador</text>
+  </g>
+  <path class="v-line" d="M62 194V204M180 194V204M298 194V204"/>
+  <rect class="v-body" x="8" y="204" width="344" height="16" rx="3"/>
+  <text x="180" y="215" text-anchor="middle" font-size="9.5"><tspan class="v-key">Siempre detrás: IGA</tspan> (el que protege y desconecta)</text>
+</svg>

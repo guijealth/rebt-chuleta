@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Verification of an installation: examination first, then the measurements with and without voltage and the
+     instrument for each (Guía anexo 4, ITC-BT-03 apéndice I). Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 184" role="img" aria-label="Verificación de una instalación: qué se mide sin tensión y con tensión, y con qué aparato">
+  <text class="v-title" x="10" y="14">Verificación: qué se mide y con qué</text>
+  <rect class="v-card" x="8" y="22" width="344" height="20" rx="3"/>
+  <text x="180" y="36" text-anchor="middle"><tspan class="v-key">1 · Por examen</tspan>, sin medidas: material, protecciones, conexiones</text>
+  <path class="v-line" d="M92 42V52M268 42V52"/>
+  <path class="v-line" d="M88 48L92 53L96 48M264 48L268 53L272 48"/>
+  <!-- without voltage -->
+  <rect class="v-ok" x="8" y="54" width="168" height="98" rx="3"/>
+  <text class="v-key" x="16" y="69">2 · Sin tensión</text>
+  <g font-size="9.5">
+    <text x="16" y="86"><tspan class="v-key">Continuidad</tspan> · ohmímetro</text>
+    <text x="16" y="101"><tspan class="v-key">Aislamiento</tspan> · megóhmetro</text>
+    <text x="16" y="116"><tspan class="v-key">Tierra</tspan> · telurómetro</text>
+    <text x="16" y="131"><tspan class="v-key">Rigidez dieléctrica</tspan> · generador</text>
+    <text class="v-soft" x="16" y="145" font-size="8.5">tierra: con el electrodo desconectado</text>
+  </g>
+  <!-- with voltage -->
+  <rect class="v-acc-soft" x="184" y="54" width="168" height="98" rx="3"/>
+  <text class="v-key" x="192" y="69">3 · Con tensión</text>
+  <g font-size="9.5">
+    <text x="192" y="86"><tspan class="v-key">Fugas</tspan> · pinza (1 mA)</text>
+    <text x="192" y="101"><tspan class="v-key">Bucle</tspan> · medidor de bucle</text>
+    <text x="192" y="116"><tspan class="v-key">Tensión de contacto</tspan> · comprobador</text>
+    <text x="192" y="131"><tspan class="v-key">Diferenciales</tspan> · comprobador</text>
+    <text x="192" y="146"><tspan class="v-key">Secuencia de fases</tspan> · multifunción</text>
+  </g>
+  <text class="v-soft" x="10" y="168" font-size="9">Además: luxómetro (alumbrado de emergencia) · analizador (potencia y energía)</text>
+  <text class="v-soft" x="10" y="180" font-size="9">Antes de trabajar sin tensión: comprobar la ausencia de tensión con un detector</text>
+</svg>

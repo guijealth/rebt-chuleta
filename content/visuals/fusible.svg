@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fuse: its data, how to read its class, and where "g" and "a" fuses cut (Guía BT-22, figures B and C, ITC-BT-13 1.2).
+     Our own drawing: a generic cartridge and schematic time-current curves, not to scale. Styled by .cheat-visual. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 306" role="img" aria-label="Datos de un fusible, cómo se leen las letras de su clase y dónde cortan los fusibles g y a">
+  <!-- generic cartridge -->
+  <rect class="v-card" x="8" y="30" width="12" height="36" rx="2"/>
+  <rect class="v-body" x="18" y="34" width="56" height="28" rx="3"/>
+  <rect class="v-card" x="72" y="30" width="12" height="36" rx="2"/>
+  <path class="v-dash" d="M20 48H72"/>
+  <path class="v-dash" d="M78 48H88M88 26V82"/>
+  <text class="v-title" x="96" y="16">Datos de un fusible</text>
+  <text class="v-key" x="96" y="34">Clase</text><text x="146" y="34">dos letras: zona de corte + uso (gG, aM…)</text>
+  <text class="v-key" x="96" y="50">In</text><text x="146" y="50">intensidad asignada, en A</text>
+  <text class="v-key" x="96" y="66">P. corte</text><text x="146" y="66">≥ Icc de su punto de instalación</text>
+  <text class="v-key" x="96" y="82">Norma</text><text x="146" y="82">UNE-EN 60269 (serie)</text>
+  <path class="v-rule" d="M0 94H360"/>
+
+  <!-- how to read the class -->
+  <text class="v-title" x="10" y="110">Cómo se leen las dos letras</text>
+  <rect class="v-acc-soft" x="10" y="120" width="32" height="34" rx="3"/>
+  <text class="v-key" x="26" y="144" text-anchor="middle" font-size="22">g</text>
+  <rect class="v-ok" x="46" y="120" width="32" height="34" rx="3"/>
+  <text class="v-key" x="62" y="144" text-anchor="middle" font-size="22">G</text>
+  <text class="v-soft" x="26" y="166" text-anchor="middle" font-size="8">1ª</text>
+  <text class="v-soft" x="62" y="166" text-anchor="middle" font-size="8">2ª</text>
+  <g font-size="9.5">
+    <text class="v-key" x="92" y="126">1ª letra: zona de corte</text>
+    <text x="92" y="138">g: todas las corrientes, sobrecarga y cortocircuito</text>
+    <text x="92" y="149">a: solo cortocircuito (desde k2·In)</text>
+    <text class="v-key" x="92" y="164">2ª letra: uso</text>
+    <text x="92" y="176">G general · M motores · Tr transformadores</text>
+    <text x="92" y="187">B líneas largas · R semiconductores · D retardado</text>
+  </g>
+  <text class="v-soft" x="10" y="202" font-size="9">Ej.: gG, uso general · aM, solo cortocircuito, para motores</text>
+  <path class="v-rule" d="M0 210H360"/>
+
+  <!-- where they cut: schematic t-I curves -->
+  <text class="v-key" x="20" y="224" font-size="9.5">g: sobrecarga y cortocircuito</text>
+  <path class="v-line" d="M20 230V288H172"/>
+  <text class="v-soft" x="14" y="236" font-size="8.5" text-anchor="end">t</text>
+  <text class="v-soft" x="172" y="298" font-size="8.5">I</text>
+  <path class="v-dash" d="M44 288V232M64 288V232"/>
+  <path class="v-line" stroke-width="1.6" d="M64 234C70 262 96 280 166 284"/>
+  <g text-anchor="middle" font-size="8.5"><text x="44" y="298">In</text><text x="64" y="298">If</text></g>
+  <text class="v-key" x="194" y="224" font-size="9.5">a: solo cortocircuito</text>
+  <path class="v-line" d="M194 230V288H346"/>
+  <text class="v-soft" x="188" y="236" font-size="8.5" text-anchor="end">t</text>
+  <text class="v-soft" x="346" y="298" font-size="8.5">I</text>
+  <rect class="v-acc-soft" x="214" y="270" width="50" height="18" stroke="none"/>
+  <text x="239" y="277" text-anchor="middle" font-size="7">otra</text><text x="239" y="285" text-anchor="middle" font-size="7">protección</text>
+  <path class="v-dash" d="M214 288V232M264 288V232"/>
+  <path class="v-line" stroke-width="1.6" d="M264 234C270 262 292 280 342 284"/>
+  <g text-anchor="middle" font-size="8.5"><text x="214" y="298">In</text><text x="264" y="298">k2·In</text></g>
+</svg>
