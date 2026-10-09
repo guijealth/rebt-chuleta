@@ -41,7 +41,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 13 chuleta + 4 symbol + 8 device pages).
+before and after a change (now 14 chuleta + 4 symbol + 8 device pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.

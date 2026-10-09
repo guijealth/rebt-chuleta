@@ -196,9 +196,52 @@
    ]
   },
   {
-   "title": "Siglas: cables",
-   "ref": "ITC-BT-07 · UNE 21031 · UNE 21123",
+   "title": "Cables: cómo se lee la designación",
+   "ref": "UNE-EN 50525 · UNE 21123 · Guías",
+   "visuals": [
+    "cables"
+   ],
    "rows": [
+    [
+     "Orden",
+     "tensión · aislamiento · cubierta (si la hay) · -clase del conductor · H07V-K: 450/750 V, aislamiento de PVC, clase 5",
+     "Guía BT-29"
+    ],
+    [
+     "Tensión",
+     "07 = 450/750 V · 05 = 300/500 V · los de 0,6/1 kV no llevan cifra: RV-K, RZ1-K…",
+     "Guía BT-26 · Guía BT-33"
+    ],
+    [
+     "Conductor (tras el guion)",
+     "-U clase 1, rígido de un alambre · -R clase 2, rígido de varios · -K clase 5, flexible, no para usos móviles · -F clase 5, apto para servicios móviles",
+     "Guía BT-26 · Guía BT-33"
+    ],
+    [
+     "Aislamiento y cubierta",
+     "V PVC · R polietileno reticulado · D etileno propileno · Z1 poliolefina termoplástica · Z compuesto reticulado o termoestable · N policloropreno",
+     "Guía BT-16 · Guía BT-28 · Guía BT-33"
+    ],
+    [
+     "R, ojo",
+     "en los de 0,6/1 kV (RV-K, RZ1-K) es polietileno reticulado; en H07RN-F es goma",
+     "Guía BT-33"
+    ],
+    [
+     "M",
+     "armadura de alambres de acero galvanizado: RVMV-K, RZ1MZ1-K",
+     "Guía BT-29"
+    ],
+    [
+     "(AS)",
+     "los no propagadores del incendio y con emisión de humos y opacidad reducida: obligatorios en LGA, DI, contadores y pública concurrencia",
+     "BT-14 3 · BT-15 3 · BT-16 1 · BT-28 4"
+    ],
+    [
+     "Reacción al fuego",
+     "clase mínima Cca-s1b,d1,a1 para los cables (AS) en garajes",
+     "Guía BT-29"
+    ],
     [
      "PVC",
      "policloruro de vinilo: termoplástico, 70 °C",
@@ -220,34 +263,39 @@
      "BT-06 1.1.1"
     ],
     [
-     "450/750 V",
-     "tensión asignada de los cables unipolares de interior (H07…)",
-     "BT-20 2.2.1"
+     "LGA y DI",
+     "RZ1-K (AS) o DZ1-K (AS) · en la DI también ES07Z1-K (AS) unipolar en tubo · aluminio: RZ1-Al (AS)",
+     "Guía BT-14 · Guía BT-15"
     ],
     [
-     "H07V-K",
-     "H armonizado · 07 = 450/750 V · V aislamiento PVC · K flexible para instalación fija",
-     ""
+     "Contadores",
+     "H07Z-R o ES07Z1-R (AS), clase 2 · hilo de mando rojo de 1,5 mm²",
+     "Guía BT-16"
     ],
     [
-     "H05VV-F",
-     "H armonizado · 05 = 300/500 V · VV aislamiento y cubierta PVC · F flexible",
-     "BT-27 3"
+     "Interior de vivienda",
+     "H07V-U, H07V-R o H07V-K (450/750 V, PVC)",
+     "Guía BT-26"
     ],
     [
-     "H07RN-F",
-     "R goma · N cubierta policloropreno · F flexible (obras, puertos)",
-     "BT-42 4.3.3"
+     "Interior de cuadros",
+     "ES05Z1-K (AS), 300/500 V (pública concurrencia)",
+     "Guía BT-28"
     ],
     [
-     "RV-K · RZ1-K",
-     "nacional 0,6/1 kV: R XLPE · V cubierta PVC · Z1 cubierta libre de halógenos",
-     ""
+     "Obras y usos móviles",
+     "H07RN-F (goma y policloropreno) · H07ZZ-F (AS) · interiores: H05VV-F",
+     "Guía BT-33"
     ],
     [
-     "(AS)",
-     "alta seguridad: libre de halógenos y baja emisión de humos (locales de pública concurrencia)",
-     ""
+     "Alumbrado exterior",
+     "RV-K (UNE 21123-2)",
+     "Guía BT-09"
+    ],
+    [
+     "Normas",
+     "UNE-EN 50525 (H07V-K, H05VV-F, H07RN-F…) · UNE 211002 (ES07Z1-K, H07Z1-K) · UNE 21123 (0,6/1 kV) · clases de conductor: UNE 21022, hoy UNE-EN 60228",
+     "BT-02 · Guía BT-33"
     ]
    ]
   },
