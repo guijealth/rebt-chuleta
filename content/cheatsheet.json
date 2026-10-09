@@ -145,12 +145,12 @@
     ],
     [
      "RA · Ia",
-     "resistencia de tierra de las masas · corriente de disparo (RA·Ia ≤ U)",
+     "resistencia de tierra de las masas · corriente de disparo ($R_A \\cdot I_a \\le U$)",
      "BT-24 4.1.2"
     ],
     [
      "Zs · U0",
-     "impedancia del bucle de defecto · tensión fase-tierra (Zs·Ia ≤ U0)",
+     "impedancia del bucle de defecto · tensión fase-tierra ($Z_s \\cdot I_a \\le U_0$)",
      "BT-24 4.1.1"
     ],
     [
@@ -220,7 +220,7 @@
      "BT-02"
     ],
     [
-     "PT = PV + PSG + PL + PG",
+     "$P_T = P_V + P_{SG} + P_L + P_G$",
      "Potencia Total = Viviendas + Servicios Generales + Locales + Garajes",
      "BT-10 3"
     ],
@@ -534,7 +534,7 @@
     ],
     [
      "S (potencia)",
-     "potencia aparente, en VA o kVA: S = U·I",
+     "potencia aparente, en VA o kVA: $S = U \\cdot I$",
      ""
     ],
     [
@@ -559,12 +559,12 @@
     ],
     [
      "Δ (delta)",
-     "«variación» o «diferencia»: ΔU = caída de tensión · Δf = variación de frecuencia",
+     "«variación» o «diferencia»: $\\Delta U$ = caída de tensión · $\\Delta f$ = variación de frecuencia",
      ""
     ],
     [
      "ΔU · e",
-     "caída de tensión: lo que se pierde en el cable. e en voltios; en %: e / U × 100",
+     "caída de tensión: lo que se pierde en el cable. $e$ en voltios; en %: $\\frac{e}{U} \\times 100$",
      "BT-19 2.2.2"
     ],
     [
@@ -574,17 +574,17 @@
     ],
     [
      "γ (gamma)",
-     "conductividad = 1/ρ, en m/(Ω·mm²): cobre ≈ 56 · aluminio ≈ 35",
+     "conductividad, $\\gamma = 1/\\rho$, en m/(Ω·mm²): cobre ≈ 56 · aluminio ≈ 35",
      ""
     ],
     [
      "√3 ≈ 1,73",
-     "aparece en trifásica: P = √3·U·I·cos φ (U entre fases, 400 V)",
+     "aparece en trifásica: $P = \\sqrt{3}\\, U I \\cos\\varphi$ (U entre fases, 400 V)",
      ""
     ],
     [
      "π ≈ 3,14 · Ø",
-     "pi · Ø = diámetro (S = π·D²/4)",
+     "pi · Ø = diámetro: $S = \\frac{\\pi D^2}{4}$",
      ""
     ],
     [
@@ -624,7 +624,7 @@
      "BT-40 4.3.1"
     ],
     [
-     "In",
+     "$I_n$",
      "intensidad nominal del aparato: la que aguanta sin disparar (PIA de 16 A → In = 16 A)",
      ""
     ],
@@ -639,8 +639,8 @@
      "BT-24 4.1.1"
     ],
     [
-     "Ia (circuitos)",
-     "en la tabla de circuitos, intensidad prevista por toma: I = n × Ia × Fs × Fu · ¡misma letra, otro uso!",
+     "$I_a$ (circuitos)",
+     "en la tabla de circuitos, intensidad prevista por toma: $I = n \\cdot I_a \\cdot F_s \\cdot F_u$ · ¡misma letra, otro uso!",
      "BT-25 tabla 1"
     ],
     [
@@ -649,8 +649,8 @@
      "BT-25 tabla 1"
     ],
     [
-     "Ib · Iz",
-     "intensidad de empleo (la que consume el circuito) · admisible del cable: Ib ≤ In ≤ Iz",
+     "$I_B$ · $I_z$",
+     "intensidad de empleo (la que consume el circuito) · admisible del cable: $I_B \\le I_n \\le I_z$",
      ""
     ],
     [
@@ -659,13 +659,13 @@
      "BT-17 1.3"
     ],
     [
-     "RA",
-     "suma de las resistencias de la toma de tierra y de los conductores de protección: RA·Ia ≤ U",
+     "$R_A$",
+     "suma de las resistencias de la toma de tierra y de los conductores de protección: $R_A \\cdot I_a \\le U$",
      "BT-24 4.1.2"
     ],
     [
-     "Zs",
-     "impedancia del bucle de defecto (fase → masa → vuelta a la fuente): Zs·Ia ≤ U0",
+     "$Z_s$",
+     "impedancia del bucle de defecto (fase → masa → vuelta a la fuente): $Z_s \\cdot I_a \\le U_0$",
      "BT-24 4.1.1"
     ],
     [
@@ -874,17 +874,17 @@
     ],
     [
      "Fórmula, monofásica",
-     "e = 2 · P · L / (γ · S · U) · U = 230 V (el 2: ida y vuelta)",
+     "$e = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot S \\cdot U}$ · U = 230 V (el 2: ida y vuelta)",
      "Guía anexo 2"
     ],
     [
      "Fórmula, trifásica",
-     "e = P · L / (γ · S · U) · U = 400 V entre fases",
+     "$e = \\dfrac{P \\cdot L}{\\gamma \\cdot S \\cdot U}$ · U = 400 V entre fases",
      "Guía anexo 2"
     ],
     [
      "Con la intensidad en vez de P",
-     "mono e = 2 · L · I · cos φ / (γ · S) · tri e = √3 · L · I · cos φ / (γ · S)",
+     "mono $e = \\dfrac{2 \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}$ · tri $e = \\dfrac{\\sqrt{3} \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}$",
      ""
     ],
     [
@@ -894,22 +894,22 @@
     ],
     [
      "Pasar a %",
-     "e % = e / U × 100 → comparar con el límite del tramo",
+     "$e\\,\\% = \\dfrac{e}{U} \\times 100$ → comparar con el límite del tramo",
      ""
     ],
     [
      "Despejar la sección",
-     "S = 2 · P · L / (γ · e · U) (mono) · S = P · L / (γ · e · U) (tri) → sección normalizada superior",
+     "mono $S = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot e \\cdot U}$ · tri $S = \\dfrac{P \\cdot L}{\\gamma \\cdot e \\cdot U}$ → sección normalizada superior",
      "Guía anexo 2"
     ],
     [
      "Ejemplo resuelto (DI, 1 %)",
-     "5 750 W, 22 m, Cu γ 48, e = 1 % de 230 = 2,3 V → S = 2·5 750·22 / (48·2,3·230) = 9,96 → 10 mm²",
+     "5 750 W, 22 m, Cu γ 48, e = 1 % de 230 = 2,3 V → $S = \\dfrac{2 \\cdot 5\\,750 \\cdot 22}{48 \\cdot 2{,}3 \\cdot 230} = 9{,}96$ → 10 mm²",
      "Guía anexo 2"
     ],
     [
      "Ejemplo al revés",
-     "2,5 mm² Cu, 20 m, 3 450 W mono, γ 56 → e = 2·3 450·20 / (56·2,5·230) = 4,3 V = 1,9 % (< 3 %)",
+     "2,5 mm² Cu, 20 m, 3 450 W mono, γ 56 → $e = \\dfrac{2 \\cdot 3\\,450 \\cdot 20}{56 \\cdot 2{,}5 \\cdot 230} = 4{,}3$ V = 1,9 % (< 3 %)",
      ""
     ],
     [
@@ -1000,12 +1000,12 @@
     ],
     [
      "2. Intensidad, monofásica",
-     "I = P / (U · cos φ) · U = 230 V",
+     "$I = \\dfrac{P}{U \\cos\\varphi}$ · U = 230 V",
      ""
     ],
     [
      "2. Intensidad, trifásica",
-     "I = P / (√3 · U · cos φ) · U = 400 V entre fases",
+     "$I = \\dfrac{P}{\\sqrt{3}\\, U \\cos\\varphi}$ · U = 400 V entre fases",
      ""
     ],
     [
@@ -1015,12 +1015,12 @@
     ],
     [
      "4. Sección por caída (ΔU), monofásica",
-     "S = 2 · P · L / (γ · e · U)",
+     "$S = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot e \\cdot U}$",
      "Guía anexo 2"
     ],
     [
      "4. Sección por caída (ΔU), trifásica",
-     "S = P · L / (γ · e · U) (sin el 2: no hay hilo de vuelta)",
+     "$S = \\dfrac{P \\cdot L}{\\gamma \\cdot e \\cdot U}$ (sin el 2: no hay hilo de vuelta)",
      "Guía anexo 2"
     ],
     [
@@ -1030,12 +1030,12 @@
     ],
     [
      "6. Protección",
-     "Ib ≤ In ≤ Iz: lo que consume ≤ calibre del PIA ≤ lo que aguanta el cable",
+     "$I_B \\le I_n \\le I_z$: lo que consume ≤ calibre del PIA ≤ lo que aguanta el cable",
      ""
     ],
     [
      "e: el % pasado a voltios",
-     "e = % × U / 100 · 3 % de 230 = 6,9 V · 1 % = 2,3 V · 0,5 % de 400 = 2 V",
+     "$e = \\dfrac{\\% \\cdot U}{100}$ · 3 % de 230 = 6,9 V · 1 % = 2,3 V · 0,5 % de 400 = 2 V",
      "Guía anexo 2"
     ],
     [
@@ -1060,7 +1060,7 @@
     ],
     [
      "Conductor de protección",
-     "fase S ≤ 16 → igual · 16 < S ≤ 35 → 16 · S > 35 → S/2",
+     "fase $S \\le 16 \\to S_p = S$ · $16 < S \\le 35 \\to S_p = 16$ · $S > 35 \\to S_p = S/2$",
      "BT-19 2.3"
     ],
     [
@@ -1181,7 +1181,7 @@
     ],
     [
      "Más de 21 viviendas",
-     "15,3 + (n − 21) × 0,5 · con tarifa nocturna, coeficiente = n.º de viviendas",
+     "$15{,}3 + (n - 21) \\cdot 0{,}5$ · con tarifa nocturna, coeficiente = n.º de viviendas",
      "BT-10 3.1"
     ],
     [
@@ -1227,7 +1227,7 @@
     ],
     [
      "Edificio de viviendas",
-     "PT = PV + PSG + PL + PG",
+     "$P_T = P_V + P_{SG} + P_L + P_G$",
      "BT-10 3"
     ]
    ]
@@ -1314,7 +1314,7 @@
    "rows": [
     [
      "Cómo se usa",
-     "PV = media de las potencias de las viviendas × coeficiente",
+     "$P_V$ = media de las potencias de las viviendas × coeficiente",
      "BT-10 3.1"
     ],
     [
@@ -1334,22 +1334,22 @@
     ],
     [
      "Ejemplo 1: todas iguales",
-     "10 viviendas básicas → 5 750 × 8,5 = 48 875 W",
+     "10 viviendas básicas → $5\\,750 \\times 8{,}5 = 48\\,875$ W",
      ""
     ],
     [
      "Ejemplo 2: mezcla",
-     "5 elevadas + 8 básicas = 13 → media (5·9 200 + 8·5 750) / 13 = 7 077 W × 10,6 ≈ 75 016 W",
+     "5 elevadas + 8 básicas = 13 → media $\\dfrac{5 \\cdot 9\\,200 + 8 \\cdot 5\\,750}{13} = 7\\,077$ W · × 10,6 ≈ 75 016 W",
      ""
     ],
     [
      "Ejemplo 3: más de 21",
-     "25 viviendas → 15,3 + (25 − 21) × 0,5 = 17,3 · básicas: 5 750 × 17,3 = 99 475 W",
+     "25 viviendas → $15{,}3 + (25 - 21) \\cdot 0{,}5 = 17{,}3$ · básicas: $5\\,750 \\times 17{,}3 = 99\\,475$ W",
      ""
     ],
     [
      "Después",
-     "PT = PV + PSG + PL + PG (sumar servicios generales, locales y garajes)",
+     "$P_T = P_V + P_{SG} + P_L + P_G$ (sumar servicios generales, locales y garajes)",
      "BT-10 3"
     ]
    ]
@@ -1565,7 +1565,7 @@
     ],
     [
      "TT, condición",
-     "RA × Ia ≤ U · U = 50 V (24 V en ciertos casos)",
+     "$R_A \\cdot I_a \\le U$ · U = 50 V (24 V en ciertos casos)",
      "BT-24 4.1.2"
     ],
     [
@@ -1617,17 +1617,17 @@
    "rows": [
     [
      "Pica vertical",
-     "R = ρ / L (L = longitud de la pica, m)",
+     "$R = \\dfrac{\\rho}{L}$ (L = longitud de la pica, m)",
      "BT-18 tabla 5"
     ],
     [
      "Placa enterrada",
-     "R = 0,8 · ρ / P (P = perímetro, m)",
+     "$R = 0{,}8 \\cdot \\dfrac{\\rho}{P}$ (P = perímetro, m)",
      "BT-18 tabla 5"
     ],
     [
      "Conductor horizontal enterrado",
-     "R = 2 · ρ / L",
+     "$R = \\dfrac{2\\rho}{L}$",
      "BT-18 tabla 5"
     ],
     [
@@ -2336,142 +2336,142 @@
    "rows": [
     [
      "Ley de Ohm",
-     "V = R · I → I = V / R · R = V / I",
+     "$V = R \\cdot I \\;\\to\\; I = \\dfrac{V}{R}$ · $R = \\dfrac{V}{I}$",
      ""
     ],
     [
      "Potencia (c.c. o resistiva)",
-     "P = V · I = R · I² = V² / R",
+     "$P = V \\cdot I = R \\cdot I^2 = \\dfrac{V^2}{R}$",
      ""
     ],
     [
      "Energía consumida",
-     "E = P · t (W·h; kWh = 1 000 W durante 1 h) — lo que se factura",
+     "$E = P \\cdot t$ (W·h; kWh = 1 000 W durante 1 h): lo que se factura",
      ""
     ],
     [
      "Calor por efecto Joule",
-     "Q = R · I² · t (julios)",
+     "$Q = R \\cdot I^2 \\cdot t$ (julios)",
      ""
     ],
     [
      "Intensidad y carga",
-     "I = Q / t (1 A = 1 culombio por segundo)",
+     "$I = \\dfrac{Q}{t}$ (1 A = 1 culombio por segundo)",
      ""
     ],
     [
      "Resistencias en serie",
-     "Req = R1 + R2 + … · misma I · V = V1 + V2 + …",
+     "$R_{eq} = R_1 + R_2 + \\dots$ · misma I · $V = V_1 + V_2 + \\dots$",
      ""
     ],
     [
      "Resistencias en paralelo",
-     "1/Req = 1/R1 + 1/R2 + … · misma V · I = I1 + I2 + … · Req < la menor",
+     "$\\dfrac{1}{R_{eq}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dots$ · misma V · $I = I_1 + I_2 + \\dots$ · $R_{eq}$ < la menor",
      ""
     ],
     [
      "Dos en paralelo",
-     "Req = R1 · R2 / (R1 + R2)",
+     "$R_{eq} = \\dfrac{R_1 \\cdot R_2}{R_1 + R_2}$",
      ""
     ],
     [
      "Resistencia de un conductor",
-     "R = ρ · L / S = L / (γ · S) · γ = 1/ρ (Cu 56 · Al 35 a 20 °C)",
+     "$R = \\dfrac{\\rho \\cdot L}{S} = \\dfrac{L}{\\gamma \\cdot S}$ · $\\gamma = 1/\\rho$ (Cu 56 · Al 35 a 20 °C)",
      "Guía anexo 2"
     ],
     [
      "Sección de un conductor circular",
-     "S = π · D² / 4 (D = diámetro)",
+     "$S = \\dfrac{\\pi D^2}{4}$ (D = diámetro)",
      ""
     ],
     [
      "Potencias, monofásica",
-     "P = U · I · cos φ (W) · Q = U · I · sen φ (VAr) · S = U · I (VA)",
+     "$P = U I \\cos\\varphi$ (W) · $Q = U I \\, \\operatorname{sen}\\varphi$ (VAr) · $S = U I$ (VA)",
      ""
     ],
     [
      "Potencias, trifásica",
-     "P = √3 · U · I · cos φ · Q = √3 · U · I · sen φ · S = √3 · U · I (U entre fases)",
+     "$P = \\sqrt{3}\\, U I \\cos\\varphi$ · $Q = \\sqrt{3}\\, U I \\, \\operatorname{sen}\\varphi$ · $S = \\sqrt{3}\\, U I$ (U entre fases)",
      ""
     ],
     [
      "Triángulo de potencias",
-     "S² = P² + Q² · cos φ = P / S",
+     "$S^2 = P^2 + Q^2$ · $\\cos\\varphi = \\dfrac{P}{S}$",
      ""
     ],
     [
      "Tensión de línea y de fase",
-     "U línea = √3 · U fase → 400 = √3 · 230",
+     "$U_\\text{línea} = \\sqrt{3} \\cdot U_\\text{fase}$ → $400 = \\sqrt{3} \\cdot 230$",
      ""
     ],
     [
      "Frecuencia y periodo",
-     "f = 1 / T → 50 Hz = un ciclo cada 20 ms",
+     "$f = \\dfrac{1}{T}$ → 50 Hz = un ciclo cada 20 ms",
      ""
     ],
     [
      "Intensidad, monofásica",
-     "I = P / (U · cos φ) · U = 230 V",
+     "$I = \\dfrac{P}{U \\cos\\varphi}$ · U = 230 V",
      ""
     ],
     [
      "Intensidad, trifásica",
-     "I = P / (√3 · U · cos φ) · U = 400 V",
+     "$I = \\dfrac{P}{\\sqrt{3}\\, U \\cos\\varphi}$ · U = 400 V",
      ""
     ],
     [
      "Circuitos de vivienda",
-     "I = n × Ia × Fs × Fu (tomas × intensidad por toma × simultaneidad × utilización)",
+     "$I = n \\cdot I_a \\cdot F_s \\cdot F_u$ (tomas × intensidad por toma × simultaneidad × utilización)",
      "BT-25 3"
     ],
     [
      "Elegir la protección",
-     "Ib ≤ In ≤ Iz (consumo ≤ calibre del PIA ≤ intensidad admisible del cable)",
+     "$I_B \\le I_n \\le I_z$ (consumo ≤ calibre del PIA ≤ intensidad admisible del cable)",
      ""
     ],
     [
      "Intensidad admisible corregida",
-     "I tabla × F1 × F2 × … (temperatura, agrupación, tubo…)",
+     "$I_z = I_\\text{tabla} \\cdot F_1 \\cdot F_2 \\cdots$ (temperatura, agrupación, tubo…)",
      "BT-07 3.1"
     ],
     [
      "Caída de tensión, monofásica",
-     "e = 2 · P · L / (γ · S · U) = 2 · L · I · cos φ / (γ · S)",
+     "$e = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{2 \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}$",
      "Guía anexo 2"
     ],
     [
      "Caída de tensión, trifásica",
-     "e = P · L / (γ · S · U) = √3 · L · I · cos φ / (γ · S)",
+     "$e = \\dfrac{P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{\\sqrt{3} \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}$",
      "Guía anexo 2"
     ],
     [
      "Caída en %",
-     "e % = e / U × 100",
+     "$e\\,\\% = \\dfrac{e}{U} \\times 100$",
      ""
     ],
     [
      "Sección por caída de tensión",
-     "mono S = 2 · P · L / (γ · e · U) · tri S = P · L / (γ · e · U)",
+     "mono $S = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot e \\cdot U}$ · tri $S = \\dfrac{P \\cdot L}{\\gamma \\cdot e \\cdot U}$",
      "Guía anexo 2"
     ],
     [
      "Edificio de viviendas",
-     "PT = PV + PSG + PL + PG (viviendas + servicios generales + locales + garajes)",
+     "$P_T = P_V + P_{SG} + P_L + P_G$ (viviendas + servicios generales + locales + garajes)",
      "BT-10 3"
     ],
     [
      "Carga de las viviendas",
-     "PV = media de sus potencias × coeficiente de simultaneidad (n > 21: 15,3 + (n − 21) × 0,5)",
+     "$P_V$ = media de sus potencias × coeficiente de simultaneidad (con $n > 21$: $15{,}3 + (n - 21) \\cdot 0{,}5$)",
      "BT-10 3.1"
     ],
     [
      "Locales y garajes",
-     "P = W/m² × superficie (locales 100 · garajes 10 natural / 20 forzada; mín. 3 450 W)",
+     "$P = (\\text{W/m}^2) \\times \\text{superficie}$ (locales 100 · garajes 10 natural / 20 forzada; mín. 3 450 W)",
      "BT-10 3.3-3.4"
     ],
     [
      "Edificio con recarga de VE",
-     "P = P1 + P2 + P3 + P4 + 0,3 · P5 con SPL (+ P5 sin SPL) · P5 = recarga del VE",
+     "$P = P_1 + P_2 + P_3 + P_4 + 0{,}3 \\cdot P_5$ con SPL ($+\\,P_5$ sin SPL) · $P_5$ = recarga del VE",
      "BT-52 7.1"
     ],
     [
@@ -2481,47 +2481,47 @@
     ],
     [
      "Motores",
-     "uno: 1,25 × I plena carga · varios: 1,25 × I del mayor + I de los demás",
+     "uno: $1{,}25 \\cdot I_\\text{plena carga}$ · varios: $1{,}25 \\cdot I_\\text{mayor} + \\sum I_\\text{demás}$",
      "BT-47 3"
     ],
     [
      "Esquema TT, condición",
-     "RA · Ia ≤ U (U = 50 V, o 24 V en locales mojados)",
+     "$R_A \\cdot I_a \\le U$ (U = 50 V, o 24 V en locales mojados)",
      "BT-24 4.1.2"
     ],
     [
      "Esquema TN, condición",
-     "Zs · Ia ≤ U0 (U0 = 230 V)",
+     "$Z_s \\cdot I_a \\le U_0$ ($U_0$ = 230 V)",
      "BT-24 4.1.1"
     ],
     [
      "Resistencia de tierra: pica",
-     "R = ρ / L (ρ del terreno en Ω·m, L en m)",
+     "$R = \\dfrac{\\rho}{L}$ (ρ del terreno en Ω·m, L en m)",
      "BT-18 tabla 5"
     ],
     [
      "Resistencia de tierra: placa",
-     "R = 0,8 · ρ / P (P = perímetro)",
+     "$R = 0{,}8 \\cdot \\dfrac{\\rho}{P}$ (P = perímetro)",
      "BT-18 tabla 5"
     ],
     [
      "Resistencia de tierra: conductor horizontal",
-     "R = 2 · ρ / L",
+     "$R = \\dfrac{2\\rho}{L}$",
      "BT-18 tabla 5"
     ],
     [
      "Conductor de protección",
-     "S ≤ 16 → Sp = S · 16 < S ≤ 35 → Sp = 16 · S > 35 → Sp = S / 2",
+     "$S \\le 16 \\to S_p = S$ · $16 < S \\le 35 \\to S_p = 16$ · $S > 35 \\to S_p = S/2$",
      "BT-19 2.3"
     ],
     [
      "Red aérea: separación en vanos > 50 m",
-     "D = 0,55 · √F (F = flecha máxima, m)",
+     "$D = 0{,}55\\,\\sqrt{F}$ (F = flecha máxima, m)",
      "BT-06 3.2.2"
     ],
     [
      "Iluminancia",
-     "E = Φ / S (lux = lúmenes / m²) · rendimiento = lm / W",
+     "$E = \\dfrac{\\Phi}{S}$ (lux = lúmenes / m²) · rendimiento = lm / W",
      "BT-28 3.1.1"
     ],
     [

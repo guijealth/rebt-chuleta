@@ -81,7 +81,7 @@
    "rows": [
     [
      "Qué mide",
-     "la resistencia de la toma de tierra RE: inyecta una corriente alterna conocida (más de 50 Hz) y mide la caída de tensión: RE = U / I",
+     "la resistencia de la toma de tierra: inyecta una corriente alterna conocida (más de 50 Hz) y mide la caída de tensión: $R_E = U/I$",
      "Guía anexo 4"
     ],
     [
@@ -116,7 +116,7 @@
     ],
     [
      "Qué valor",
-     "el que cumpla RA × Ia ≤ U (50 V; 24 V en ciertos casos): ver «Puesta a tierra» en la chuleta",
+     "el que cumpla $R_A \\cdot I_a \\le U$ (50 V; 24 V en ciertos casos): ver «Puesta a tierra» en la chuleta",
      "BT-24 4.1.2"
     ]
    ]
@@ -263,7 +263,7 @@
     ],
     [
      "Para qué",
-     "Icc = U0 / Zs debe ser ≥ Ia, la corriente que hace actuar la protección en el tiempo exigido (TN, 230 V: 0,4 s)",
+     "$I_{cc} = \\dfrac{U_0}{Z_s}$ debe ser ≥ $I_a$, la corriente que hace actuar la protección en el tiempo exigido (TN, 230 V: 0,4 s)",
      "Guía anexo 4"
     ],
     [
@@ -273,7 +273,7 @@
     ],
     [
      "Tensión de contacto",
-     "el aparato calcula Uc = Zs × IΔn; como Zs es mayor que RA, sale mayor que la real: del lado de la seguridad",
+     "el aparato calcula $U_c = Z_s \\cdot I_{\\Delta n}$; como $Z_s$ es mayor que $R_A$, sale mayor que la real: del lado de la seguridad",
      "Guía anexo 4"
     ],
     [

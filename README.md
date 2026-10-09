@@ -58,6 +58,11 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
   `"Guía anexo 2"` (other documents, grey), or `""` when there is none. Several: `"BT-14 3 · BT-15 3"`. Check values
   against the text in `sources/` (see below); `python3 tools/sources.py check` confirms every ref points to a real
   section.
+- **Formulas** go between `$…$` in a row's text (key or value) or a table cell, written in LaTeX and typeset by KaTeX:
+  `"$e = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot S \\cdot U}$ · U = 230 V"`. In JSON every backslash is doubled. Write a
+  decimal comma as `{,}` (`1{,}45`), thousands with `\\,` (`5\\,750`), subscripts with `_` (`I_B`, `I_{\\Delta n}`),
+  words with `\\text{…}`, "sen" with `\\operatorname{sen}`. Use `\\dfrac` for fractions so they stay readable when printed.
+  `tools/build.py` rejects an unpaired `$`. Plain limits ("≥ 25 A") need no `$`.
 - A section may have drawings, shown under its heading: `"visuals": ["pia"]` names `content/visuals/pia.svg`. They
   are our own SVGs, drawn with the `v-*` classes of `assets/chuleta.css` (`v-line`, `v-key`, `v-acc-soft`…) so they
   follow the light/dark theme and print in the paper palette; keep them 360 units wide, the width of a printed column.
@@ -133,6 +138,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 |---|---|
 | `index.html`, `assets/chuleta.css`, `assets/chuleta.js` | The page: screen view, search, print layout and controls |
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
+| `assets/katex/` | KaTeX script, stylesheet and woff2 fonts, for the formulas |
 | `content/cheatsheet.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
@@ -154,5 +160,6 @@ summary, the symbols and the freely redistributable official sources are publish
 - Symbol drawings: the EN 60617 element collection of [QElectroTech](https://qelectrotech.org/), licensed
   [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) (see `content/elements/qet/ELEMENTS.LICENSE`).
 - Source documents: see `sources/README.md` for each publisher's terms and the attribution it asks for.
+- Formulas: [KaTeX](https://katex.org/) (MIT licence, `assets/katex/LICENSE`), served from this site.
 - Fonts: Barlow and Barlow Condensed by the Barlow Project Authors, SIL Open Font License 1.1, served from this site
   (`assets/fonts/`, licence in `assets/fonts/OFL.txt`), so the page and its print layout work offline.

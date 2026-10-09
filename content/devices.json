@@ -31,13 +31,13 @@
      "Guía BT-22"
     ],
     [
-     "gG: If",
-     "corriente convencional de fusión: 1,60 In (In ≥ 16 A) · 1,90 In (4 A < In < 16 A) · 2,10 In (In ≤ 4 A)",
+     "gG: $I_f$",
+     "corriente convencional de fusión: $1{,}60\\,I_n$ ($I_n \\ge 16$ A) · $1{,}90\\,I_n$ (4 A < $I_n$ < 16 A) · $2{,}10\\,I_n$ ($I_n \\le 4$ A)",
      "Guía BT-22"
     ],
     [
      "Sobrecarga",
-     "If hace el papel de la I2 del automático: IB ≤ In ≤ Iz e If ≤ 1,45 Iz",
+     "$I_f$ hace el papel de la $I_2$ del automático: $I_B \\le I_n \\le I_z$ e $I_f \\le 1{,}45\\,I_z$",
      "Guía BT-22"
     ],
     [
@@ -307,7 +307,7 @@
      "Guía BT-24"
     ],
     [
-     "IΔn",
+     "$I_{\\Delta n}$",
      "sensibilidad: 10 · 30 · 100 · 300 · 500 mA · 1 A",
      "Guía BT-24"
     ],
@@ -348,7 +348,7 @@
     ],
     [
      "Fugas",
-     "< IΔn/2 en servicio normal · mejor ≤ 30 % de IΔn para evitar disparos intempestivos",
+     "$< I_{\\Delta n}/2$ en servicio normal · mejor ≤ 30 % de $I_{\\Delta n}$ para evitar disparos intempestivos",
      "Guía BT-24"
     ],
     [
@@ -391,37 +391,37 @@
      "BT-17 1.3"
     ],
     [
-     "In",
+     "$I_n$",
      "intensidad asignada, el calibre · vivienda: C1 10 A, C2 16 A, C3 25 A, C4 20 A, C5 16 A",
      "BT-25 tabla 1"
     ],
     [
      "Curva B",
-     "Im = 3–5 In · circuitos sin transitorios",
+     "$I_m = 3\\text{–}5\\,I_n$ · circuitos sin transitorios",
      "Guía BT-22"
     ],
     [
      "Curva C",
-     "Im = 5–10 In · carga mixta, la habitual en vivienda",
+     "$I_m = 5\\text{–}10\\,I_n$ · carga mixta, la habitual en vivienda",
      "Guía BT-22"
     ],
     [
      "Curva D",
-     "Im = 10–20 In · transitorios fuertes, como el arranque de motores",
+     "$I_m = 10\\text{–}20\\,I_n$ · transitorios fuertes, como el arranque de motores",
      "Guía BT-22"
     ],
     [
-     "Elegir In",
-     "IB ≤ In ≤ Iz (IB: corriente prevista del circuito · Iz: admisible del cable)",
+     "Elegir $I_n$",
+     "$I_B \\le I_n \\le I_z$ ($I_B$: corriente prevista del circuito · $I_z$: admisible del cable)",
      "Guía BT-22"
     ],
     [
-     "I2",
-     "la que asegura el disparo en tiempo largo: 1,45 In (UNE-EN 60898 y 61009) · 1,30 In (UNE-EN 60947-2) · debe cumplir I2 ≤ 1,45 Iz",
+     "$I_2$",
+     "la que asegura el disparo en tiempo largo: $1{,}45\\,I_n$ (UNE-EN 60898 y 61009) · $1{,}30\\,I_n$ (UNE-EN 60947-2) · debe cumplir $I_2 \\le 1{,}45\\,I_z$",
      "Guía BT-22"
     ],
     [
-     "Icn",
+     "$I_{cn}$",
      "poder de corte asignado: ≥ Icc máxima en su punto de instalación",
      "Guía BT-22"
     ],
@@ -432,7 +432,7 @@
     ],
     [
      "Final de la línea",
-     "Icc mín > Im, para que el disparo magnético esté asegurado (curva C: se toma Im = 10 In)",
+     "$I_{cc\\,\\text{mín}} > I_m$, para que el disparo magnético esté asegurado (curva C: se toma $I_m = 10\\,I_n$)",
      "Guía BT-22"
     ],
     [

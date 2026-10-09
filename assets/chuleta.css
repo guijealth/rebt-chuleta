@@ -116,6 +116,10 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .cheat-table td { padding: 4px 12px; border-top: 1px solid var(--rule); }
 .cheat-table td:first-child { font-weight: 600; }
 
+/* formulas typeset by KaTeX: sized to sit in a line of Barlow, never wider than their column */
+.math .katex { font-size: 1.08em; }
+.math { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+
 /* section visuals (content/visuals/*.svg): drawn with these classes so they follow the theme and print light */
 .cheat-visual { margin: 0; padding: 8px 12px; border-bottom: 1px solid var(--rule); }
 /* the default size goes on the svg, so a text's own font-size attribute still wins */

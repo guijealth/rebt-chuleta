@@ -40,6 +40,23 @@
 
   // ---------- building blocks, shared by the screen and the printed pages ----------
 
+  // Text with formulas: what goes between $…$ is LaTeX, typeset by KaTeX (assets/katex/); the rest is plain text.
+  // Without KaTeX (it failed to load), the formula is shown as written.
+  function rich(text) {
+    if (!text || !text.includes('$')) return text;
+    return text.split(/\$([^$]+)\$/).map((part, i) => {
+      if (i % 2 === 0) return part || null;
+      if (!window.katex) return part;
+      return el('span', { class: 'math', html: window.katex.renderToString(part, { throwOnError: false, output: 'htmlAndMathml' }) });
+    });
+  }
+  // what search looks at: the visible text, without KaTeX's hidden MathML copy
+  const findText = (node) => {
+    const c = node.cloneNode(true);
+    c.querySelectorAll('.katex-mathml').forEach((m) => m.remove());
+    return c.textContent;
+  };
+
   // Rows are [what, value, ref]; a ref from the REBT itself (BT-xx, art.) is blue, other documents grey.
   function cheatSection(s, title = s.title) {
     const kind = (r) => (!r ? null : /^(BT-|art\.)/.test(r) ? 'rebt' : 'official');
@@ -47,10 +64,10 @@
       el('h3', {}, title, el('span', { text: s.ref || '' })),
       (s.visuals || []).map((svg) => el('figure', { class: 'cheat-visual', html: svg })),
       s.table ? el('table', { class: 'cheat-table' },
-        el('thead', {}, el('tr', {}, s.table.head.map((h) => el('th', { text: h })))),
-        el('tbody', {}, s.table.rows.map((r) => el('tr', {}, r.map((x) => el('td', { text: x })))))) : null,
+        el('thead', {}, el('tr', {}, s.table.head.map((h) => el('th', {}, rich(h))))),
+        el('tbody', {}, s.table.rows.map((r) => el('tr', {}, r.map((x) => el('td', {}, rich(x)))))) ) : null,
       s.rows?.length ? el('dl', { class: 'cheat-rows' }, s.rows.map(([k, v, r]) => el('div', {},
-        el('dt', { text: k }), el('dd', { text: v }), el('dd', { class: 'cheat-ref', 'data-kind': kind(r), text: r })))) : null);
+        el('dt', {}, rich(k)), el('dd', {}, rich(v)), el('dd', { class: 'cheat-ref', 'data-kind': kind(r), text: r })))) : null);
   }
 
   function symbolTile(it) {
@@ -105,7 +122,7 @@
       const whole = !words.length || hit(sec.querySelector('h3').textContent);
       let shown = 0;
       for (const item of $$('.cheat-rows > div, .cheat-table tbody tr, .sym', sec)) {
-        item.hidden = !whole && !hit(item.textContent);
+        item.hidden = !whole && !hit(item.dataset.find ??= findText(item));
         if (!item.hidden) shown++;
       }
       const table = sec.querySelector('.cheat-table');
@@ -324,7 +341,8 @@
     window.addEventListener('beforeprint', layout);  // Ctrl+P before the fonts arrived: lay out with what there is
     // measure with the real fonts
     await Promise.allSettled(['400 16px Barlow', '500 16px Barlow', '600 16px Barlow', '500 16px "Barlow Condensed"',
-      '600 16px "Barlow Condensed"', '700 16px "Barlow Condensed"']
+      '600 16px "Barlow Condensed"', '700 16px "Barlow Condensed"', '16px KaTeX_Main', 'italic 16px KaTeX_Math',
+      '16px KaTeX_Size1', '16px KaTeX_Size2']
       .map((f) => document.fonts.load(f)));
     await document.fonts.ready;
     laidOut = null;

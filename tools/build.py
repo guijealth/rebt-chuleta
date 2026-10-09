@@ -47,6 +47,8 @@ def check_cheatsheet(c, name="cheatsheet.json"):
         for k, row in enumerate(s.get("rows", []), 1):
             if not (isinstance(row, list) and len(row) == 3 and all(isinstance(x, str) for x in row)):
                 errors.append(f"{where}, row {k}: must be [what, value, ref] (three strings; ref may be \"\")")
+            elif any(x.count("$") % 2 for x in row[:2]):
+                errors.append(f"{where}, row {k}: unpaired $ (formulas go between $…$)")
         t = s.get("table")
         if t:
             for k, row in enumerate(t.get("rows", []), 1):
