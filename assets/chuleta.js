@@ -1,4 +1,4 @@
-/* Chuleta REBT — one page in three parts: the chuleta, the UNE-EN 60617 symbols and the devices, ready to print.
+/* Chuleta REBT — one page in four parts (chuleta, materiales, dispositivos, símbolos), ready to print.
    Content comes from data.js (built by tools/build.py from content/*.json).
    Printing: the pages are laid out ahead of time in #print-root (A4 landscape, 14 mm binding strip),
    hidden on screen and the only thing printed, so the browser's own Print (Ctrl+P) gives the same result. */
@@ -16,7 +16,7 @@
       else if (k === 'html') n.innerHTML = v;
       else n.setAttribute(k, v);
     }
-    for (const c of children.flat()) if (c != null && c !== false) n.append(c);
+    for (const c of children.flat(Infinity)) if (c != null && c !== false) n.append(c);
     return n;
   };
 
@@ -25,8 +25,17 @@
     $('#screen').textContent = 'Falta data.js: ejecuta «python3 tools/build.py».';
     return;
   }
-  const { cheatsheet: cheat, devices, symbols: syms } = data;
   const builtDate = new Date(`${data.built}T12:00:00`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  // The parts of the page, in order. kind "sheet": sections of rows (and drawings); kind "symbols": tile grids.
+  // id: anchor and print checkbox value · label: nav and checkbox · ref: right side of the printed binding strip.
+  const PARTS = [
+    { id: 'chuleta', label: 'Chuleta', data: data.cheatsheet, kind: 'sheet', ref: 'REBT · ITC-BT' },
+    { id: 'materiales', label: 'Materiales', data: data.materials, kind: 'sheet', ref: 'REBT · Guías técnicas' },
+    { id: 'dispositivos', label: 'Dispositivos', data: data.devices, kind: 'sheet', ref: 'REBT · Guías técnicas' },
+    { id: 'simbolos', label: 'Símbolos', data: data.symbols, kind: 'symbols', ref: 'UNE-EN 60617' },
+  ].filter((p) => p.data);
+  const syms = data.symbols;
 
   // ---------- building blocks, shared by the screen and the printed pages ----------
 
@@ -63,25 +72,25 @@
   // ---------- screen ----------
 
   function renderScreen() {
-    $('#chuleta').append(
-      el('h2', { class: 'part-title', id: 'chuleta-title', text: cheat.title }),
-      cheat.subtitle ? el('p', { class: 'part-sub', text: cheat.subtitle }) : null,
-      el('div', { class: 'cheat-grid' }, cheat.sections.map((s) => cheatSection(s))));
-    $('#simbolos').append(
-      el('h2', { class: 'part-title', id: 'simbolos-title', text: syms.title }),
-      syms.subtitle ? el('p', { class: 'part-sub', text: syms.subtitle }) : null,
-      ...syms.sections.map((s) => (s.items ? symbolSection(s) : cheatSection(s))),
-      syms.credit ? el('p', { class: 'sym-credit', text: syms.credit }) : null);
-    $('#dispositivos').append(
-      el('h2', { class: 'part-title', id: 'dispositivos-title', text: devices.title }),
-      devices.subtitle ? el('p', { class: 'part-sub', text: devices.subtitle }) : null,
-      el('div', { class: 'cheat-grid' }, devices.sections.map((s) => cheatSection(s))));
+    for (const part of PARTS) {
+      const d = part.data;
+      $('#jump').append(el('a', { href: `#${part.id}`, text: part.label }));
+      $('#part-checks').append(el('label', { class: 'check' },
+        el('input', { type: 'checkbox', name: 'part', value: part.id, checked: '' }), ` ${part.label}`));
+      $('#parts').append(el('section', { id: part.id, class: 'part', 'aria-labelledby': `${part.id}-title` },
+        el('h2', { class: 'part-title', id: `${part.id}-title`, text: d.title }),
+        d.subtitle ? el('p', { class: 'part-sub', text: d.subtitle }) : null,
+        part.kind === 'sheet'
+          ? el('div', { class: 'cheat-grid' }, d.sections.map((s) => cheatSection(s)))
+          : [d.sections.map((s) => (s.items ? symbolSection(s) : cheatSection(s))),
+            d.credit ? el('p', { class: 'sym-credit', text: d.credit }) : null]));
+    }
     $('#foot').append(
       el('p', {}, 'Resumen para estudiar, ', el('strong', { text: 'no es un documento oficial' }),
         '. El texto que vale es el del ',
         el('a', { href: 'https://www.boe.es/biblioteca_juridica/codigos/codigo.php?id=326', text: 'REBT en el BOE' }),
         '; cada fila lleva su ITC-BT y apartado para comprobarlo.'),
-      el('p', {}, syms.credit ? `${syms.credit} ` : '', `Actualizado el ${builtDate}.`));
+      el('p', {}, syms?.credit ? `${syms.credit} ` : '', `Actualizado el ${builtDate}.`));
   }
 
   // Search: keeps rows, table rows and symbols that contain every word; a section whose title or reference
@@ -109,30 +118,33 @@
 
   // ---------- printed pages ----------
 
-  const MAX_PAGES = 20;  // per part: a safety net against a runaway layout; past it the last page shrinks
+  const MAX_PAGES = 30;  // per part: a safety net against a runaway layout; past it the last page shrinks
   const CHEAT_COLS = 3;
+  const LOOKAHEAD = 20;  // how many later sections may be tried to fill a gap
 
-  function page(root, part, ref, first, intro) {
+  function page(root, part, first) {
     const label = el('span');
     const body = el('div', { class: 'ppage-body' },
-      first ? el('h2', { class: 'ppage-title', text: intro.title }) : null,
-      first && intro.subtitle ? el('p', { class: 'ppage-sub', text: intro.subtitle }) : null);
-    root.append(el('section', { class: 'ppage', 'aria-label': part },
-      el('header', { class: 'pbind' }, label, el('span', { class: 'pbind-ref', text: ref })),
+      first ? el('h2', { class: 'ppage-title', text: part.data.title }) : null,
+      first && part.data.subtitle ? el('p', { class: 'ppage-sub', text: part.data.subtitle }) : null);
+    root.append(el('section', { class: 'ppage', 'aria-label': part.label },
+      el('header', { class: 'pbind' }, label, el('span', { class: 'pbind-ref', text: part.ref })),
       el('div', { class: 'ppage-inner' }, body)));
     return { body, label };
   }
 
   const label = (pages, part) => pages.forEach((p, i) => {
-    p.label.textContent = `Chuleta REBT · ${part}${pages.length > 1 ? ` ${i + 1} de ${pages.length}` : ''} · ${builtDate}`;
+    p.label.textContent = `Chuleta REBT · ${part.label.toLowerCase()}${pages.length > 1 ? ` ${i + 1} de ${pages.length}` : ''} · ${builtDate}`;
   });
 
-  // Chuleta and devices: sections fill three columns in order, column by column and page by page; a long section is
-  // split between rows (at least two on each side) and continues in the next column.
-  function layoutCheat(root, sheet = cheat, part = 'chuleta', ref = 'REBT · ITC-BT') {
+  // Sheets: sections fill three columns, column by column and page by page. To waste as little paper as possible:
+  // when the next section does not fit in what is left of a column, the biggest later section that fits whole is
+  // placed there instead (so the order changes only to fill gaps); when none fits, the next section is split between
+  // rows (at least two on each side) and continues at the top of the next column.
+  function layoutSheet(root, part) {
     const pages = [];
     const newPage = () => {
-      const p = page(root, part, ref, !pages.length, sheet);
+      const p = page(root, part, !pages.length);
       p.cols = Array.from({ length: CHEAT_COLS }, () => el('div', { class: 'cheat-col' }));
       p.body.append(el('div', { class: 'cheat-cols' }, p.cols));
       pages.push(p);
@@ -147,27 +159,64 @@
       else return false;
       return true;
     };
-    for (const s of sheet.sections) {
-      let sec = cheatSection(s);
-      for (;;) {
-        const col = p.cols[ci];
-        col.append(sec);
-        if (!full(col)) break;
-        const dl = sec.querySelector('.cheat-rows');
-        const rest = [];
-        while (dl && full(col) && dl.children.length > 2) { const r = dl.lastElementChild; r.remove(); rest.unshift(r); }
-        if (dl && !full(col) && rest.length >= 2) {
-          if (!advance()) { dl.append(...rest); break; }
-          sec = cheatSection({ ...s, table: null, visuals: null, rows: [] }, `${s.title} (cont.)`);
-          sec.append(el('dl', { class: 'cheat-rows' }, rest));
+    // queue of what is still to place: a section, or the continuation of a split one (which must go next)
+    const queue = part.data.sections.map((s) => ({ s, node: null }));
+    const nodeOf = (item) => (item.node ||= cheatSection(item.s));
+    const fits = (col, node) => { col.append(node); const ok = !full(col); node.remove(); return ok; };
+    while (queue.length) {
+      const col = p.cols[ci];
+      const first = queue[0];
+      const sec = nodeOf(first);
+      if (fits(col, sec)) { col.append(sec); queue.shift(); continue; }
+      // fill the gap with the biggest later section that fits whole
+      if (col.children.length && !first.cont) {
+        let best = -1, bestH = 0;
+        for (let k = 1; k < Math.min(queue.length, LOOKAHEAD + 1); k++) {
+          const cand = nodeOf(queue[k]);
+          if (!fits(col, cand)) continue;
+          col.append(cand);
+          const h = cand.getBoundingClientRect().height;
+          cand.remove();
+          if (h > bestH) { best = k; bestH = h; }
+        }
+        if (best > 0) { col.append(queue[best].node); queue.splice(best, 1); continue; }
+      }
+      // split: move trailing rows on, keeping at least two rows on each side
+      col.append(sec);
+      const dl = sec.querySelector('.cheat-rows');
+      const rest = [];
+      while (dl && full(col) && dl.children.length > 2) { const r = dl.lastElementChild; r.remove(); rest.unshift(r); }
+      if (dl && !full(col) && rest.length === 1 && dl.children.length > 2) { const r = dl.lastElementChild; r.remove(); rest.unshift(r); }
+      if (dl && !full(col) && rest.length >= 2) {
+        const cont = cheatSection({ ...first.s, table: null, visuals: null, rows: [] }, `${first.s.title} (cont.)`);
+        cont.append(el('dl', { class: 'cheat-rows' }, rest));
+        queue[0] = { s: first.s, node: cont, cont: true };
+        if (!advance()) break;
+        continue;
+      }
+      if (dl) dl.append(...rest);
+      sec.remove();
+      // a section whose drawing does not fit in the gap may start there with its heading and first rows; the drawing
+      // goes on, with the remaining rows, at the top of the next column
+      if (!first.cont && first.s.visuals?.length && first.s.rows?.length > 2) {
+        const head = cheatSection({ ...first.s, visuals: null });
+        col.append(head);
+        const hdl = head.querySelector('.cheat-rows');
+        const tail = [];
+        while (full(col) && hdl.children.length > 2) { const r = hdl.lastElementChild; r.remove(); tail.unshift(r); }
+        if (!full(col)) {
+          const cont = cheatSection({ ...first.s, table: null, rows: [] }, `${first.s.title} (cont.)`);
+          if (tail.length) cont.append(el('dl', { class: 'cheat-rows' }, tail));
+          queue[0] = { s: first.s, node: cont, cont: true };
+          if (!advance()) break;
           continue;
         }
-        if (dl) dl.append(...rest);
-        if (col.children.length === 1) break;  // too tall even alone: shrink below
-        sec.remove();
-        if (!advance()) { p.cols[ci].append(sec); break; }
+        head.remove();
       }
+      if (!col.children.length) { col.append(sec); queue.shift(); if (!advance()) break; continue; }  // too tall even alone: shrink below
+      if (!advance()) { p.cols[ci].append(sec); queue.shift(); break; }
     }
+    for (const item of queue) p.cols[ci].append(nodeOf(item));  // only if MAX_PAGES was hit
     for (let z = 1; p.cols.some(full) && z > 0.6; z -= 0.03) p.body.style.zoom = (z - 0.03).toFixed(2);
     label(pages, part);
     return pages.length;
@@ -175,10 +224,11 @@
 
   // Symbols: sections flow down the page as tile grids; one that does not fit is split between rows of tiles and
   // continues on the next page. Sections of rows (if any) go two side by side at the end.
-  function layoutSymbols(root) {
+  function layoutSymbols(root, part) {
+    const d = part.data;
     const pages = [];
     const newPage = () => {
-      const p = page(root, 'Símbolos', 'UNE-EN 60617', !pages.length, syms);
+      const p = page(root, part, !pages.length);
       p.flow = el('div', { class: 'psym-flow' });
       p.body.append(p.flow);
       pages.push(p);
@@ -210,12 +260,12 @@
       if (full(p) || !rest.length) { grid.append(...rest); return null; }
       return symbolSection(s, `${s.title} (cont.)`, rest);
     };
-    for (const s of syms.sections.filter((x) => x.items)) place(symbolSection(s), splitGrid(s));
-    const tables = syms.sections.filter((x) => x.rows);
+    for (const s of d.sections.filter((x) => x.items)) place(symbolSection(s), splitGrid(s));
+    const tables = d.sections.filter((x) => x.rows);
     if (tables.length) place(el('div', { class: 'psym-tables' }, tables.map((s) => cheatSection(s))));
-    if (syms.credit) p.flow.append(el('p', { class: 'sym-credit', text: syms.credit }));
+    if (d.credit) p.flow.append(el('p', { class: 'sym-credit', text: d.credit }));
     for (let z = 1; full(p) && z > 0.6; z -= 0.03) p.body.style.zoom = (z - 0.03).toFixed(2);
-    label(pages, 'símbolos');
+    label(pages, part);
     return pages.length;
   }
 
@@ -233,15 +283,13 @@
     const root = $('#print-root');
     root.replaceChildren();
     root.classList.toggle('duplex', duplex.checked);  // even pages (backs) carry the strip at the bottom
-    const cp = parts.includes('chuleta') ? layoutCheat(root) : 0;
-    const sp = parts.includes('simbolos') ? layoutSymbols(root) : 0;
-    const dp = parts.includes('dispositivos') ? layoutCheat(root, devices, 'dispositivos', 'REBT · Guías técnicas') : 0;
+    const counts = PARTS.filter((part) => parts.includes(part.id))
+      .map((part) => [part, part.kind === 'sheet' ? layoutSheet(root, part) : layoutSymbols(root, part)]);
     laidOut = key;
-    const pages = cp + sp + dp;
+    const pages = counts.reduce((a, [, n]) => a + n, 0);
     const sheets = duplex.checked ? Math.ceil(pages / 2) : pages;
-    const what = [cp && `${cp} de chuleta`, sp && `${sp} de símbolos`, dp && `${dp} de dispositivos`].filter(Boolean).join(' + ');
     $('#print-est').textContent = pages ? `${pages} págs. → ${sheets} ${sheets === 1 ? 'hoja' : 'hojas'} A4` : 'Marca qué imprimir';
-    $('#print-est').title = what;  // the breakdown per part, on hover
+    $('#print-est').title = counts.map(([part, n]) => `${n} de ${part.label.toLowerCase()}`).join(' + ');  // on hover
     $('#print').disabled = !pages;
     document.body.classList.toggle('duplex', duplex.checked);
   }

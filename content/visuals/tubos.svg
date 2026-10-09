@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tube code (Guía BT-21, tables 1, A and B) and the minimum code for each installation (ITC-BT-21 1.2, Guía BT-21
+     tables 1, 3, 4, 6 and 8). Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 198" role="img" aria-label="Cómo se lee el código de un tubo, 4321, y el mínimo según la instalación">
+  <text class="v-title" x="10" y="14">Cómo se lee el código: 4321</text>
+  <g text-anchor="middle">
+    <rect class="v-acc-soft" x="10" y="22" width="82" height="26" rx="3"/><text class="v-key" x="51" y="41" font-size="16">4</text>
+    <rect class="v-acc-soft" x="96" y="22" width="82" height="26" rx="3"/><text class="v-key" x="137" y="41" font-size="16">3</text>
+    <rect class="v-ok" x="182" y="22" width="82" height="26" rx="3"/><text class="v-key" x="223" y="41" font-size="16">2</text>
+    <rect class="v-ok" x="268" y="22" width="82" height="26" rx="3"/><text class="v-key" x="309" y="41" font-size="16">1</text>
+    <g font-size="8.5">
+      <text class="v-key" x="51" y="60">compresión</text><text x="51" y="71">fuerte · 1 250 N</text>
+      <text class="v-key" x="137" y="60">impacto</text><text x="137" y="71">medio · 2 J</text>
+      <text class="v-key" x="223" y="60">temp. mínima</text><text x="223" y="71">−5 °C</text>
+      <text class="v-key" x="309" y="60">temp. máxima</text><text x="309" y="71">+60 °C</text>
+    </g>
+  </g>
+  <path class="v-rule" d="M0 82H360"/>
+  <text class="v-title" x="10" y="98">Mínimo según la instalación</text>
+  <g font-size="9.5">
+    <text class="v-key" x="10" y="114">En superficie</text><text class="v-key" x="140" y="114">4321</text><text x="196" y="114">rígido (o curvable)</text>
+    <text class="v-key" x="10" y="128">Empotrado en obra</text><text class="v-key" x="140" y="128">2221</text><text x="196" y="128">cualquiera; lo normal, curvable</text>
+    <text class="v-key" x="10" y="142">En hormigón</text><text class="v-key" x="140" y="142">3322</text><text x="196" y="142">aguanta el fraguado (+90 °C)</text>
+    <text class="v-key" x="10" y="156">Al aire</text><text class="v-key" x="140" y="156">4321</text><text x="196" y="156">flexible, solo para máquinas</text>
+    <text class="v-key" x="10" y="170">Enterrado</text><text class="v-key" x="140" y="170">250 / 450 / 750 N</text><text x="248" y="170">hormigón / ligero / pesado</text>
+  </g>
+  <text class="v-soft" x="10" y="190" font-size="8.5">Más de 5 conductores: 2,5 × lo ocupado en superficie · 3 × empotrado · 4 × al aire</text>
+</svg>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chuleta REBT</title>
-<meta name="description" content="Chuleta del Reglamento Electrotécnico para Baja Tensión (REBT), símbolos UNE-EN 60617 y dispositivos de protección, lista para imprimir.">
+<meta name="description" content="Chuleta del Reglamento Electrotécnico para Baja Tensión (REBT), materiales, dispositivos y símbolos UNE-EN 60617, lista para imprimir.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232e63a6'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,7 @@
 <body>
 <header class="bar">
   <h1 class="brand">Chuleta REBT</h1>
-  <nav class="jump" aria-label="Partes">
-    <a href="#chuleta">Chuleta</a>
-    <a href="#simbolos">Símbolos</a>
-    <a href="#dispositivos">Dispositivos</a>
-  </nav>
+  <nav class="jump" id="jump" aria-label="Partes"></nav>
   <label class="search">
     <span class="visually-hidden">Buscar</span>
     <input type="search" id="q" placeholder="Buscar (tecla /)" autocomplete="off">
@@ -26,9 +22,7 @@
   <form class="print-box" id="print-form" aria-label="Imprimir">
     <fieldset>
       <legend class="visually-hidden">Qué imprimir</legend>
-      <label class="check"><input type="checkbox" name="part" value="chuleta" checked> Chuleta</label>
-      <label class="check"><input type="checkbox" name="part" value="simbolos" checked> Símbolos</label>
-      <label class="check"><input type="checkbox" name="part" value="dispositivos" checked> Dispositivos</label>
+      <span id="part-checks"></span>
       <label class="check" title="Las páginas pares llevan la franja de encuadernar abajo: imprime a doble cara volteando por el borde largo">
         <input type="checkbox" id="duplex"> Doble cara</label>
     </fieldset>
@@ -45,9 +39,7 @@
 </p>
 
 <main id="screen">
-  <section id="chuleta" class="part" aria-labelledby="chuleta-title"></section>
-  <section id="simbolos" class="part" aria-labelledby="simbolos-title"></section>
-  <section id="dispositivos" class="part" aria-labelledby="dispositivos-title"></section>
+  <div id="parts"></div>
   <p class="no-match" id="no-match" hidden>Nada coincide con la búsqueda.</p>
 </main>
 

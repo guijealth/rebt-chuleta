@@ -41,7 +41,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 14 chuleta + 4 symbol + 8 device pages).
+before and after a change (now 12 chuleta + 4 material + 7 device + 4 symbol pages, ~86 % of the column space used).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.
@@ -49,14 +49,19 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 ## Where things are
 
 - `content/cheatsheet.json`: sections → `rows` `[what, value, ref]`, optional `table {head, rows}`. Order = page order.
-- `content/devices.json`: one section per device (PIA, differential…), same format as the chuleta. **When the content
-  is about a device or piece of equipment, it goes here, not in the chuleta** (user's request, 2026-10-09).
-- `content/visuals/*.svg`: our own drawings for chuleta and device sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
+- `content/materials.json`: one section per material (cables, tubes, trunking, boxes, IP/IK enclosures, sockets), same
+  format. **Materials go here, devices in devices.json, rules and figures in the chuleta** (user's request, 2026-10-09).
+- `content/devices.json`: one section per device (fuses, ICP, IGA, differential, PIA, emergency lights, measuring
+  instruments), same format. **A device or piece of equipment goes here, not in the chuleta.**
+- `content/visuals/*.svg`: our own drawings for chuleta, material and device sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).
 - `assets/chuleta.js`: screen rendering, search, and the print layout (pages pre-built in `#print-root`, hidden on
-  screen; `layoutCheat` fills 3 columns and splits long sections, for the chuleta and the devices; `layoutSymbols`
-  splits grids between rows). Part order: chuleta, símbolos, dispositivos.
+  screen). `PARTS` lists the parts in page order: chuleta, materiales, dispositivos, símbolos (nav, checkboxes,
+  screen and print all come from it). `layoutSheet` packs sections into 3 columns: biggest later section that fits
+  fills a gap, else split by rows (≥ 2 each side), else a section may start with its rows and continue with its
+  drawing. `layoutSymbols` splits tile grids between rows. To check print waste, measure each `.cheat-col`'s used
+  height against its clientHeight in a headless page.
   `assets/chuleta.css`: screen styles, then `.ppage` print styles (A4 landscape, 14 mm binding strip, duplex).
 - `sources/`: official PDFs + `sources.json`. `tools/sources.py` (check, index, grep, show, sections, update, add);
   `tools/rebt_index.py` splits the REBT into sections (`ITC-BT-19#2.2.4`, `RD#art-16`).

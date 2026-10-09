@@ -1,5 +1,5 @@
 {
- "_doc": "Chuleta: the first part of the page. Sections in order; rows are [what, value, ref] (ref like \"BT-19 2.2.4\", \"art. 4\", \"Guía anexo 2\", or \"\"); an optional table {head, rows} goes above the rows. See README.md. Devices (PIA, differential…) go in devices.json.",
+ "_doc": "Chuleta: the first part of the page. Sections in order; rows are [what, value, ref] (ref like \"BT-19 2.2.4\", \"art. 4\", \"Guía anexo 2\", or \"\"); an optional table {head, rows} goes above the rows. See README.md. Devices go in devices.json, materials (cables, tubes, enclosures, sockets…) in materials.json.",
  "title": "Chuleta REBT",
  "subtitle": "Las siglas y letras, las cifras que más se preguntan y las clave de cada capítulo, con su sitio en el REBT (BOE, edición 2025)",
  "sections": [
@@ -192,110 +192,6 @@
      "DPS",
      "Dispositivo de Protección contra Sobretensiones (en inglés SPD)",
      "BT-02"
-    ]
-   ]
-  },
-  {
-   "title": "Cables: cómo se lee la designación",
-   "ref": "UNE-EN 50525 · UNE 21123 · Guías",
-   "visuals": [
-    "cables"
-   ],
-   "rows": [
-    [
-     "Orden",
-     "tensión · aislamiento · cubierta (si la hay) · -clase del conductor · H07V-K: 450/750 V, aislamiento de PVC, clase 5",
-     "Guía BT-29"
-    ],
-    [
-     "Tensión",
-     "07 = 450/750 V · 05 = 300/500 V · los de 0,6/1 kV no llevan cifra: RV-K, RZ1-K…",
-     "Guía BT-26 · Guía BT-33"
-    ],
-    [
-     "Conductor (tras el guion)",
-     "-U clase 1, rígido de un alambre · -R clase 2, rígido de varios · -K clase 5, flexible, no para usos móviles · -F clase 5, apto para servicios móviles",
-     "Guía BT-26 · Guía BT-33"
-    ],
-    [
-     "Aislamiento y cubierta",
-     "V PVC · R polietileno reticulado · D etileno propileno · Z1 poliolefina termoplástica · Z compuesto reticulado o termoestable · N policloropreno",
-     "Guía BT-16 · Guía BT-28 · Guía BT-33"
-    ],
-    [
-     "R, ojo",
-     "en los de 0,6/1 kV (RV-K, RZ1-K) es polietileno reticulado; en H07RN-F es goma",
-     "Guía BT-33"
-    ],
-    [
-     "M",
-     "armadura de alambres de acero galvanizado: RVMV-K, RZ1MZ1-K",
-     "Guía BT-29"
-    ],
-    [
-     "(AS)",
-     "los no propagadores del incendio y con emisión de humos y opacidad reducida: obligatorios en LGA, DI, contadores y pública concurrencia",
-     "BT-14 3 · BT-15 3 · BT-16 1 · BT-28 4"
-    ],
-    [
-     "Reacción al fuego",
-     "clase mínima Cca-s1b,d1,a1 para los cables (AS) en garajes",
-     "Guía BT-29"
-    ],
-    [
-     "PVC",
-     "policloruro de vinilo: termoplástico, 70 °C",
-     "BT-07 3.1.1"
-    ],
-    [
-     "XLPE",
-     "polietileno reticulado: termoestable, 90 °C",
-     "BT-07 3.1.1"
-    ],
-    [
-     "EPR",
-     "etileno-propileno: goma termoestable, 90 °C",
-     "BT-07 3.1.1"
-    ],
-    [
-     "0,6/1 kV",
-     "tensión asignada: 0,6 kV a tierra / 1 kV entre fases (redes, LGA, DI)",
-     "BT-06 1.1.1"
-    ],
-    [
-     "LGA y DI",
-     "RZ1-K (AS) o DZ1-K (AS) · en la DI también ES07Z1-K (AS) unipolar en tubo · aluminio: RZ1-Al (AS)",
-     "Guía BT-14 · Guía BT-15"
-    ],
-    [
-     "Contadores",
-     "H07Z-R o ES07Z1-R (AS), clase 2 · hilo de mando rojo de 1,5 mm²",
-     "Guía BT-16"
-    ],
-    [
-     "Interior de vivienda",
-     "H07V-U, H07V-R o H07V-K (450/750 V, PVC)",
-     "Guía BT-26"
-    ],
-    [
-     "Interior de cuadros",
-     "ES05Z1-K (AS), 300/500 V (pública concurrencia)",
-     "Guía BT-28"
-    ],
-    [
-     "Obras y usos móviles",
-     "H07RN-F (goma y policloropreno) · H07ZZ-F (AS) · interiores: H05VV-F",
-     "Guía BT-33"
-    ],
-    [
-     "Alumbrado exterior",
-     "RV-K (UNE 21123-2)",
-     "Guía BT-09"
-    ],
-    [
-     "Normas",
-     "UNE-EN 50525 (H07V-K, H05VV-F, H07RN-F…) · UNE 211002 (ES07Z1-K, H07Z1-K) · UNE 21123 (0,6/1 kV) · clases de conductor: UNE 21022, hoy UNE-EN 60228",
-     "BT-02 · Guía BT-33"
     ]
    ]
   },
@@ -1603,9 +1499,9 @@
      "BT-19 2.11"
     ],
     [
-     "Tubo empotrado o en superficie",
-     "> 5 conductores: sección interior 3 × la ocupada",
-     "BT-21 1.2.2"
+     "Tubo, > 5 conductores",
+     "sección interior ≥ 2,5 × la ocupada en superficie · 3 × empotrado · 4 × al aire",
+     "BT-21 1.2"
     ],
     [
      "Tubo enterrado",

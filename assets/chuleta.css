@@ -57,6 +57,7 @@ a { color: var(--rebt); text-underline-offset: 0.18em; }
   background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
 }
 .print-box { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-left: auto; }
+#part-checks { display: contents; }
 .print-box fieldset { display: flex; gap: 4px 12px; flex-wrap: wrap; margin: 0; padding: 0; border: 0; }
 .check { display: inline-flex; align-items: center; gap: 5px; font-size: 0.9375rem; white-space: nowrap; cursor: pointer; }
 .check input { margin: 0; accent-color: var(--rebt); }

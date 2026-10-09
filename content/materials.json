@@ -1,0 +1,440 @@
+{
+ "_doc": "Materiales: the second part of the page. Same format as cheatsheet.json: rows [what, value, ref], optional table {head, rows}, optional \"visuals\": names of our SVGs in content/visuals/. See README.md.",
+ "title": "Materiales",
+ "subtitle": "Con qué se hace la instalación, de la canalización a la toma: cómo se leen sus códigos y dónde va cada uno, según el REBT y las guías técnicas del Ministerio",
+ "sections": [
+  {
+   "title": "Tubos protectores",
+   "ref": "UNE-EN 61386 · ITC-BT-21 · Guía BT-21",
+   "visuals": [
+    "tubos"
+   ],
+   "rows": [
+    [
+     "Código de 4 cifras",
+     "compresión · impacto · temperatura mínima · temperatura máxima: 4321 = fuerte, medio, −5 °C, +60 °C",
+     "Guía BT-21"
+    ],
+    [
+     "1ª: compresión",
+     "2 ligero 320 N · 3 medio 750 N · 4 fuerte 1 250 N · 5 muy fuerte 4 000 N",
+     "Guía BT-21"
+    ],
+    [
+     "2ª: impacto",
+     "1 muy ligero 0,5 J · 2 ligero 1 J · 3 medio 2 J · 4 fuerte 6 J · 5 muy fuerte 20 J",
+     "Guía BT-21"
+    ],
+    [
+     "3ª y 4ª: temperatura",
+     "mínima: 2 = −5 °C · máxima: 1 = +60 °C, 2 = +90 °C",
+     "Guía BT-21"
+    ],
+    [
+     "Curvado",
+     "1 rígido · 2 curvable · 3 curvable y transversalmente elástico · 4 flexible, para movimiento continuo",
+     "Guía BT-21"
+    ],
+    [
+     "En superficie",
+     "mínimo 4321, preferentemente rígido, no propagador de la llama",
+     "BT-21 1.2.1"
+    ],
+    [
+     "Empotrado en obra",
+     "mínimo 2221; rígido, curvable o flexible (lo habitual, curvable)",
+     "BT-21 1.2.2"
+    ],
+    [
+     "Embebido en hormigón",
+     "mínimo 3322 (hasta +90 °C por el fraguado), y las canalizaciones precableadas",
+     "BT-21 1.2.2"
+    ],
+    [
+     "Al aire",
+     "flexible, mínimo 4321 · solo para máquinas: ≤ 4 m de largo, desde ≥ 2 m de altura",
+     "BT-21 1.2.3"
+    ],
+    [
+     "Enterrado",
+     "compresión 250 N en hormigón · 450 N en suelo ligero · 750 N en suelo pedregoso con cargas pesadas · a 0,45 m bajo acera, 0,60 m en el resto (recomendado)",
+     "Guía BT-21"
+    ],
+    [
+     "Más de 5 conductores",
+     "sección interior ≥ 2,5 × la ocupada en superficie · 3 × empotrado · 4 × al aire · enterrado: 4 × con más de 10",
+     "BT-21 1.2"
+    ],
+    [
+     "Registros",
+     "cada 15 m como máximo en tramos rectos · no más de 3 curvas entre dos registros",
+     "Guía BT-21"
+    ],
+    [
+     "En superficie: fijación",
+     "abrazaderas cada 0,50 m como máximo · conviene a ≥ 2,50 m del suelo",
+     "Guía BT-21"
+    ],
+    [
+     "Empotrado: roza",
+     "recubierto ≥ 1 cm · conviene: horizontales a ≤ 50 cm del suelo o techo, verticales a ≤ 20 cm de las esquinas",
+     "Guía BT-21"
+    ],
+    [
+     "Metálicos",
+     "si son accesibles, a tierra (flexibles: cada 10 m como máximo) · nunca como conductor de protección o neutro",
+     "Guía BT-21"
+    ],
+    [
+     "Tamaño",
+     "se designa por el diámetro exterior; hay tablas de diámetro mínimo según número y sección de conductores",
+     "Guía BT-21"
+    ],
+    [
+     "Normas",
+     "UNE-EN 61386-21 rígidos · -22 curvables · -23 flexibles · enterrados: UNE-EN 50626-1 (antes UNE-EN 50086)",
+     "BT-02"
+    ]
+   ]
+  },
+  {
+   "title": "Canales protectoras y bandejas",
+   "ref": "UNE-EN 50085 · UNE-EN 61537 · Guía BT-21",
+   "rows": [
+    [
+     "Canal",
+     "perfil con tapa desmontable para alojar conductores o cables",
+     "Guía BT-21"
+    ],
+    [
+     "IP4X y tapa con herramienta",
+     "admite conductor aislado de 450/750 V, mecanismos dentro y empalmes",
+     "Guía BT-21"
+    ],
+    [
+     "Si no lo es",
+     "solo conductor aislado bajo cubierta estanca, de 300/500 V como mínimo",
+     "Guía BT-21"
+    ],
+    [
+     "En superficie",
+     "lado mayor ≤ 16 mm: impacto muy ligero, desde +15 °C · > 16 mm: impacto medio, desde −5 °C · hasta +60 °C · no propagadora de la llama",
+     "Guía BT-21"
+    ],
+    [
+     "Metálicas",
+     "a tierra, con continuidad asegurada · nunca como conductor de protección o neutro · la tapa, siempre accesible",
+     "Guía BT-21"
+    ],
+    [
+     "Bandeja",
+     "soporta y conduce los cables pero no los protege: solo conductor bajo cubierta; se recomiendan cables de 0,6/1 kV",
+     "Guía BT-21"
+    ],
+    [
+     "Bandeja: mínimo",
+     "impacto 2 J · de −5 a +60 °C · no propagadora de la llama · metálica: a tierra",
+     "Guía BT-21"
+    ],
+    [
+     "Tipos de bandeja",
+     "de rejilla, ciega, perforada o de escalera",
+     "Guía BT-21"
+    ],
+    [
+     "Normas",
+     "canales: UNE-EN 50085 · bandejas: UNE-EN 61537",
+     "Guía BT-21"
+    ]
+   ]
+  },
+  {
+   "title": "Cables: cómo se lee la designación",
+   "ref": "UNE-EN 50525 · UNE 21123 · Guías",
+   "visuals": [
+    "cables"
+   ],
+   "rows": [
+    [
+     "Orden",
+     "tensión · aislamiento · cubierta (si la hay) · -clase del conductor · H07V-K: 450/750 V, aislamiento de PVC, clase 5",
+     "Guía BT-29"
+    ],
+    [
+     "Tensión",
+     "07 = 450/750 V · 05 = 300/500 V · los de 0,6/1 kV no llevan cifra: RV-K, RZ1-K…",
+     "Guía BT-26 · Guía BT-33"
+    ],
+    [
+     "Conductor (tras el guion)",
+     "-U clase 1, rígido de un alambre · -R clase 2, rígido de varios · -K clase 5, flexible, no para usos móviles · -F clase 5, apto para servicios móviles",
+     "Guía BT-26 · Guía BT-33"
+    ],
+    [
+     "Aislamiento y cubierta",
+     "V PVC · R polietileno reticulado · D etileno propileno · Z1 poliolefina termoplástica · Z compuesto reticulado o termoestable · N policloropreno",
+     "Guía BT-16 · Guía BT-28 · Guía BT-33"
+    ],
+    [
+     "R, ojo",
+     "en los de 0,6/1 kV (RV-K, RZ1-K) es polietileno reticulado; en H07RN-F es goma",
+     "Guía BT-33"
+    ],
+    [
+     "M",
+     "armadura de alambres de acero galvanizado: RVMV-K, RZ1MZ1-K",
+     "Guía BT-29"
+    ],
+    [
+     "(AS)",
+     "los no propagadores del incendio y con emisión de humos y opacidad reducida: obligatorios en LGA, DI, contadores y pública concurrencia",
+     "BT-14 3 · BT-15 3 · BT-16 1 · BT-28 4"
+    ],
+    [
+     "Reacción al fuego",
+     "clase mínima Cca-s1b,d1,a1 para los cables (AS) en garajes",
+     "Guía BT-29"
+    ],
+    [
+     "PVC",
+     "policloruro de vinilo: termoplástico, 70 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "XLPE",
+     "polietileno reticulado: termoestable, 90 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "EPR",
+     "etileno-propileno: goma termoestable, 90 °C",
+     "BT-07 3.1.1"
+    ],
+    [
+     "0,6/1 kV",
+     "tensión asignada: 0,6 kV a tierra / 1 kV entre fases (redes, LGA, DI)",
+     "BT-06 1.1.1"
+    ],
+    [
+     "LGA y DI",
+     "RZ1-K (AS) o DZ1-K (AS) · en la DI también ES07Z1-K (AS) unipolar en tubo · aluminio: RZ1-Al (AS)",
+     "Guía BT-14 · Guía BT-15"
+    ],
+    [
+     "Contadores",
+     "H07Z-R o ES07Z1-R (AS), clase 2 · hilo de mando rojo de 1,5 mm²",
+     "Guía BT-16"
+    ],
+    [
+     "Interior de vivienda",
+     "H07V-U, H07V-R o H07V-K (450/750 V, PVC)",
+     "Guía BT-26"
+    ],
+    [
+     "Interior de cuadros",
+     "ES05Z1-K (AS), 300/500 V (pública concurrencia)",
+     "Guía BT-28"
+    ],
+    [
+     "Obras y usos móviles",
+     "H07RN-F (goma y policloropreno) · H07ZZ-F (AS) · interiores: H05VV-F",
+     "Guía BT-33"
+    ],
+    [
+     "Alumbrado exterior",
+     "RV-K (UNE 21123-2)",
+     "Guía BT-09"
+    ],
+    [
+     "Normas",
+     "UNE-EN 50525 (H07V-K, H05VV-F, H07RN-F…) · UNE 211002 (ES07Z1-K, H07Z1-K) · UNE 21123 (0,6/1 kV) · clases de conductor: UNE 21022, hoy UNE-EN 60228",
+     "BT-02 · Guía BT-33"
+    ]
+   ]
+  },
+  {
+   "title": "Cajas de empalme y derivación",
+   "ref": "UNE-EN 60670 · UNE-EN 60998 · Guía BT-21",
+   "rows": [
+    [
+     "Material",
+     "aislante y no propagador de la llama; si es metálica, protegida contra la corrosión",
+     "Guía BT-21"
+    ],
+    [
+     "Tamaño",
+     "profundidad ≥ diámetro del tubo mayor + 50 %, mínimo 40 mm · diámetro o lado interior ≥ 60 mm",
+     "Guía BT-21"
+    ],
+    [
+     "Empalmes",
+     "dentro de cajas, con bornes o regletas (UNE-EN 60998), nunca retorciendo los conductores",
+     "BT-19 2.11"
+    ],
+    [
+     "Estancas",
+     "entradas de tubo con prensaestopas o racores",
+     "Guía BT-21"
+    ],
+    [
+     "Tapas",
+     "accesibles y desmontables al acabar la obra; enrasadas con la pared",
+     "Guía BT-21"
+    ],
+    [
+     "Sin receptor aún",
+     "los circuitos sin luminaria terminan en bornes, caja o portalámparas: nunca puntas sueltas",
+     "Guía BT-21"
+    ],
+    [
+     "Normas",
+     "cajas: UNE-EN 60670 · bornes: UNE-EN 60998",
+     "Guía BT-17 · Guía BT-28"
+    ]
+   ]
+  },
+  {
+   "title": "Envolventes: códigos IP e IK",
+   "ref": "UNE-EN 60529 · UNE-EN 62262 · Guía anexo 1",
+   "visuals": [
+    "ipik"
+   ],
+   "rows": [
+    [
+     "IP",
+     "dos cifras independientes: 1ª acceso a partes peligrosas y cuerpos sólidos (0–6) · 2ª agua (0–8)",
+     "Guía anexo 1"
+    ],
+    [
+     "1ª cifra",
+     "1 > 50 mm · 2 > 12 mm · 3 > 2,5 mm · 4 > 1 mm · 5 protegida contra el polvo · 6 estanca al polvo",
+     "Guía anexo 1"
+    ],
+    [
+     "2ª cifra",
+     "1 gotas verticales · 2 gotas con 15° · 3 lluvia fina · 4 proyecciones · 5 chorros · 6 chorros fuertes · 7 inmersión · 8 inmersión prolongada",
+     "Guía anexo 1"
+    ],
+    [
+     "X",
+     "cifra no ensayada o no necesaria: IP2X solo declara los cuerpos sólidos",
+     "Guía anexo 1"
+    ],
+    [
+     "Letra adicional",
+     "A mano (esfera de 50 mm) · B dedo (12 mm × 80 mm) · C herramienta (2,5 mm) · D alambre (1 mm)",
+     "Guía anexo 1"
+    ],
+    [
+     "Símbolos",
+     "malla: IP5X · malla con recuadro: IP6X · gota: IPX1 · en cuadrado: IPX3 · en triángulo: IPX4 · dos en triángulos: IPX5 · dos gotas: IPX7 · con la profundidad: IPX8",
+     "Guía anexo 1"
+    ],
+    [
+     "IK",
+     "impactos, de 00 a 10 y siempre con dos cifras · IK07 = 2 J (0,5 kg desde 400 mm) · IK08 = 5 J · IK10 = 20 J",
+     "Guía anexo 1"
+    ],
+    [
+     "Cuadro de vivienda",
+     "IP30 e IK07 como mínimo",
+     "BT-17 1.2"
+    ],
+    [
+     "CGP · CPM",
+     "IP43 e IK08 · CPM: IP43 e IK09",
+     "BT-13 1.2 · BT-13 2.2"
+    ],
+    [
+     "Normas",
+     "IP: UNE-EN 60529 (antes UNE 20324) · IK: UNE-EN 62262 (antes UNE-EN 50102)",
+     "Guía BT-17 · BT-02"
+    ]
+   ]
+  },
+  {
+   "title": "Bases de enchufe y clavijas",
+   "ref": "UNE 20315 · ITC-BT-19 y 52",
+   "visuals": [
+    "tomas"
+   ],
+   "rows": [
+    [
+     "Interiores",
+     "bases de UNE 20315, figuras C2a, C3a o ESB 25-5a",
+     "BT-19 2.10"
+    ],
+    [
+     "C2a",
+     "bipolar con contacto lateral de tierra, 16 A 250 V, con obturadores (UNE 20315:2004): la de uso general",
+     "Guía BT-19"
+    ],
+    [
+     "C3a",
+     "bipolar con espiga de tierra, 16 A 250 V: cuando hay que distinguir fase y neutro o hay una red de tierras específica",
+     "BT-19 2.10"
+    ],
+    [
+     "ESB 25-5a",
+     "bipolar con contacto de tierra, 25 A 250 V: la de cocina y horno",
+     "Guía BT-19"
+    ],
+    [
+     "En vivienda",
+     "C2, C5 y C10: base 16 A 2p+T · C3: base 25 A 2p+T · C4: base 16 A 2p+T con fusible o automático de 16 A",
+     "BT-25 tabla 1"
+    ],
+    [
+     "Solo reposición",
+     "fijas C1a, ESB 10-5a, ESC 10-1a y clavijas ESB 10-5b, C1b: solo para sustituir las existentes",
+     "BT-19 2.10"
+    ],
+    [
+     "Bases móviles",
+     "ESC 10-1a, C2a o C3a",
+     "BT-19 2.10"
+    ],
+    [
+     "Clavijas",
+     "ESC 10-1b, C2b, C4, C6 o ESB 25-5b (UNE 20315) o UNE-EN 50075; fuera de vivienda, también UNE-EN 60309",
+     "BT-43 2.5"
+    ],
+    [
+     "Industriales",
+     "las de UNE-EN 60309 se admiten en instalaciones que no sean viviendas",
+     "BT-19 2.10"
+    ],
+    [
+     "Maniobra en carga",
+     "las clavijas de ≤ 16 A sirven para conectar y desconectar en carga",
+     "BT-19 2.7"
+    ],
+    [
+     "Puertos (amarres)",
+     "UNE-EN 60309: 230 V, 16 A, 2 polos + tierra, IPX6, cada una con su protección",
+     "BT-42 4.3.2"
+    ],
+    [
+     "VE ≤ 3,7 kW",
+     "monofásica, en vivienda unifamiliar o aparcamiento de viviendas: cualquiera de la tabla 3, también la C2a (a 10 A)",
+     "BT-52"
+    ],
+    [
+     "VE 3,7–22 kW",
+     "base o conector tipo 2 (UNE-EN 62196-2); se recomiendan obturadores si la usa público no experto",
+     "BT-52"
+    ],
+    [
+     "VE > 22 kW",
+     "alterna: conector tipo 2 · continua (modo 4): combo 2 (EN 62196-3)",
+     "BT-52"
+    ],
+    [
+     "Modos de carga",
+     "1: toma normalizada ≤ 16 A · 2: ≤ 32 A, con control piloto y diferencial en el cable · 3: SAVE · 4: continua, con el convertidor en el SAVE",
+     "BT-52"
+    ]
+   ]
+  }
+ ]
+}
