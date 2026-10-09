@@ -57,6 +57,10 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
   in devices** (user's request, 2026-10-09).
 - Formulas: LaTeX between `$…$` in rows and table cells (KaTeX, `assets/katex/`); see README for the conventions
   (`{,}` decimal comma, `\dfrac`, `\operatorname{sen}`). Check new ones render: count `.katex-error` in a headless page.
+- `content/calculators.json`: calculators for formula rows (🖩 button, dialog). When adding a formula row, consider a
+  calculator. Test all of them: in a headless page, for each id in `window.chuletaCalc.CALCS`, `openCalc`, `fillCalc`
+  with its example, `readCalc` + `runCalc`, and require finite numbers / booleans. The 🖩 glyph needs the 'Calc Glyph'
+  font (system fonts lack U+1F5A9).
 - `content/visuals/*.svg`: our own drawings for chuleta, material, device and measurement sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).

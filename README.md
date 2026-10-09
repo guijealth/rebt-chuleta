@@ -86,6 +86,29 @@ the chuleta. The drawings show what the device's data mean; they never claim how
 Same format: one section per instrument or test (earth tester, insulation tester, leakage clamp and voltage detector,
 loop and RCD tester), plus the instruments ITC-BT-03 requires. Measuring and verification go here, not in devices.
 
+### `content/calculators.json` — the calculators
+
+Rows with a formula show a 🖩 button (screen only, never printed) that opens a form: type the values (decimal comma
+or point), see the result as you type. Each calculator lists:
+
+```json
+{"id": "paralelo", "title": "Resistencias en paralelo", "tex": "\\dfrac{1}{R_{eq}} = …",
+ "rows": [["Todas las fórmulas", "Resistencias en paralelo"], ["Todas las fórmulas", "Dos en paralelo"]],
+ "inputs": [{"id": "R", "type": "list", "label": "Resistencias", "unit": "Ω", "min": 2}],
+ "outputs": [{"label": "R_eq", "expr": "1 / sum(R.map(x => 1 / x))", "unit": "Ω", "digits": 3}],
+ "example": {"R": [10, 10, 20]}}
+```
+
+- `rows`: the rows (section title and row key, exact) that get the button; the build fails if one doesn't exist.
+- Inputs: a number (`unit`, `default`, `optional`, `hint`), `select` (`options` with `label` and `value`), `list`
+  (several values of one variable: resistors, factors, motors) or `groups` (rows of several `fields`, e.g. groups of
+  homes with their number and power).
+- Outputs: `expr` is a JavaScript expression over the input ids and the helpers `sum`, `max`, `min`, `sqrt`, `PI`,
+  `nextSection` (next standard section) and `coefSim` (ITC-BT-10 table 1). A blank optional input is `undefined`, so
+  `V ?? R * I` solves for whichever value is missing. `{"type": "check", "expr": …, "ok": …, "fail": …}` shows ✓ or ✗.
+- `constants` (standard sections, simultaneity coefficients) must equal the chuleta's own row and table: the build
+  checks it. `example` fills the form (button «Ejemplo») and is what the tests run.
+
 ### `content/symbols.json` — the symbols
 
 ```json
@@ -139,6 +162,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | `index.html`, `assets/chuleta.css`, `assets/chuleta.js` | The page: screen view, search, print layout and controls |
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
 | `assets/katex/` | KaTeX script, stylesheet and woff2 fonts, for the formulas |
+| `content/calculators.json` | The calculators behind the 🖩 buttons |
 | `content/cheatsheet.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
@@ -160,6 +184,7 @@ summary, the symbols and the freely redistributable official sources are publish
 - Symbol drawings: the EN 60617 element collection of [QElectroTech](https://qelectrotech.org/), licensed
   [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/) (see `content/elements/qet/ELEMENTS.LICENSE`).
 - Source documents: see `sources/README.md` for each publisher's terms and the attribution it asks for.
+- Calculator icon: 🖩 from Noto Sans Symbols 2 (SIL OFL 1.1, `assets/fonts/OFL-NotoSansSymbols2.txt`), one glyph only.
 - Formulas: [KaTeX](https://katex.org/) (MIT licence, `assets/katex/LICENSE`), served from this site.
 - Fonts: Barlow and Barlow Condensed by the Barlow Project Authors, SIL Open Font License 1.1, served from this site
   (`assets/fonts/`, licence in `assets/fonts/OFL.txt`), so the page and its print layout work offline.

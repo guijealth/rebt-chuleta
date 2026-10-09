@@ -20,6 +20,8 @@
     return n;
   };
 
+  const put = (target, ...children) => target.replaceChildren(...children.flat(Infinity).filter((c) => c != null && c !== false));
+
   const data = window.CHULETA;
   if (!data) {
     $('#screen').textContent = 'Falta data.js: ejecuta «python3 tools/build.py».';
@@ -66,8 +68,9 @@
       s.table ? el('table', { class: 'cheat-table' },
         el('thead', {}, el('tr', {}, s.table.head.map((h) => el('th', {}, rich(h))))),
         el('tbody', {}, s.table.rows.map((r) => el('tr', {}, r.map((x) => el('td', {}, rich(x)))))) ) : null,
-      s.rows?.length ? el('dl', { class: 'cheat-rows' }, s.rows.map(([k, v, r]) => el('div', {},
-        el('dt', {}, rich(k)), el('dd', {}, rich(v)), el('dd', { class: 'cheat-ref', 'data-kind': kind(r), text: r })))) : null);
+      s.rows?.length ? el('dl', { class: 'cheat-rows' }, s.rows.map(([k, v, r, calc]) => el('div', {},
+        el('dt', {}, rich(k)), el('dd', {}, rich(v), calcButton(calc)),
+        el('dd', { class: 'cheat-ref', 'data-kind': kind(r), text: r })))) : null);
   }
 
   function symbolTile(it) {
@@ -86,6 +89,220 @@
       el('h3', {}, title, el('span', { text: s.ref || '' })),
       el('div', { class: 'sym-grid' }, items));
   }
+
+  // ---------- calculators (content/calculators.json): a 🖩 button on a row opens a form for its formula ----------
+
+  const CALCS = Object.fromEntries((data.calculators?.calculators || []).map((c) => [c.id, c]));
+  const K = data.calculators?.constants || {};
+  const HELPERS = {
+    sum: (a) => a.reduce((x, y) => x + y, 0),
+    max: Math.max,
+    min: Math.min,
+    sqrt: Math.sqrt,
+    PI: Math.PI,
+    nextSection: (S) => (K.secciones || []).find((x) => x >= S - 1e-9) ?? NaN,  // next standard section
+    coefSim: (n) => (n < 1 ? NaN : n <= 21 ? K.coefSimultaneidad[Math.round(n) - 1] : 15.3 + (n - 21) * 0.5),  // ITC-BT-10 tabla 1
+  };
+
+  function calcButton(id) {
+    if (!id || !CALCS[id]) return null;
+    return el('button', { type: 'button', class: 'calc-btn', 'data-calc': id, title: `Calculadora: ${CALCS[id].title}`,
+      'aria-label': `Calculadora: ${CALCS[id].title}` }, '\u{1F5A9}');
+  }
+
+  // "I_B" → I<sub>B</sub> in labels
+  const subs = (text) => text.split(/([A-Za-zΔ])_([A-Za-zΔ0-9]+)/).map((part, i) =>
+    (i % 3 === 2 ? el('sub', { text: part }) : part || null));
+
+  // "1.234,5", "2,5", "2.5" → number; "" → undefined (a blank optional field); nonsense → NaN
+  function parseNum(text) {
+    let t = String(text).trim().replace(/\s/g, '');
+    if (!t) return undefined;
+    if (/^-?\d{1,3}(\.\d{3})+(,\d+)?$/.test(t)) t = t.replace(/\./g, '');
+    const v = Number(t.replace(',', '.'));
+    return Number.isFinite(v) ? v : NaN;
+  }
+  // like the chuleta: decimal comma, thousands with a (non-breaking) space: 75 015,4
+  const fmt = (v, digits = 2) => new Intl.NumberFormat('es-ES', { maximumFractionDigits: digits, useGrouping: false }).format(v)
+    .replace(/^(-?\d+)/, (m) => m.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0'));
+  const showNum = (v) => (v == null ? '' : String(v).replace('.', ','));
+
+  const compiled = new Map();
+  function compile(calc, expr) {
+    const key = `${calc.id}|${expr}`;
+    if (!compiled.has(key)) {
+      const names = calc.inputs.map((i) => i.id);
+      compiled.set(key, new Function(...names, ...Object.keys(HELPERS), `"use strict"; return (${expr});`));
+    }
+    return compiled.get(key);
+  }
+
+  function numberField(attrs, value) {
+    return el('input', { type: 'text', inputmode: 'decimal', autocomplete: 'off', value: showNum(value), ...attrs });
+  }
+
+  function listRow(input, value) {
+    const row = el('div', { class: 'calc-item' },
+      numberField({ 'data-item': '' }, value),
+      input.unit ? el('span', { class: 'calc-unit', text: input.unit }) : null,
+      el('button', { type: 'button', class: 'calc-del', 'aria-label': 'Quitar', title: 'Quitar' }, '×'));
+    return row;
+  }
+  function groupRow(input, value = {}) {
+    return el('div', { class: 'calc-item calc-group' },
+      input.fields.map((f) => el('label', {}, el('span', { class: 'calc-sub', text: f.label + (f.unit ? ` (${f.unit})` : '') }),
+        numberField({ 'data-field': f.id }, value[f.id]))),
+      el('button', { type: 'button', class: 'calc-del', 'aria-label': 'Quitar', title: 'Quitar' }, '×'));
+  }
+
+  function inputBlock(input) {
+    const label = [subs(input.label), input.unit && input.type !== 'list' ? el('span', { class: 'calc-unit', text: ` (${input.unit})` }) : null,
+      input.optional ? el('span', { class: 'calc-opt', text: ' opcional' }) : null];
+    const hint = input.hint ? el('small', { class: 'calc-hint', text: input.hint }) : null;
+    if (input.type === 'select') {
+      return el('label', { class: 'calc-field' }, el('span', {}, label),
+        el('select', { 'data-input': input.id }, input.options.map((o, i) => el('option', { value: i, text: o.label,
+          selected: o.value === input.default ? '' : null }))), hint);
+    }
+    if (input.type === 'list' || input.type === 'groups') {
+      const items = el('div', { class: 'calc-items' });
+      const add = el('button', { type: 'button', class: 'btn btn-quiet calc-add' }, input.type === 'list' ? '+ Añadir valor' : '+ Añadir grupo');
+      const box = el('fieldset', { class: 'calc-field calc-multi', 'data-input': input.id }, el('legend', {}, label), hint, items, add);
+      const n = input.type === 'list' ? Math.max(input.min || 1, 2) : 1;
+      for (let k = 0; k < n; k++) items.append(input.type === 'list' ? listRow(input) : groupRow(input));
+      add.addEventListener('click', () => {
+        const row = input.type === 'list' ? listRow(input) : groupRow(input);
+        items.append(row);
+        row.querySelector('input').focus();
+      });
+      return box;
+    }
+    return el('label', { class: 'calc-field' }, el('span', {}, label), numberField({ 'data-input': input.id }, input.default), hint);
+  }
+
+  // read the form: values by input id, and whether everything required is there and valid
+  function readCalc(calc, form) {
+    const values = {};
+    let ok = true;
+    for (const input of calc.inputs) {
+      const node = form.querySelector(`[data-input="${input.id}"]`);
+      if (input.type === 'select') { values[input.id] = input.options[node.value].value; continue; }
+      if (input.type === 'list') {
+        const nums = $$('input', node).map((x) => { const v = parseNum(x.value); x.classList.toggle('bad', Number.isNaN(v)); return v; });
+        if (nums.some((v) => Number.isNaN(v))) ok = false;
+        values[input.id] = nums.filter((v) => v !== undefined && !Number.isNaN(v));
+        if (values[input.id].length < (input.min || 1)) ok = false;
+        continue;
+      }
+      if (input.type === 'groups') {
+        const groups = [];
+        for (const row of $$('.calc-group', node)) {
+          const g = {};
+          let filled = 0, bad = false;
+          for (const f of input.fields) {
+            const x = row.querySelector(`[data-field="${f.id}"]`);
+            const v = parseNum(x.value);
+            x.classList.toggle('bad', Number.isNaN(v));
+            if (Number.isNaN(v)) bad = true;
+            if (v !== undefined) filled++;
+            g[f.id] = v;
+          }
+          if (bad || (filled && filled < input.fields.length)) ok = false;
+          else if (filled) groups.push(g);
+        }
+        values[input.id] = groups;
+        if (!groups.length) ok = false;
+        continue;
+      }
+      const v = parseNum(node.value);
+      node.classList.toggle('bad', Number.isNaN(v));
+      if (Number.isNaN(v) || (v === undefined && !input.optional)) ok = false;
+      values[input.id] = v;
+    }
+    return { values, ok };
+  }
+
+  function runCalc(calc, values) {
+    const args = [...calc.inputs.map((i) => values[i.id]), ...Object.values(HELPERS)];
+    return calc.outputs.map((o) => {
+      let v;
+      try { v = compile(calc, o.expr)(...args); } catch { v = undefined; }
+      return { o, v };
+    });
+  }
+
+  function showResults(calc, form, out) {
+    const { values, ok } = readCalc(calc, form);
+    const res = ok ? runCalc(calc, values) : calc.outputs.map((o) => ({ o, v: undefined }));
+    put(out, res.map(({ o, v }) => {
+      let text, cls = '';
+      if (o.type === 'check') {
+        if (v === true) { text = `✓ ${o.ok}`; cls = 'pass'; } else if (v === false) { text = `✗ ${o.fail}`; cls = 'fail'; } else text = '—';
+      } else text = typeof v === 'number' && Number.isFinite(v) ? `${fmt(v, o.digits ?? 2)}${o.unit ? ` ${o.unit}` : ''}` : '—';
+      return el('div', { class: cls }, el('dt', {}, subs(o.label)), el('dd', { text }));
+    }));
+    out.previousElementSibling.hidden = ok;  // "faltan datos"
+  }
+
+  function fillCalc(calc, form, values) {
+    for (const input of calc.inputs) {
+      const node = form.querySelector(`[data-input="${input.id}"]`);
+      const v = values[input.id];
+      if (input.type === 'select') node.value = Math.max(0, input.options.findIndex((o) => o.value === (v ?? input.default)));
+      else if (input.type === 'list' || input.type === 'groups') {
+        const items = node.querySelector('.calc-items');
+        const rows = v?.length ? v : [undefined, ...(input.type === 'list' ? [undefined] : [])];
+        items.replaceChildren(...rows.map((x) => (input.type === 'list' ? listRow(input, x) : groupRow(input, x))));
+      } else node.value = showNum(v ?? input.default);
+    }
+  }
+
+  let calcDialog;
+  function openCalc(id) {
+    const calc = CALCS[id];
+    if (!calc) return;
+    if (!calcDialog) {
+      calcDialog = el('dialog', { class: 'print-dialog calc-dialog', 'aria-labelledby': 'calc-title' });
+      document.body.append(calcDialog);
+      calcDialog.addEventListener('click', (e) => { if (e.target === calcDialog) calcDialog.close(); });
+    }
+    const form = el('form', { class: 'calc-form', novalidate: '' }, calc.inputs.map(inputBlock));
+    const out = el('dl', { class: 'calc-out', 'aria-live': 'polite' });
+    const missing = el('p', { class: 'calc-missing', text: 'Rellena los datos para ver el resultado.' });
+    const update = () => showResults(calc, form, out);
+    form.addEventListener('input', update);
+    form.addEventListener('change', update);
+    form.addEventListener('click', (e) => {
+      const del = e.target.closest('.calc-del');
+      if (!del) return;
+      const items = del.closest('.calc-items');
+      if (items.children.length > 1) del.closest('.calc-item').remove();
+      else del.closest('.calc-item').querySelectorAll('input').forEach((x) => { x.value = ''; });
+      update();
+    });
+    form.addEventListener('submit', (e) => e.preventDefault());
+    const example = el('button', { type: 'button', class: 'btn btn-quiet' }, 'Ejemplo');
+    example.addEventListener('click', () => { fillCalc(calc, form, calc.example || {}); update(); });
+    const clear = el('button', { type: 'button', class: 'btn btn-quiet' }, 'Borrar');
+    clear.addEventListener('click', () => { fillCalc(calc, form, {}); update(); });
+    const close = el('button', { class: 'btn-close', type: 'button', 'aria-label': 'Cerrar' }, '×');
+    close.addEventListener('click', () => calcDialog.close());
+    put(calcDialog, el('div', { class: 'print-panel calc-panel' },
+      el('header', { class: 'print-head' }, el('h2', { id: 'calc-title' }, el('span', { class: 'calc-glyph', 'aria-hidden': 'true' }, '\u{1F5A9} '), calc.title), close),
+      el('div', { class: 'calc-tex', html: window.katex ? window.katex.renderToString(calc.tex, { throwOnError: false, displayMode: true }) : calc.tex }),
+      calc.note ? el('p', { class: 'calc-note', text: calc.note }) : null,
+      form,
+      el('section', { class: 'calc-result' }, el('h3', { text: 'Resultado' }), missing, out),
+      el('div', { class: 'print-actions' }, example, clear)));
+    update();
+    calcDialog.showModal();
+    form.querySelector('input, select')?.focus();
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.calc-btn');
+    if (b) openCalc(b.dataset.calc);
+  });
+  window.chuletaCalc = { CALCS, readCalc, runCalc, fillCalc, openCalc };  // for the tests
 
   // ---------- screen ----------
 

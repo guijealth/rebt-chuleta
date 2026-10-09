@@ -1,0 +1,2320 @@
+{
+ "_doc": "Calculators: each one opens from a 🖩 button on the rows listed in 'rows' ([section title, row key], exact). Inputs: number (unit, default, optional), select (options label/value), list (several numbers of one variable), groups (rows of several fields). Outputs: {label, unit, expr, digits} or {type: check, label, expr, ok, fail}; expr is a JavaScript expression over the input ids and the helpers sum, max, min, sqrt, PI, nextSection (next standard section) and coefSim (ITC-BT-10 table 1). A blank optional input is null: use ?? to solve for the missing one. 'example' fills the form and is run by the tests. See README.md.",
+ "constants": {
+  "secciones": [
+   1.5,
+   2.5,
+   4,
+   6,
+   10,
+   16,
+   25,
+   35,
+   50,
+   70,
+   95,
+   120,
+   150,
+   185,
+   240
+  ],
+  "coefSimultaneidad": [
+   1,
+   2,
+   3,
+   3.8,
+   4.6,
+   5.4,
+   6.2,
+   7,
+   7.8,
+   8.5,
+   9.2,
+   9.9,
+   10.6,
+   11.3,
+   11.9,
+   12.5,
+   13.1,
+   13.7,
+   14.3,
+   14.8,
+   15.3
+  ]
+ },
+ "calculators": [
+  {
+   "id": "ohm",
+   "title": "Ley de Ohm",
+   "tex": "V = R \\cdot I",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Ley de Ohm"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "V",
+     "label": "Tensión V",
+     "unit": "V",
+     "optional": true
+    },
+    {
+     "id": "R",
+     "label": "Resistencia R",
+     "unit": "Ω",
+     "optional": true
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A",
+     "optional": true
+    }
+   ],
+   "outputs": [
+    {
+     "label": "V",
+     "expr": "V ?? R * I",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "R",
+     "expr": "R ?? V / I",
+     "unit": "Ω",
+     "digits": 2
+    },
+    {
+     "label": "I",
+     "expr": "I ?? V / R",
+     "unit": "A",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "V": 230,
+    "R": 52.9
+   },
+   "note": "Rellena dos valores cualesquiera: se calcula el tercero."
+  },
+  {
+   "id": "potencia_cc",
+   "title": "Potencia en continua o resistiva",
+   "tex": "P = V \\cdot I = R \\cdot I^2 = \\dfrac{V^2}{R}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Potencia (c.c. o resistiva)"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "V",
+     "label": "Tensión V",
+     "unit": "V",
+     "optional": true
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A",
+     "optional": true
+    },
+    {
+     "id": "R",
+     "label": "Resistencia R",
+     "unit": "Ω",
+     "optional": true
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P",
+     "expr": "V != null && I != null ? V * I : R != null && I != null ? R * I * I : V != null && R != null ? V * V / R : null",
+     "unit": "W",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "V": 230,
+    "I": 10
+   },
+   "note": "Rellena dos valores cualesquiera."
+  },
+  {
+   "id": "energia",
+   "title": "Energía consumida",
+   "tex": "E = P \\cdot t",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Energía consumida"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W"
+    },
+    {
+     "id": "t",
+     "label": "Tiempo t",
+     "unit": "h"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "E",
+     "expr": "P * t",
+     "unit": "Wh",
+     "digits": 0
+    },
+    {
+     "label": "E",
+     "expr": "P * t / 1000",
+     "unit": "kWh",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "P": 2000,
+    "t": 3
+   }
+  },
+  {
+   "id": "joule",
+   "title": "Calor por efecto Joule",
+   "tex": "Q = R \\cdot I^2 \\cdot t",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Calor por efecto Joule"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "R",
+     "label": "Resistencia R",
+     "unit": "Ω"
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A"
+    },
+    {
+     "id": "t",
+     "label": "Tiempo t",
+     "unit": "s"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "Q",
+     "expr": "R * I * I * t",
+     "unit": "J",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "R": 10,
+    "I": 2,
+    "t": 60
+   }
+  },
+  {
+   "id": "carga",
+   "title": "Intensidad y carga",
+   "tex": "I = \\dfrac{Q}{t}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Intensidad y carga"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Q",
+     "label": "Carga Q",
+     "unit": "C"
+    },
+    {
+     "id": "t",
+     "label": "Tiempo t",
+     "unit": "s"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I",
+     "expr": "Q / t",
+     "unit": "A",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "Q": 120,
+    "t": 60
+   }
+  },
+  {
+   "id": "serie",
+   "title": "Resistencias en serie",
+   "tex": "R_{eq} = R_1 + R_2 + \\dots",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Resistencias en serie"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "R",
+     "type": "list",
+     "label": "Resistencias",
+     "unit": "Ω",
+     "min": 2
+    }
+   ],
+   "outputs": [
+    {
+     "label": "R_eq",
+     "expr": "sum(R)",
+     "unit": "Ω",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "R": [
+     10,
+     22,
+     47
+    ]
+   }
+  },
+  {
+   "id": "paralelo",
+   "title": "Resistencias en paralelo",
+   "tex": "\\dfrac{1}{R_{eq}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dots",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Resistencias en paralelo"
+    ],
+    [
+     "Todas las fórmulas",
+     "Dos en paralelo"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "R",
+     "type": "list",
+     "label": "Resistencias",
+     "unit": "Ω",
+     "min": 2
+    }
+   ],
+   "outputs": [
+    {
+     "label": "R_eq",
+     "expr": "1 / sum(R.map(x => 1 / x))",
+     "unit": "Ω",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "R": [
+     10,
+     10,
+     20
+    ]
+   }
+  },
+  {
+   "id": "r_conductor",
+   "title": "Resistencia de un conductor",
+   "tex": "R = \\dfrac{L}{\\gamma \\cdot S}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Resistencia de un conductor"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "L",
+     "label": "Longitud L",
+     "unit": "m"
+    },
+    {
+     "id": "S",
+     "label": "Sección S",
+     "unit": "mm²"
+    },
+    {
+     "id": "gamma",
+     "type": "select",
+     "label": "Conductividad γ",
+     "options": [
+      {
+       "label": "cobre, 70 °C (PVC a plena carga) · 48",
+       "value": 48
+      },
+      {
+       "label": "cobre, 90 °C (XLPE, EPR) · 44",
+       "value": 44
+      },
+      {
+       "label": "cobre, 20 °C · 56",
+       "value": 56
+      },
+      {
+       "label": "aluminio, 70 °C · 30",
+       "value": 30
+      },
+      {
+       "label": "aluminio, 90 °C · 28",
+       "value": 28
+      },
+      {
+       "label": "aluminio, 20 °C · 35",
+       "value": 35
+      }
+     ],
+     "default": 48
+    }
+   ],
+   "outputs": [
+    {
+     "label": "R",
+     "expr": "L / (gamma * S)",
+     "unit": "Ω",
+     "digits": 4
+    }
+   ],
+   "example": {
+    "L": 100,
+    "S": 2.5,
+    "gamma": 56
+   }
+  },
+  {
+   "id": "seccion_circular",
+   "title": "Sección de un conductor circular",
+   "tex": "S = \\dfrac{\\pi D^2}{4}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Sección de un conductor circular"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "D",
+     "label": "Diámetro D",
+     "unit": "mm"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "S",
+     "expr": "PI * D * D / 4",
+     "unit": "mm²",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "D": 1.78
+   }
+  },
+  {
+   "id": "potencias_mono",
+   "title": "Potencias en monofásica",
+   "tex": "P = U I \\cos\\varphi \\quad Q = U I \\operatorname{sen}\\varphi \\quad S = U I",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Potencias, monofásica"
+    ],
+    [
+     "Letras y símbolos: magnitudes",
+     "S (potencia)"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "U",
+     "label": "Tensión U",
+     "unit": "V",
+     "default": 230
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A"
+    },
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": "",
+     "default": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P",
+     "expr": "U * I * cos",
+     "unit": "W",
+     "digits": 0
+    },
+    {
+     "label": "Q",
+     "expr": "U * I * sqrt(1 - cos * cos)",
+     "unit": "VAr",
+     "digits": 0
+    },
+    {
+     "label": "S",
+     "expr": "U * I",
+     "unit": "VA",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "U": 230,
+    "I": 10,
+    "cos": 0.9
+   }
+  },
+  {
+   "id": "potencias_tri",
+   "title": "Potencias en trifásica",
+   "tex": "P = \\sqrt{3}\\, U I \\cos\\varphi \\quad Q = \\sqrt{3}\\, U I \\operatorname{sen}\\varphi \\quad S = \\sqrt{3}\\, U I",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Potencias, trifásica"
+    ],
+    [
+     "Letras y símbolos: magnitudes",
+     "√3 ≈ 1,73"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "U",
+     "label": "Tensión entre fases U",
+     "unit": "V",
+     "default": 400
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A"
+    },
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": "",
+     "default": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P",
+     "expr": "sqrt(3) * U * I * cos",
+     "unit": "W",
+     "digits": 0
+    },
+    {
+     "label": "Q",
+     "expr": "sqrt(3) * U * I * sqrt(1 - cos * cos)",
+     "unit": "VAr",
+     "digits": 0
+    },
+    {
+     "label": "S",
+     "expr": "sqrt(3) * U * I",
+     "unit": "VA",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "U": 400,
+    "I": 16,
+    "cos": 0.85
+   }
+  },
+  {
+   "id": "triangulo",
+   "title": "Triángulo de potencias",
+   "tex": "S^2 = P^2 + Q^2 \\qquad \\cos\\varphi = \\dfrac{P}{S}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Triángulo de potencias"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia activa P",
+     "unit": "W"
+    },
+    {
+     "id": "Q",
+     "label": "Potencia reactiva Q",
+     "unit": "VAr"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "S",
+     "expr": "sqrt(P * P + Q * Q)",
+     "unit": "VA",
+     "digits": 0
+    },
+    {
+     "label": "cos φ",
+     "expr": "P / sqrt(P * P + Q * Q)",
+     "unit": "",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "P": 3000,
+    "Q": 1500
+   }
+  },
+  {
+   "id": "linea_fase",
+   "title": "Tensión de línea y de fase",
+   "tex": "U_\\text{línea} = \\sqrt{3} \\cdot U_\\text{fase}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Tensión de línea y de fase"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Uf",
+     "label": "Tensión de fase",
+     "unit": "V",
+     "optional": true
+    },
+    {
+     "id": "Ul",
+     "label": "Tensión de línea (entre fases)",
+     "unit": "V",
+     "optional": true
+    }
+   ],
+   "outputs": [
+    {
+     "label": "U fase",
+     "expr": "Uf ?? Ul / sqrt(3)",
+     "unit": "V",
+     "digits": 1
+    },
+    {
+     "label": "U línea",
+     "expr": "Ul ?? Uf * sqrt(3)",
+     "unit": "V",
+     "digits": 1
+    }
+   ],
+   "example": {
+    "Uf": 230
+   },
+   "note": "Rellena una de las dos."
+  },
+  {
+   "id": "frecuencia",
+   "title": "Frecuencia y periodo",
+   "tex": "f = \\dfrac{1}{T}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Frecuencia y periodo"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "f",
+     "label": "Frecuencia f",
+     "unit": "Hz",
+     "optional": true
+    },
+    {
+     "id": "T",
+     "label": "Periodo T",
+     "unit": "ms",
+     "optional": true
+    }
+   ],
+   "outputs": [
+    {
+     "label": "f",
+     "expr": "f ?? 1000 / T",
+     "unit": "Hz",
+     "digits": 2
+    },
+    {
+     "label": "T",
+     "expr": "T ?? 1000 / f",
+     "unit": "ms",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "f": 50
+   },
+   "note": "Rellena una de las dos."
+  },
+  {
+   "id": "intensidad_mono",
+   "title": "Intensidad en monofásica",
+   "tex": "I = \\dfrac{P}{U \\cos\\varphi}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Intensidad, monofásica"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "2. Intensidad, monofásica"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W"
+    },
+    {
+     "id": "U",
+     "label": "Tensión U",
+     "unit": "V",
+     "default": 230
+    },
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": "",
+     "default": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I",
+     "expr": "P / (U * cos)",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "P": 5750,
+    "U": 230,
+    "cos": 1
+   }
+  },
+  {
+   "id": "intensidad_tri",
+   "title": "Intensidad en trifásica",
+   "tex": "I = \\dfrac{P}{\\sqrt{3}\\, U \\cos\\varphi}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Intensidad, trifásica"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "2. Intensidad, trifásica"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W"
+    },
+    {
+     "id": "U",
+     "label": "Tensión entre fases U",
+     "unit": "V",
+     "default": 400
+    },
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": "",
+     "default": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I",
+     "expr": "P / (sqrt(3) * U * cos)",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "P": 15000,
+    "U": 400,
+    "cos": 0.9
+   }
+  },
+  {
+   "id": "circuito_vivienda",
+   "title": "Intensidad de un circuito de vivienda",
+   "tex": "I = n \\cdot I_a \\cdot F_s \\cdot F_u",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Circuitos de vivienda"
+    ],
+    [
+     "Letras y símbolos: subíndices y aparatos",
+     "$I_a$ (circuitos)"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Circuitos de vivienda I = n × Ia × Fs × Fu"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "n",
+     "label": "Número de tomas o receptores n",
+     "unit": ""
+    },
+    {
+     "id": "Ia",
+     "label": "Intensidad prevista por toma I_a",
+     "unit": "A"
+    },
+    {
+     "id": "Fs",
+     "label": "Factor de simultaneidad F_s",
+     "unit": ""
+    },
+    {
+     "id": "Fu",
+     "label": "Factor de utilización F_u",
+     "unit": ""
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I",
+     "expr": "n * Ia * Fs * Fu",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "n": 20,
+    "Ia": 15,
+    "Fs": 0.2,
+    "Fu": 0.25
+   },
+   "note": "Valores de cada circuito en la tabla 1 de la ITC-BT-25."
+  },
+  {
+   "id": "proteccion",
+   "title": "Elegir la protección contra sobrecargas",
+   "tex": "I_B \\le I_n \\le I_z \\qquad I_2 \\le 1{,}45\\, I_z",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Elegir la protección"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "6. Protección"
+    ],
+    [
+     "Letras y símbolos: subíndices y aparatos",
+     "$I_B$ · $I_z$"
+    ],
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "Elegir $I_n$"
+    ],
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "$I_2$"
+    ],
+    [
+     "Fusibles (cortacircuitos fusibles)",
+     "Sobrecarga"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "IB",
+     "label": "Corriente del circuito I_B",
+     "unit": "A"
+    },
+    {
+     "id": "In",
+     "label": "Calibre de la protección I_n",
+     "unit": "A"
+    },
+    {
+     "id": "Iz",
+     "label": "Admisible del cable I_z",
+     "unit": "A"
+    },
+    {
+     "id": "tipo",
+     "type": "select",
+     "label": "Protección",
+     "options": [
+      {
+       "label": "PIA o AD (UNE-EN 60898, 61009) · I₂ = 1,45 In",
+       "value": "pia"
+      },
+      {
+       "label": "automático industrial (UNE-EN 60947-2) · I₂ = 1,30 In",
+       "value": "ind"
+      },
+      {
+       "label": "fusible gG · I₂ = If",
+       "value": "gG"
+      }
+     ],
+     "default": "pia"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I₂",
+     "expr": "In * (tipo == 'pia' ? 1.45 : tipo == 'ind' ? 1.3 : In >= 16 ? 1.6 : In > 4 ? 1.9 : 2.1)",
+     "unit": "A",
+     "digits": 2
+    },
+    {
+     "type": "check",
+     "label": "I_B ≤ I_n",
+     "expr": "IB <= In",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    },
+    {
+     "type": "check",
+     "label": "I_n ≤ I_z",
+     "expr": "In <= Iz",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    },
+    {
+     "type": "check",
+     "label": "I₂ ≤ 1,45 I_z",
+     "expr": "In * (tipo == 'pia' ? 1.45 : tipo == 'ind' ? 1.3 : In >= 16 ? 1.6 : In > 4 ? 1.9 : 2.1) <= 1.45 * Iz",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    }
+   ],
+   "example": {
+    "IB": 13,
+    "In": 16,
+    "Iz": 21,
+    "tipo": "pia"
+   }
+  },
+  {
+   "id": "iz_corregida",
+   "title": "Intensidad admisible corregida",
+   "tex": "I_z = I_\\text{tabla} \\cdot F_1 \\cdot F_2 \\cdots",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Intensidad admisible corregida"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "It",
+     "label": "Intensidad de la tabla",
+     "unit": "A"
+    },
+    {
+     "id": "F",
+     "type": "list",
+     "label": "Factores de corrección",
+     "unit": "",
+     "min": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I_z",
+     "expr": "It * F.reduce((a, b) => a * b, 1)",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "It": 27,
+    "F": [
+     0.8,
+     0.94
+    ]
+   }
+  },
+  {
+   "id": "caida_mono",
+   "title": "Caída de tensión en monofásica",
+   "tex": "e = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{2 \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Caída de tensión, monofásica"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Fórmula, monofásica"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Con la intensidad en vez de P"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Ejemplo al revés"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W",
+     "optional": true,
+     "hint": "o la intensidad"
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A",
+     "optional": true
+    },
+    {
+     "id": "cos",
+     "label": "cos φ (con la intensidad)",
+     "unit": "",
+     "default": 1
+    },
+    {
+     "id": "L",
+     "label": "Longitud L (solo ida)",
+     "unit": "m"
+    },
+    {
+     "id": "S",
+     "label": "Sección S",
+     "unit": "mm²"
+    },
+    {
+     "id": "gamma",
+     "type": "select",
+     "label": "Conductividad γ",
+     "options": [
+      {
+       "label": "cobre, 70 °C (PVC a plena carga) · 48",
+       "value": 48
+      },
+      {
+       "label": "cobre, 90 °C (XLPE, EPR) · 44",
+       "value": 44
+      },
+      {
+       "label": "cobre, 20 °C · 56",
+       "value": 56
+      },
+      {
+       "label": "aluminio, 70 °C · 30",
+       "value": 30
+      },
+      {
+       "label": "aluminio, 90 °C · 28",
+       "value": 28
+      },
+      {
+       "label": "aluminio, 20 °C · 35",
+       "value": 35
+      }
+     ],
+     "default": 48
+    },
+    {
+     "id": "U",
+     "label": "Tensión U",
+     "unit": "V",
+     "default": 230
+    }
+   ],
+   "outputs": [
+    {
+     "label": "e",
+     "expr": "P != null ? 2 * P * L / (gamma * S * U) : 2 * L * I * cos / (gamma * S)",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "e",
+     "expr": "100 * (P != null ? 2 * P * L / (gamma * S * U) : 2 * L * I * cos / (gamma * S)) / U",
+     "unit": "%",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "P": 3450,
+    "L": 20,
+    "S": 2.5,
+    "gamma": 56,
+    "U": 230
+   },
+   "note": "Rellena la potencia o la intensidad."
+  },
+  {
+   "id": "caida_tri",
+   "title": "Caída de tensión en trifásica",
+   "tex": "e = \\dfrac{P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{\\sqrt{3} \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Caída de tensión, trifásica"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Fórmula, trifásica"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W",
+     "optional": true,
+     "hint": "o la intensidad"
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A",
+     "optional": true
+    },
+    {
+     "id": "cos",
+     "label": "cos φ (con la intensidad)",
+     "unit": "",
+     "default": 1
+    },
+    {
+     "id": "L",
+     "label": "Longitud L",
+     "unit": "m"
+    },
+    {
+     "id": "S",
+     "label": "Sección S",
+     "unit": "mm²"
+    },
+    {
+     "id": "gamma",
+     "type": "select",
+     "label": "Conductividad γ",
+     "options": [
+      {
+       "label": "cobre, 70 °C (PVC a plena carga) · 48",
+       "value": 48
+      },
+      {
+       "label": "cobre, 90 °C (XLPE, EPR) · 44",
+       "value": 44
+      },
+      {
+       "label": "cobre, 20 °C · 56",
+       "value": 56
+      },
+      {
+       "label": "aluminio, 70 °C · 30",
+       "value": 30
+      },
+      {
+       "label": "aluminio, 90 °C · 28",
+       "value": 28
+      },
+      {
+       "label": "aluminio, 20 °C · 35",
+       "value": 35
+      }
+     ],
+     "default": 48
+    },
+    {
+     "id": "U",
+     "label": "Tensión entre fases U",
+     "unit": "V",
+     "default": 400
+    }
+   ],
+   "outputs": [
+    {
+     "label": "e",
+     "expr": "P != null ? P * L / (gamma * S * U) : sqrt(3) * L * I * cos / (gamma * S)",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "e",
+     "expr": "100 * (P != null ? P * L / (gamma * S * U) : sqrt(3) * L * I * cos / (gamma * S)) / U",
+     "unit": "%",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "P": 15000,
+    "L": 40,
+    "S": 6,
+    "gamma": 48,
+    "U": 400
+   },
+   "note": "Rellena la potencia o la intensidad."
+  },
+  {
+   "id": "caida_pct",
+   "title": "Caída en % y en voltios",
+   "tex": "e\\,\\% = \\dfrac{e}{U} \\times 100",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Caída en %"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Pasar a %"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "e: el % pasado a voltios"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "e",
+     "label": "Caída e",
+     "unit": "V",
+     "optional": true
+    },
+    {
+     "id": "pct",
+     "label": "Caída",
+     "unit": "%",
+     "optional": true
+    },
+    {
+     "id": "U",
+     "label": "Tensión U",
+     "unit": "V",
+     "default": 230
+    }
+   ],
+   "outputs": [
+    {
+     "label": "e",
+     "expr": "e ?? pct * U / 100",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "e",
+     "expr": "pct ?? 100 * e / U",
+     "unit": "%",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "pct": 3,
+    "U": 230
+   },
+   "note": "Rellena la caída en voltios o en %."
+  },
+  {
+   "id": "seccion_caida",
+   "title": "Sección por caída de tensión",
+   "tex": "S = \\dfrac{k \\cdot P \\cdot L}{\\gamma \\cdot e \\cdot U} \\qquad k = 2 \\text{ (mono)},\\ 1 \\text{ (tri)}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Sección por caída de tensión"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Despejar la sección"
+    ],
+    [
+     "Caídas de tensión: todos los límites",
+     "Ejemplo resuelto (DI, 1 %)"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "4. Sección por caída (ΔU), monofásica"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "4. Sección por caída (ΔU), trifásica"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "sis",
+     "type": "select",
+     "label": "Sistema",
+     "options": [
+      {
+       "label": "monofásico",
+       "value": "mono"
+      },
+      {
+       "label": "trifásico",
+       "value": "tri"
+      }
+     ],
+     "default": "mono"
+    },
+    {
+     "id": "P",
+     "label": "Potencia P",
+     "unit": "W"
+    },
+    {
+     "id": "L",
+     "label": "Longitud L",
+     "unit": "m"
+    },
+    {
+     "id": "pct",
+     "label": "Caída máxima",
+     "unit": "%"
+    },
+    {
+     "id": "gamma",
+     "type": "select",
+     "label": "Conductividad γ",
+     "options": [
+      {
+       "label": "cobre, 70 °C (PVC a plena carga) · 48",
+       "value": 48
+      },
+      {
+       "label": "cobre, 90 °C (XLPE, EPR) · 44",
+       "value": 44
+      },
+      {
+       "label": "cobre, 20 °C · 56",
+       "value": 56
+      },
+      {
+       "label": "aluminio, 70 °C · 30",
+       "value": 30
+      },
+      {
+       "label": "aluminio, 90 °C · 28",
+       "value": 28
+      },
+      {
+       "label": "aluminio, 20 °C · 35",
+       "value": 35
+      }
+     ],
+     "default": 48
+    },
+    {
+     "id": "U",
+     "label": "Tensión U (230 mono · 400 tri)",
+     "unit": "V",
+     "default": 230
+    }
+   ],
+   "outputs": [
+    {
+     "label": "e admisible",
+     "expr": "pct * U / 100",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "S calculada",
+     "expr": "(sis == 'mono' ? 2 : 1) * P * L / (gamma * (pct * U / 100) * U)",
+     "unit": "mm²",
+     "digits": 2
+    },
+    {
+     "label": "S normalizada",
+     "expr": "nextSection((sis == 'mono' ? 2 : 1) * P * L / (gamma * (pct * U / 100) * U))",
+     "unit": "mm²",
+     "digits": 1
+    }
+   ],
+   "example": {
+    "sis": "mono",
+    "P": 5750,
+    "L": 22,
+    "pct": 1,
+    "gamma": 48,
+    "U": 230
+   },
+   "note": "Comprueba también la sección por calentamiento: vale la mayor de las dos."
+  },
+  {
+   "id": "edificio",
+   "title": "Carga total de un edificio de viviendas",
+   "tex": "P_T = P_V + P_{SG} + P_L + P_G",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Edificio de viviendas"
+    ],
+    [
+     "Previsión de cargas",
+     "Edificio de viviendas"
+    ],
+    [
+     "Coeficientes de simultaneidad (viviendas)",
+     "Después"
+    ],
+    [
+     "Siglas: recarga, autoconsumo y documentación",
+     "$P_T = P_V + P_{SG} + P_L + P_G$"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Edificio de viviendas"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "PV",
+     "label": "Viviendas P_V",
+     "unit": "W"
+    },
+    {
+     "id": "PSG",
+     "label": "Servicios generales P_SG",
+     "unit": "W",
+     "default": 0
+    },
+    {
+     "id": "PL",
+     "label": "Locales y oficinas P_L",
+     "unit": "W",
+     "default": 0
+    },
+    {
+     "id": "PG",
+     "label": "Garajes P_G",
+     "unit": "W",
+     "default": 0
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P_T",
+     "expr": "PV + PSG + PL + PG",
+     "unit": "W",
+     "digits": 0
+    },
+    {
+     "label": "P_T",
+     "expr": "(PV + PSG + PL + PG) / 1000",
+     "unit": "kW",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "PV": 75016,
+    "PSG": 12000,
+    "PL": 6900,
+    "PG": 9000
+   }
+  },
+  {
+   "id": "viviendas",
+   "title": "Carga de las viviendas (simultaneidad)",
+   "tex": "P_V = \\bar P \\cdot \\text{coef}(n)",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Carga de las viviendas"
+    ],
+    [
+     "Coeficientes de simultaneidad (viviendas)",
+     "Cómo se usa"
+    ],
+    [
+     "Coeficientes de simultaneidad (viviendas)",
+     "Ejemplo 1: todas iguales"
+    ],
+    [
+     "Coeficientes de simultaneidad (viviendas)",
+     "Ejemplo 2: mezcla"
+    ],
+    [
+     "Coeficientes de simultaneidad (viviendas)",
+     "Ejemplo 3: más de 21"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Más de 21 viviendas"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "g",
+     "type": "groups",
+     "label": "Grupos de viviendas",
+     "fields": [
+      {
+       "id": "n",
+       "label": "n.º de viviendas"
+      },
+      {
+       "id": "P",
+       "label": "potencia de cada una",
+       "unit": "W"
+      }
+     ]
+    },
+    {
+     "id": "noct",
+     "type": "select",
+     "label": "Tarifa nocturna",
+     "options": [
+      {
+       "label": "no",
+       "value": 0
+      },
+      {
+       "label": "sí: simultaneidad 1",
+       "value": 1
+      }
+     ],
+     "default": 0
+    }
+   ],
+   "outputs": [
+    {
+     "label": "n.º de viviendas",
+     "expr": "sum(g.map(x => x.n))",
+     "unit": "",
+     "digits": 0
+    },
+    {
+     "label": "potencia media",
+     "expr": "sum(g.map(x => x.n * x.P)) / sum(g.map(x => x.n))",
+     "unit": "W",
+     "digits": 0
+    },
+    {
+     "label": "coeficiente",
+     "expr": "noct ? sum(g.map(x => x.n)) : coefSim(sum(g.map(x => x.n)))",
+     "unit": "",
+     "digits": 1
+    },
+    {
+     "label": "P_V",
+     "expr": "sum(g.map(x => x.n * x.P)) / sum(g.map(x => x.n)) * (noct ? sum(g.map(x => x.n)) : coefSim(sum(g.map(x => x.n))))",
+     "unit": "W",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "g": [
+     {
+      "n": 5,
+      "P": 9200
+     },
+     {
+      "n": 8,
+      "P": 5750
+     }
+    ],
+    "noct": 0
+   },
+   "note": "Coeficientes de la tabla 1 de la ITC-BT-10; con más de 21 viviendas, 15,3 + (n − 21) · 0,5."
+  },
+  {
+   "id": "locales",
+   "title": "Locales, oficinas y garajes",
+   "tex": "P = (\\text{W/m}^2) \\times \\text{superficie} \\quad (\\ge 3\\,450\\ \\text{W})",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Locales y garajes"
+    ],
+    [
+     "Previsión de cargas",
+     "Locales y oficinas"
+    ],
+    [
+     "Previsión de cargas",
+     "Garajes"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "sup",
+     "label": "Superficie",
+     "unit": "m²"
+    },
+    {
+     "id": "tipo",
+     "type": "select",
+     "label": "Uso",
+     "options": [
+      {
+       "label": "local u oficina · 100 W/m²",
+       "value": 100
+      },
+      {
+       "label": "garaje, ventilación natural · 10 W/m²",
+       "value": 10
+      },
+      {
+       "label": "garaje, ventilación forzada · 20 W/m²",
+       "value": 20
+      }
+     ],
+     "default": 100
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P",
+     "expr": "max(sup * tipo, 3450)",
+     "unit": "W",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "sup": 120,
+    "tipo": 100
+   },
+   "note": "Mínimo 3 450 W por local o garaje."
+  },
+  {
+   "id": "recarga_edificio",
+   "title": "Edificio con recarga de vehículo eléctrico",
+   "tex": "P = (P_1 + P_2 + P_3 + P_4) + 0{,}3 \\cdot P_5 \\ \\text{(con SPL)}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Edificio con recarga de VE"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Recarga VE en el edificio"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P1",
+     "label": "Viviendas P₁",
+     "unit": "W"
+    },
+    {
+     "id": "P2",
+     "label": "Servicios generales P₂",
+     "unit": "W",
+     "default": 0
+    },
+    {
+     "id": "P3",
+     "label": "Locales y oficinas P₃",
+     "unit": "W",
+     "default": 0
+    },
+    {
+     "id": "P4",
+     "label": "Garajes (sin la recarga) P₄",
+     "unit": "W",
+     "default": 0
+    },
+    {
+     "id": "P5",
+     "label": "Recarga de VE P₅",
+     "unit": "W"
+    },
+    {
+     "id": "spl",
+     "type": "select",
+     "label": "SPL (sistema de protección de la LGA)",
+     "options": [
+      {
+       "label": "sí: P₅ × 0,3",
+       "value": 0.3
+      },
+      {
+       "label": "no: P₅ entera",
+       "value": 1
+      }
+     ],
+     "default": 0.3
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P edificio",
+     "expr": "P1 + P2 + P3 + P4 + spl * P5",
+     "unit": "W",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "P1": 75016,
+    "P2": 12000,
+    "P3": 6900,
+    "P4": 9000,
+    "P5": 36800,
+    "spl": 0.3
+   },
+   "note": "ITC-BT-52 4.1: simultaneidad 0,3 con SPL y 1 sin él."
+  },
+  {
+   "id": "lamparas",
+   "title": "Lámparas de descarga",
+   "tex": "\\text{VA} = 1{,}8 \\times \\text{W}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Lámparas de descarga"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Lámparas de descarga"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "W",
+     "label": "Potencia de las lámparas",
+     "unit": "W"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "carga",
+     "expr": "1.8 * W",
+     "unit": "VA",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "W": 580
+   }
+  },
+  {
+   "id": "motores",
+   "title": "Línea de motores",
+   "tex": "I = 1{,}25 \\cdot I_\\text{mayor} + \\textstyle\\sum I_\\text{demás}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Motores"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Un motor"
+    ],
+    [
+     "Factores y coeficientes: cuándo se aplican",
+     "Varios motores"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "I",
+     "type": "list",
+     "label": "Intensidad a plena carga de cada motor",
+     "unit": "A",
+     "min": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I de cálculo",
+     "expr": "1.25 * max(...I) + sum(I) - max(...I)",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "I": [
+     12,
+     8,
+     5.5
+    ]
+   }
+  },
+  {
+   "id": "tt",
+   "title": "Esquema TT: tensión de contacto",
+   "tex": "R_A \\cdot I_a \\le U",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Esquema TT, condición"
+    ],
+    [
+     "Protección de las personas",
+     "TT, condición"
+    ],
+    [
+     "Letras y símbolos: subíndices y aparatos",
+     "$R_A$"
+    ],
+    [
+     "Siglas: conductores, tierras y protección",
+     "RA · Ia"
+    ],
+    [
+     "Telurómetro (resistencia de tierra)",
+     "Qué valor"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "RA",
+     "label": "Resistencia de tierra R_A",
+     "unit": "Ω"
+    },
+    {
+     "id": "Ia",
+     "label": "Corriente de disparo I_a",
+     "unit": "mA",
+     "default": 30,
+     "hint": "la IΔn del diferencial"
+    },
+    {
+     "id": "U",
+     "type": "select",
+     "label": "Tensión límite U",
+     "options": [
+      {
+       "label": "50 V (general)",
+       "value": 50
+      },
+      {
+       "label": "24 V (locales húmedos, obras, alumbrado exterior…)",
+       "value": 24
+      }
+     ],
+     "default": 50
+    }
+   ],
+   "outputs": [
+    {
+     "label": "R_A · I_a",
+     "expr": "RA * Ia / 1000",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "label": "R_A máxima",
+     "expr": "U / (Ia / 1000)",
+     "unit": "Ω",
+     "digits": 0
+    },
+    {
+     "type": "check",
+     "label": "R_A · I_a ≤ U",
+     "expr": "RA * Ia / 1000 <= U",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    }
+   ],
+   "example": {
+    "RA": 80,
+    "Ia": 30,
+    "U": 50
+   }
+  },
+  {
+   "id": "tn",
+   "title": "Esquema TN: bucle de defecto",
+   "tex": "Z_s \\cdot I_a \\le U_0 \\qquad I_{cc} = \\dfrac{U_0}{Z_s}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Esquema TN, condición"
+    ],
+    [
+     "Letras y símbolos: subíndices y aparatos",
+     "$Z_s$"
+    ],
+    [
+     "Siglas: conductores, tierras y protección",
+     "Zs · U0"
+    ],
+    [
+     "Comprobador de bucle y de diferenciales",
+     "Para qué"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Zs",
+     "label": "Impedancia del bucle Z_s",
+     "unit": "Ω"
+    },
+    {
+     "id": "Ia",
+     "label": "Corriente que hace actuar la protección I_a",
+     "unit": "A"
+    },
+    {
+     "id": "U0",
+     "label": "Tensión fase-tierra U_0",
+     "unit": "V",
+     "default": 230
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I_cc prevista",
+     "expr": "U0 / Zs",
+     "unit": "A",
+     "digits": 0
+    },
+    {
+     "type": "check",
+     "label": "Z_s · I_a ≤ U_0",
+     "expr": "Zs * Ia <= U0",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    }
+   ],
+   "example": {
+    "Zs": 0.8,
+    "Ia": 160,
+    "U0": 230
+   }
+  },
+  {
+   "id": "tierra",
+   "title": "Resistencia de una toma de tierra",
+   "tex": "R_\\text{pica} = \\dfrac{\\rho}{L} \\quad R_\\text{placa} = 0{,}8 \\dfrac{\\rho}{P} \\quad R_\\text{conductor} = \\dfrac{2\\rho}{L}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Resistencia de tierra: pica"
+    ],
+    [
+     "Todas las fórmulas",
+     "Resistencia de tierra: placa"
+    ],
+    [
+     "Todas las fórmulas",
+     "Resistencia de tierra: conductor horizontal"
+    ],
+    [
+     "Puesta a tierra: valores para calcular",
+     "Pica vertical"
+    ],
+    [
+     "Puesta a tierra: valores para calcular",
+     "Placa enterrada"
+    ],
+    [
+     "Puesta a tierra: valores para calcular",
+     "Conductor horizontal enterrado"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "tipo",
+     "type": "select",
+     "label": "Electrodo",
+     "options": [
+      {
+       "label": "pica vertical",
+       "value": "pica"
+      },
+      {
+       "label": "placa enterrada",
+       "value": "placa"
+      },
+      {
+       "label": "conductor horizontal enterrado",
+       "value": "cond"
+      }
+     ],
+     "default": "pica"
+    },
+    {
+     "id": "rho",
+     "label": "Resistividad del terreno ρ",
+     "unit": "Ω·m",
+     "hint": "cultivable y húmedo 50 · terraplén 500 · arena seca 3 000"
+    },
+    {
+     "id": "L",
+     "label": "Longitud (pica o conductor) o perímetro (placa)",
+     "unit": "m"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "R",
+     "expr": "tipo == 'pica' ? rho / L : tipo == 'placa' ? 0.8 * rho / L : 2 * rho / L",
+     "unit": "Ω",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "tipo": "pica",
+    "rho": 50,
+    "L": 2
+   }
+  },
+  {
+   "id": "contacto",
+   "title": "Tensión de contacto medida",
+   "tex": "U_c = Z_s \\cdot I_{\\Delta n}",
+   "rows": [
+    [
+     "Comprobador de bucle y de diferenciales",
+     "Tensión de contacto"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Zs",
+     "label": "Impedancia del bucle Z_s",
+     "unit": "Ω"
+    },
+    {
+     "id": "Idn",
+     "label": "Sensibilidad I_Δn",
+     "unit": "mA",
+     "default": 30
+    },
+    {
+     "id": "U",
+     "type": "select",
+     "label": "Tensión límite",
+     "options": [
+      {
+       "label": "50 V",
+       "value": 50
+      },
+      {
+       "label": "24 V",
+       "value": 24
+      }
+     ],
+     "default": 50
+    }
+   ],
+   "outputs": [
+    {
+     "label": "U_c",
+     "expr": "Zs * Idn / 1000",
+     "unit": "V",
+     "digits": 2
+    },
+    {
+     "type": "check",
+     "label": "U_c ≤ límite",
+     "expr": "Zs * Idn / 1000 <= U",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    }
+   ],
+   "example": {
+    "Zs": 120,
+    "Idn": 30,
+    "U": 50
+   }
+  },
+  {
+   "id": "pe",
+   "title": "Sección del conductor de protección",
+   "tex": "S \\le 16 \\to S_p = S \\quad 16 < S \\le 35 \\to 16 \\quad S > 35 \\to \\dfrac{S}{2}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Conductor de protección"
+    ],
+    [
+     "Cálculo de una línea, paso a paso",
+     "Conductor de protección"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "S",
+     "label": "Sección de fase S",
+     "unit": "mm²"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "S_p",
+     "expr": "S <= 16 ? S : S <= 35 ? 16 : S / 2",
+     "unit": "mm²",
+     "digits": 1
+    }
+   ],
+   "example": {
+    "S": 50
+   },
+   "note": "Con S/2 se toma la sección normalizada correspondiente."
+  },
+  {
+   "id": "red_aerea",
+   "title": "Red aérea: separación entre conductores",
+   "tex": "D = 0{,}55\\,\\sqrt{F}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Red aérea: separación en vanos > 50 m"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "F",
+     "label": "Flecha máxima F",
+     "unit": "m"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "D",
+     "expr": "0.55 * sqrt(F)",
+     "unit": "m",
+     "digits": 3
+    }
+   ],
+   "example": {
+    "F": 1.2
+   }
+  },
+  {
+   "id": "iluminancia",
+   "title": "Iluminancia",
+   "tex": "E = \\dfrac{\\Phi}{S}",
+   "rows": [
+    [
+     "Todas las fórmulas",
+     "Iluminancia"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Phi",
+     "label": "Flujo luminoso Φ",
+     "unit": "lm"
+    },
+    {
+     "id": "S",
+     "label": "Superficie S",
+     "unit": "m²"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "E",
+     "expr": "Phi / S",
+     "unit": "lx",
+     "digits": 1
+    }
+   ],
+   "example": {
+    "Phi": 3000,
+    "S": 12
+   }
+  },
+  {
+   "id": "fusible_if",
+   "title": "Fusible gG: corriente convencional de fusión",
+   "tex": "I_f = k \\cdot I_n",
+   "rows": [
+    [
+     "Fusibles (cortacircuitos fusibles)",
+     "gG: $I_f$"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "In",
+     "label": "Intensidad asignada I_n",
+     "unit": "A"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "k",
+     "expr": "In >= 16 ? 1.6 : In > 4 ? 1.9 : 2.1",
+     "unit": "",
+     "digits": 2
+    },
+    {
+     "label": "I_f",
+     "expr": "In * (In >= 16 ? 1.6 : In > 4 ? 1.9 : 2.1)",
+     "unit": "A",
+     "digits": 2
+    }
+   ],
+   "example": {
+    "In": 25
+   }
+  },
+  {
+   "id": "pia_im",
+   "title": "PIA: disparo magnético",
+   "tex": "I_m = k \\cdot I_n \\qquad I_{cc\\,\\text{mín}} > I_m",
+   "rows": [
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "Curva B"
+    ],
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "Curva C"
+    ],
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "Curva D"
+    ],
+    [
+     "PIA: interruptor automático (magnetotérmico)",
+     "Final de la línea"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "In",
+     "label": "Calibre I_n",
+     "unit": "A"
+    },
+    {
+     "id": "curva",
+     "type": "select",
+     "label": "Curva",
+     "options": [
+      {
+       "label": "B · 3 a 5 In",
+       "value": "B"
+      },
+      {
+       "label": "C · 5 a 10 In",
+       "value": "C"
+      },
+      {
+       "label": "D · 10 a 20 In",
+       "value": "D"
+      }
+     ],
+     "default": "C"
+    },
+    {
+     "id": "Icc",
+     "label": "I_cc mínima al final de la línea",
+     "unit": "A",
+     "optional": true
+    }
+   ],
+   "outputs": [
+    {
+     "label": "I_m desde",
+     "expr": "In * (curva == 'B' ? 3 : curva == 'C' ? 5 : 10)",
+     "unit": "A",
+     "digits": 0
+    },
+    {
+     "label": "I_m hasta",
+     "expr": "In * (curva == 'B' ? 5 : curva == 'C' ? 10 : 20)",
+     "unit": "A",
+     "digits": 0
+    },
+    {
+     "type": "check",
+     "label": "I_cc mín > I_m (el máximo)",
+     "expr": "Icc == null ? null : Icc > In * (curva == 'B' ? 5 : curva == 'C' ? 10 : 20)",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    }
+   ],
+   "example": {
+    "In": 16,
+    "curva": "C",
+    "Icc": 250
+   }
+  },
+  {
+   "id": "dif_fugas",
+   "title": "Diferencial: fugas admisibles",
+   "tex": "I_\\text{fuga} < \\dfrac{I_{\\Delta n}}{2}",
+   "rows": [
+    [
+     "Diferencial: ID y AD",
+     "Fugas"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "Idn",
+     "label": "Sensibilidad I_Δn",
+     "unit": "mA",
+     "default": 30
+    },
+    {
+     "id": "fuga",
+     "label": "Fuga medida",
+     "unit": "mA"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "máximo admisible",
+     "expr": "Idn / 2",
+     "unit": "mA",
+     "digits": 1
+    },
+    {
+     "label": "recomendado (30 %)",
+     "expr": "0.3 * Idn",
+     "unit": "mA",
+     "digits": 1
+    },
+    {
+     "type": "check",
+     "label": "fuga < I_Δn/2",
+     "expr": "fuga < Idn / 2",
+     "ok": "se cumple",
+     "fail": "no se cumple"
+    },
+    {
+     "type": "check",
+     "label": "fuga ≤ 30 % de I_Δn",
+     "expr": "fuga <= 0.3 * Idn",
+     "ok": "sin disparos intempestivos",
+     "fail": "riesgo de disparos intempestivos"
+    }
+   ],
+   "example": {
+    "Idn": 30,
+    "fuga": 7
+   }
+  }
+ ]
+}

@@ -120,6 +120,49 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .math .katex { font-size: 1.08em; }
 .math { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
 
+/* calculators: the 🖩 button on a row (screen only) and its dialog */
+.calc-btn {
+  margin-left: 6px; padding: 0 5px; vertical-align: 1px;
+  font: 400 0.95em/1.35 "Calc Glyph", sans-serif; color: var(--rebt);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 5px; cursor: pointer;
+}
+.calc-btn:hover { background: var(--card); border-color: var(--rebt); }
+.ppage .calc-btn { display: none; }
+.calc-glyph { font-family: "Calc Glyph", sans-serif; color: var(--rebt); }
+.calc-dialog { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); }
+.calc-tex { overflow-x: auto; padding: 4px 0; border-block: 1px solid var(--rule); }
+.calc-tex .katex-display { margin: 6px 0; }
+.calc-note { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+.calc-form { display: grid; gap: 10px; }
+.calc-field { display: grid; gap: 4px; font-size: 0.9375rem; }
+.calc-field > span:first-child { font-weight: 500; }
+.calc-field input, .calc-field select {
+  width: 100%; padding: 6px 9px; font: inherit; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
+}
+.calc-field input.bad { border-color: #c62828; outline: 1px solid #c62828; }
+.calc-unit, .calc-opt, .calc-sub, .calc-hint { color: var(--ink-soft); font-weight: 400; }
+.calc-opt { font-size: 0.8125rem; font-style: italic; }
+.calc-hint { font-size: 0.8125rem; }
+.calc-multi { margin: 0; padding: 8px 10px 10px; border: 1px solid var(--rule); border-radius: 8px; }
+.calc-multi legend { padding: 0 4px; font-weight: 500; }
+.calc-items { display: grid; gap: 6px; }
+.calc-item { display: flex; align-items: center; gap: 6px; }
+.calc-item input { flex: 1 1 auto; }
+.calc-group { align-items: flex-end; }
+.calc-group label { display: grid; gap: 2px; flex: 1 1 0; min-width: 0; }
+.calc-sub { font-size: 0.8125rem; }
+.calc-del { flex: none; width: 30px; height: 32px; font-size: 1.1rem; color: var(--ink-soft); background: none; border: 1px solid var(--rule); border-radius: 6px; cursor: pointer; }
+.calc-add { justify-self: start; margin-top: 8px; padding: 4px 10px; font-size: 0.9375rem; }
+.calc-result { padding: 10px 12px; background: var(--panel); border-radius: 8px; }
+.calc-result h3 { margin: 0 0 6px; font: 500 1.0625rem/1.2 var(--cond); }
+.calc-missing { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+.calc-out { margin: 0; display: grid; gap: 4px; }
+.calc-out div { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9375rem; }
+.calc-out dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.calc-out .pass dd { color: #2f8f46; }
+.calc-out .fail dd { color: #c62828; }
+
 /* section visuals (content/visuals/*.svg): drawn with these classes so they follow the theme and print light */
 .cheat-visual { margin: 0; padding: 8px 12px; border-bottom: 1px solid var(--rule); }
 /* the default size goes on the svg, so a text's own font-size attribute still wins */
