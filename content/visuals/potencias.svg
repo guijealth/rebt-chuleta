@@ -2,7 +2,7 @@
 <!-- Phase angle φ and the power triangle, drawn for cos φ = 0,8 (φ ≈ 37°): the waves u and i shifted by φ, the
      phasors U and I with the components of I, and the power triangle (the current triangle times U). Basic
      electricity, our own drawing. Styled by .cheat-visual classes. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 258" role="img" aria-label="Ángulo de desfase φ entre tensión e intensidad, fasores y triángulo de potencias P, Q, S">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 268" role="img" aria-label="Ángulo de desfase φ entre tensión e intensidad, fasores y triángulo de potencias P, Q, S">
   <text class="v-title" x="10" y="12">Desfase φ: la intensidad i va detrás de la tensión u</text>
   <!-- waves: one period = 200 units, i delayed by φ = 36,9° (20,5 units) -->
   <g transform="translate(0 8)">
@@ -18,33 +18,33 @@
     <text class="v-key" x="120" y="20">φ</text>
     <text class="v-soft" x="160" y="104" text-anchor="middle" font-size="9">un periodo = 360° (20 ms a 50 Hz) · φ en grados = retraso / periodo × 360°</text>
   </g>
-  <path class="v-rule" d="M8 120H352M180 126V226"/>
+  <path class="v-rule" d="M8 120H352M180 126V240"/>
 
-  <!-- phasors -->
+  <!-- phasors: U along the base, I from the same origin, angle φ at the left -->
   <text class="v-key" x="10" y="135">Fasores</text>
-  <path class="v-line" d="M24 150H164M158 147L164 150L158 153"/>
-  <text class="v-key" x="168" y="154">U</text>
-  <path class="v-acc-line" d="M24 150L104 210M97.4 208.8L104 210L101 204"/>
-  <text class="v-key v-acc" x="96" y="222">I</text>
-  <path class="v-dash" d="M104 210V150"/>
-  <path class="v-line" d="M52 150A28 28 0 0 1 46.4 166.8"/>
-  <text class="v-key" x="54" y="166">φ</text>
-  <text class="v-soft" x="64" y="145" text-anchor="middle" font-size="9">I cos φ</text>
+  <path class="v-line" d="M24 210H164M158 207L164 210L158 213"/>
+  <text class="v-key" x="168" y="214">U</text>
+  <path class="v-acc-line" d="M24 210L104 150M97.4 151.2L104 150L101 156"/>
+  <text class="v-key v-acc" x="100" y="146">I</text>
+  <path class="v-dash" d="M104 150V210"/>
+  <path class="v-line" d="M52 210A28 28 0 0 0 46.4 193.2"/>
+  <text class="v-key" x="54" y="204">φ</text>
+  <text class="v-soft" x="64" y="222" text-anchor="middle" font-size="9">I cos φ</text>
   <text class="v-soft" x="108" y="184" font-size="9">I sen φ</text>
 
-  <!-- power triangle = current triangle × U -->
+  <!-- power triangle = current triangle × U: P along the base, φ at the left -->
   <text class="v-key" x="190" y="135">Triángulo de potencias</text>
-  <path class="v-line" d="M196 150H300V228"/>
-  <path class="v-acc-line" d="M196 150L300 228"/>
-  <path class="v-line" d="M292 150V158H300"/>
-  <path class="v-line" d="M220 150A24 24 0 0 1 215.2 164.4"/>
-  <text class="v-key" x="222" y="164">φ</text>
-  <text x="248" y="146" text-anchor="middle" font-size="9"><tspan class="v-key">P</tspan> = S cos φ · W</text>
-  <text x="304" y="184" font-size="9"><tspan class="v-key">Q</tspan></text>
-  <text x="304" y="196" font-size="9">S sen φ</text>
-  <text x="304" y="208" font-size="9">VAr</text>
-  <text x="237" y="204" text-anchor="middle" font-size="9" transform="rotate(36.87 237 204)"><tspan class="v-key v-acc">S</tspan> = U I · VA</text>
+  <path class="v-line" d="M196 226H300V148"/>
+  <path class="v-acc-line" d="M196 226L300 148"/>
+  <path class="v-line" d="M292 226V218H300"/>
+  <path class="v-line" d="M220 226A24 24 0 0 0 215.2 211.6"/>
+  <text class="v-key" x="222" y="220">φ</text>
+  <text x="248" y="238" text-anchor="middle" font-size="9"><tspan class="v-key">P</tspan> = S cos φ · W</text>
+  <text x="304" y="176" font-size="9"><tspan class="v-key">Q</tspan></text>
+  <text x="304" y="188" font-size="9">S sen φ</text>
+  <text x="304" y="200" font-size="9">VAr</text>
+  <text x="244" y="182" text-anchor="middle" font-size="9" transform="rotate(-36.87 244 182)"><tspan class="v-key v-acc">S</tspan> = U I · VA</text>
 
-  <text class="v-soft" x="10" y="243" font-size="9">Cada lado del de intensidades × U (× √3·U en trifásica) da el de potencias</text>
-  <text x="10" y="255" font-size="9.5">cos φ = P/S · sen φ = Q/S · tg φ = Q/P · <tspan class="v-key">S² = P² + Q²</tspan></text>
+  <text class="v-soft" x="10" y="253" font-size="9">Cada lado del de intensidades × U (× √3·U en trifásica) da el de potencias</text>
+  <text x="10" y="265" font-size="9.5">cos φ = P/S · sen φ = Q/S · tg φ = Q/P · <tspan class="v-key">S² = P² + Q²</tspan></text>
 </svg>
