@@ -579,6 +579,10 @@
     [
      "Todas las fórmulas",
      "Triángulo de potencias"
+    ],
+    [
+     "Potencias en alterna: P, Q y S",
+     "Pitágoras"
     ]
    ],
    "inputs": [
@@ -613,6 +617,231 @@
    },
    "about": "En alterna la potencia aparente S (la que cargan los cables y el transformador) tiene dos componentes: la activa P, que hace trabajo útil, y la reactiva Q, que va y vuelve con motores y reactancias. El cos φ indica qué parte de S es útil.",
    "about_general": true
+  },
+  {
+   "id": "potencias_pqs",
+   "title": "Potencias P, Q y S",
+   "tex": "P = k\\, U I \\cos\\varphi \\quad Q = k\\, U I \\operatorname{sen}\\varphi \\quad S = k\\, U I \\qquad k = 1 \\text{ (mono)} \\text{ o } \\sqrt{3} \\text{ (tri)}",
+   "rows": [
+    [
+     "Potencias en alterna: P, Q y S",
+     "P · potencia activa (W)"
+    ],
+    [
+     "Potencias en alterna: P, Q y S",
+     "Q · potencia reactiva (VAr)"
+    ],
+    [
+     "Potencias en alterna: P, Q y S",
+     "S · potencia aparente (VA)"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "sis",
+     "type": "select",
+     "label": "Sistema",
+     "options": [
+      {
+       "label": "monofásica · k = 1",
+       "value": "mono"
+      },
+      {
+       "label": "trifásica · k = √3",
+       "value": "tri"
+      }
+     ],
+     "default": "mono"
+    },
+    {
+     "id": "U",
+     "label": "Tensión U",
+     "unit": "V",
+     "default": 230,
+     "hint": "en trifásica, entre fases (400 V)"
+    },
+    {
+     "id": "I",
+     "label": "Intensidad I",
+     "unit": "A"
+    },
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": "",
+     "default": 1
+    }
+   ],
+   "outputs": [
+    {
+     "label": "P",
+     "expr": "(sis == 'tri' ? sqrt(3) : 1) * U * I * cos",
+     "unit": "W",
+     "digits": 0
+    },
+    {
+     "label": "Q",
+     "expr": "(sis == 'tri' ? sqrt(3) : 1) * U * I * sqrt(1 - cos * cos)",
+     "unit": "VAr",
+     "digits": 0
+    },
+    {
+     "label": "S",
+     "expr": "(sis == 'tri' ? sqrt(3) : 1) * U * I",
+     "unit": "VA",
+     "digits": 0
+    },
+    {
+     "label": "φ",
+     "expr": "Math.acos(cos) * 180 / PI",
+     "unit": "°",
+     "digits": 1
+    }
+   ],
+   "example": {
+    "sis": "tri",
+    "U": 400,
+    "I": 16,
+    "cos": 0.85
+   },
+   "about": "Las tres potencias salen de la misma U, la misma I y el desfase φ entre ellas: la aparente S es el producto U·I (por √3 en trifásica), y la activa P y la reactiva Q son sus proyecciones con el coseno y el seno de φ.",
+   "about_general": true
+  },
+  {
+   "id": "cosphi",
+   "title": "Del cos φ al ángulo, sen φ y tg φ",
+   "tex": "\\operatorname{sen}\\varphi = \\sqrt{1 - \\cos^2\\varphi} \\qquad \\operatorname{tg}\\varphi = \\dfrac{\\operatorname{sen}\\varphi}{\\cos\\varphi} \\qquad S = \\dfrac{P}{\\cos\\varphi} \\quad Q = P \\operatorname{tg}\\varphi",
+   "rows": [
+    [
+     "Potencias en alterna: P, Q y S",
+     "Trigonometría"
+    ],
+    [
+     "Potencias en alterna: P, Q y S",
+     "sen φ a partir de cos φ"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "cos",
+     "label": "cos φ",
+     "unit": ""
+    },
+    {
+     "id": "P",
+     "label": "Potencia activa P",
+     "unit": "W",
+     "optional": true,
+     "hint": "para obtener S y Q"
+    }
+   ],
+   "outputs": [
+    {
+     "label": "φ",
+     "expr": "Math.acos(cos) * 180 / PI",
+     "unit": "°",
+     "digits": 1
+    },
+    {
+     "label": "sen φ",
+     "expr": "sqrt(1 - cos * cos)",
+     "unit": "",
+     "digits": 3
+    },
+    {
+     "label": "tg φ",
+     "expr": "sqrt(1 - cos * cos) / cos",
+     "unit": "",
+     "digits": 3
+    },
+    {
+     "label": "S",
+     "expr": "P / cos",
+     "unit": "VA",
+     "digits": 0
+    },
+    {
+     "label": "Q",
+     "expr": "P * sqrt(1 - cos * cos) / cos",
+     "unit": "VAr",
+     "digits": 0
+    }
+   ],
+   "example": {
+    "cos": 0.8,
+    "P": 4000
+   },
+   "about": "En el triángulo de potencias el cos φ fija la forma: de él salen el ángulo, el seno y la tangente, y con la potencia activa P se obtienen la aparente S y la reactiva Q.",
+   "about_general": true
+  },
+  {
+   "id": "compensacion",
+   "title": "Compensación del factor de potencia",
+   "tex": "Q_C = P\\,(\\operatorname{tg}\\varphi_1 - \\operatorname{tg}\\varphi_2)",
+   "rows": [
+    [
+     "Potencias en alterna: P, Q y S",
+     "Compensar con condensadores"
+    ]
+   ],
+   "inputs": [
+    {
+     "id": "P",
+     "label": "Potencia activa P",
+     "unit": "W"
+    },
+    {
+     "id": "c1",
+     "label": "cos φ₁ (actual)",
+     "unit": ""
+    },
+    {
+     "id": "c2",
+     "label": "cos φ₂ (deseado)",
+     "unit": "",
+     "default": 0.95
+    }
+   ],
+   "outputs": [
+    {
+     "label": "Q_C (condensadores)",
+     "expr": "P * (sqrt(1 - c1 * c1) / c1 - sqrt(1 - c2 * c2) / c2)",
+     "unit": "VAr",
+     "digits": 0
+    },
+    {
+     "label": "S antes",
+     "expr": "P / c1",
+     "unit": "VA",
+     "digits": 0
+    },
+    {
+     "label": "S después",
+     "expr": "P / c2",
+     "unit": "VA",
+     "digits": 0
+    },
+    {
+     "label": "I baja un",
+     "expr": "(1 - c1 / c2) * 100",
+     "unit": "%",
+     "digits": 1
+    },
+    {
+     "type": "check",
+     "label": "no capacitiva",
+     "expr": "c2 <= 1 && c2 >= c1",
+     "ok": "cos φ₂ entre cos φ₁ y 1",
+     "fail": "cos φ₂ debe estar entre cos φ₁ y 1"
+    }
+   ],
+   "example": {
+    "P": 10000,
+    "c1": 0.75,
+    "c2": 0.95
+   },
+   "about": "Los condensadores aportan la reactiva que piden motores y reactancias, así que la red solo entrega la diferencia: con la misma P, baja Q y con ella S y la intensidad. El reglamento permite compensar, pero sin que la red llegue a absorber energía capacitiva.",
+   "about_ref": "BT-43 2.7"
   },
   {
    "id": "linea_fase",

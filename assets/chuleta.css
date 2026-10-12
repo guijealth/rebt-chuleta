@@ -175,6 +175,7 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .cheat-visual .v-title { font-family: var(--cond); font-size: 12px; font-weight: 600; }
 .cheat-visual .v-line { fill: none; stroke: var(--ink); stroke-width: 1; }
 .cheat-visual .v-rule { fill: none; stroke: var(--rule); stroke-width: 1; }
+.cheat-visual .v-acc-line { fill: none; stroke: var(--rebt); stroke-width: 1.4; }
 .cheat-visual .v-dash { fill: none; stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 3 2; }
 .cheat-visual .v-body { fill: var(--panel); stroke: var(--ink); stroke-width: 1; }
 .cheat-visual .v-card { fill: var(--card); stroke: var(--ink-soft); stroke-width: 0.8; }

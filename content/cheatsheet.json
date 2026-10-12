@@ -691,6 +691,75 @@
    ]
   },
   {
+   "title": "Potencias en alterna: P, Q y S",
+   "ref": "",
+   "visuals": [
+    "potencias"
+   ],
+   "rows": [
+    [
+     "Desfase φ",
+     "ángulo entre tensión e intensidad · resistencia: φ = 0° · motores y reactancias (inductivo): I va detrás · condensadores (capacitivo): I va delante",
+     ""
+    ],
+    [
+     "Fundamento geométrico",
+     "I se descompone en $I\\cos\\varphi$ (en fase con U) e $I\\operatorname{sen}\\varphi$ (a 90°); multiplicando por U sale un triángulo rectángulo semejante: catetos P y Q, hipotenusa S, ángulo φ entre P y S",
+     ""
+    ],
+    [
+     "Trigonometría",
+     "$\\cos\\varphi = \\dfrac{P}{S}$ · $\\operatorname{sen}\\varphi = \\dfrac{Q}{S}$ · $\\operatorname{tg}\\varphi = \\dfrac{Q}{P}$",
+     ""
+    ],
+    [
+     "Pitágoras",
+     "$S = \\sqrt{P^2 + Q^2}$ · $P = \\sqrt{S^2 - Q^2}$ · $Q = \\sqrt{S^2 - P^2}$",
+     ""
+    ],
+    [
+     "P · potencia activa (W)",
+     "$P = S\\cos\\varphi$ · mono $P = U I \\cos\\varphi$ · tri $P = \\sqrt{3}\\, U I \\cos\\varphi$ · se convierte en trabajo o calor",
+     "Guía anexo 2"
+    ],
+    [
+     "Q · potencia reactiva (VAr)",
+     "$Q = S\\operatorname{sen}\\varphi = P\\operatorname{tg}\\varphi$ · mono $Q = U I \\operatorname{sen}\\varphi$ · tri $Q = \\sqrt{3}\\, U I \\operatorname{sen}\\varphi$ · crea los campos de motores y reactancias: va y vuelve, no da trabajo",
+     ""
+    ],
+    [
+     "S · potencia aparente (VA)",
+     "$S = \\dfrac{P}{\\cos\\varphi}$ · mono $S = U I$ · tri $S = \\sqrt{3}\\, U I$ (U entre fases) · fija la intensidad: cables, protecciones y transformadores",
+     ""
+    ],
+    [
+     "sen φ a partir de cos φ",
+     "$\\operatorname{sen}\\varphi = \\sqrt{1 - \\cos^2\\varphi}$ · cos φ = 1 → sen φ = 0 · 0,9 → 0,44 · 0,8 → 0,6",
+     ""
+    ],
+    [
+     "Compensar con condensadores",
+     "$Q_C = P\\,(\\operatorname{tg}\\varphi_1 - \\operatorname{tg}\\varphi_2)$: bajan Q, S e I; P no cambia",
+     ""
+    ],
+    [
+     "Compensación: reglas",
+     "permitida con cos φ < 1, pero la red nunca debe absorber energía capacitiva · por receptor (mismo interruptor) o global automática (variación ≤ ±10 %)",
+     "BT-43 2.7"
+    ],
+    [
+     "cos φ mínimos",
+     "lámparas de descarga ≥ 0,90 · generadores asíncronos ≥ 0,86 · síncronos de 0,8 a 1",
+     "BT-09 3 · BT-44 3.1 · BT-40 4.3.4"
+    ],
+    [
+     "cos φ para calcular",
+     "con I fijada por la protección, cos φ = 1 da la caída de tensión más desfavorable",
+     "Guía anexo 2"
+    ]
+   ]
+  },
+  {
    "title": "Tensiones",
    "ref": "RD 842/2002 art. 4",
    "rows": [
