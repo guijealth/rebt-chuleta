@@ -186,6 +186,36 @@
      "name": "Bobina de relé o contactor",
      "code": "K",
      "note": "bornes A1–A2"
+    },
+    {
+     "qet": "qet/telerupteur.elmt",
+     "name": "Telerruptor (relé de impulsos)",
+     "code": "K",
+     "note": "cada impulso de pulsador cambia su estado: luz desde varios puntos",
+     "iec": "sin número"
+    },
+    {
+     "qet": "07-15-07",
+     "name": "Bobina de relé temporizado a la desconexión",
+     "code": "K",
+     "note": "rectángulo negro: retarda al soltar"
+    },
+    {
+     "qet": "07-15-08",
+     "name": "Bobina de relé temporizado a la conexión",
+     "code": "K",
+     "note": "aspa: retarda al excitar"
+    },
+    {
+     "qet": "07-15-09",
+     "name": "Bobina de relé temporizado a la conexión y a la desconexión",
+     "code": "K"
+    },
+    {
+     "qet": "07-15-14",
+     "name": "Bobina de relé con enclavamiento mecánico",
+     "code": "K",
+     "note": "se queda en posición hasta que se desenclava"
     }
    ]
   },
@@ -203,6 +233,17 @@
      "name": "Contactor (contacto principal)",
      "code": "K",
      "note": "semicírculo = función contactor"
+    },
+    {
+     "qet": "07-13-04",
+     "name": "Contactor (contacto principal de apertura)",
+     "code": "K"
+    },
+    {
+     "qet": "07-13-03",
+     "name": "Contactor con disparo automático",
+     "code": "Q",
+     "note": "p. ej. guardamotor: dispara por un relé de protección"
     },
     {
      "qet": "07-13-05",
