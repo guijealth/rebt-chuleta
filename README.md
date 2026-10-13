@@ -79,7 +79,8 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
 ### `content/zones.json` — zones and paths
 
 Same format as the chuleta, one section each with a drawing: *De la red al cuadro* (the service line and the
-instalación de enlace, ITC-BT-06, 07 and 11 to 17), *Cuadro de mando y protección* (where and at what height,
+instalación de enlace, ITC-BT-06, 07 and 11 to 17), *Acometidas aéreas* (clearances to windows, balconies and
+roofs, ITC-BT-06 and 11), *Cuadro de mando y protección* (where and at what height,
 and the panel of each electrification grade), *Baños y duchas* (ITC-BT-27) and *Piscinas y fuentes* (ITC-BT-31).
 
 ### `content/formulas.json` — formulas and calculations

@@ -54,7 +54,7 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
   The chuleta is ordered by how likely a section is to be looked up (household circuits, voltage drops, loads… first;
   special installations last), user's request 2026-10-13. Put a new section where it belongs in that order.
 - `content/zones.json`: zonas y recorridos, one section each with a drawing: from the network to the board
-  (ITC-BT-06, 07, 11-17), the board and its height (ITC-BT-17, 25), baños (ITC-BT-27), piscinas
+  (ITC-BT-06, 07, 11-17), overhead service clearances (ITC-BT-06, 11), the board and its height (ITC-BT-17, 25), baños (ITC-BT-27), piscinas
   (ITC-BT-31). **Places defined by zones, volumes or a path go
   here** (user's request, 2026-10-13).
 - `content/formulas.json`: formulas, coefficients and the line calculation (voltage-drop limits, load forecast and

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- An insulated service cable laid on a facade (ITC-BT-06 3.1.1, ITC-BT-11 1.2.1): the clearances around a window
+     and a balcony, and the tube below 2,5 m. Distances to scale (50 units per metre); the openings are schematic.
+     Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 236" role="img" aria-label="Distancias de un cable de acometida posado en fachada a ventanas y balcones, y tubo por debajo de 2,5 m">
+  <text class="v-title" x="10" y="14">Cable posado en fachada (alzado)</text>
+  <!-- facade -->
+  <rect class="v-card" x="10" y="22" width="340" height="190"/>
+  <path class="v-line" stroke-width="1.6" d="M4 212H356"/>
+  <text class="v-soft" x="352" y="226" text-anchor="end" font-size="8.5">suelo</text>
+
+  <!-- window 1 x 1 m: keep-out 0,30 above, 0,50 below and at the sides -->
+  <rect class="v-acc-soft" x="45" y="85" width="100" height="90" opacity="0.55"/>
+  <rect class="v-body" x="70" y="100" width="50" height="50"/>
+  <path class="v-rule" d="M95 100V150M70 125H120"/>
+  <text x="95" y="166" text-anchor="middle" font-size="8.5">ventana</text>
+  <g class="v-key" font-size="8.5" text-anchor="middle">
+    <text x="95" y="96">0,30</text>
+    <text x="57" y="129">0,50</text><text x="133" y="129">0,50</text>
+  </g>
+
+  <!-- balcony: keep-out 0,30 above the opening and 1 m beyond each side of the balcony -->
+  <rect class="v-acc-soft" x="168" y="45" width="170" height="100" opacity="0.55"/>
+  <rect class="v-body" x="228" y="60" width="50" height="80"/>
+  <path class="v-line" stroke-width="2.4" d="M218 140H288"/>
+  <path class="v-line" d="M222 140V124M284 140V124M222 124H284"/>
+  <text x="253" y="156" text-anchor="middle" font-size="8.5">balcón</text>
+  <g class="v-key" font-size="8.5" text-anchor="middle">
+    <text x="253" y="56">0,30</text>
+    <text x="193" y="104">1,00</text><text x="313" y="104">1,00</text>
+  </g>
+
+  <!-- the cable: rises in a tube to 2,5 m, then runs above the openings -->
+  <path class="v-acc-line" stroke-width="2.2" d="M26 212V37H346"/>
+  <rect class="v-acc" x="22" y="87" width="8" height="125" rx="2"/>
+  <path class="v-line" d="M36 87V212M32 87H40M32 212H40"/>
+  <text class="v-key" x="44" y="196" font-size="8.5">2,5 m: por debajo, en tubo</text>
+  <text class="v-key" x="150" y="33" font-size="8.5" text-anchor="middle">cable 0,6/1 kV, separado de la pared</text>
+  <text class="v-soft" x="10" y="232" font-size="8.5">Medidas en m · nunca por delante de una abertura</text>
+</svg>

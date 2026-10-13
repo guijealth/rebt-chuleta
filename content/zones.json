@@ -67,6 +67,74 @@
    ]
   },
   {
+   "title": "Acometidas aéreas: distancias a la fachada",
+   "ref": "ITC-BT-06 · ITC-BT-11",
+   "visuals": [
+    "acometida-fachada"
+   ],
+   "table": {
+    "head": [
+     "Junto a",
+     "Cable aislado posado",
+     "Conductor desnudo"
+    ],
+    "rows": [
+     [
+      "Ventana",
+      "0,30 m arriba · 0,50 m abajo y a los lados",
+      "zona de 1 m delante: 0,30 m arriba, 1 m a los lados, 3 m bajo el antepecho"
+     ],
+     [
+      "Balcón",
+      "0,30 m arriba · 1 m a los lados",
+      "3 m sobre su suelo, y lo mismo que una ventana"
+     ],
+     [
+      "Pared sin aberturas",
+      "posado, separado de la pared",
+      "0,20 m"
+     ],
+     [
+      "Tejado",
+      "—",
+      "1,80 m (1,50 m si va a tierra) · > 45°: 1 m"
+     ],
+     [
+      "Suelo",
+      "2,5 m (más bajo, en tubo) · tensado 4 m",
+      "4 m"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Cable aislado",
+     "posado: distancias a las aberturas · tensado: 4 m del suelo · bajo 2,5 m, en tubo",
+     "BT-06 3.1.1 · BT-06 3.1.2 · BT-11 1.2.1"
+    ],
+    [
+     "Conductor desnudo",
+     "fuera de la zona de protección de la figura 1 de la ITC-BT-06",
+     "BT-06 3.2.1.2"
+    ],
+    [
+     "Sobre calles",
+     "acometida tensada a ≥ 6 m",
+     "BT-11 1.2.2"
+    ],
+    [
+     "Paso a subterránea",
+     "tubo rígido desde la zanja hasta ≥ 2,5 m",
+     "BT-11 1.2.4"
+    ],
+    [
+     "Partes metálicas",
+     "≥ 0,05 m (escaleras…) si el cable no va protegido",
+     "BT-06 3.1.1"
+    ]
+   ]
+  },
+  {
    "title": "Cuadro de mando y protección",
    "ref": "ITC-BT-17 · ITC-BT-25",
    "rows": [
