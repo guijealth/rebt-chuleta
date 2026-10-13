@@ -82,7 +82,7 @@
         el('span', { class: 'sym-name', text: it.name }),
         it.note ? el('span', { class: 'sym-note', text: it.note }) : null,
         el('span', { class: 'sym-tags' },
-          el('span', { class: 'sym-iec', text: it.iec || 'compuesto' }),
+          el('span', { class: 'sym-iec', 'data-kind': it.ref ? 'official' : null, text: it.ref || it.iec || 'compuesto' }),
           it.code ? el('span', { class: 'sym-code', text: it.code }) : null)));
   }
 

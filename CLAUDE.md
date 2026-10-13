@@ -16,7 +16,9 @@ symbols and the devices (dispositivos). User-facing text is Spanish; code, comme
 - Standards themselves are not in `sources/`: write about a standard only what the official documents say about it
   (the Guías cite them often). Device marking formats (how a PIA or a differential is labelled) are defined only in
   the standards: the user chose to show the data and its meaning, never a claimed printed format.
-- Symbol drawings only from QElectroTech's EN 60617 collection (CC-BY 3.0; keep the credit) or our own drawings.
+- Symbol drawings only from QElectroTech's EN 60617 collection (CC-BY 3.0; keep the credit) or our own drawings
+  (`content/elements/rebt/`, in the style of an official figure, with its `ref`). The user's textbook redraws the Guía's
+  figures: find the official figure it copies and draw from that, never from the book.
 - **New source document:** only from an official publisher (BOE, ministries, INSST, CTE, EU Official Journal…).
   First read the publisher's legal notice / reuse terms on its site and record them in `sources/sources.json`
   `publishers` (terms URL, licence, what it allows, attribution text) and in the table of `sources/README.md`. Then
@@ -41,7 +43,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 13 chuleta + 4 material + 5 device + 3 measurement + 4 symbol pages).
+before and after a change (now 13 chuleta + 4 material + 5 device + 3 measurement + 5 symbol pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.

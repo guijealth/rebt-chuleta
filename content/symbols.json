@@ -1,8 +1,8 @@
 {
- "_doc": "Symbol sheet: the second part of the page. 'qet' = EN 60617 number (part-section-symbol) of the QElectroTech element in content/elements/qet/, or a path under content/elements/ (qet/<composite>, fixed/<our correction>); 'iec' = the number shown when it differs from 'qet' (QElectroTech swaps 03-02-01 junction and 03-02-02 terminal); 'star' replaces the '*' of a general symbol (machine, instrument); 'notext' drops the element's captions; 'code' = reference letter (IEC 60750). See README.md.",
+ "_doc": "Symbol sheet: the second part of the page. 'qet' = EN 60617 number (part-section-symbol) of the QElectroTech element in content/elements/qet/, or a path under content/elements/ (qet/<composite>, fixed/<our correction>, rebt/<our own drawing in the style of the Guía>); 'ref' = the official figure an own drawing follows, shown instead of the number; 'iec' = the number shown when it differs from 'qet' (QElectroTech swaps 03-02-01 junction and 03-02-02 terminal); 'star' replaces the '*' of a general symbol (machine, instrument); 'notext' drops the element's captions; 'code' = reference letter (IEC 60750). See README.md.",
  "title": "Símbolos UNE-EN 60617",
- "subtitle": "Símbolos gráficos normalizados (UNE-EN 60617 = IEC 60617). Cada uno lleva su número de la norma: parte-sección-símbolo.",
- "credit": "Dibujos: colección de elementos EN 60617 de QElectroTech (CC-BY 3.0).",
+ "subtitle": "Símbolos gráficos normalizados (UNE-EN 60617 = IEC 60617). Cada uno lleva su número de la norma: parte-sección-símbolo. Los del cuadro de vivienda siguen los esquemas unifilares de la Guía Técnica del REBT.",
+ "credit": "Dibujos: colección de elementos EN 60617 de QElectroTech (CC-BY 3.0). Los del cuadro de vivienda son propios, al estilo de los esquemas de la Guía Técnica de Aplicación del REBT (Ministerio de Industria).",
  "sections": [
   {
    "title": "Corriente y conexiones",
@@ -87,7 +87,7 @@
     {
      "qet": "fixed/protective_earth.elmt",
      "name": "Tierra de protección",
-     "code": "PE",
+     "code": "CP/PE",
      "iec": "02-15-03"
     },
     {
@@ -107,18 +107,18 @@
     {
      "qet": "11-11-02",
      "name": "Conductor de protección",
-     "code": "PE"
+     "code": "CP/PE"
     },
     {
      "qet": "11-11-03",
-     "name": "Conductor PEN (protección + neutro)",
-     "code": "PEN"
+     "name": "Conductor CPN o PEN (protección + neutro)",
+     "code": "CPN/PEN"
     },
     {
      "qet": "11-11-04",
      "name": "Tres fases, neutro y protección",
      "code": "3N+PE",
-     "note": "3 trazos de fase + N + PE"
+     "note": "3 trazos de fase + N + CP (PE)"
     }
    ]
   },
@@ -224,13 +224,13 @@
     },
     {
      "qet": "qet/dis_mag_term_2f-1.elmt",
-     "name": "Interruptor automático magnetotérmico (PIA), fase + neutro",
+     "name": "Interruptor automático magnetotérmico (PIA), multifilar, fase + neutro",
      "code": "Q",
      "note": "07-13-05 + relé térmico 07-15-21 + relé I> 07-17-05"
     },
     {
      "qet": "qet/int_diff2.elmt",
-     "name": "Interruptor diferencial, 2 polos",
+     "name": "Interruptor diferencial, multifilar, 2 polos",
      "code": "F",
      "note": "el toroidal abraza fase y neutro: detecta la corriente diferencial"
     },
@@ -255,6 +255,45 @@
      "name": "Descargador de sobretensiones",
      "code": "F",
      "note": "protege contra sobretensiones del rayo"
+    }
+   ]
+  },
+  {
+   "title": "Cuadro de vivienda (unifilar de la Guía BT-25)",
+   "ref": "Guía BT-25 fig. A",
+   "items": [
+    {
+     "qet": "rebt/icp.elmt",
+     "name": "ICP, interruptor de control de potencia",
+     "ref": "Guía BT-25 fig. A",
+     "note": "según la potencia contratada"
+    },
+    {
+     "qet": "rebt/interruptor_automatico.elmt",
+     "name": "Interruptor automático: IGA y PIA",
+     "code": "Q",
+     "ref": "Guía BT-25 fig. A",
+     "note": "protege contra sobrecargas y cortocircuitos; en el esquema, con su calibre (25 A, 16 A…)"
+    },
+    {
+     "qet": "rebt/interruptor_diferencial.elmt",
+     "name": "Interruptor diferencial (IDif)",
+     "code": "F",
+     "ref": "Guía BT-25 fig. A",
+     "note": "el toroidal rodea la línea; en el esquema, In e IΔn (40 A, 30 mA)"
+    },
+    {
+     "qet": "rebt/proteccion_sobretensiones.elmt",
+     "name": "Protección contra sobretensiones",
+     "code": "F",
+     "ref": "Guía BT-25 fig. A",
+     "note": "en derivación a tierra, entre el interruptor general y el diferencial"
+    },
+    {
+     "qet": "08-10-01",
+     "name": "Punto de luz (en los planos de la Guía)",
+     "ref": "Guía BT-25 fig. D–K",
+     "note": "el círculo con aspa; la norma también tiene el de la sección de planos"
     }
    ]
   },
@@ -473,7 +512,8 @@
     },
     {
      "qet": "11-15-01",
-     "name": "Punto de luz"
+     "name": "Punto de luz",
+     "note": "en los planos de la Guía BT-25: círculo con aspa ⊗"
     },
     {
      "qet": "11-15-02",

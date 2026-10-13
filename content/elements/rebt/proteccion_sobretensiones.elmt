@@ -1,0 +1,19 @@
+<definition version="0.100.0" type="element" link_type="simple" width="100" height="80" hotspot_x="0" hotspot_y="0">
+    <!-- Own drawing, after the style of Guía BT-25 fig. A: breaker in a branch, the protector and its earth. -->
+    <description>
+        <line x1="-14.00" y1="0.00" x2="14.00" y2="0.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="0.00" y1="0.00" x2="0.00" y2="-3.80" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <ellipse x="-2.20" y="-8.20" width="4.40" height="4.40" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <ellipse x="-2.20" y="-32.20" width="4.40" height="4.40" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="0.00" y1="-27.80" x2="-12.00" y2="-6.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="-7.44" y1="-14.28" x2="-20.58" y2="-21.52" end1="none" end2="triangle" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <polygon x1="-3.84" y1="-20.82" x2="-8.22" y2="-23.24" x3="-5.81" y3="-27.62" x4="-10.19" y4="-30.03" x5="-12.60" y5="-25.65" x6="-16.98" y6="-28.06" closed="false" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="0.00" y1="-32.20" x2="0.00" y2="-38.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <rect x="-4.50" y="-56.00" width="9.00" height="18.00" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="0.00" y1="-56.00" x2="0.00" y2="-62.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <polygon x1="0.00" y1="-62.00" x2="20.00" y2="-62.00" x3="20.00" y3="-46.00" closed="false" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="13.00" y1="-46.00" x2="27.00" y2="-46.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="15.50" y1="-42.50" x2="24.50" y2="-42.50" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+        <line x1="18.00" y1="-39.00" x2="22.00" y2="-39.00" end1="none" end2="none" length1="1.5" length2="2" style="line-style:normal;line-weight:normal;filling:none;color:black"/>
+    </description>
+</definition>

@@ -122,6 +122,9 @@ or point), see the result as you type. Each calculator lists:
 - `qet`: the symbol's EN 60617 number (part-section-symbol), which names its drawing in `content/elements/qet/`
   (`en_60617_07_13_05.elmt`); or a path under `content/elements/` for composite symbols (`qet/int_diff2.elmt`) and
   our corrections (`fixed/protective_earth.elmt`).
+  Our own drawings, for the symbols the Guía Técnica draws in its own style (the unifilar of a vivienda, Guía BT-25
+  fig. A: ICP, IGA/PIA, diferencial, sobretensiones), are in `rebt/` (`rebt/icp.elmt`).
+- `ref`: for those own drawings, the official figure they follow (`"Guía BT-25 fig. A"`), shown instead of the number.
 - `name` (required), `code` (reference letter, IEC 60750), `note` (one short line).
 - `iec`: the number to show when it differs from `qet` (QElectroTech swaps 03-02-01 junction and 03-02-02 terminal).
 - `star`: text that replaces the `*` of a general symbol: `"M"`, `"M\n3∼"` (motor), `"V"` (voltmeter)…

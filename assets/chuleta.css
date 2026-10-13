@@ -194,6 +194,7 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .sym-note { color: var(--ink-soft); font-size: 0.75rem; }
 .sym-tags { display: flex; gap: 6px; align-items: baseline; margin-top: 2px; }
 .sym-iec { font: 600 0.75rem/1.2 var(--cond); color: var(--rebt); }
+.sym-iec[data-kind="official"] { color: var(--official); }
 .sym-code { font: 700 0.75rem/1.2 var(--cond); padding: 0 5px; border: 1px solid var(--rule); border-radius: 4px; color: var(--ink-soft); }
 .sym-credit { margin: 4px 0 0; font-size: 0.75rem; color: var(--ink-soft); }
 
