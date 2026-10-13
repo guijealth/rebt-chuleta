@@ -51,6 +51,8 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 ## Where things are
 
 - `content/cheatsheet.json`: sections → `rows` `[what, value, ref]`, optional `table {head, rows}`. Order = page order.
+  The chuleta is ordered by how likely a section is to be looked up (household circuits, voltage drops, loads… first;
+  special installations last), user's request 2026-10-13. Put a new section where it belongs in that order.
 - `content/zones.json`: zonas y recorridos, one section each with a drawing: from the network to the board
   (ITC-BT-06, 07, 11-17), the board and its height (ITC-BT-17, 25), baños (ITC-BT-27), piscinas
   (ITC-BT-31). **Places defined by zones, volumes or a path go
