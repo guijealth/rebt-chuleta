@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Contactor: the control circuit drives the coil, the main contacts switch the load. The example is ITC-BT-46 6: a
+     thermostat that cannot break the heater's current acts on the coil of a contactor in the distribution board,
+     downstream of the circuit breaker. Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 178" role="img" aria-label="Contactor: el termostato manda la bobina y los contactos principales conectan el calefactor">
+  <text class="v-title" x="10" y="16">Mando y potencia: calefacción con termostato</text>
+
+  <!-- power circuit: L → PIA → main contact K → heater → N -->
+  <text class="v-soft" x="10" y="36" font-size="9">potencia</text>
+  <text class="v-key" x="10" y="58">L</text>
+  <path class="v-line" d="M22 54H52"/>
+  <rect class="v-body" x="52" y="44" width="40" height="20" rx="2"/>
+  <text x="72" y="58" text-anchor="middle" font-size="9">PIA</text>
+  <path class="v-line" d="M92 54H122"/>
+  <!-- main make contact with the contactor semicircle -->
+  <circle class="v-line" cx="124" cy="54" r="2"/>
+  <path class="v-line" d="M126 54L148 42"/>
+  <circle class="v-line" cx="152" cy="54" r="2"/>
+  <path class="v-line" d="M151 54A3.5 3.5 0 0 1 151 47"/>
+  <text class="v-key" x="138" y="72" text-anchor="middle">K</text>
+  <path class="v-line" d="M154 54H200"/>
+  <rect class="v-body" x="200" y="47" width="44" height="14" rx="1"/>
+  <path class="v-line" d="M206 54h4l2-4l4 8l4-8l4 8l4-8l4 8l2-4h4"/>
+  <text class="v-soft" x="222" y="76" text-anchor="middle" font-size="9">calefactor</text>
+  <path class="v-line" d="M244 54H330"/>
+  <text class="v-key" x="336" y="58">N</text>
+
+  <!-- the coil moves the contacts -->
+  <path class="v-dash" d="M138 46V108"/>
+
+  <!-- control circuit: thermostat → coil K -->
+  <text class="v-soft" x="10" y="98" font-size="9">mando</text>
+  <path class="v-line" d="M22 122H58"/>
+  <circle class="v-line" cx="60" cy="122" r="2"/>
+  <path class="v-line" d="M62 122L82 111"/>
+  <circle class="v-line" cx="86" cy="122" r="2"/>
+  <text x="74" y="140" text-anchor="middle" font-size="9">termostato</text>
+  <path class="v-line" d="M88 122H124"/>
+  <rect class="v-body" x="124" y="112" width="28" height="20"/>
+  <text class="v-key" x="138" y="126" text-anchor="middle">K</text>
+  <text class="v-soft" x="138" y="146" text-anchor="middle" font-size="9">bobina</text>
+  <path class="v-line" d="M152 122H330"/>
+
+  <path class="v-rule" d="M0 154H360"/>
+  <text x="10" y="170" font-size="9.5">El termostato solo lleva la corriente de la bobina; el contactor corta la carga.</text>
+</svg>

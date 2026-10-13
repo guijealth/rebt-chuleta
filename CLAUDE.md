@@ -43,7 +43,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 13 chuleta + 4 material + 5 device + 3 measurement + 5 symbol pages).
+before and after a change (now 13 chuleta + 4 material + 6 device + 3 measurement + 5 symbol pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.
@@ -66,6 +66,8 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 - Calculator `about` texts come from an official passage (`about_ref`). For the basic-electricity formulas no source
   explains, the user asked for general texts: `"about_general": true`, labelled «explicación general, no del REBT»
   (2026-10-09). Keep that exception to textbook physics; REBT figures and rules always need a source.
+  Same exception for a device no source explains (the telerruptor, 2026-10-13): rows with ref `"explicación general"`,
+  which `sources.py check` accepts.
 - `content/visuals/*.svg`: our own drawings for chuleta, material, device and measurement sections (`"visuals": [name]`); 360 units wide, `v-*` classes.
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).

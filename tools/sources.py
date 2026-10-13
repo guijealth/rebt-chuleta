@@ -127,7 +127,7 @@ def list_sections(a):
 # ---------- check ----------
 
 REF_PART = re.compile(r"^(?:BT-(?P<itc>\d{2})(?:\s+(?:(?P<tabla>tabla\s+\d+)|(?P<num>\d+(?:\.\d+)*)(?:-[\d.]+)?))?"
-                      r"|art\.\s*(?P<art>\d+)|Guía(?:\s+(?P<guia>.+))?|(?P<other>INSST|NTP 391|RD 614/2001|CTE DB-SUA))$")
+                      r"|art\.\s*(?P<art>\d+)|Guía(?:\s+(?P<guia>.+))?|(?P<other>INSST|NTP 391|RD 614/2001|CTE DB-SUA)|(?P<general>explicación general))$")
 OTHER_DOCS = {"INSST": "INSST-RIESGO-ELECTRICO", "NTP 391": "INSST-NTP-391", "RD 614/2001": "RD-614-2001", "CTE DB-SUA": "CTE-DB-SUA"}
 
 
@@ -156,6 +156,8 @@ def check_refs(sections, docs):
                     ok = bool(doc) and doc in docs
                 if m and m["other"]:
                     ok = OTHER_DOCS[m["other"]] in docs
+                if m and m["general"]:  # textbook explanation the user allowed where no source explains (telerruptor)
+                    ok = True
                 if not ok:
                     bad.append(f"  {sec['title']} · {row[0]}: «{part}»")
     return bad

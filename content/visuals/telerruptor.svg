@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Telerruptor: push-buttons in parallel give impulses to the coil; its contact stays in each position until the
+     next impulse. General explanation (no official source describes it); the Guía BT-25 only counts it as an
+     "interruptor". Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 196" role="img" aria-label="Telerruptor: tres pulsadores en paralelo mandan la bobina y su contacto enciende la lámpara">
+  <text class="v-title" x="10" y="16">Una luz desde tres puntos</text>
+
+  <!-- control: three push-buttons in parallel → coil -->
+  <text class="v-soft" x="10" y="36" font-size="9">mando</text>
+  <text class="v-key" x="10" y="80">L</text>
+  <path class="v-line" d="M22 76H40M40 48V104"/>
+  <g>
+    <path class="v-line" d="M40 48H62"/><circle class="v-line" cx="64" cy="48" r="2"/>
+    <path class="v-line" d="M66 46L88 38M77 42V32M73 32H81"/><circle class="v-line" cx="90" cy="48" r="2"/>
+    <path class="v-line" d="M40 76H62"/><circle class="v-line" cx="64" cy="76" r="2"/>
+    <path class="v-line" d="M66 74L88 66M77 70V60M73 60H81"/><circle class="v-line" cx="90" cy="76" r="2"/>
+    <path class="v-line" d="M40 104H62"/><circle class="v-line" cx="64" cy="104" r="2"/>
+    <path class="v-line" d="M66 102L88 94M77 98V88M73 88H81"/><circle class="v-line" cx="90" cy="104" r="2"/>
+  </g>
+  <text class="v-soft" x="77" y="120" text-anchor="middle" font-size="9">pulsadores en paralelo</text>
+  <path class="v-line" d="M92 48H112V104H92M92 76H112M112 76H140"/>
+  <!-- coil with the step -->
+  <rect class="v-body" x="140" y="64" width="34" height="24"/>
+  <path class="v-line" d="M146 82H156V70H168"/>
+  <text class="v-key" x="157" y="102" text-anchor="middle">K</text>
+  <path class="v-line" d="M174 76H210"/>
+  <text class="v-key" x="216" y="80">N</text>
+
+  <!-- power: contact K → lamp -->
+  <path class="v-rule" d="M236 30V150"/>
+  <text class="v-soft" x="246" y="36" font-size="9">potencia</text>
+  <text class="v-key" x="246" y="58">L</text>
+  <path class="v-line" d="M290 46V58"/><circle class="v-line" cx="290" cy="60" r="2"/>
+  <path class="v-line" d="M290 62L280 82"/><circle class="v-line" cx="290" cy="84" r="2"/>
+  <text class="v-key" x="300" y="76">K</text>
+  <path class="v-line" d="M256 46H290M290 86V100"/>
+  <circle class="v-line" cx="290" cy="110" r="10"/>
+  <path class="v-line" d="M283 103L297 117M297 103L283 117"/>
+  <path class="v-line" d="M290 120V134"/>
+  <text class="v-key" x="286" y="146">N</text>
+  <path class="v-dash" d="M174 70H270V72H283"/>
+
+  <path class="v-rule" d="M0 158H360"/>
+  <text x="10" y="174" font-size="9.5">Cada pulsación cambia el contacto: encendida → apagada → encendida…</text>
+  <text class="v-soft" x="10" y="188" font-size="9">Explicación general, no del REBT.</text>
+</svg>

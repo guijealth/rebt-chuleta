@@ -448,6 +448,104 @@
    ]
   },
   {
+   "title": "Contactor",
+   "ref": "ITC-BT-01 · BT-46 · Guía BT-17, 19 y 52",
+   "visuals": [
+    "contactor"
+   ],
+   "rows": [
+    [
+     "Qué es",
+     "aparato de interrupción no accionado a mano, con una sola posición de reposo, para maniobras frecuentes con cargas y sobrecargas normales",
+     "BT-01"
+    ],
+    [
+     "Tipos",
+     "con contactos abiertos en reposo (NA) o con contactos cerrados en reposo (NC)",
+     "BT-01"
+    ],
+    [
+     "Con apertura automática",
+     "lleva relés que lo abren en condiciones predeterminadas",
+     "BT-01"
+    ],
+    [
+     "Mando y potencia",
+     "la bobina (circuito de mando, A1–A2) mueve los contactos principales, que conectan la carga",
+     "explicación general"
+    ],
+    [
+     "Conexión en carga",
+     "admitido: contactores accionados por pulsador, igual que interruptores manuales o automáticos",
+     "Guía BT-19"
+    ],
+    [
+     "No secciona",
+     "puede servir de interruptor, pero no para seccionamiento (máquinas de elevación y transporte)",
+     "BT-32 5.1"
+    ],
+    [
+     "No protege",
+     "un térmico en el motor combinado con un contactor no basta contra cortocircuitos",
+     "BT-32 3.2"
+    ],
+    [
+     "Calefacción",
+     "si el termostato no tiene poder de corte suficiente o el circuito es trifásico, actúa sobre la bobina de un contactor en el cuadro, aguas abajo del automático",
+     "BT-46 6"
+    ],
+    [
+     "Tarifa nocturna",
+     "contactores que puentean el ICP en las horas de esa tarifa",
+     "Guía BT-17"
+    ],
+    [
+     "Recarga del VE",
+     "el sistema de protección de la LGA puede desconectar y reconectar la recarga actuando sobre un contactor",
+     "BT-52 7.1"
+    ],
+    [
+     "Hilo de mando del VE",
+     "recomendado rojo y ≥ 1,5 mm²; contactor en la estación de recarga o en la centralización de contadores",
+     "Guía BT-52"
+    ]
+   ]
+  },
+  {
+   "title": "Telerruptor (relé de impulsos)",
+   "ref": "Guía BT-25 · explicación general, no del REBT",
+   "visuals": [
+    "telerruptor"
+   ],
+   "rows": [
+    [
+     "Qué hace",
+     "cada impulso en su bobina cambia sus contactos, que se quedan así hasta el siguiente impulso",
+     "explicación general"
+    ],
+    [
+     "Para qué",
+     "encender una luz desde 3 o más puntos con pulsadores, en vez de conmutadores y cruzamientos",
+     "explicación general"
+    ],
+    [
+     "Pulsadores",
+     "en paralelo; solo llevan la corriente de la bobina, no la de la carga",
+     "explicación general"
+    ],
+    [
+     "En la vivienda",
+     "cuenta como «interruptor» en la tabla 2 de puntos de utilización, igual que conmutadores y cruzamientos",
+     "Guía BT-25"
+    ],
+    [
+     "Símbolo",
+     "bobina con un escalón dentro (en la parte de símbolos)",
+     "explicación general"
+    ]
+   ]
+  },
+  {
    "title": "Alumbrado de emergencia: los aparatos",
    "ref": "ITC-BT-28 · Guía BT-28",
    "visuals": [
