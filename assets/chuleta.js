@@ -313,6 +313,14 @@
 
   // ---------- screen ----------
 
+  // On screen the sections flow down CSS columns; a "newPage" section starts a new block of columns, so it and the
+  // ones after it sit side by side instead of at the foot of the last column.
+  const screenGroups = (sections) => sections.reduce((gs, s) => {
+    if (s.newPage && gs.at(-1).length) gs.push([]);
+    gs.at(-1).push(s);
+    return gs;
+  }, [[]]);
+
   function renderScreen() {
     for (const part of PARTS) {
       const d = part.data;
@@ -323,7 +331,7 @@
         el('h2', { class: 'part-title', id: `${part.id}-title`, text: d.title }),
         d.subtitle ? el('p', { class: 'part-sub', text: d.subtitle }) : null,
         part.kind === 'sheet'
-          ? el('div', { class: 'cheat-grid' }, d.sections.map((s) => cheatSection(s)))
+          ? screenGroups(d.sections).map((g) => el('div', { class: 'cheat-grid' }, g.map((s) => cheatSection(s))))
           : [d.sections.map((s) => (s.items ? symbolSection(s) : cheatSection(s))),
             d.credit ? el('p', { class: 'sym-credit', text: d.credit }) : null]));
     }
@@ -409,11 +417,18 @@
       const col = p.cols[ci];
       const first = queue[0];
       const sec = nodeOf(first);
+      // "newPage" / "newColumn" in the content: the section starts at the top of a page / column
+      if (!first.cont && first.s.newPage && p.cols.some((c) => c.children.length)) {
+        if (pages.length >= MAX_PAGES) break;
+        p = newPage(); ci = 0; continue;
+      }
+      if (!first.cont && first.s.newColumn && col.children.length) { if (!advance()) break; continue; }
       if (fits(col, sec)) { col.append(sec); queue.shift(); continue; }
       // fill the gap with the biggest later section that fits whole
       if (col.children.length && !first.cont) {
         let best = -1, bestH = 0;
         for (let k = 1; k < Math.min(queue.length, LOOKAHEAD + 1); k++) {
+          if (queue[k].s.newPage || queue[k].s.newColumn) break;  // they keep their place
           const cand = nodeOf(queue[k]);
           if (!fits(col, cand)) continue;
           col.append(cand);

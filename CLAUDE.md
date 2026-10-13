@@ -77,7 +77,8 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
   screen). `PARTS` lists the parts in page order: chuleta, terminología, materiales, dispositivos, mediciones, símbolos (nav, checkboxes,
   screen and print all come from it). `layoutSheet` packs sections into 3 columns: biggest later section that fits
   fills a gap, else split by rows (≥ 2 each side), else a section may start with its rows and continue with its
-  drawing. `layoutSymbols` splits tile grids between rows. To check print waste, measure each `.cheat-col`'s used
+  drawing. A section with `newPage` / `newColumn` starts a page / column and is never pulled into a gap.
+  `layoutSymbols` splits tile grids between rows. To check print waste, measure each `.cheat-col`'s used
   height against its clientHeight in a headless page.
   `assets/chuleta.css`: screen styles, then `.ppage` print styles (A4 landscape, 14 mm binding strip, duplex).
 - `sources/`: official PDFs + `sources.json`. `tools/sources.py` (check, index, grep, show, sections, update, add);

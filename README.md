@@ -67,6 +67,8 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
 - A section may have drawings, shown under its heading: `"visuals": ["pia"]` names `content/visuals/pia.svg`. They
   are our own SVGs, drawn with the `v-*` classes of `assets/chuleta.css` (`v-line`, `v-key`, `v-acc-soft`…) so they
   follow the light/dark theme and print in the paper palette; keep them 360 units wide, the width of a printed column.
+- `"newPage": true` makes a section start at the top of a printed page (`"newColumn": true`, of a column), and no
+  earlier gap is filled with it: «Baños y duchas» uses it so it and «Piscinas y fuentes» print together.
 - A section may also have a table, shown above its rows (or alone, with `"rows": []`):
   `"table": {"head": ["", "Uso", "PIA"], "rows": [["C1", "alumbrado", "10 A"]]}`. Every table row needs as many cells
   as `head`.

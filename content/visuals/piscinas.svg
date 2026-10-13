@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pool zones (ITC-BT-31 2.1, after its figure 1) in a side view of half a pool sunk in the floor, to scale for the
+     distances the REBT gives (2 m, 1,5 m, 2,5 m; 40 units per metre; the pool itself is schematic). What each zone
+     allows is in the rows (ITC-BT-31 2.2 to 3.1). Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 178" role="img" aria-label="Zonas 0, 1 y 2 de una piscina con sus medidas">
+  <text class="v-title" x="10" y="12">Zonas de una piscina (alzado)</text>
+  <!-- zone 1: over the pool and 2 m from its edge, 2,5 m high -->
+  <rect class="v-acc-soft" x="40" y="24" width="180" height="100"/>
+  <!-- zone 2: 1,5 m more, same height -->
+  <rect class="v-ok" x="220" y="24" width="60" height="100"/>
+  <!-- the pool: inside is zone 0 -->
+  <rect class="v-acc" x="40" y="124" width="100" height="30"/>
+  <path class="v-line" stroke-width="2" d="M40 124V156H142V124H300"/>
+  <path class="v-line" stroke-width="2" d="M24 124H40"/>
+  <text class="v-on-acc" x="90" y="144" text-anchor="middle" font-size="13">0</text>
+  <text class="v-soft" x="90" y="166" text-anchor="middle" font-size="8">vaso</text>
+  <text class="v-key" x="130" y="80" text-anchor="middle" font-size="15">1</text>
+  <text class="v-key" x="250" y="80" text-anchor="middle" font-size="15">2</text>
+  <!-- height -->
+  <path class="v-dash" d="M40 24H320"/>
+  <path class="v-line" d="M308 24V124M304 24H312M304 124H312"/>
+  <text x="314" y="78" font-size="9" class="v-key">2,5 m</text>
+  <!-- horizontal distances from the edge -->
+  <path class="v-line" d="M140 168H280M140 164V172M220 164V172M280 164V172"/>
+  <g text-anchor="middle" font-size="9" class="v-key">
+    <text x="180" y="162">2 m</text><text x="250" y="162">1,5 m</text>
+  </g>
+  <text class="v-soft" x="290" y="171" font-size="8">desde el borde</text>
+</svg>

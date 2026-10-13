@@ -97,6 +97,7 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .no-match { color: var(--ink-soft); }
 
 .cheat-grid { columns: 3 320px; column-gap: 16px; }
+.cheat-grid + .cheat-grid { margin-top: 16px; }
 .cheat-sec { break-inside: avoid; margin: 0 0 14px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); overflow: hidden; }
 .cheat-sec h3, .sym-sec h3 {
   margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 10px;

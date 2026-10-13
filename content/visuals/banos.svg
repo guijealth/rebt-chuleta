@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Bathroom zones (ITC-BT-27 2.1) in a side view of a bath against a wall, to scale for the distances the REBT
-     gives (0,6 m, 2,4 m, 2,25 m, 3 m; 50 units per metre; the bath itself is schematic), and what Table 1 of
-     ITC-BT-27 2.3 allows in each zone. Our own drawing. Styled by .cheat-visual classes. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 436" role="img" aria-label="Volúmenes 0, 1, 2 y 3 de un baño con sus medidas, y qué se permite en cada uno">
+     gives (0,6 m, 2,4 m, 2,25 m, 3 m; 50 units per metre; the bath itself is schematic). What each zone allows is in the rows
+     (ITC-BT-27 2.3). Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 312" role="img" aria-label="Volúmenes 0, 1, 2 y 3 de un baño con sus medidas">
   <text class="v-title" x="10" y="12">Volúmenes de un baño (alzado)</text>
   <!-- above 2,25 m, up to the ceiling or 3 m -->
   <rect class="v-ok" x="20" y="26" width="90" height="37.5" opacity="0.55"/>
@@ -57,21 +57,4 @@
     <text x="200" y="298">si es fijo</text>
   </g>
   <text class="v-soft" x="80" y="310" text-anchor="middle" font-size="8">radio</text>
-  <path class="v-rule" d="M0 316H360"/>
-  <!-- what each zone allows (ITC-BT-27, table 1) -->
-  <g font-size="8.5">
-    <text class="v-soft" x="10" y="328">Vol.</text><text class="v-soft" x="38" y="328">IP</text>
-    <text class="v-soft" x="98" y="328">Mecanismos y aparatos</text>
-    <text class="v-key" x="14" y="344">0</text><text class="v-key" x="38" y="344">IPX7</text>
-    <text x="98" y="344">ningún mecanismo · solo aparatos hechos para el volumen 0</text>
-    <text class="v-key" x="14" y="360">1</text><text class="v-key" x="38" y="360">IPX4</text>
-    <text x="98" y="360">solo interruptores de MBTS ≤ 12 V ca / 30 V cc · calentador,</text>
-    <text x="98" y="371">bomba de ducha, hidromasaje: con diferencial ≤ 30 mA</text>
-    <text class="v-key" x="14" y="387">2</text><text class="v-key" x="38" y="387">IPX4</text>
-    <text x="98" y="387">además bases de MBTS y de afeitadora · luminarias,</text>
-    <text x="98" y="398">ventiladores, calefactores: con diferencial ≤ 30 mA</text>
-    <text class="v-key" x="14" y="414">3</text><text class="v-key" x="38" y="414">—</text>
-    <text x="98" y="414">bases y aparatos con trafo de aislamiento, MBTS o diferencial ≤ 30 mA</text>
-  </g>
-  <text class="v-soft" x="10" y="431" font-size="8">IPX5 con chorros de limpieza (baños comunes) · fuente de la MBTS fuera de 0, 1 y 2</text>
 </svg>
