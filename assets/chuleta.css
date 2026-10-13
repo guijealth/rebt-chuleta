@@ -278,7 +278,10 @@ body:not(.duplex) .duplex-only { display: none; }
 .ppage .cheat-visual { padding: 1.6mm 2.8mm; }
 .ppage .cheat-table { font-size: 9pt; }
 .ppage .cheat-table th { font-size: 8pt; padding: 1.2mm 2.8mm 0.6mm; }
-.ppage .cheat-table td { padding: 0.9mm 2.8mm; }
+.ppage .cheat-table td { padding: 0.9mm 1.4mm; }
+.ppage .cheat-table th { padding-left: 1.4mm; padding-right: 1.4mm; }
+.ppage .cheat-table :is(td, th):first-child { padding-left: 2.8mm; }
+.ppage .cheat-table :is(td, th):last-child { padding-right: 2.8mm; }
 
 .psym-flow { flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .ppage .sym-grid { grid-template-columns: repeat(9, minmax(0, 1fr)); }

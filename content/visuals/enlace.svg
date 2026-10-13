@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- From the distribution network to the user's board, in a schematic elevation of a building with the meters
+     centralised on the ground floor (ITC-BT-11 1.1, ITC-BT-12 1.1-1.2 and scheme 2.2.2, ITC-BT-13 1.1, ITC-BT-16 2.2,
+     ITC-BT-17 1.1). Not to scale. Our own drawing. Styled by .cheat-visual classes. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 232" role="img" aria-label="Recorrido de la red de distribución al cuadro de mando y protección de cada vivienda">
+  <text class="v-title" x="10" y="14">De la red al cuadro (alzado, sin escala)</text>
+
+  <!-- building: three storeys -->
+  <rect class="v-card" x="120" y="24" width="236" height="142"/>
+  <path class="v-rule" d="M120 70H356M120 116H356"/>
+  <g class="v-soft" font-size="9">
+    <text x="125" y="35">2.º</text><text x="125" y="81">1.º</text><text x="350" y="127" text-anchor="end">planta baja</text>
+  </g>
+  <!-- ground, street, network and service line (the distributor's) -->
+  <path class="v-line" stroke-width="1.6" d="M4 166H356"/>
+  <text class="v-soft" x="6" y="160" font-size="9">calle</text>
+  <path class="v-acc-line" stroke-width="2.6" d="M4 188H96"/>
+  <text x="6" y="202" font-size="9.5">red de distribución</text>
+  <path class="v-acc-line" stroke-width="1.8" d="M80 188V146H108"/>
+  <text class="v-key" x="6" y="181" font-size="9.5">acometida</text>
+
+  <!-- CGP in the facade -->
+  <rect class="v-body" x="108" y="135" width="26" height="22"/>
+  <text class="v-key" x="121" y="149.5" text-anchor="middle" font-size="8.5">CGP</text>
+
+  <!-- LGA to the meters -->
+  <path class="v-line" stroke-width="1.8" d="M134 146H158"/>
+  <text class="v-key" x="136" y="140" font-size="9">LGA</text>
+  <rect class="v-body" x="158" y="128" width="40" height="32"/>
+  <path class="v-rule" d="M163 136H193M163 144H193M163 152H193"/>
+  <text x="178" y="124" text-anchor="middle" font-size="9">contadores</text>
+
+  <!-- individual lines (DI), one per user -->
+  <path class="v-line" d="M198 148H282M198 141H212V95H282M198 134H224V49H282"/>
+  <text class="v-key" x="230" y="73" font-size="9">DI, una por usuario</text>
+
+  <!-- ICP + general board at the entrance of each dwelling -->
+  <g>
+    <rect class="v-acc-soft" x="282" y="40" width="66" height="18" rx="2"/>
+    <rect class="v-acc-soft" x="282" y="86" width="66" height="18" rx="2"/>
+    <rect class="v-acc-soft" x="282" y="139" width="66" height="18" rx="2"/>
+  </g>
+  <g font-size="9" text-anchor="middle" class="v-key">
+    <text x="315" y="52.5">ICP · CGMP</text><text x="315" y="98.5">ICP · CGMP</text><text x="315" y="151.5">ICP · CGMP</text>
+  </g>
+
+  <!-- who owns what -->
+  <rect class="v-acc" x="4" y="212" width="116" height="16" rx="2"/>
+  <text class="v-on-acc" x="62" y="223.5" text-anchor="middle" font-size="9">distribuidora</text>
+  <rect class="v-acc-soft" x="120" y="212" width="162" height="16" rx="2"/>
+  <text class="v-key" x="201" y="223.5" text-anchor="middle" font-size="9">enlace: del usuario</text>
+  <rect class="v-card" x="282" y="212" width="74" height="16" rx="2"/>
+  <text x="319" y="223.5" text-anchor="middle" font-size="9">interior</text>
+</svg>

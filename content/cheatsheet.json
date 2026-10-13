@@ -290,24 +290,39 @@
    "ref": "ITC-BT-12 a 17",
    "rows": [
     [
-     "Orden",
-     "acometida → CGP → LGA → contadores → DI → mando y protección",
-     "BT-12 1.2"
-    ],
-    [
-     "Uno o dos usuarios desde el mismo lugar",
-     "no existe LGA: la DI sale de la CGP · el fusible de seguridad es el de la CGP",
-     "BT-12 2.1"
-    ],
-    [
      "CGP",
-     "neutro amovible a la izquierda · fusibles en las fases",
+     "en fachada, de libre acceso · acometida aérea: a 3–4 m del suelo · subterránea: en nicho con puerta IK10, a ≥ 0,30 m del suelo",
+     "BT-13 1.1"
+    ],
+    [
+     "CGP por dentro",
+     "fusibles en las fases · neutro amovible a la izquierda",
      "BT-13 1.2"
     ],
     [
-     "LGA, sección mínima",
-     "10 mm² Cu · 16 mm² Al",
-     "BT-14 3"
+     "Uno o dos usuarios desde el mismo lugar",
+     "no existe LGA: la DI sale de la CGP (o de la CPM, CGP + contador) · el fusible de seguridad es el de la CGP",
+     "BT-12 2.1 · BT-13 2"
+    ],
+    [
+     "LGA",
+     "de la CGP a la centralización de contadores · 0,6/1 kV, 3 fases + neutro, sin empalmes · mín. 10 mm² Cu · 16 mm² Al",
+     "BT-14 1 · BT-14 3"
+    ],
+    [
+     "LGA vertical",
+     "en conducto de obra ≥ 30 × 30 cm, RF 120, registrable en cada planta, cortafuegos cada 3 plantas",
+     "BT-14 2"
+    ],
+    [
+     "Contadores: local o armario",
+     "más de 16: en local · hasta 16: local o armario, con pasillo ≥ 1,5 m delante",
+     "BT-16 2.2 · BT-16 2.2.2"
+    ],
+    [
+     "Local de contadores",
+     "solo para eso · planta baja, entresuelo o 1.er sótano, cerca de la entrada · alto ≥ 2,30 m · ≥ 1,10 m libres delante",
+     "BT-16 2.2.1"
     ],
     [
      "Contadores",
@@ -315,9 +330,34 @@
      "BT-16 3"
     ],
     [
+     "DI",
+     "del embarrado general a la instalación del usuario: incluye fusibles de seguridad, contador y mando y protección",
+     "BT-15 1"
+    ],
+    [
+     "DI, cables",
+     "450/750 V (0,6/1 kV si va enterrada o es multiconductor) · ≥ 6 mm² · hilo de mando rojo de 1,5 mm² · nunca neutro ni protección comunes",
+     "BT-15 3"
+    ],
+    [
      "DI, tubos",
-     "Ø exterior ≥ 32 mm · 1 de reserva cada 10 DI",
+     "Ø exterior ≥ 32 mm · 1 de reserva cada 10 DI · vertical: conducto RF 120, cortafuegos cada 3 plantas",
      "BT-15 2"
+    ],
+    [
+     "Caída de tensión",
+     "LGA + DI = 1,5 %: contadores en un lugar 0,5 + 1 · por plantas 1 + 0,5 · un usuario, todo en la DI",
+     "BT-14 3 · BT-15 3"
+    ],
+    [
+     "ICP",
+     "caja precintable inmediatamente antes de los demás dispositivos; puede ir en el mismo cuadro",
+     "BT-17 1.1"
+    ],
+    [
+     "Cuadro (CGMP)",
+     "junto a la puerta de entrada, nunca en dormitorios ni baños · a 1,4–2 m del suelo en vivienda · ≥ 1 m en locales comerciales",
+     "BT-17 1.1"
     ]
    ]
   },
@@ -1957,120 +1997,6 @@
      "amperímetro en serie · voltímetro en paralelo · óhmetro y aislamiento sin tensión",
      ""
     ]
-   ]
-  },
-  {
-   "title": "Baños y duchas",
-   "ref": "ITC-BT-27",
-   "newPage": true,
-   "rows": [
-    [
-     "Volúmenes",
-     "cuatro: 0, 1, 2 y 3",
-     "BT-27 2.1"
-    ],
-    [
-     "Volumen 0",
-     "interior de bañera o ducha · sin plato: hasta 0,05 m",
-     "BT-27 2.1.1"
-    ],
-    [
-     "Volumen 1",
-     "sobre el 0 hasta 2,25 m de altura",
-     "BT-27 2.1.2"
-    ],
-    [
-     "Volúmenes 2 y 3",
-     "0,6 m y 2,4 m más allá del anterior",
-     "BT-27 2.1.3-4"
-    ],
-    [
-     "Ducha sin plato",
-     "volúmenes 0 y 1: radio de 1,2 m desde la toma de agua (difusor móvil) o de 0,6 m alrededor del difusor fijo · el 0, hasta 0,05 m del suelo",
-     "BT-27 2.1.1"
-    ],
-    [
-     "Por encima de 2,25 m",
-     "hasta el techo o 3 m: sobre el volumen 1 es volumen 2; sobre el 2, volumen 3",
-     "BT-27 2.1.3-4"
-    ],
-    [
-     "Mamparas y falsos techos",
-     "no separan volúmenes",
-     "BT-27 2.1"
-    ],
-    [
-     "Grado IP",
-     "0: IPX7 · 1 y 2: IPX4 (IPX2 por encima de un difusor fijo) · IPX5 donde haya chorros de limpieza, en baños comunes",
-     "BT-27 2.3"
-    ],
-    [
-     "Mecanismos",
-     "0: ninguno · 1: solo interruptores de MBTS ≤ 12 V ca o 30 V cc, con la fuente fuera de 0, 1 y 2 · 2: además bases de MBTS y de afeitadora · 3: bases con trafo de aislamiento, MBTS o diferencial ≤ 30 mA",
-     "BT-27 2.3"
-    ],
-    [
-     "Aparatos fijos",
-     "1: calentador, bomba de ducha, hidromasaje · 2: además luminarias, ventiladores, calefactores · en 1 y 2, con diferencial ≤ 30 mA · 3: con trafo de aislamiento, MBTS o diferencial ≤ 30 mA",
-     "BT-27 2.3"
-    ],
-    [
-     "Conexión equipotencial",
-     "une al conductor de protección las masas de clase I de los volúmenes 1, 2 y 3 y las tuberías y partes metálicas de 0 a 3",
-     "BT-27 2.2"
-    ]
-   ],
-   "visuals": [
-    "banos"
-   ]
-  },
-  {
-   "title": "Piscinas y fuentes",
-   "ref": "ITC-BT-31",
-   "rows": [
-    [
-     "Zona 0",
-     "interior del vaso, con canales, pediluvios e inyectores o cascadas · IPX8",
-     "BT-31 2.1-2.2"
-    ],
-    [
-     "Zona 1",
-     "hasta 2 m del borde y 2,5 m de alto · IPX5 (IPX4 en piscina interior que no se limpia con chorros) · trampolines y toboganes: 1,5 m alrededor y 2,5 m sobre lo más alto",
-     "BT-31 2.1-2.2"
-    ],
-    [
-     "Zona 2",
-     "1,5 m más allá de la 1, 2,5 m de alto · IPX2 interior · IPX4 exterior · IPX5 con chorros de limpieza",
-     "BT-31 2.1-2.2"
-    ],
-    [
-     "Zonas 0 y 1",
-     "solo MBTS ≤ 12 V c.a. · 30 V c.c., fuente fuera de 0, 1 y 2 · sin interruptores, programadores ni tomas · cajas solo de MBTS en la 1 (IPX5, aislantes)",
-     "BT-31 2.2-2.2.4"
-    ],
-    [
-     "Piscina pequeña",
-     "tomas a ≥ 1,25 m de la zona 0 y ≥ 0,3 m del suelo, con MBTS ≤ 25 V c.a., diferencial ≤ 30 mA o separación",
-     "BT-31 2.2.4"
-    ],
-    [
-     "Zona 2: mecanismos",
-     "tomas e interruptores con MBTS, diferencial ≤ 30 mA o separación eléctrica",
-     "BT-31 2.2.4"
-    ],
-    [
-     "Equipotencial",
-     "todos los elementos conductores de las zonas 0, 1 y 2, también los suelos no aislados",
-     "BT-31 2.2"
-    ],
-    [
-     "Fuentes",
-     "no tienen zona 2 · en 0 y 1: MBTS 12 V c.a./30 V c.c., diferencial ≤ 30 mA o separación · sin tomas",
-     "BT-31 2.1 · BT-31 3.1"
-    ]
-   ],
-   "visuals": [
-    "piscinas"
    ]
   }
  ]

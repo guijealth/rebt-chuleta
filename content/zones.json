@@ -1,0 +1,190 @@
+{
+ "_doc": "Zonas y recorridos: a part of the page of its own (user's request, 2026-10-13): the path from the network to the user's board, and the zones of bathrooms and pools, each with a drawing. Same format as cheatsheet.json. See README.md.",
+ "title": "Zonas y recorridos",
+ "subtitle": "Por dónde va la instalación, de la red de distribución al cuadro de la vivienda, y las zonas o volúmenes de baños y piscinas, con sus medidas",
+ "sections": [
+  {
+   "title": "De la red al cuadro",
+   "ref": "ITC-BT-06, 07 y 11 a 17",
+   "visuals": [
+    "enlace"
+   ],
+   "table": {
+    "head": [
+     "Tramo · ITC",
+     "Qué y dónde",
+     "Cifras"
+    ],
+    "rows": [
+     [
+      "Red · 06, 07",
+      "aérea o enterrada",
+      "posada ≥ 2,5 m · acera ≥ 0,60 m"
+     ],
+     [
+      "Acometida · 11",
+      "red → CGP · una por edificio",
+      "de la distribuidora"
+     ],
+     [
+      "CGP · 13",
+      "en fachada · fusibles en fases",
+      "aérea 3–4 m · nicho ≥ 0,30 m"
+     ],
+     [
+      "LGA · 14",
+      "CGP → contadores",
+      "≥ 10 mm² Cu (16 Al)"
+     ],
+     [
+      "Contadores · 16",
+      "> 16: local · ≤ 16: o armario",
+      "0,25 a 1,80 m del suelo"
+     ],
+     [
+      "DI · 15",
+      "contadores → cuadro",
+      "≥ 6 mm² · hilo de mando rojo"
+     ],
+     [
+      "ICP · CGMP · 17",
+      "junto a la puerta",
+      "1,4 a 2 m del suelo"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Enlace",
+     "de la CGP al cuadro, por zonas comunes · es del usuario",
+     "BT-12 1.1 · BT-12 1.2"
+    ],
+    [
+     "Caída LGA + DI",
+     "1,5 % · 1 o 2 usuarios: sin LGA",
+     "BT-14 3 · BT-15 3 · BT-12 2.1"
+    ]
+   ]
+  },
+  {
+   "title": "Baños y duchas",
+   "ref": "ITC-BT-27",
+   "visuals": [
+    "banos"
+   ],
+   "table": {
+    "head": [
+     "Vol.",
+     "Dónde",
+     "IP",
+     "Se permite"
+    ],
+    "rows": [
+     [
+      "0",
+      "bañera o ducha",
+      "IPX7",
+      "ningún mecanismo"
+     ],
+     [
+      "1",
+      "sobre el 0, a 2,25 m",
+      "IPX4",
+      "interruptores MBTS 12 V · calentador, hidromasaje *"
+     ],
+     [
+      "2",
+      "+ 0,6 m",
+      "IPX4",
+      "+ bases MBTS y afeitadora · luminarias, ventiladores *"
+     ],
+     [
+      "3",
+      "+ 2,4 m",
+      "—",
+      "bases con trafo de aislamiento, MBTS o *"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "*",
+     "con diferencial ≤ 30 mA · IPX5 con chorros de limpieza",
+     "BT-27 2.3"
+    ],
+    [
+     "Ducha sin plato",
+     "0 hasta 0,05 m · radio 1,2 m de la toma (0,6 m si el difusor es fijo)",
+     "BT-27 2.1.1"
+    ],
+    [
+     "Equipotencial",
+     "masas de clase I y partes metálicas de 0 a 3",
+     "BT-27 2.2"
+    ]
+   ]
+  },
+  {
+   "title": "Piscinas y fuentes",
+   "ref": "ITC-BT-31",
+   "visuals": [
+    "piscinas"
+   ],
+   "table": {
+    "head": [
+     "Zona",
+     "Dónde",
+     "IP",
+     "Se permite"
+    ],
+    "rows": [
+     [
+      "0",
+      "vaso y pediluvios",
+      "IPX8",
+      "solo MBTS 12 V · sin cajas ni mecanismos"
+     ],
+     [
+      "1",
+      "2 m del borde",
+      "IPX5",
+      "igual que la 0 · cajas de MBTS"
+     ],
+     [
+      "2",
+      "+ 1,5 m",
+      "IPX2 · IPX4 ext.",
+      "tomas e interruptores con MBTS, dif. 30 mA o separación"
+     ]
+    ]
+   },
+   "rows": [
+    [
+     "Altura",
+     "2,5 m sobre el suelo, o sobre trampolines y toboganes (+1,5 m alrededor)",
+     "BT-31 2.1"
+    ],
+    [
+     "IP",
+     "1: IPX4 si es interior y no se limpia con chorros · 2: IPX5 donde lleguen chorros",
+     "BT-31 2.2"
+    ],
+    [
+     "Piscina pequeña",
+     "tomas a ≥ 1,25 m de la 0 y ≥ 0,3 m del suelo, con MBTS, dif. 30 mA o separación",
+     "BT-31 2.2.4"
+    ],
+    [
+     "Fuentes",
+     "sin zona 2 · sin tomas en 0 y 1",
+     "BT-31 2.1 · BT-31 3.1"
+    ],
+    [
+     "Equipotencial",
+     "todo lo conductor de 0, 1 y 2",
+     "BT-31 2.2"
+    ]
+   ]
+  }
+ ]
+}

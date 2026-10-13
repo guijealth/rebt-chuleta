@@ -1,7 +1,8 @@
 # Chuleta REBT
 
-One page with six parts, each ready to print: the **chuleta** (the key figures of every chapter of the Spanish
-low-voltage regulation, REBT, each tagged with its ITC-BT section), the **terminology** (terminología: acronyms, letters
+One page with seven parts, each ready to print: the **chuleta** (the key figures of every chapter of the Spanish
+low-voltage regulation, REBT, each tagged with its ITC-BT section), the **zones and paths** (zonas y recorridos: from
+the distribution network to the user's board, and the zones of bathrooms and pools, with drawings), the **terminology** (terminología: acronyms, letters
 and symbols of magnitudes), the **materials**
 (materiales: cables, tubes, trunking, boxes, enclosures, sockets: how their codes are read), the **devices**
 (dispositivos: fuses, ICP, IGA, surge protector, differential, PIA, contactor, telerruptor, emergency lights), the **measurements**
@@ -15,9 +16,9 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Use
 
-- **Read:** the page shows the six parts in that order. The search box (or the `/` key) filters them all: rows, table
+- **Read:** the page shows the seven parts in that order. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
-- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Terminología**, **Materiales**,
+- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Zonas y recorridos**, **Terminología**, **Materiales**,
   **Dispositivos**, **Mediciones**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
   or **Vista previa** to see the pages on screen (**Volver** in the bar returns). The browser's own Print
   (Ctrl/Cmd+P) gives the same result.
@@ -68,10 +69,15 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
   are our own SVGs, drawn with the `v-*` classes of `assets/chuleta.css` (`v-line`, `v-key`, `v-acc-soft`…) so they
   follow the light/dark theme and print in the paper palette; keep them 360 units wide, the width of a printed column.
 - `"newPage": true` makes a section start at the top of a printed page (`"newColumn": true`, of a column), and no
-  earlier gap is filled with it: «Baños y duchas» uses it so it and «Piscinas y fuentes» print together.
+  earlier gap is filled with it: Not used at the moment.
 - A section may also have a table, shown above its rows (or alone, with `"rows": []`):
   `"table": {"head": ["", "Uso", "PIA"], "rows": [["C1", "alumbrado", "10 A"]]}`. Every table row needs as many cells
   as `head`.
+
+### `content/zones.json` — zones and paths
+
+Same format as the chuleta, one section each with a drawing: *De la red al cuadro* (the service line and the
+instalación de enlace, ITC-BT-06, 07 and 11 to 17), *Baños y duchas* (ITC-BT-27) and *Piscinas y fuentes* (ITC-BT-31).
 
 ### `content/terminology.json` — the terminology
 
@@ -178,7 +184,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
 | `assets/katex/` | KaTeX script, stylesheet and woff2 fonts, for the formulas |
 | `content/calculators.json` | The calculators behind the 🖩 buttons |
-| `content/cheatsheet.json`, `terminology.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
+| `content/cheatsheet.json`, `zones.json`, `terminology.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
 | `content/elements/fixed/` | Our corrections of faulty elements |
