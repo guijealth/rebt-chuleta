@@ -1,9 +1,10 @@
 # Chuleta REBT
 
-One page with five parts, each ready to print: the **chuleta** (acronyms, letters and the key figures of every
-chapter of the Spanish low-voltage regulation, REBT, each tagged with its ITC-BT section), the **materials**
+One page with six parts, each ready to print: the **chuleta** (the key figures of every chapter of the Spanish
+low-voltage regulation, REBT, each tagged with its ITC-BT section), the **terminology** (terminología: acronyms, letters
+and symbols of magnitudes), the **materials**
 (materiales: cables, tubes, trunking, boxes, enclosures, sockets: how their codes are read), the **devices**
-(dispositivos: fuses, ICP, IGA, surge protector, differential, PIA, emergency lights), the **measurements**
+(dispositivos: fuses, ICP, IGA, surge protector, differential, PIA, contactor, telerruptor, emergency lights), the **measurements**
 (mediciones: the instruments the REBT requires and how each verification is done), and the **UNE-EN 60617 graphical
 symbols** a low-voltage electrician needs. Materials, devices and measurements come one section each, with a drawing.
 
@@ -14,9 +15,9 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Use
 
-- **Read:** the page shows the five parts in that order. The search box (or the `/` key) filters them all: rows, table
+- **Read:** the page shows the six parts in that order. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
-- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Materiales**,
+- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Terminología**, **Materiales**,
   **Dispositivos**, **Mediciones**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
   or **Vista previa** to see the pages on screen (**Volver** in the bar returns). The browser's own Print
   (Ctrl/Cmd+P) gives the same result.
@@ -69,6 +70,11 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
 - A section may also have a table, shown above its rows (or alone, with `"rows": []`):
   `"table": {"head": ["", "Uso", "PIA"], "rows": [["C1", "alumbrado", "10 A"]]}`. Every table row needs as many cells
   as `head`.
+
+### `content/terminology.json` — the terminology
+
+Same format as the chuleta: the sections of acronyms (siglas) and of letters and symbols of magnitudes. The
+terminal letters of schemes (*Letras y bornes de esquemas*) and the circuit names (C1…C13) stay in the chuleta.
 
 ### `content/materials.json` — the materials
 
@@ -170,7 +176,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
 | `assets/katex/` | KaTeX script, stylesheet and woff2 fonts, for the formulas |
 | `content/calculators.json` | The calculators behind the 🖩 buttons |
-| `content/cheatsheet.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
+| `content/cheatsheet.json`, `terminology.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
 | `content/elements/fixed/` | Our corrections of faulty elements |

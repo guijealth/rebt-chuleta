@@ -36,7 +36,7 @@ SRC = ROOT / "sources"
 MANIFEST = SRC / "sources.json"
 INDEX = SRC / "index"
 PAGES = INDEX / "pages.json"
-SHEETS = [ROOT / "content" / f for f in ("cheatsheet.json", "materials.json", "devices.json", "measurements.json")]
+SHEETS = [ROOT / "content" / f for f in ("cheatsheet.json", "terminology.json", "materials.json", "devices.json", "measurements.json")]
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
 
 

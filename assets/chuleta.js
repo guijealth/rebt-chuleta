@@ -1,4 +1,4 @@
-/* Chuleta REBT — one page in five parts (chuleta, materiales, dispositivos, mediciones, símbolos), ready to print.
+/* Chuleta REBT — one page in six parts (chuleta, terminología, materiales, dispositivos, mediciones, símbolos), ready to print.
    Content comes from data.js (built by tools/build.py from content/*.json).
    Printing: the pages are laid out ahead of time in #print-root (A4 landscape, 14 mm binding strip),
    hidden on screen and the only thing printed, so the browser's own Print (Ctrl+P) gives the same result. */
@@ -33,6 +33,7 @@
   // id: anchor and print checkbox value · label: nav and checkbox · ref: right side of the printed binding strip.
   const PARTS = [
     { id: 'chuleta', label: 'Chuleta', data: data.cheatsheet, kind: 'sheet', ref: 'REBT · ITC-BT' },
+    { id: 'terminologia', label: 'Terminología', data: data.terminology, kind: 'sheet', ref: 'Siglas · letras · símbolos' },
     { id: 'materiales', label: 'Materiales', data: data.materials, kind: 'sheet', ref: 'REBT · Guías técnicas' },
     { id: 'dispositivos', label: 'Dispositivos', data: data.devices, kind: 'sheet', ref: 'REBT · Guías técnicas' },
     { id: 'mediciones', label: 'Mediciones', data: data.measurements, kind: 'sheet', ref: 'REBT · Guía anexo 4' },

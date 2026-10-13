@@ -1,0 +1,553 @@
+{
+ "_doc": "Terminología: siglas, letras y símbolos of magnitudes, a part of the page of its own (user's request, 2026-10-13). Same format as cheatsheet.json. Terminal letters (Letras y bornes de esquemas) and circuit names (C1…C13) stay in the chuleta. See README.md.",
+ "title": "Terminología",
+ "subtitle": "Siglas, letras y símbolos: qué significa cada abreviatura del REBT, de las normas y de los esquemas",
+ "sections": [
+  {
+   "title": "Siglas: enlace y cuadro",
+   "ref": "ITC-BT-12 a 17 · ITC-BT-25",
+   "rows": [
+    [
+     "CGP",
+     "Caja General de Protección",
+     "BT-12 1.2"
+    ],
+    [
+     "CPM",
+     "Caja de Protección y Medida: CGP + contador, 1 o 2 usuarios",
+     "BT-13 2"
+    ],
+    [
+     "DGP",
+     "Dispositivo General de Protección: nombre común de CGP, AGP, CSP y ASP (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "AGP",
+     "Armario General de Protección: armario donde van las CGP (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "CSP",
+     "Conjunto de Seccionamiento y Protección: 2 armarios, uno con cuchillas de seccionamiento y otro con fusibles para hasta 2 LGA (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "ASP",
+     "Armario de Seccionamiento y Protección: lo mismo que el CSP, hasta 4 salidas, bases tripolares verticales de 630 A (norma de la distribuidora)",
+     ""
+    ],
+    [
+     "CGP-7-250",
+     "cómo se lee: CGP de esquema 7 con bases cortacircuitos de 250 A",
+     ""
+    ],
+    [
+     "LGA",
+     "Línea General de Alimentación: CGP → contadores",
+     "BT-12 1.2"
+    ],
+    [
+     "CC",
+     "Centralización de Contadores",
+     "BT-12 1.2"
+    ],
+    [
+     "DI",
+     "Derivación Individual: contador → cuadro del usuario",
+     "BT-12 1.2"
+    ],
+    [
+     "ICP",
+     "Interruptor de Control de Potencia: corta si se pasa de la potencia contratada (el REBT lo define con protección contra sobrecargas y cortocircuitos)",
+     "BT-01"
+    ],
+    [
+     "DGMP",
+     "Dispositivos Generales de Mando y Protección",
+     "BT-12 1.2"
+    ],
+    [
+     "CGMP · CMP",
+     "Cuadro (General) de Mando y Protección (uso común)",
+     "BT-17 1"
+    ],
+    [
+     "IGA",
+     "Interruptor General Automático, corte omnipolar",
+     "BT-17 1.2"
+    ],
+    [
+     "ID",
+     "Interruptor Diferencial (UNE-EN 61008)",
+     "BT-17 1.2"
+    ],
+    [
+     "AD",
+     "Automático diferencial: ID + magnetotérmico (UNE-EN 61009)",
+     "BT-02"
+    ],
+    [
+     "PIA",
+     "Pequeño Interruptor Automático: magnetotérmico de cada circuito (uso común)",
+     ""
+    ],
+    [
+     "CT",
+     "Centro de Transformación (AT → BT)",
+     "BT-06 3.7"
+    ],
+    [
+     "AT · MT · BT",
+     "alta · media · baja tensión (BT ≤ 1 000 V c.a.) · un CT es MT/BT",
+     "art. 4"
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: conductores, tierras y protección",
+   "ref": "ITC-BT-01, 08, 19, 24, 36 y 38",
+   "rows": [
+    [
+     "L1 · L2 · L3",
+     "fases (también F1, F2, F3) · marrón, negro, gris",
+     "BT-19 2.2.4"
+    ],
+    [
+     "N",
+     "neutro · azul claro",
+     "BT-19 2.2.4"
+    ],
+    [
+     "PE · CP",
+     "conductor de protección (tierra) · verde-amarillo",
+     "BT-01"
+    ],
+    [
+     "CPN · PEN",
+     "conductor que hace de neutro y protección a la vez (esquema TN-C)",
+     "BT-01"
+    ],
+    [
+     "TT · TN · IT",
+     "1.ª letra, la alimentación: T a tierra · I aislada · 2.ª letra, las masas: T a tierra propia · N al neutro",
+     "BT-08 1"
+    ],
+    [
+     "TN-S · TN-C · TN-C-S",
+     "S: N y PE separados · C: combinados (PEN) · C-S: combinados y luego separados",
+     "BT-08 1.1"
+    ],
+    [
+     "RA · Ia",
+     "resistencia de tierra de las masas · corriente de disparo ($R_A \\cdot I_a \\le U$)",
+     "BT-24 4.1.2"
+    ],
+    [
+     "Zs · U0",
+     "impedancia del bucle de defecto · tensión fase-tierra ($Z_s \\cdot I_a \\le U_0$)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "MBT",
+     "Muy Baja Tensión (≤ 50 V c.a. · ≤ 75 V c.c.)",
+     "art. 4"
+    ],
+    [
+     "MBTS",
+     "MBT de Seguridad: fuente separada, sin tierra (en inglés SELV)",
+     "BT-36 1"
+    ],
+    [
+     "MBTP",
+     "MBT de Protección: como la MBTS pero con un punto a tierra (PELV)",
+     "BT-36 1"
+    ],
+    [
+     "MBTF",
+     "MBT Funcional: MBT por funcionamiento, sin las garantías de la MBTS (FELV)",
+     "BT-36 1"
+    ],
+    [
+     "EE · PT",
+     "quirófanos: Embarrado Equipotencial · Puesta a Tierra de protección",
+     "BT-38 2.1.2"
+    ],
+    [
+     "IP",
+     "grado de protección de la envolvente: 1.ª cifra sólidos 0–6, 2.ª agua 0–8 (X = no se indica)",
+     "BT-02"
+    ],
+    [
+     "IK",
+     "resistencia a impactos mecánicos: IK00 a IK10",
+     "BT-02"
+    ],
+    [
+     "DPS",
+     "Dispositivo de Protección contra Sobretensiones (en inglés SPD)",
+     "BT-02"
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: recarga, autoconsumo y documentación",
+   "ref": "ITC-BT-03, 04, 40 y 52 · RD 842/2002",
+   "rows": [
+    [
+     "VE",
+     "Vehículo Eléctrico",
+     "BT-52"
+    ],
+    [
+     "SAVE",
+     "Sistema de Alimentación específico del Vehículo Eléctrico (modos 3 y 4)",
+     "BT-52 7.1"
+    ],
+    [
+     "SPL",
+     "Sistema de Protección de la LGA: reduce la recarga del VE para no sobrecargar la LGA",
+     "BT-52 7.1"
+    ],
+    [
+     "FV",
+     "fotovoltaica",
+     "BT-02"
+    ],
+    [
+     "$P_T = P_V + P_{SG} + P_L + P_G$",
+     "Potencia Total = Viviendas + Servicios Generales + Locales + Garajes",
+     "BT-10 3"
+    ],
+    [
+     "IBTB · IBTE",
+     "empresa instaladora en BT: categoría Básica · Especialista",
+     "BT-03 3"
+    ],
+    [
+     "MTD",
+     "Memoria Técnica de Diseño (cuando no hace falta proyecto)",
+     "BT-04 2.2"
+    ],
+    [
+     "OCA",
+     "Organismo de Control Autorizado: hace las inspecciones (uso común)",
+     "art. 18"
+    ],
+    [
+     "CIE",
+     "Certificado de Instalación Eléctrica, el «boletín» (uso común)",
+     "art. 18"
+    ],
+    [
+     "CUPS",
+     "Código Universal del Punto de Suministro: identifica el contador (fuera del REBT)",
+     ""
+    ],
+    [
+     "RF 120",
+     "Resistencia al Fuego 120 min (hoy EI 120); NBE-CPI-96 hoy es el CTE DB-SI",
+     "BT-14 2"
+    ],
+    [
+     "MIE-BT",
+     "ITC del reglamento anterior (REBT de 1973)",
+     "BT-16 2.1"
+    ],
+    [
+     "PCI",
+     "Protección Contra Incendios: extintores, bocas de incendio equipadas (BIE), pulsadores… (alumbrado de emergencia 5 lux en ellos)",
+     "BT-28 3.1.1"
+    ],
+    [
+     "ICT",
+     "Infraestructura Común de Telecomunicaciones del edificio",
+     ""
+    ],
+    [
+     "INSST · NTP",
+     "Instituto Nacional de Seguridad y Salud en el Trabajo · sus Notas Técnicas de Prevención",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Siglas: normas y organismos",
+   "ref": "ITC-BT-02 · fuera del REBT",
+   "rows": [
+    [
+     "REBT",
+     "Reglamento Electrotécnico para Baja Tensión (RD 842/2002)",
+     "art. 1"
+    ],
+    [
+     "ITC-BT",
+     "Instrucción Técnica Complementaria de baja tensión (01 a 52)",
+     "art. 2"
+    ],
+    [
+     "RD · BOE",
+     "Real Decreto · Boletín Oficial del Estado",
+     ""
+    ],
+    [
+     "UNE",
+     "norma española (antes AENOR, hoy la Asociación Española de Normalización)",
+     "BT-02"
+    ],
+    [
+     "UNE-EN · UNE-HD",
+     "norma europea adoptada · documento de armonización europeo",
+     "BT-02"
+    ],
+    [
+     "IEC · CEI",
+     "Comisión Electrotécnica Internacional (CEI es la sigla en español)",
+     "BT-02"
+    ],
+    [
+     "CENELEC",
+     "Comité Europeo de Normalización Electrotécnica (normas EN)",
+     "BT-02"
+    ],
+    [
+     "ISO",
+     "Organización Internacional de Normalización",
+     ""
+    ],
+    [
+     "IRANOR",
+     "Instituto de Racionalización y Normalización: el antecesor de AENOR",
+     ""
+    ],
+    [
+     "DIN · VDE",
+     "normas alemanas (DIN general · VDE electrotecnia)",
+     ""
+    ],
+    [
+     "BS · ANSI",
+     "normas británicas · estadounidenses",
+     ""
+    ],
+    [
+     "CE · CEE · UE",
+     "marcado de conformidad europeo · Comunidad Económica Europea · Unión Europea",
+     ""
+    ],
+    [
+     "CTE · DB-SUA · DB-SI",
+     "Código Técnico de la Edificación · Seguridad de Utilización y Accesibilidad · Seguridad en caso de Incendio",
+     ""
+    ],
+    [
+     "CCAA",
+     "Comunidades Autónomas: registran las instalaciones",
+     ""
+    ],
+    [
+     "c.a. · c.c.",
+     "corriente alterna · continua (en inglés AC · DC)",
+     "art. 4"
+    ],
+    [
+     "MCB · RCD · RCBO",
+     "en inglés: PIA · diferencial · automático diferencial",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Letras y símbolos: magnitudes",
+   "ref": "electrotecnia · unidades",
+   "rows": [
+    [
+     "U · V",
+     "tensión, en voltios (V). U es la letra de las normas; V la de muchos libros: es lo mismo",
+     ""
+    ],
+    [
+     "I",
+     "intensidad (corriente), en amperios (A)",
+     ""
+    ],
+    [
+     "R",
+     "resistencia, en ohmios (Ω)",
+     ""
+    ],
+    [
+     "Z · X",
+     "impedancia: la «resistencia» total en c.a. (Ω) · X: reactancia (Ω), la parte de bobinas y condensadores",
+     ""
+    ],
+    [
+     "P",
+     "potencia activa, en vatios (W, kW): la que se convierte en trabajo o calor",
+     ""
+    ],
+    [
+     "Q",
+     "potencia reactiva, en VAr (voltamperios reactivos)",
+     ""
+    ],
+    [
+     "S (potencia)",
+     "potencia aparente, en VA o kVA: $S = U \\cdot I$",
+     ""
+    ],
+    [
+     "S (sección)",
+     "sección del conductor, en mm². ¡Misma letra que la potencia aparente!",
+     ""
+    ],
+    [
+     "L",
+     "longitud de la línea, en metros",
+     ""
+    ],
+    [
+     "f",
+     "frecuencia, en hercios (Hz): la red va a 50 Hz",
+     "art. 4"
+    ],
+    [
+     "φ · cos φ",
+     "φ (fi): desfase entre tensión e intensidad · cos φ: factor de potencia, de 0 a 1 (1 en resistencias)",
+     "BT-09 3"
+    ],
+    [
+     "Δ (delta)",
+     "«variación» o «diferencia»: $\\Delta U$ = caída de tensión · $\\Delta f$ = variación de frecuencia",
+     ""
+    ],
+    [
+     "ΔU · e",
+     "caída de tensión: lo que se pierde en el cable. $e$ en voltios; en %: $\\frac{e}{U} \\times 100$",
+     "BT-19 2.2.2"
+    ],
+    [
+     "ρ (rho)",
+     "resistividad, en Ω·mm²/m: resistencia de 1 m de 1 mm² (Cu ≈ 0,018)",
+     ""
+    ],
+    [
+     "γ (gamma)",
+     "conductividad, $\\gamma = 1/\\rho$, en m/(Ω·mm²): cobre ≈ 56 · aluminio ≈ 35",
+     ""
+    ],
+    [
+     "√3 ≈ 1,73",
+     "aparece en trifásica: $P = \\sqrt{3}\\, U I \\cos\\varphi$ (U entre fases, 400 V)",
+     ""
+    ],
+    [
+     "π ≈ 3,14 · Ø",
+     "pi · Ø = diámetro: $S = \\frac{\\pi D^2}{4}$",
+     ""
+    ],
+    [
+     "lx · lm · cd",
+     "lux = lm/m² (iluminancia) · lumen (flujo luminoso) · candela (intensidad luminosa)",
+     "BT-28 3.1.1"
+    ],
+    [
+     "m · k · M",
+     "prefijos: mili = /1000 (30 mA = 0,03 A) · kilo = ×1000 (kW) · mega = ×1 000 000 (MΩ)",
+     ""
+    ],
+    [
+     "≤ · ≥ · ≈",
+     "menor o igual · mayor o igual · aproximadamente",
+     ""
+    ]
+   ]
+  },
+  {
+   "title": "Letras y símbolos: subíndices y aparatos",
+   "ref": "ITC-BT-24 · 25 · normas de aparamenta",
+   "rows": [
+    [
+     "U0 · Uo",
+     "tensión fase-tierra (o fase-neutro): 230 V · en cables, Uo/U = a tierra / entre fases (450/750 V)",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Un",
+     "tensión nominal (asignada) de la red o del aparato",
+     ""
+    ],
+    [
+     "3×400/230 V",
+     "trifásica con neutro: 400 V entre fases, 230 V fase-neutro",
+     "BT-40 4.3.1"
+    ],
+    [
+     "$I_n$",
+     "intensidad nominal del aparato: la que aguanta sin disparar (PIA de 16 A → In = 16 A)",
+     ""
+    ],
+    [
+     "IΔn",
+     "«I delta n»: sensibilidad del diferencial, la fuga a la que dispara (30 mA, 300 mA)",
+     ""
+    ],
+    [
+     "Ia (protección)",
+     "corriente que hace actuar la protección; si es un diferencial, su IΔn",
+     "BT-24 4.1.1"
+    ],
+    [
+     "$I_a$ (circuitos)",
+     "en la tabla de circuitos, intensidad prevista por toma: $I = n \\cdot I_a \\cdot F_s \\cdot F_u$ · ¡misma letra, otro uso!",
+     "BT-25 tabla 1"
+    ],
+    [
+     "n · Fs · Fu",
+     "nº de tomas · factor de simultaneidad · factor de utilización",
+     "BT-25 tabla 1"
+    ],
+    [
+     "$I_B$ · $I_z$",
+     "intensidad de empleo (la que consume el circuito) · admisible del cable: $I_B \\le I_n \\le I_z$",
+     ""
+    ],
+    [
+     "Icc · PdC",
+     "corriente de cortocircuito · poder de corte: la Icc máxima que el aparato corta (IGA ≥ 4 500 A)",
+     "BT-17 1.3"
+    ],
+    [
+     "$R_A$",
+     "suma de las resistencias de la toma de tierra y de los conductores de protección: $R_A \\cdot I_a \\le U$",
+     "BT-24 4.1.2"
+    ],
+    [
+     "$Z_s$",
+     "impedancia del bucle de defecto (fase → masa → vuelta a la fuente): $Z_s \\cdot I_a \\le U_0$",
+     "BT-24 4.1.1"
+    ],
+    [
+     "Curva B · C · D",
+     "disparo magnético del PIA: B 3–5 In · C 5–10 In (la usual) · D 10–20 In (motores)",
+     "BT-52 7.1"
+    ],
+    [
+     "Diferencial clase AC · A · B",
+     "AC: solo alterna · A: también continua pulsante (electrónica) · B: también continua lisa",
+     "BT-24 3.5"
+    ],
+    [
+     "gG · aM",
+     "fusible de uso general (líneas) · fusible de acompañamiento de motor (solo cortocircuito)",
+     ""
+    ],
+    [
+     "Clase 0 · I · II · III",
+     "aparatos: I con toma de tierra · II doble aislamiento (□ dentro de □) · III a MBTS",
+     "BT-24 4.2"
+    ]
+   ]
+  }
+ ]
+}
