@@ -43,7 +43,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 7 chuleta + 1 zones + 4 formulas + 4 terminology + 4 material + 6 device + 3 measurement + 5 symbol pages).
+before and after a change (now 7 chuleta + 2 zones + 4 formulas + 4 terminology + 4 material + 6 device + 3 measurement + 5 symbol pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.
@@ -52,7 +52,8 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 
 - `content/cheatsheet.json`: sections → `rows` `[what, value, ref]`, optional `table {head, rows}`. Order = page order.
 - `content/zones.json`: zonas y recorridos, one section each with a drawing: from the network to the board
-  (ITC-BT-06, 07, 11-17), baños (ITC-BT-27), piscinas (ITC-BT-31). **Places defined by zones, volumes or a path go
+  (ITC-BT-06, 07, 11-17), the board and its height (ITC-BT-17, 25), baños (ITC-BT-27), piscinas
+  (ITC-BT-31). **Places defined by zones, volumes or a path go
   here** (user's request, 2026-10-13).
 - `content/formulas.json`: formulas, coefficients and the line calculation (voltage-drop limits, load forecast and
   the simultaneity table stay in the chuleta), same format. **Formula and

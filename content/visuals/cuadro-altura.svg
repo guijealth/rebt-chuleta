@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Where the general board goes and at what height (ITC-BT-17 1.1): in a dwelling, next to the entrance door,
+     between 1,4 and 2 m from the floor, never in bedrooms or bathrooms; in a shop, at least 1 m, near an entrance.
+     Heights to scale (50 units per metre); door and board are schematic. Our own drawing. Styled by .cheat-visual. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 170" role="img" aria-label="Altura del cuadro general de mando y protección: de 1,4 a 2 m en viviendas y al menos 1 m en locales comerciales">
+  <text class="v-title" x="10" y="14">Dónde y a qué altura va el cuadro</text>
+
+  <!-- dwelling: band from 1,4 to 2 m, board next to the entrance door -->
+  <text class="v-key" x="10" y="32" font-size="9">Vivienda: junto a la puerta de entrada</text>
+  <rect class="v-acc-soft" x="10" y="51" width="166" height="30" opacity="0.6"/>
+  <rect class="v-card" x="22" y="44" width="40" height="107"/>
+  <circle class="v-line" cx="54" cy="100" r="2"/>
+  <text class="v-soft" x="42" y="125" text-anchor="middle" font-size="8">puerta</text>
+  <rect class="v-body" x="72" y="54" width="40" height="24" rx="2"/>
+  <path class="v-rule" d="M78 62H106M78 70H106"/>
+  <text class="v-key" x="92" y="94" text-anchor="middle" font-size="8.5">cuadro</text>
+  <path class="v-dash" d="M10 51H176M10 81H176"/>
+  <!-- two dimensions from the floor: to 1,4 m and to 2 m -->
+  <path class="v-line" d="M140 81V151M136 81H144M136 151H144"/>
+  <text class="v-key" x="134" y="120" text-anchor="middle" font-size="9" transform="rotate(-90 134 120)">1,4 m</text>
+  <path class="v-line" d="M166 51V151M162 51H170M162 151H170"/>
+  <text class="v-key" x="160" y="104" text-anchor="middle" font-size="9" transform="rotate(-90 160 104)">2 m</text>
+  <path class="v-line" stroke-width="1.6" d="M6 151H180"/>
+
+  <!-- shop: at least 1 m -->
+  <path class="v-rule" d="M190 24V160"/>
+  <text class="v-key" x="200" y="32" font-size="9">Local comercial: cerca de una entrada</text>
+  <rect class="v-acc-soft" x="200" y="44" width="150" height="57" opacity="0.6"/>
+  <rect class="v-body" x="232" y="70" width="44" height="24" rx="2"/>
+  <path class="v-rule" d="M238 78H270M238 86H270"/>
+  <path class="v-dash" d="M200 101H350"/>
+  <path class="v-line" d="M336 101V151M332 101H340M332 151H340"/>
+  <text class="v-key" x="330" y="126" text-anchor="middle" font-size="9" transform="rotate(-90 330 126)">≥ 1 m</text>
+  <path class="v-line" stroke-width="1.6" d="M196 151H354"/>
+  <text class="v-soft" x="10" y="166" font-size="8.5">Nunca en dormitorios, baños ni aseos · alturas medidas desde el suelo</text>
+</svg>
