@@ -1,7 +1,7 @@
 # Chuleta REBT — working notes
 
 Public repo (`guijealth/rebt-chuleta`), published by GitHub Pages at https://guijealth.github.io/rebt-chuleta/ on every
-push to `main` (`.github/workflows/pages.yml`). One static page in seven printable parts: the chuleta, the zones and paths, the terminology, the materials, the devices,
+push to `main` (`.github/workflows/pages.yml`). One static page in eight printable parts: the chuleta, the zones and paths, the formulas, the terminology, the materials, the devices,
 the measurements and the UNE-EN 60617 symbols. User-facing text is Spanish; code, comments and docs are English. Read `README.md` (content formats) and
 `sources/README.md` (sources and their terms) before changing things.
 
@@ -43,7 +43,7 @@ pdftoppm -r 60 -png -f 1 -l 2 <scratch>/out.pdf <scratch>/p      # then view the
 
 Screens: `--screenshot --window-size=1400,900`. Phone width: headless can't go below ~500 px, so load the page in a
 390 px iframe from a scratch HTML file (`--allow-file-access-from-files`). The bar shows the page count: compare it
-before and after a change (now 10 chuleta + 1 zones + 4 terminology + 4 material + 6 device + 3 measurement + 5 symbol pages).
+before and after a change (now 7 chuleta + 1 zones + 4 formulas + 4 terminology + 4 material + 6 device + 3 measurement + 5 symbol pages).
 
 Commit and push when the user asks; the push publishes. The workflow runs `tools/build.py`; check the run with
 `gh run list` / `gh run watch`.
@@ -54,6 +54,9 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 - `content/zones.json`: zonas y recorridos, one section each with a drawing: from the network to the board
   (ITC-BT-06, 07, 11-17), baños (ITC-BT-27), piscinas (ITC-BT-31). **Places defined by zones, volumes or a path go
   here** (user's request, 2026-10-13).
+- `content/formulas.json`: formulas, coefficients and the line calculation (voltage-drop limits, load forecast and
+  the simultaneity table stay in the chuleta), same format. **Formula and
+  calculation sections go here, not in the chuleta** (user's request, 2026-10-13).
 - `content/terminology.json`: siglas, letters and symbols of magnitudes, same format. **Terminal letters (Letras y
   bornes de esquemas) and circuit names C1…C13 stay in the chuleta** (user's request, 2026-10-13).
 - `content/materials.json`: one section per material (cables, tubes, trunking, boxes, IP/IK enclosures, sockets), same
@@ -77,7 +80,7 @@ Commit and push when the user asks; the push publishes. The workflow runs `tools
 - `content/symbols.json`: sections → `items` `{qet, name, code?, note?, iec?, star?, notext?}`. New element:
   `python3 tools/symbols.py --vendor <qelectrotech-elements checkout>` (clone github.com/qelectrotech/qelectrotech-elements).
 - `assets/chuleta.js`: screen rendering, search, and the print layout (pages pre-built in `#print-root`, hidden on
-  screen). `PARTS` lists the parts in page order: chuleta, zonas y recorridos, terminología, materiales, dispositivos, mediciones, símbolos (nav, checkboxes,
+  screen). `PARTS` lists the parts in page order: chuleta, zonas y recorridos, fórmulas y cálculos, terminología, materiales, dispositivos, mediciones, símbolos (nav, checkboxes,
   screen and print all come from it). `layoutSheet` packs sections into 3 columns: biggest later section that fits
   fills a gap, else split by rows (≥ 2 each side), else a section may start with its rows and continue with its
   drawing. A section with `newPage` / `newColumn` starts a page / column and is never pulled into a gap.

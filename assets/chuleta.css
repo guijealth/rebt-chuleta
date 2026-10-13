@@ -94,6 +94,10 @@ main { padding: 8px 24px 24px; max-width: 1480px; margin: 0 auto; }
 .part + .part { margin-top: 16px; border-top: 1px solid var(--rule); }
 .part-title { margin: 0 0 4px; font: 500 2rem/1.1 var(--cond); }
 .part-sub { margin: 0 0 16px; color: var(--ink-soft); max-width: 90ch; }
+.sec-link { color: inherit; text-decoration: none; }
+.sec-link:hover, .sec-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.sec-link:hover::after, .sec-link:focus-visible::after { content: " #"; color: var(--rebt); }
+#screen .cheat-sec, #screen .sym-sec { scroll-margin-top: 72px; }
 .no-match { color: var(--ink-soft); }
 
 .cheat-grid { columns: 3 320px; column-gap: 16px; }

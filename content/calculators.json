@@ -49,7 +49,7 @@
    "tex": "V = R \\cdot I",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Ley de Ohm"
     ]
    ],
@@ -107,7 +107,7 @@
    "tex": "P = V \\cdot I = R \\cdot I^2 = \\dfrac{V^2}{R}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Potencia (c.c. o resistiva)"
     ]
    ],
@@ -153,7 +153,7 @@
    "tex": "E = P \\cdot t",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Energía consumida"
     ]
    ],
@@ -196,7 +196,7 @@
    "tex": "Q = R \\cdot I^2 \\cdot t",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Calor por efecto Joule"
     ]
    ],
@@ -239,7 +239,7 @@
    "tex": "I = \\dfrac{Q}{t}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Intensidad y carga"
     ]
    ],
@@ -276,7 +276,7 @@
    "tex": "R_{eq} = R_1 + R_2 + \\dots",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Resistencias en serie"
     ]
    ],
@@ -313,11 +313,11 @@
    "tex": "\\dfrac{1}{R_{eq}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dots",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Resistencias en paralelo"
     ],
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Dos en paralelo"
     ]
    ],
@@ -354,7 +354,7 @@
    "tex": "R = \\dfrac{L}{\\gamma \\cdot S}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Resistencia de un conductor"
     ]
    ],
@@ -424,7 +424,7 @@
    "tex": "S = \\dfrac{\\pi D^2}{4}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Sección de un conductor circular"
     ]
    ],
@@ -455,7 +455,7 @@
    "tex": "P = U I \\cos\\varphi \\quad Q = U I \\operatorname{sen}\\varphi \\quad S = U I",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Potencias, monofásica"
     ],
     [
@@ -516,7 +516,7 @@
    "tex": "P = \\sqrt{3}\\, U I \\cos\\varphi \\quad Q = \\sqrt{3}\\, U I \\operatorname{sen}\\varphi \\quad S = \\sqrt{3}\\, U I",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Potencias, trifásica"
     ],
     [
@@ -577,7 +577,7 @@
    "tex": "S^2 = P^2 + Q^2 \\qquad \\cos\\varphi = \\dfrac{P}{S}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Triángulo de potencias"
     ],
     [
@@ -849,7 +849,7 @@
    "tex": "U_\\text{línea} = \\sqrt{3} \\cdot U_\\text{fase}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Tensión de línea y de fase"
     ]
    ],
@@ -894,7 +894,7 @@
    "tex": "f = \\dfrac{1}{T}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Frecuencia y periodo"
     ]
    ],
@@ -939,7 +939,7 @@
    "tex": "I = \\dfrac{P}{U \\cos\\varphi}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Intensidad, monofásica"
     ],
     [
@@ -988,7 +988,7 @@
    "tex": "I = \\dfrac{P}{\\sqrt{3}\\, U \\cos\\varphi}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: alterna y trifásica",
      "Intensidad, trifásica"
     ],
     [
@@ -1037,7 +1037,7 @@
    "tex": "I = n \\cdot I_a \\cdot F_s \\cdot F_u",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Circuitos de vivienda"
     ],
     [
@@ -1095,7 +1095,7 @@
    "tex": "I_B \\le I_n \\le I_z \\qquad I_2 \\le 1{,}45\\, I_z",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Elegir la protección"
     ],
     [
@@ -1200,7 +1200,7 @@
    "tex": "I_z = I_\\text{tabla} \\cdot F_1 \\cdot F_2 \\cdots",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Intensidad admisible corregida"
     ]
    ],
@@ -1242,7 +1242,7 @@
    "tex": "e = \\dfrac{2 \\cdot P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{2 \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Caída de tensión, monofásica"
     ],
     [
@@ -1358,7 +1358,7 @@
    "tex": "e = \\dfrac{P \\cdot L}{\\gamma \\cdot S \\cdot U} = \\dfrac{\\sqrt{3} \\cdot L \\cdot I \\cos\\varphi}{\\gamma \\cdot S}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Caída de tensión, trifásica"
     ],
     [
@@ -1466,7 +1466,7 @@
    "tex": "e\\,\\% = \\dfrac{e}{U} \\times 100",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Caída en %"
     ],
     [
@@ -1526,7 +1526,7 @@
    "tex": "S = \\dfrac{k \\cdot P \\cdot L}{\\gamma \\cdot e \\cdot U} \\qquad k = 2 \\text{ (mono)},\\ 1 \\text{ (tri)}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Sección por caída de tensión"
     ],
     [
@@ -1655,7 +1655,7 @@
    "tex": "P_T = P_V + P_{SG} + P_L + P_G",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Edificio de viviendas"
     ],
     [
@@ -1729,7 +1729,7 @@
    "tex": "P_V = \\bar P \\cdot \\text{coef}(n)",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Carga de las viviendas"
     ],
     [
@@ -1836,7 +1836,7 @@
    "tex": "P = (\\text{W/m}^2) \\times \\text{superficie} \\quad (\\ge 3\\,450\\ \\text{W})",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Locales y garajes"
     ],
     [
@@ -1897,7 +1897,7 @@
    "tex": "P = (P_1 + P_2 + P_3 + P_4) + 0{,}3 \\cdot P_5 \\ \\text{(con SPL)}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Edificio con recarga de VE"
     ],
     [
@@ -1977,7 +1977,7 @@
    "tex": "\\text{VA} = 1{,}8 \\times \\text{W}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Lámparas de descarga"
     ],
     [
@@ -2012,7 +2012,7 @@
    "tex": "I = 1{,}25 \\cdot I_\\text{mayor} + \\textstyle\\sum I_\\text{demás}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: previsión de cargas",
      "Motores"
     ],
     [
@@ -2057,7 +2057,7 @@
    "tex": "R_A \\cdot I_a \\le U",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: tierra y protección de personas",
      "Esquema TT, condición"
     ],
     [
@@ -2142,7 +2142,7 @@
    "tex": "Z_s \\cdot I_a \\le U_0 \\qquad I_{cc} = \\dfrac{U_0}{Z_s}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: tierra y protección de personas",
      "Esquema TN, condición"
     ],
     [
@@ -2205,15 +2205,15 @@
    "tex": "R_\\text{pica} = \\dfrac{\\rho}{L} \\quad R_\\text{placa} = 0{,}8 \\dfrac{\\rho}{P} \\quad R_\\text{conductor} = \\dfrac{2\\rho}{L}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: tierra y protección de personas",
      "Resistencia de tierra: pica"
     ],
     [
-     "Todas las fórmulas",
+     "Fórmulas: tierra y protección de personas",
      "Resistencia de tierra: placa"
     ],
     [
-     "Todas las fórmulas",
+     "Fórmulas: tierra y protección de personas",
      "Resistencia de tierra: conductor horizontal"
     ],
     [
@@ -2346,7 +2346,7 @@
    "tex": "S \\le 16 \\to S_p = S \\quad 16 < S \\le 35 \\to 16 \\quad S > 35 \\to \\dfrac{S}{2}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Conductor de protección"
     ],
     [
@@ -2382,7 +2382,7 @@
    "tex": "D = 0{,}55\\,\\sqrt{F}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: líneas y protecciones",
      "Red aérea: separación en vanos > 50 m"
     ]
    ],
@@ -2413,7 +2413,7 @@
    "tex": "E = \\dfrac{\\Phi}{S}",
    "rows": [
     [
-     "Todas las fórmulas",
+     "Fórmulas: electricidad básica",
      "Iluminancia"
     ]
    ],

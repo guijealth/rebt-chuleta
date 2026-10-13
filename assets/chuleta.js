@@ -1,4 +1,4 @@
-/* Chuleta REBT — one page in seven parts (chuleta, zonas y recorridos, terminología, materiales, dispositivos, mediciones, símbolos), ready to print.
+/* Chuleta REBT — one page in eight parts (chuleta, zonas y recorridos, fórmulas y cálculos, terminología, materiales, dispositivos, mediciones, símbolos), ready to print.
    Content comes from data.js (built by tools/build.py from content/*.json).
    Printing: the pages are laid out ahead of time in #print-root (A4 landscape, 14 mm binding strip),
    hidden on screen and the only thing printed, so the browser's own Print (Ctrl+P) gives the same result. */
@@ -34,6 +34,7 @@
   const PARTS = [
     { id: 'chuleta', label: 'Chuleta', data: data.cheatsheet, kind: 'sheet', ref: 'REBT · ITC-BT' },
     { id: 'zonas', label: 'Zonas y recorridos', data: data.zones, kind: 'sheet', ref: 'REBT · ITC-BT' },
+    { id: 'formulas', label: 'Fórmulas y cálculos', data: data.formulas, kind: 'sheet', ref: 'REBT · Guía anexo 2' },
     { id: 'terminologia', label: 'Terminología', data: data.terminology, kind: 'sheet', ref: 'Siglas · letras · símbolos' },
     { id: 'materiales', label: 'Materiales', data: data.materials, kind: 'sheet', ref: 'REBT · Guías técnicas' },
     { id: 'dispositivos', label: 'Dispositivos', data: data.devices, kind: 'sheet', ref: 'REBT · Guías técnicas' },
@@ -322,18 +323,31 @@
     return gs;
   }, [[]]);
 
+  const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
   function renderScreen() {
     for (const part of PARTS) {
       const d = part.data;
       $('#jump').append(el('a', { href: `#${part.id}`, text: part.label }));
       $('#part-checks').append(el('label', { class: 'check' },
         el('input', { type: 'checkbox', name: 'part', value: part.id, checked: '' }), ` ${part.label}`));
+      // every section gets an id, and its title links to it: a link to share that lands on the section (screen only)
+      const secs = new Map(d.sections.map((s) => [s, part.kind === 'sheet' || !s.items ? cheatSection(s) : symbolSection(s)]));
+      const used = new Set();
+      for (const [s, node] of secs) {
+        let id = `${part.id}-${slug(s.title)}`;
+        while (used.has(id)) id += '-';
+        used.add(id);
+        node.id = id;
+        const h = node.querySelector('h3');
+        h.prepend(el('a', { class: 'sec-link', href: `#${id}`, title: 'Enlace a esta sección' }, h.firstChild));
+      }
       $('#parts').append(el('section', { id: part.id, class: 'part', 'aria-labelledby': `${part.id}-title` },
         el('h2', { class: 'part-title', id: `${part.id}-title`, text: d.title }),
         d.subtitle ? el('p', { class: 'part-sub', text: d.subtitle }) : null,
         part.kind === 'sheet'
-          ? screenGroups(d.sections).map((g) => el('div', { class: 'cheat-grid' }, g.map((s) => cheatSection(s))))
-          : [d.sections.map((s) => (s.items ? symbolSection(s) : cheatSection(s))),
+          ? screenGroups(d.sections).map((g) => el('div', { class: 'cheat-grid' }, g.map((s) => secs.get(s))))
+          : [d.sections.map((s) => secs.get(s)),
             d.credit ? el('p', { class: 'sym-credit', text: d.credit }) : null]));
     }
     $('#foot').append(
@@ -587,6 +601,9 @@
     await document.fonts.ready;
     laidOut = null;
     layout();
+    // the sections are built here, after the browser looked for the link's #section: go there now, with the real fonts
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView();
   }
 
   boot();

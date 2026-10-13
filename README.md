@@ -1,8 +1,9 @@
 # Chuleta REBT
 
-One page with seven parts, each ready to print: the **chuleta** (the key figures of every chapter of the Spanish
+One page with eight parts, each ready to print: the **chuleta** (the key figures of every chapter of the Spanish
 low-voltage regulation, REBT, each tagged with its ITC-BT section), the **zones and paths** (zonas y recorridos: from
-the distribution network to the user's board, and the zones of bathrooms and pools, with drawings), the **terminology** (terminología: acronyms, letters
+the distribution network to the user's board, and the zones of bathrooms and pools, with drawings), the **formulas and calculations** (fórmulas y cálculos: the formulas, coefficients and
+step-by-step line calculation, where most calculators hang), the **terminology** (terminología: acronyms, letters
 and symbols of magnitudes), the **materials**
 (materiales: cables, tubes, trunking, boxes, enclosures, sockets: how their codes are read), the **devices**
 (dispositivos: fuses, ICP, IGA, surge protector, differential, PIA, contactor, telerruptor, emergency lights), the **measurements**
@@ -16,9 +17,10 @@ This is a study summary, not an official document: the text that counts is the
 
 ## Use
 
-- **Read:** the page shows the seven parts in that order. The search box (or the `/` key) filters them all: rows, table
+- **Read:** the page shows the eight parts in that order. Each section title is a link to that section: click it and
+  copy the address to share a link that opens the page right there. The search box (or the `/` key) filters them all: rows, table
   rows and symbols that contain every word, ignoring accents. A section whose title or reference matches stays whole.
-- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Zonas y recorridos**, **Terminología**, **Materiales**,
+- **Print:** **Imprimir…** in the top bar opens a dialog: tick what to print (**Chuleta**, **Zonas y recorridos**, **Fórmulas y cálculos**, **Terminología**, **Materiales**,
   **Dispositivos**, **Mediciones**, **Símbolos**, **Doble cara**), see how many pages and sheets that is (per part), then **Imprimir**,
   or **Vista previa** to see the pages on screen (**Volver** in the bar returns). The browser's own Print
   (Ctrl/Cmd+P) gives the same result.
@@ -79,6 +81,12 @@ Everything shown comes from five JSON files in `content/`. Edit them (on GitHub'
 Same format as the chuleta, one section each with a drawing: *De la red al cuadro* (the service line and the
 instalación de enlace, ITC-BT-06, 07 and 11 to 17), *Baños y duchas* (ITC-BT-27) and *Piscinas y fuentes* (ITC-BT-31).
 
+### `content/formulas.json` — formulas and calculations
+
+Same format as the chuleta: powers in AC, the step-by-step line calculation, correction
+factors, earthing values, and the formulas in five groups (basic electricity, AC and three-phase, load
+forecast, lines and protections, earthing). Calculators attach to rows here as anywhere else.
+
 ### `content/terminology.json` — the terminology
 
 Same format as the chuleta: the sections of acronyms (siglas) and of letters and symbols of magnitudes. The
@@ -107,7 +115,7 @@ or point), see the result as you type. Each calculator lists:
 
 ```json
 {"id": "paralelo", "title": "Resistencias en paralelo", "tex": "\\dfrac{1}{R_{eq}} = …",
- "rows": [["Todas las fórmulas", "Resistencias en paralelo"], ["Todas las fórmulas", "Dos en paralelo"]],
+ "rows": [["Fórmulas: electricidad básica", "Resistencias en paralelo"], ["Fórmulas: electricidad básica", "Dos en paralelo"]],
  "inputs": [{"id": "R", "type": "list", "label": "Resistencias", "unit": "Ω", "min": 2}],
  "outputs": [{"label": "R_eq", "expr": "1 / sum(R.map(x => 1 / x))", "unit": "Ω", "digits": 3}],
  "example": {"R": [10, 10, 20]}}
@@ -184,7 +192,7 @@ Needs `pdftotext` (poppler). The workflow also runs `check` before publishing.
 | `assets/fonts/` | Barlow and Barlow Condensed (woff2, Latin + Latin Extended) and their licence |
 | `assets/katex/` | KaTeX script, stylesheet and woff2 fonts, for the formulas |
 | `content/calculators.json` | The calculators behind the 🖩 buttons |
-| `content/cheatsheet.json`, `zones.json`, `terminology.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
+| `content/cheatsheet.json`, `zones.json`, `formulas.json`, `terminology.json`, `materials.json`, `devices.json`, `measurements.json`, `symbols.json` | The content, in page order |
 | `content/visuals/` | Our own SVG drawings for chuleta and device sections |
 | `content/elements/qet/` | QElectroTech EN 60617 elements in use, with their licence (`ELEMENTS.LICENSE`) |
 | `content/elements/fixed/` | Our corrections of faulty elements |
